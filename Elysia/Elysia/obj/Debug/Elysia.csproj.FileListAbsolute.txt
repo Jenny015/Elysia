@@ -124,3 +124,11 @@ C:\Users\USER\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Ely
 C:\Users\USER\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\obj\Debug\Elysia.csproj.Up2Date
 C:\Users\USER\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\obj\Debug\Elysia.exe
 C:\Users\USER\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\obj\Debug\Elysia.pdb
+C:\Users\Jenny015\Desktop\elysia\Elysia\Elysia\Elysia\obj\Debug\Elysia.csproj.AssemblyReference.cache
+C:\Users\Jenny015\Desktop\elysia\Elysia\Elysia\Elysia\obj\Debug\Elysia.newOrder.resources
+C:\Users\Jenny015\Desktop\elysia\Elysia\Elysia\Elysia\obj\Debug\Elysia.Properties.Resources.resources
+C:\Users\Jenny015\Desktop\elysia\Elysia\Elysia\Elysia\obj\Debug\Elysia.UI_Tester.resources
+C:\Users\Jenny015\Desktop\elysia\Elysia\Elysia\Elysia\obj\Debug\Elysia.csproj.GenerateResource.cache
+C:\Users\Jenny015\Desktop\elysia\Elysia\Elysia\Elysia\obj\Debug\Elysia.csproj.CoreCompileInputs.cache
+C:\Users\Jenny015\Desktop\elysia\Elysia\Elysia\Elysia\obj\Debug\Elysia.exe
+C:\Users\Jenny015\Desktop\elysia\Elysia\Elysia\Elysia\obj\Debug\Elysia.pdb
