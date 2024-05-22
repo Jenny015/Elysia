@@ -1,134 +1,44 @@
-C:\Users\Jenny015\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\Elysia.exe.config
-C:\Users\Jenny015\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\Elysia.exe
-C:\Users\Jenny015\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\Elysia.pdb
-C:\Users\Jenny015\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\BouncyCastle.Cryptography.dll
-C:\Users\Jenny015\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\Google.Protobuf.dll
-C:\Users\Jenny015\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\K4os.Compression.LZ4.dll
-C:\Users\Jenny015\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\K4os.Compression.LZ4.Streams.dll
-C:\Users\Jenny015\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\K4os.Hash.xxHash.dll
-C:\Users\Jenny015\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
-C:\Users\Jenny015\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\MySql.Data.dll
-C:\Users\Jenny015\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\System.Buffers.dll
-C:\Users\Jenny015\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\System.Configuration.ConfigurationManager.dll
-C:\Users\Jenny015\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\System.Diagnostics.DiagnosticSource.dll
-C:\Users\Jenny015\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\System.IO.Pipelines.dll
-C:\Users\Jenny015\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\System.Memory.dll
-C:\Users\Jenny015\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\System.Numerics.Vectors.dll
-C:\Users\Jenny015\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\Jenny015\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\System.Threading.Tasks.Extensions.dll
-C:\Users\Jenny015\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\ZstdSharp.dll
-C:\Users\Jenny015\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\BouncyCastle.Cryptography.xml
-C:\Users\Jenny015\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\Google.Protobuf.pdb
-C:\Users\Jenny015\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\Google.Protobuf.xml
-C:\Users\Jenny015\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\K4os.Compression.LZ4.xml
-C:\Users\Jenny015\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\K4os.Compression.LZ4.Streams.xml
-C:\Users\Jenny015\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\K4os.Hash.xxHash.xml
-C:\Users\Jenny015\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
-C:\Users\Jenny015\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\MySql.Data.xml
-C:\Users\Jenny015\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\System.Buffers.xml
-C:\Users\Jenny015\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\System.Diagnostics.DiagnosticSource.xml
-C:\Users\Jenny015\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\System.IO.Pipelines.xml
-C:\Users\Jenny015\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\System.Memory.xml
-C:\Users\Jenny015\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\System.Numerics.Vectors.xml
-C:\Users\Jenny015\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-C:\Users\Jenny015\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\System.Threading.Tasks.Extensions.xml
-C:\Users\Jenny015\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\obj\Debug\Elysia.csproj.AssemblyReference.cache
-C:\Users\Jenny015\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\obj\Debug\Elysia.Login.resources
-C:\Users\Jenny015\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\obj\Debug\Elysia.Properties.Resources.resources
-C:\Users\Jenny015\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\obj\Debug\Elysia.csproj.GenerateResource.cache
-C:\Users\Jenny015\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\obj\Debug\Elysia.csproj.CoreCompileInputs.cache
-C:\Users\Jenny015\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\obj\Debug\Elysia.csproj.CopyComplete
-C:\Users\Jenny015\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\obj\Debug\Elysia.exe
-C:\Users\Jenny015\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\obj\Debug\Elysia.pdb
-C:\Users\230268178\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\Elysia.exe.config
-C:\Users\230268178\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\Elysia.exe
-C:\Users\230268178\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\Elysia.pdb
-C:\Users\230268178\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\BouncyCastle.Cryptography.dll
-C:\Users\230268178\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\Google.Protobuf.dll
-C:\Users\230268178\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\K4os.Compression.LZ4.dll
-C:\Users\230268178\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\K4os.Compression.LZ4.Streams.dll
-C:\Users\230268178\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\K4os.Hash.xxHash.dll
-C:\Users\230268178\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
-C:\Users\230268178\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\MySql.Data.dll
-C:\Users\230268178\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\System.Buffers.dll
-C:\Users\230268178\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\System.Configuration.ConfigurationManager.dll
-C:\Users\230268178\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\System.Diagnostics.DiagnosticSource.dll
-C:\Users\230268178\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\System.IO.Pipelines.dll
-C:\Users\230268178\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\System.Memory.dll
-C:\Users\230268178\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\System.Numerics.Vectors.dll
-C:\Users\230268178\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\230268178\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\System.Threading.Tasks.Extensions.dll
-C:\Users\230268178\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\ZstdSharp.dll
-C:\Users\230268178\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\BouncyCastle.Cryptography.xml
-C:\Users\230268178\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\Google.Protobuf.pdb
-C:\Users\230268178\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\Google.Protobuf.xml
-C:\Users\230268178\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\K4os.Compression.LZ4.xml
-C:\Users\230268178\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\K4os.Compression.LZ4.Streams.xml
-C:\Users\230268178\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\K4os.Hash.xxHash.xml
-C:\Users\230268178\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
-C:\Users\230268178\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\MySql.Data.xml
-C:\Users\230268178\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\System.Buffers.xml
-C:\Users\230268178\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\System.Diagnostics.DiagnosticSource.xml
-C:\Users\230268178\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\System.IO.Pipelines.xml
-C:\Users\230268178\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\System.Memory.xml
-C:\Users\230268178\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\System.Numerics.Vectors.xml
-C:\Users\230268178\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-C:\Users\230268178\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\System.Threading.Tasks.Extensions.xml
-C:\Users\230268178\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\obj\Debug\Elysia.csproj.AssemblyReference.cache
-C:\Users\230268178\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\obj\Debug\Elysia.Properties.Resources.resources
-C:\Users\230268178\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\obj\Debug\Elysia.csproj.GenerateResource.cache
-C:\Users\230268178\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\obj\Debug\Elysia.csproj.CoreCompileInputs.cache
-C:\Users\230268178\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\obj\Debug\Elysia.csproj.Up2Date
-C:\Users\230268178\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\obj\Debug\Elysia.exe
-C:\Users\230268178\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\obj\Debug\Elysia.pdb
-C:\Users\230268178\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\obj\Debug\Elysia.newOrder.resources
-C:\Users\USER\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\Elysia.exe.config
-C:\Users\USER\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\Elysia.exe
-C:\Users\USER\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\Elysia.pdb
-C:\Users\USER\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\BouncyCastle.Cryptography.dll
-C:\Users\USER\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\Google.Protobuf.dll
-C:\Users\USER\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\K4os.Compression.LZ4.dll
-C:\Users\USER\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\K4os.Compression.LZ4.Streams.dll
-C:\Users\USER\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\K4os.Hash.xxHash.dll
-C:\Users\USER\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
-C:\Users\USER\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\MySql.Data.dll
-C:\Users\USER\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\System.Buffers.dll
-C:\Users\USER\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\System.Configuration.ConfigurationManager.dll
-C:\Users\USER\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\System.Diagnostics.DiagnosticSource.dll
-C:\Users\USER\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\System.IO.Pipelines.dll
-C:\Users\USER\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\System.Memory.dll
-C:\Users\USER\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\System.Numerics.Vectors.dll
-C:\Users\USER\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\USER\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\System.Threading.Tasks.Extensions.dll
-C:\Users\USER\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\ZstdSharp.dll
-C:\Users\USER\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\BouncyCastle.Cryptography.xml
-C:\Users\USER\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\Google.Protobuf.pdb
-C:\Users\USER\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\Google.Protobuf.xml
-C:\Users\USER\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\K4os.Compression.LZ4.xml
-C:\Users\USER\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\K4os.Compression.LZ4.Streams.xml
-C:\Users\USER\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\K4os.Hash.xxHash.xml
-C:\Users\USER\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
-C:\Users\USER\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\MySql.Data.xml
-C:\Users\USER\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\System.Buffers.xml
-C:\Users\USER\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\System.Diagnostics.DiagnosticSource.xml
-C:\Users\USER\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\System.IO.Pipelines.xml
-C:\Users\USER\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\System.Memory.xml
-C:\Users\USER\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\System.Numerics.Vectors.xml
-C:\Users\USER\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-C:\Users\USER\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\bin\Debug\System.Threading.Tasks.Extensions.xml
-C:\Users\USER\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\obj\Debug\Elysia.csproj.AssemblyReference.cache
-C:\Users\USER\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\obj\Debug\Elysia.newOrder.resources
-C:\Users\USER\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\obj\Debug\Elysia.Properties.Resources.resources
-C:\Users\USER\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\obj\Debug\Elysia.csproj.GenerateResource.cache
-C:\Users\USER\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\obj\Debug\Elysia.csproj.CoreCompileInputs.cache
-C:\Users\USER\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\obj\Debug\Elysia.csproj.Up2Date
-C:\Users\USER\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\obj\Debug\Elysia.exe
-C:\Users\USER\OneDrive - Vocational Training Council - Student\_sem3\4915-C#\Elysia\Elysia\Elysia\obj\Debug\Elysia.pdb
 C:\Users\Jenny015\Desktop\elysia\Elysia\Elysia\Elysia\obj\Debug\Elysia.csproj.AssemblyReference.cache
 C:\Users\Jenny015\Desktop\elysia\Elysia\Elysia\Elysia\obj\Debug\Elysia.newOrder.resources
 C:\Users\Jenny015\Desktop\elysia\Elysia\Elysia\Elysia\obj\Debug\Elysia.Properties.Resources.resources
 C:\Users\Jenny015\Desktop\elysia\Elysia\Elysia\Elysia\obj\Debug\Elysia.UI_Tester.resources
 C:\Users\Jenny015\Desktop\elysia\Elysia\Elysia\Elysia\obj\Debug\Elysia.csproj.GenerateResource.cache
 C:\Users\Jenny015\Desktop\elysia\Elysia\Elysia\Elysia\obj\Debug\Elysia.csproj.CoreCompileInputs.cache
+C:\Users\Jenny015\Desktop\elysia\Elysia\Elysia\Elysia\bin\Debug\Elysia.exe.config
+C:\Users\Jenny015\Desktop\elysia\Elysia\Elysia\Elysia\bin\Debug\Elysia.exe
+C:\Users\Jenny015\Desktop\elysia\Elysia\Elysia\Elysia\bin\Debug\Elysia.pdb
+C:\Users\Jenny015\Desktop\elysia\Elysia\Elysia\Elysia\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\Jenny015\Desktop\elysia\Elysia\Elysia\Elysia\bin\Debug\Google.Protobuf.dll
+C:\Users\Jenny015\Desktop\elysia\Elysia\Elysia\Elysia\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\Jenny015\Desktop\elysia\Elysia\Elysia\Elysia\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\Jenny015\Desktop\elysia\Elysia\Elysia\Elysia\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\Jenny015\Desktop\elysia\Elysia\Elysia\Elysia\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Jenny015\Desktop\elysia\Elysia\Elysia\Elysia\bin\Debug\MySql.Data.dll
+C:\Users\Jenny015\Desktop\elysia\Elysia\Elysia\Elysia\bin\Debug\System.Buffers.dll
+C:\Users\Jenny015\Desktop\elysia\Elysia\Elysia\Elysia\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\Jenny015\Desktop\elysia\Elysia\Elysia\Elysia\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Jenny015\Desktop\elysia\Elysia\Elysia\Elysia\bin\Debug\System.IO.Pipelines.dll
+C:\Users\Jenny015\Desktop\elysia\Elysia\Elysia\Elysia\bin\Debug\System.Memory.dll
+C:\Users\Jenny015\Desktop\elysia\Elysia\Elysia\Elysia\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Jenny015\Desktop\elysia\Elysia\Elysia\Elysia\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Jenny015\Desktop\elysia\Elysia\Elysia\Elysia\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Jenny015\Desktop\elysia\Elysia\Elysia\Elysia\bin\Debug\ZstdSharp.dll
+C:\Users\Jenny015\Desktop\elysia\Elysia\Elysia\Elysia\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\Jenny015\Desktop\elysia\Elysia\Elysia\Elysia\bin\Debug\Google.Protobuf.pdb
+C:\Users\Jenny015\Desktop\elysia\Elysia\Elysia\Elysia\bin\Debug\Google.Protobuf.xml
+C:\Users\Jenny015\Desktop\elysia\Elysia\Elysia\Elysia\bin\Debug\K4os.Compression.LZ4.xml
+C:\Users\Jenny015\Desktop\elysia\Elysia\Elysia\Elysia\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\Jenny015\Desktop\elysia\Elysia\Elysia\Elysia\bin\Debug\K4os.Hash.xxHash.xml
+C:\Users\Jenny015\Desktop\elysia\Elysia\Elysia\Elysia\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\Jenny015\Desktop\elysia\Elysia\Elysia\Elysia\bin\Debug\MySql.Data.xml
+C:\Users\Jenny015\Desktop\elysia\Elysia\Elysia\Elysia\bin\Debug\System.Buffers.xml
+C:\Users\Jenny015\Desktop\elysia\Elysia\Elysia\Elysia\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\Jenny015\Desktop\elysia\Elysia\Elysia\Elysia\bin\Debug\System.IO.Pipelines.xml
+C:\Users\Jenny015\Desktop\elysia\Elysia\Elysia\Elysia\bin\Debug\System.Memory.xml
+C:\Users\Jenny015\Desktop\elysia\Elysia\Elysia\Elysia\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\Jenny015\Desktop\elysia\Elysia\Elysia\Elysia\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Jenny015\Desktop\elysia\Elysia\Elysia\Elysia\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\Jenny015\Desktop\elysia\Elysia\Elysia\Elysia\obj\Debug\Elysia.csproj.CopyComplete
 C:\Users\Jenny015\Desktop\elysia\Elysia\Elysia\Elysia\obj\Debug\Elysia.exe
 C:\Users\Jenny015\Desktop\elysia\Elysia\Elysia\Elysia\obj\Debug\Elysia.pdb
+C:\Users\Jenny015\Desktop\elysia\Elysia\Elysia\Elysia\obj\Debug\Elysia.Login.resources
