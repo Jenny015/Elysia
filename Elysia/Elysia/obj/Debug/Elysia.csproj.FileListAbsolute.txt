@@ -176,3 +176,4 @@ C:\Users\230113181\Downloads\elysia\Elysia\Elysia\Elysia\obj\Debug\Elysia.csproj
 C:\Users\230113181\Downloads\elysia\Elysia\Elysia\Elysia\obj\Debug\Elysia.csproj.Up2Date
 C:\Users\230113181\Downloads\elysia\Elysia\Elysia\Elysia\obj\Debug\Elysia.exe
 C:\Users\230113181\Downloads\elysia\Elysia\Elysia\Elysia\obj\Debug\Elysia.pdb
+C:\Users\ok227\Documents\4915 ea sql\Elysia\Elysia\Elysia\obj\Debug\Elysia.ViewOrder.resources
