@@ -13,14 +13,14 @@ namespace Elysia
 {
     public partial class newOrder : Form
     {
-        MySqlConnection cnn;
-        Dictionary<String, int> orderParts = new Dictionary<string, int>();
+        private MySqlConnection cnn;
+        private Dictionary<String, int> orderParts = new Dictionary<string, int>();
         String newOrderID;
         public newOrder()
         {
             InitializeComponent();
             cnn = new MySqlConnection("server=localhost;database=elysia;uid=root;pwd=\"\";");
-            loadInformation();
+            LoadInformation();
         }
 
         public void ConnectToSql()
@@ -35,7 +35,7 @@ namespace Elysia
             }
         }
 
-        public void loadInformation()
+        public void LoadInformation()
         {
             ConnectToSql();
             MySqlCommand cmd = cnn.CreateCommand();
@@ -87,7 +87,7 @@ namespace Elysia
 
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void BtnAdd_Click(object sender, EventArgs e)
         {
             if(cbPartID.SelectedItem != null && nQty.Value > 0)
             {
@@ -116,11 +116,6 @@ namespace Elysia
                 cbPartID.Focus();
 
             }
-        }
-
-        private void newOrder_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
