@@ -127,6 +127,12 @@
     <Compile Include="UI_Tester.Designer.cs">
       <DependentUpon>UI_Tester.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewOrder.Designer.cs">
+      <DependentUpon>ViewOrder.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -140,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI_Tester.resx">
       <DependentUpon>UI_Tester.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewOrder.resx">
+      <DependentUpon>ViewOrder.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
