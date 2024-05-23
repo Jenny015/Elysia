@@ -1,26 +1,34 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\230268178\\Downloads\\Elysia\\Elysia\\",
+  "WorkspaceRootPath": "C:\\Users\\ok227\\Documents\\4915 ea sql\\Elysia\\Elysia\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2A10908A-C5A3-4104-BEFC-0BDE708DEE41}|Elysia\\Elysia.csproj|C:\\Users\\230268178\\Downloads\\Elysia\\Elysia\\elysia\\neworder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2A10908A-C5A3-4104-BEFC-0BDE708DEE41}|Elysia\\Elysia.csproj|solutionrelative:elysia\\neworder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{2A10908A-C5A3-4104-BEFC-0BDE708DEE41}|Elysia\\Elysia.csproj|c:\\users\\ok227\\documents\\4915 ea sql\\elysia\\elysia\\elysia\\ui_tester.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A10908A-C5A3-4104-BEFC-0BDE708DEE41}|Elysia\\Elysia.csproj|solutionrelative:elysia\\ui_tester.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2A10908A-C5A3-4104-BEFC-0BDE708DEE41}|Elysia\\Elysia.csproj|c:\\users\\230268178\\downloads\\elysia\\elysia\\elysia\\neworder.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2A10908A-C5A3-4104-BEFC-0BDE708DEE41}|Elysia\\Elysia.csproj|C:\\Users\\ok227\\Documents\\4915 ea sql\\Elysia\\Elysia\\elysia\\neworder.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2A10908A-C5A3-4104-BEFC-0BDE708DEE41}|Elysia\\Elysia.csproj|solutionrelative:elysia\\neworder.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2A10908A-C5A3-4104-BEFC-0BDE708DEE41}|Elysia\\Elysia.csproj|C:\\Users\\230268178\\Downloads\\Elysia\\Elysia\\elysia\\neworder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2A10908A-C5A3-4104-BEFC-0BDE708DEE41}|Elysia\\Elysia.csproj|c:\\users\\ok227\\documents\\4915 ea sql\\elysia\\elysia\\elysia\\properties\\resources.resx||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{2A10908A-C5A3-4104-BEFC-0BDE708DEE41}|Elysia\\Elysia.csproj|solutionrelative:elysia\\properties\\resources.resx||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A10908A-C5A3-4104-BEFC-0BDE708DEE41}|Elysia\\Elysia.csproj|C:\\Users\\ok227\\Documents\\4915 ea sql\\Elysia\\Elysia\\elysia\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A10908A-C5A3-4104-BEFC-0BDE708DEE41}|Elysia\\Elysia.csproj|solutionrelative:elysia\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A10908A-C5A3-4104-BEFC-0BDE708DEE41}|Elysia\\Elysia.csproj|c:\\users\\ok227\\documents\\4915 ea sql\\elysia\\elysia\\elysia\\neworder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2A10908A-C5A3-4104-BEFC-0BDE708DEE41}|Elysia\\Elysia.csproj|solutionrelative:elysia\\neworder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A10908A-C5A3-4104-BEFC-0BDE708DEE41}|Elysia\\Elysia.csproj|C:\\Users\\ok227\\Documents\\4915 ea sql\\Elysia\\Elysia\\elysia\\neworder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2A10908A-C5A3-4104-BEFC-0BDE708DEE41}|Elysia\\Elysia.csproj|solutionrelative:elysia\\neworder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2A10908A-C5A3-4104-BEFC-0BDE708DEE41}|Elysia\\Elysia.csproj|c:\\users\\230268178\\downloads\\elysia\\elysia\\elysia\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{2A10908A-C5A3-4104-BEFC-0BDE708DEE41}|Elysia\\Elysia.csproj|C:\\Users\\ok227\\Documents\\4915 ea sql\\Elysia\\Elysia\\elysia\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{2A10908A-C5A3-4104-BEFC-0BDE708DEE41}|Elysia\\Elysia.csproj|solutionrelative:elysia\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2A10908A-C5A3-4104-BEFC-0BDE708DEE41}|Elysia\\Elysia.csproj|c:\\users\\230268178\\downloads\\elysia\\elysia\\elysia\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2A10908A-C5A3-4104-BEFC-0BDE708DEE41}|Elysia\\Elysia.csproj|solutionrelative:elysia\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,39 +38,61 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UI_Tester.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\ok227\\Documents\\4915 ea sql\\Elysia\\Elysia\\Elysia\\UI_Tester.Designer.cs",
+              "RelativeDocumentMoniker": "Elysia\\UI_Tester.Designer.cs",
+              "ToolTip": "C:\\Users\\ok227\\Documents\\4915 ea sql\\Elysia\\Elysia\\Elysia\\UI_Tester.Designer.cs",
+              "RelativeToolTip": "Elysia\\UI_Tester.Designer.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-23T04:09:33.572Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Resources.resx",
+              "DocumentMoniker": "C:\\Users\\ok227\\Documents\\4915 ea sql\\Elysia\\Elysia\\Elysia\\Properties\\Resources.resx",
+              "RelativeDocumentMoniker": "Elysia\\Properties\\Resources.resx",
+              "ToolTip": "C:\\Users\\ok227\\Documents\\4915 ea sql\\Elysia\\Elysia\\Elysia\\Properties\\Resources.resx",
+              "RelativeToolTip": "Elysia\\Properties\\Resources.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2024-05-23T04:08:10.226Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "newOrder.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\230268178\\Downloads\\Elysia\\Elysia\\Elysia\\newOrder.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\ok227\\Documents\\4915 ea sql\\Elysia\\Elysia\\Elysia\\newOrder.Designer.cs",
               "RelativeDocumentMoniker": "Elysia\\newOrder.Designer.cs",
-              "ToolTip": "C:\\Users\\230268178\\Downloads\\Elysia\\Elysia\\Elysia\\newOrder.Designer.cs",
+              "ToolTip": "C:\\Users\\ok227\\Documents\\4915 ea sql\\Elysia\\Elysia\\Elysia\\newOrder.Designer.cs",
               "RelativeToolTip": "Elysia\\newOrder.Designer.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-23T03:24:50.805Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\230268178\\Downloads\\Elysia\\Elysia\\Elysia\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\ok227\\Documents\\4915 ea sql\\Elysia\\Elysia\\Elysia\\Program.cs",
               "RelativeDocumentMoniker": "Elysia\\Program.cs",
-              "ToolTip": "C:\\Users\\230268178\\Downloads\\Elysia\\Elysia\\Elysia\\Program.cs",
+              "ToolTip": "C:\\Users\\ok227\\Documents\\4915 ea sql\\Elysia\\Elysia\\Elysia\\Program.cs",
               "RelativeToolTip": "Elysia\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-23T03:10:52.676Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "Login.cs [\u8A2D\u8A08]",
-              "DocumentMoniker": "C:\\Users\\230268178\\Downloads\\Elysia\\Elysia\\Elysia\\Login.cs",
+              "DocumentMoniker": "C:\\Users\\ok227\\Documents\\4915 ea sql\\Elysia\\Elysia\\Elysia\\Login.cs",
               "RelativeDocumentMoniker": "Elysia\\Login.cs",
               "ToolTip": "Elysia/Elysia/Login.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -73,9 +103,9 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "newOrder.cs [\u8A2D\u8A08]",
-              "DocumentMoniker": "C:\\Users\\230268178\\Downloads\\Elysia\\Elysia\\Elysia\\newOrder.cs",
+              "DocumentMoniker": "C:\\Users\\ok227\\Documents\\4915 ea sql\\Elysia\\Elysia\\Elysia\\newOrder.cs",
               "RelativeDocumentMoniker": "Elysia\\newOrder.cs",
               "ToolTip": "Elysia/Elysia/newOrder.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -86,13 +116,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "newOrder.cs",
-              "DocumentMoniker": "C:\\Users\\230268178\\Downloads\\Elysia\\Elysia\\Elysia\\newOrder.cs",
+              "DocumentMoniker": "C:\\Users\\ok227\\Documents\\4915 ea sql\\Elysia\\Elysia\\Elysia\\newOrder.cs",
               "RelativeDocumentMoniker": "Elysia\\newOrder.cs",
-              "ToolTip": "C:\\Users\\230268178\\Downloads\\Elysia\\Elysia\\Elysia\\newOrder.cs",
+              "ToolTip": "C:\\Users\\ok227\\Documents\\4915 ea sql\\Elysia\\Elysia\\Elysia\\newOrder.cs",
               "RelativeToolTip": "Elysia\\newOrder.cs",
-              "ViewState": "AQIAAEQAAAAAAAAAAAAQwEwAAAA1AAAA",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAQwEwAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-22T03:46:56.114Z",
               "EditorCaption": ""

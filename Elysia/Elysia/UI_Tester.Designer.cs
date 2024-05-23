@@ -84,7 +84,6 @@ namespace Elysia
             this.radioButton5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(135)))), ((int)(((byte)(167)))));
             this.radioButton5.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.radioButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.radioButton5.Image = global::Elysia.Properties.Resources.logout;
             this.radioButton5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.radioButton5.Location = new System.Drawing.Point(4, 824);
             this.radioButton5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -102,7 +101,6 @@ namespace Elysia
             this.radioButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(135)))), ((int)(((byte)(167)))));
             this.radioButton1.Dock = System.Windows.Forms.DockStyle.Top;
             this.radioButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.radioButton1.Image = global::Elysia.Properties.Resources.ViewOrder;
             this.radioButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.radioButton1.Location = new System.Drawing.Point(4, 227);
             this.radioButton1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -132,7 +130,6 @@ namespace Elysia
             this.imgLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(84)))), ((int)(((byte)(129)))));
             this.imgLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.imgLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.imgLogo.Image = global::Elysia.Properties.Resources.logo;
             this.imgLogo.Location = new System.Drawing.Point(4, 3);
             this.imgLogo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.imgLogo.Name = "imgLogo";
