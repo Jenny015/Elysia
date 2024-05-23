@@ -117,5 +117,10 @@ namespace Elysia
 
             }
         }
+
+        private void newOrder_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

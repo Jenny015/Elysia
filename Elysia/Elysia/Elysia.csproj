@@ -130,14 +130,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="UI_Tester.resx">
       <DependentUpon>UI_Tester.cs</DependentUpon>
     </EmbeddedResource>
@@ -172,6 +166,69 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\newDealer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addSupplier.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EvaluatedList.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\goodInward.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\invoiceGenerate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lateDelivery.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\newDealer1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\newOrder1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reorder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scrapItem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SparePart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\viewDealer1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\viewDid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\viewInvoice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\viewLog.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\viewOrder1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\viewReOrder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\viewSupplier.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
