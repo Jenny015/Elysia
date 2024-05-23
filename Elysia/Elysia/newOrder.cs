@@ -117,5 +117,54 @@ namespace Elysia
 
             }
         }
+
+        private void btnDeleteItem_Click(object sender, EventArgs e)
+        {
+            String removeItem = lbItems.SelectedItem.ToString().Split(' ')[0];
+            orderParts.Remove(removeItem).ToString();
+            lbItems.Items.Remove(lbItems.SelectedItem);
+        }
+
+        private void cbDealerID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cbDealerID.SelectedItem == null)
+            {
+                return;
+            }
+            ConnectToSql();
+            MySqlCommand cmd = cnn.CreateCommand();
+
+            //load dealer info
+            String dealerID = cbDealerID.SelectedItem.ToString();
+            cmd.CommandText = $"SELECT dName, dCompany FROM dealer WHERE dealerID = \"{dealerID}\"";
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    lblDealerName.Text = reader.GetString(0);
+                    lblDealerCompany.Text = reader.GetString(1);
+                }
+            }
+            cnn.Close();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            cbDealerID.SelectedItem = null;
+            lbItems.Items.Clear();
+            cbPartID.SelectedItem = null;
+            nQty.Value = 1;
+            orderParts = new Dictionary<string, int>();
+            lblDealerName.Text = "";
+            lblDealerCompany.Text = "";
+        }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            //If stock qty > order qty -> Generate DID, status == processing, order status == processing
+
+
+            //else DID status == OStanding, order (outstanding == true) 
+        }
     }
 }
