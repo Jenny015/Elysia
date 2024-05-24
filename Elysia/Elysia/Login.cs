@@ -15,6 +15,16 @@ namespace Elysia
         public Login()
         {
             InitializeComponent();
+            setComponent();
+
+        }
+
+        public void setComponent()
+        {
+            tb_username.AutoSize = false;
+            tb_password.AutoSize = false;
+            tb_username.Size = new System.Drawing.Size(250, 30);
+            tb_password.Size = new System.Drawing.Size(250, 30);
         }
     }
 }
