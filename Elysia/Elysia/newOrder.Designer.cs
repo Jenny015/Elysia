@@ -68,10 +68,9 @@
             this.panel1.Controls.Add(this.imgLogo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.panel1.Size = new System.Drawing.Size(373, 879);
+            this.panel1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.panel1.Size = new System.Drawing.Size(280, 762);
             this.panel1.TabIndex = 2;
             // 
             // radioButton5
@@ -81,10 +80,9 @@
             this.radioButton5.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.radioButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.radioButton5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radioButton5.Location = new System.Drawing.Point(4, 824);
-            this.radioButton5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.radioButton5.Location = new System.Drawing.Point(3, 714);
             this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(363, 50);
+            this.radioButton5.Size = new System.Drawing.Size(272, 43);
             this.radioButton5.TabIndex = 6;
             this.radioButton5.TabStop = true;
             this.radioButton5.Text = "Logout";
@@ -98,10 +96,9 @@
             this.radioButton4.Dock = System.Windows.Forms.DockStyle.Top;
             this.radioButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.radioButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radioButton4.Location = new System.Drawing.Point(4, 413);
-            this.radioButton4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.radioButton4.Location = new System.Drawing.Point(3, 359);
             this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(363, 62);
+            this.radioButton4.Size = new System.Drawing.Size(272, 54);
             this.radioButton4.TabIndex = 5;
             this.radioButton4.TabStop = true;
             this.radioButton4.Text = "View Order";
@@ -116,10 +113,9 @@
             this.radioButton3.Dock = System.Windows.Forms.DockStyle.Top;
             this.radioButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.radioButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radioButton3.Location = new System.Drawing.Point(4, 351);
-            this.radioButton3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.radioButton3.Location = new System.Drawing.Point(3, 305);
             this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(363, 62);
+            this.radioButton3.Size = new System.Drawing.Size(272, 54);
             this.radioButton3.TabIndex = 4;
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "New Order";
@@ -134,10 +130,9 @@
             this.radioButton2.Dock = System.Windows.Forms.DockStyle.Top;
             this.radioButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.radioButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radioButton2.Location = new System.Drawing.Point(4, 289);
-            this.radioButton2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.radioButton2.Location = new System.Drawing.Point(3, 251);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(363, 62);
+            this.radioButton2.Size = new System.Drawing.Size(272, 54);
             this.radioButton2.TabIndex = 3;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "View Dealer";
@@ -152,10 +147,9 @@
             this.radioButton1.Dock = System.Windows.Forms.DockStyle.Top;
             this.radioButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.radioButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radioButton1.Location = new System.Drawing.Point(4, 227);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.radioButton1.Location = new System.Drawing.Point(3, 197);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(363, 62);
+            this.radioButton1.Size = new System.Drawing.Size(272, 54);
             this.radioButton1.TabIndex = 2;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "New Dealer";
@@ -167,10 +161,9 @@
             // 
             this.lblDept.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblDept.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDept.Location = new System.Drawing.Point(4, 165);
-            this.lblDept.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDept.Location = new System.Drawing.Point(3, 143);
             this.lblDept.Name = "lblDept";
-            this.lblDept.Size = new System.Drawing.Size(363, 62);
+            this.lblDept.Size = new System.Drawing.Size(272, 54);
             this.lblDept.TabIndex = 1;
             this.lblDept.Text = "Sales Department";
             this.lblDept.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -180,46 +173,49 @@
             this.imgLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(84)))), ((int)(((byte)(129)))));
             this.imgLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.imgLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.imgLogo.Location = new System.Drawing.Point(4, 3);
-            this.imgLogo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.imgLogo.Location = new System.Drawing.Point(3, 3);
             this.imgLogo.Name = "imgLogo";
-            this.imgLogo.Size = new System.Drawing.Size(363, 162);
+            this.imgLogo.Size = new System.Drawing.Size(272, 140);
             this.imgLogo.TabIndex = 0;
             this.imgLogo.TabStop = false;
             // 
             // lblDealerID
             // 
             this.lblDealerID.AutoSize = true;
-            this.lblDealerID.Location = new System.Drawing.Point(412, 192);
+            this.lblDealerID.Location = new System.Drawing.Point(309, 166);
+            this.lblDealerID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDealerID.Name = "lblDealerID";
-            this.lblDealerID.Size = new System.Drawing.Size(59, 15);
+            this.lblDealerID.Size = new System.Drawing.Size(49, 13);
             this.lblDealerID.TabIndex = 3;
             this.lblDealerID.Text = "DealerID";
             // 
             // cbDealerID
             // 
             this.cbDealerID.FormattingEnabled = true;
-            this.cbDealerID.Location = new System.Drawing.Point(528, 184);
-            this.cbDealerID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbDealerID.Location = new System.Drawing.Point(396, 159);
+            this.cbDealerID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbDealerID.Name = "cbDealerID";
-            this.cbDealerID.Size = new System.Drawing.Size(108, 23);
+            this.cbDealerID.Size = new System.Drawing.Size(82, 21);
             this.cbDealerID.TabIndex = 4;
             this.cbDealerID.SelectedIndexChanged += new System.EventHandler(this.cbDealerID_SelectedIndexChanged);
+            this.cbDealerID.SelectionChangeCommitted += new System.EventHandler(this.cbDealerID_SelectedIndexChanged);
+            this.cbDealerID.Leave += new System.EventHandler(this.cbDealerID_SelectedIndexChanged);
             // 
             // cbPartID
             // 
             this.cbPartID.FormattingEnabled = true;
-            this.cbPartID.Location = new System.Drawing.Point(672, 373);
-            this.cbPartID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbPartID.Location = new System.Drawing.Point(504, 323);
+            this.cbPartID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbPartID.Name = "cbPartID";
-            this.cbPartID.Size = new System.Drawing.Size(108, 23);
+            this.cbPartID.Size = new System.Drawing.Size(82, 21);
             this.cbPartID.TabIndex = 5;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(1102, 369);
+            this.btnAdd.Location = new System.Drawing.Point(826, 320);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.Size = new System.Drawing.Size(56, 20);
             this.btnAdd.TabIndex = 6;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -228,15 +224,17 @@
             // lblItem
             // 
             this.lblItem.AutoSize = true;
-            this.lblItem.Location = new System.Drawing.Point(412, 328);
+            this.lblItem.Location = new System.Drawing.Point(309, 284);
+            this.lblItem.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblItem.Name = "lblItem";
-            this.lblItem.Size = new System.Drawing.Size(38, 15);
+            this.lblItem.Size = new System.Drawing.Size(32, 13);
             this.lblItem.TabIndex = 7;
             this.lblItem.Text = "Items";
             // 
             // nQty
             // 
-            this.nQty.Location = new System.Drawing.Point(894, 371);
+            this.nQty.Location = new System.Drawing.Point(670, 322);
+            this.nQty.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.nQty.Maximum = new decimal(new int[] {
             -727379969,
             232,
@@ -248,7 +246,7 @@
             0,
             0});
             this.nQty.Name = "nQty";
-            this.nQty.Size = new System.Drawing.Size(120, 25);
+            this.nQty.Size = new System.Drawing.Size(90, 20);
             this.nQty.TabIndex = 8;
             this.nQty.Value = new decimal(new int[] {
             1,
@@ -259,36 +257,39 @@
             // lbItems
             // 
             this.lbItems.FormattingEnabled = true;
-            this.lbItems.ItemHeight = 15;
-            this.lbItems.Location = new System.Drawing.Point(415, 358);
+            this.lbItems.Location = new System.Drawing.Point(311, 310);
+            this.lbItems.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.lbItems.Name = "lbItems";
-            this.lbItems.Size = new System.Drawing.Size(196, 184);
+            this.lbItems.Size = new System.Drawing.Size(148, 160);
             this.lbItems.Sorted = true;
             this.lbItems.TabIndex = 9;
             // 
             // lblDate
             // 
             this.lblDate.AutoSize = true;
-            this.lblDate.Location = new System.Drawing.Point(716, 115);
+            this.lblDate.Location = new System.Drawing.Point(537, 100);
+            this.lblDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(30, 15);
+            this.lblDate.Size = new System.Drawing.Size(28, 13);
             this.lblDate.TabIndex = 10;
             this.lblDate.Text = "date";
             // 
             // lblOrderID
             // 
             this.lblOrderID.AutoSize = true;
-            this.lblOrderID.Location = new System.Drawing.Point(525, 115);
+            this.lblOrderID.Location = new System.Drawing.Point(394, 100);
+            this.lblOrderID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblOrderID.Name = "lblOrderID";
-            this.lblOrderID.Size = new System.Drawing.Size(52, 15);
+            this.lblOrderID.Size = new System.Drawing.Size(42, 13);
             this.lblOrderID.TabIndex = 11;
             this.lblOrderID.Text = "orderID";
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(796, 772);
+            this.btnClear.Location = new System.Drawing.Point(597, 669);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(75, 23);
+            this.btnClear.Size = new System.Drawing.Size(56, 20);
             this.btnClear.TabIndex = 12;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
@@ -296,9 +297,10 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(939, 772);
+            this.btnSubmit.Location = new System.Drawing.Point(704, 669);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(75, 23);
+            this.btnSubmit.Size = new System.Drawing.Size(56, 20);
             this.btnSubmit.TabIndex = 13;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
@@ -307,24 +309,27 @@
             // lblDealerCompany
             // 
             this.lblDealerCompany.AutoSize = true;
-            this.lblDealerCompany.Location = new System.Drawing.Point(706, 239);
+            this.lblDealerCompany.Location = new System.Drawing.Point(530, 207);
+            this.lblDealerCompany.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDealerCompany.Name = "lblDealerCompany";
-            this.lblDealerCompany.Size = new System.Drawing.Size(0, 15);
+            this.lblDealerCompany.Size = new System.Drawing.Size(0, 13);
             this.lblDealerCompany.TabIndex = 14;
             // 
             // lblDealerName
             // 
             this.lblDealerName.AutoSize = true;
-            this.lblDealerName.Location = new System.Drawing.Point(706, 187);
+            this.lblDealerName.Location = new System.Drawing.Point(530, 162);
+            this.lblDealerName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDealerName.Name = "lblDealerName";
-            this.lblDealerName.Size = new System.Drawing.Size(0, 15);
+            this.lblDealerName.Size = new System.Drawing.Size(0, 13);
             this.lblDealerName.TabIndex = 15;
             // 
             // btnDeleteItem
             // 
-            this.btnDeleteItem.Location = new System.Drawing.Point(454, 558);
+            this.btnDeleteItem.Location = new System.Drawing.Point(340, 484);
+            this.btnDeleteItem.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnDeleteItem.Name = "btnDeleteItem";
-            this.btnDeleteItem.Size = new System.Drawing.Size(108, 23);
+            this.btnDeleteItem.Size = new System.Drawing.Size(81, 20);
             this.btnDeleteItem.TabIndex = 16;
             this.btnDeleteItem.Text = "Delete Item";
             this.btnDeleteItem.UseVisualStyleBackColor = true;
@@ -332,10 +337,10 @@
             // 
             // newOrder
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1710, 879);
+            this.ClientSize = new System.Drawing.Size(1282, 762);
             this.Controls.Add(this.btnDeleteItem);
             this.Controls.Add(this.lblDealerName);
             this.Controls.Add(this.lblDealerCompany);
@@ -351,7 +356,7 @@
             this.Controls.Add(this.cbDealerID);
             this.Controls.Add(this.lblDealerID);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "newOrder";
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
