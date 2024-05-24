@@ -182,7 +182,7 @@ namespace Elysia
             bool outstanding = false;
 
             //insert a new order into order DB
-            cmd.CommandText = $"INSERT INTO order (orderID, dealerID) VALUES (\"{newOrderID}\", \"{cbDealerID.SelectedItem.ToString()}\")";
+            cmd.CommandText = $"INSERT INTO `order` (orderID, dealerID) VALUES (\"{newOrderID}\", \"{cbDealerID.SelectedItem.ToString()}\")";
             try
             {
                 // Execute the SQl statement
