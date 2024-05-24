@@ -79,7 +79,7 @@ namespace Elysia
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.panel1.Padding = new System.Windows.Forms.Padding(3);
             this.panel1.Size = new System.Drawing.Size(280, 762);
             this.panel1.TabIndex = 3;
             // 
@@ -147,7 +147,7 @@ namespace Elysia
             this.button1.Location = new System.Drawing.Point(410, 231);
             this.button1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(60, 25);
+            this.button1.Size = new System.Drawing.Size(100, 30);
             this.button1.TabIndex = 4;
             this.button1.Text = "Save";
             this.button1.UseVisualStyleBackColor = false;
@@ -159,7 +159,7 @@ namespace Elysia
             this.button2.Location = new System.Drawing.Point(525, 231);
             this.button2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(60, 25);
+            this.button2.Size = new System.Drawing.Size(100, 30);
             this.button2.TabIndex = 5;
             this.button2.Text = "Submit";
             this.button2.UseVisualStyleBackColor = false;
@@ -168,6 +168,7 @@ namespace Elysia
             // 
             this.button3.BackColor = System.Drawing.Color.Tomato;
             this.button3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.button3.ForeColor = System.Drawing.SystemColors.Control;
             this.button3.Location = new System.Drawing.Point(626, 231);
             this.button3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button3.Name = "button3";
@@ -183,7 +184,7 @@ namespace Elysia
             this.button4.Location = new System.Drawing.Point(314, 231);
             this.button4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(60, 25);
+            this.button4.Size = new System.Drawing.Size(100, 30);
             this.button4.TabIndex = 7;
             this.button4.Text = "Add";
             this.button4.UseVisualStyleBackColor = false;
@@ -192,6 +193,7 @@ namespace Elysia
             // 
             this.button5.BackColor = System.Drawing.Color.Tomato;
             this.button5.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.button5.ForeColor = System.Drawing.SystemColors.Control;
             this.button5.Location = new System.Drawing.Point(626, 280);
             this.button5.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button5.Name = "button5";
@@ -207,7 +209,7 @@ namespace Elysia
             this.button6.Location = new System.Drawing.Point(410, 280);
             this.button6.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(60, 25);
+            this.button6.Size = new System.Drawing.Size(100, 30);
             this.button6.TabIndex = 9;
             this.button6.Text = "Confirm";
             this.button6.UseVisualStyleBackColor = false;
