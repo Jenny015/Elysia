@@ -139,8 +139,8 @@ namespace Elysia
         {
             if(cbDealerID.SelectedItem == null)
             {
-                lblDealerName.Text = "";
-                lblDealerCompany.Text = "";
+                lblDealerName.Text = "N\\A";
+                lblDealerCompany.Text = "N\\A";
                 return;
             }
             ConnectToSql();
@@ -167,8 +167,6 @@ namespace Elysia
             cbPartID.SelectedItem = null;
             nQty.Value = 1;
             orderParts = new Dictionary<string, int>();
-            lblDealerName.Text = "";
-            lblDealerCompany.Text = "";
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
@@ -187,7 +185,6 @@ namespace Elysia
             {
                 // Execute the SQl statement
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Order inserted successfully.", "Success");
             }
             catch (Exception ex)
             {
@@ -222,7 +219,6 @@ namespace Elysia
                 {
                     // Execute the SQl statement
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("DID inserted successfully.", "Success");
                 }
                 catch (Exception ex)
                 {
@@ -230,11 +226,24 @@ namespace Elysia
                     MessageBox.Show("Failed to insert DID\n" + ex.Message, "Failed");
                 }
             }
+            // change order outstanding value to true
             if (outstanding)
             {
-                cmd.CommandText = $"UPDATE orderpart SET outstanding = \"OStanding\", WHERE orderID = \"{newOrderID}\"";
+                cmd.CommandText = $"UPDATE `order` SET outstanding = 1 WHERE orderID = \"{newOrderID}\"";
+                try
+                {
+                    // Execute the SQl statement
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    // if error occurs, show fail message
+                    MessageBox.Show("Failed to insert DID\n" + ex.Message, "Failed");
+                }
             }
             cnn.Close();
+            MessageBox.Show("New Order has been inserted successfully.", "Success");
+            btnClear_Click(null, null);
         }
         //check if every necessary data has been input
         private bool checkInput()
@@ -257,6 +266,32 @@ namespace Elysia
             {
                 return true;
             }
+        }
+
+        //Update product information after partID changed
+        private void cbPartID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbPartID.SelectedItem == null)
+            {
+                lblpartName.Text = "N\\A";
+                lblStock.Text = "N\\A";
+                return;
+            }
+            ConnectToSql();
+            MySqlCommand cmd = cnn.CreateCommand();
+
+            //load dealer info
+            String partID = cbPartID.SelectedItem.ToString();
+            cmd.CommandText = $"SELECT partName, partQty FROM part WHERE partID = \"{partID}\"";
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    lblpartName.Text = reader.GetString(0);
+                    lblStock.Text = reader.GetInt32(1).ToString();
+                }
+            }
+            cnn.Close();
         }
     }
 }
