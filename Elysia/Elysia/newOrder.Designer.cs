@@ -85,9 +85,9 @@
             this.panel1.Controls.Add(this.imgLogo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Padding = new System.Windows.Forms.Padding(4);
             this.panel1.Size = new System.Drawing.Size(419, 1055);
             this.panel1.TabIndex = 2;
             // 
@@ -100,7 +100,7 @@
             this.btnLogout.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLogout.Location = new System.Drawing.Point(4, 990);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(409, 59);
             this.btnLogout.TabIndex = 6;
@@ -118,7 +118,7 @@
             this.btnViewOrder.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnViewOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnViewOrder.Location = new System.Drawing.Point(4, 498);
-            this.btnViewOrder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnViewOrder.Margin = new System.Windows.Forms.Padding(4);
             this.btnViewOrder.Name = "btnViewOrder";
             this.btnViewOrder.Size = new System.Drawing.Size(409, 75);
             this.btnViewOrder.TabIndex = 5;
@@ -137,7 +137,7 @@
             this.btnNewOrder.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnNewOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNewOrder.Location = new System.Drawing.Point(4, 423);
-            this.btnNewOrder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNewOrder.Margin = new System.Windows.Forms.Padding(4);
             this.btnNewOrder.Name = "btnNewOrder";
             this.btnNewOrder.Size = new System.Drawing.Size(409, 75);
             this.btnNewOrder.TabIndex = 4;
@@ -156,7 +156,7 @@
             this.btnViewDealer.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnViewDealer.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnViewDealer.Location = new System.Drawing.Point(4, 348);
-            this.btnViewDealer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnViewDealer.Margin = new System.Windows.Forms.Padding(4);
             this.btnViewDealer.Name = "btnViewDealer";
             this.btnViewDealer.Size = new System.Drawing.Size(409, 75);
             this.btnViewDealer.TabIndex = 3;
@@ -175,7 +175,7 @@
             this.btnNewDealer.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnNewDealer.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNewDealer.Location = new System.Drawing.Point(4, 273);
-            this.btnNewDealer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNewDealer.Margin = new System.Windows.Forms.Padding(4);
             this.btnNewDealer.Name = "btnNewDealer";
             this.btnNewDealer.Size = new System.Drawing.Size(409, 75);
             this.btnNewDealer.TabIndex = 2;
@@ -203,7 +203,7 @@
             this.imgLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.imgLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.imgLogo.Location = new System.Drawing.Point(4, 4);
-            this.imgLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.imgLogo.Margin = new System.Windows.Forms.Padding(4);
             this.imgLogo.Name = "imgLogo";
             this.imgLogo.Size = new System.Drawing.Size(409, 194);
             this.imgLogo.TabIndex = 0;
