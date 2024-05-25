@@ -14,7 +14,7 @@ namespace Elysia
 {
     public partial class newOrder : Form
     {
-        private MySqlConnection cnn;
+        private MySqlConnection cnn = new MySqlConnection("server=localhost;database=elysia;uid=root;pwd=\"\";");
         //dicationary to store order item partID and qty
         private Dictionary<String, int> orderParts = new Dictionary<string, int>();
         //store new orderID
@@ -22,7 +22,6 @@ namespace Elysia
         public newOrder()
         {
             InitializeComponent();
-            cnn = new MySqlConnection("server=localhost;database=elysia;uid=root;pwd=\"\";");
             LoadInformation();
         }
 
