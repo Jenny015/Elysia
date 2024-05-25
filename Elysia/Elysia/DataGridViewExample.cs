@@ -18,6 +18,7 @@ namespace Elysia
         {
             InitializeComponent();
             setDataGridView();
+            this.dataGridView1.CellClick += new DataGridViewCellEventHandler(dataGridView1_CellClick);
         }
         private void setDataGridView()
         {
@@ -31,7 +32,27 @@ namespace Elysia
                     DataSet ds = new DataSet();
                     adapter.Fill(ds);
                     dataGridView1.DataSource = ds.Tables[0];
+                    dataGridView1.Columns[0].ReadOnly = true;
+
+                    DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn();
+                    buttonColumn.HeaderText = "Assemble";
+                    buttonColumn.Name = "buttonColumn";
+                    buttonColumn.Text = "Assemble";
+                    buttonColumn.UseColumnTextForButtonValue = true; // This will set the button text to "Click Me"
+
+                    // Add the button column to the DataGridView
+                    dataGridView1.Columns.Add(buttonColumn);
                 }
+            }
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Check if the click is on the button column
+            if (e.ColumnIndex == dataGridView1.Columns["buttonColumn"].Index && e.RowIndex >= 0)
+            {
+                // Perform the action you want to take when the button is clicked
+                MessageBox.Show("Button clicked in row " + e.RowIndex);
             }
         }
     }

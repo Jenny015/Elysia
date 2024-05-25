@@ -39,16 +39,16 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 31;
-            this.dataGridView1.Size = new System.Drawing.Size(1827, 1110);
+            this.dataGridView1.Size = new System.Drawing.Size(1561, 885);
             this.dataGridView1.TabIndex = 0;
             // 
-            // filter
+            // DataGridViewExample
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1976, 1210);
+            this.ClientSize = new System.Drawing.Size(1629, 963);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "filter";
+            this.Name = "DataGridViewExample";
             this.Text = "filter";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
