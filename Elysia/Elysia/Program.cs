@@ -17,7 +17,7 @@ namespace Elysia
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DataGridViewExample());
+            Application.Run(new viewDID());
         }
     }
 }
