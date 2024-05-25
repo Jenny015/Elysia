@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using ZstdSharp.Unsafe;
 
+
+//TODO: search and combine previous 
 namespace Elysia
 {
     public partial class newOrder : Form
@@ -65,7 +67,19 @@ namespace Elysia
                 }
             }
 
-            //get the larger orderID to calculate new orderID
+            updateOrderID(cmd);
+
+            cnn.Close();
+
+            //display date of the order
+            lblDate.Text = DateTime.Today.ToString("d");
+
+        }
+
+
+        //get the larger orderID to calculate new orderID
+        private void updateOrderID(MySqlCommand cmd)
+        {
             cmd.CommandText = "SELECT MAX(OrderID) FROM `order`";
             using (MySqlDataReader reader = cmd.ExecuteReader())
             {
@@ -80,14 +94,7 @@ namespace Elysia
                         lblOrderID.Text = newOrderID;
                     }
                 }
-                
             }
-
-            cnn.Close();
-
-            //display date of the order
-            lblDate.Text = DateTime.Today.ToString("d");
-
         }
 
         //add item to list and dictionary
@@ -240,6 +247,7 @@ namespace Elysia
                     MessageBox.Show("Failed to insert DID\n" + ex.Message, "Failed");
                 }
             }
+            updateOrderID(cmd);
             cnn.Close();
             MessageBox.Show("New Order has been inserted successfully.", "Success");
             btnClear_Click(null, null);
