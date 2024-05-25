@@ -134,6 +134,12 @@
     <Compile Include="UI_Tester.Designer.cs">
       <DependentUpon>UI_Tester.cs</DependentUpon>
     </Compile>
+    <Compile Include="viewDID.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewDID.Designer.cs">
+      <DependentUpon>viewDID.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewOrder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI_Tester.resx">
       <DependentUpon>UI_Tester.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewDID.resx">
+      <DependentUpon>viewDID.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewOrder.resx">
       <DependentUpon>ViewOrder.cs</DependentUpon>
