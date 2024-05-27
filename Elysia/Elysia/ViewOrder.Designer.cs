@@ -28,232 +28,290 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnSave = new System.Windows.Forms.Button();
             this.lblOrderID = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.lblDept = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnViewOrder = new System.Windows.Forms.RadioButton();
+            this.btnNewOrder = new System.Windows.Forms.RadioButton();
+            this.btnViewDealer = new System.Windows.Forms.RadioButton();
+            this.btnNewDealer = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.btnLogout = new System.Windows.Forms.RadioButton();
+            this.lblDept = new System.Windows.Forms.Label();
             this.imgLogo = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.bar = new System.Windows.Forms.Panel();
+            this.OrderInfor = new System.Windows.Forms.Label();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.dataGridVieworder = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
+            this.bar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridVieworder)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(130)))), ((int)(((byte)(126)))));
-            this.btnSave.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(236)))), ((int)(((byte)(230)))));
-            this.btnSave.Location = new System.Drawing.Point(1458, 799);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(200, 50);
-            this.btnSave.TabIndex = 25;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // lblOrderID
             // 
             this.lblOrderID.AutoSize = true;
-            this.lblOrderID.Location = new System.Drawing.Point(418, -57);
+            this.lblOrderID.Location = new System.Drawing.Point(470, -68);
             this.lblOrderID.Name = "lblOrderID";
-            this.lblOrderID.Size = new System.Drawing.Size(41, 15);
+            this.lblOrderID.Size = new System.Drawing.Size(50, 18);
             this.lblOrderID.TabIndex = 23;
             this.lblOrderID.Text = "label1";
             // 
             // lblDate
             // 
             this.lblDate.AutoSize = true;
-            this.lblDate.Location = new System.Drawing.Point(609, -57);
+            this.lblDate.Location = new System.Drawing.Point(685, -68);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(41, 15);
+            this.lblDate.Size = new System.Drawing.Size(50, 18);
             this.lblDate.TabIndex = 22;
             this.lblDate.Text = "label1";
             // 
-            // radioButton5
-            // 
-            this.radioButton5.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(187)))), ((int)(((byte)(171)))));
-            this.radioButton5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.radioButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.radioButton5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radioButton5.Location = new System.Drawing.Point(4, 824);
-            this.radioButton5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(363, 50);
-            this.radioButton5.TabIndex = 6;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "Logout";
-            this.radioButton5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioButton5.UseVisualStyleBackColor = false;
-            this.radioButton5.CheckedChanged += new System.EventHandler(this.radioButton5_CheckedChanged);
-            // 
-            // radioButton4
-            // 
-            this.radioButton4.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(187)))), ((int)(((byte)(171)))));
-            this.radioButton4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.radioButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.radioButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radioButton4.Location = new System.Drawing.Point(4, 413);
-            this.radioButton4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(363, 62);
-            this.radioButton4.TabIndex = 5;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "View Order";
-            this.radioButton4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.radioButton4.UseVisualStyleBackColor = false;
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(187)))), ((int)(((byte)(171)))));
-            this.radioButton3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.radioButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.radioButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radioButton3.Location = new System.Drawing.Point(4, 351);
-            this.radioButton3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(363, 62);
-            this.radioButton3.TabIndex = 4;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "New Order";
-            this.radioButton3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.radioButton3.UseVisualStyleBackColor = false;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(187)))), ((int)(((byte)(171)))));
-            this.radioButton2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.radioButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.radioButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radioButton2.Location = new System.Drawing.Point(4, 289);
-            this.radioButton2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(363, 62);
-            this.radioButton2.TabIndex = 3;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "View Dealer";
-            this.radioButton2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.radioButton2.UseVisualStyleBackColor = false;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(187)))), ((int)(((byte)(171)))));
-            this.radioButton1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.radioButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.radioButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radioButton1.Location = new System.Drawing.Point(4, 227);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(363, 62);
-            this.radioButton1.TabIndex = 2;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "New Dealer";
-            this.radioButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.radioButton1.UseVisualStyleBackColor = false;
-            // 
-            // lblDept
-            // 
-            this.lblDept.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(236)))), ((int)(((byte)(230)))));
-            this.lblDept.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblDept.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDept.Location = new System.Drawing.Point(4, 165);
-            this.lblDept.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblDept.Name = "lblDept";
-            this.lblDept.Size = new System.Drawing.Size(363, 62);
-            this.lblDept.TabIndex = 1;
-            this.lblDept.Text = "label1";
-            this.lblDept.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblDept.Click += new System.EventHandler(this.lblDept_Click);
-            // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(236)))), ((int)(((byte)(230)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(84)))), ((int)(((byte)(129)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.radioButton5);
-            this.panel1.Controls.Add(this.radioButton4);
-            this.panel1.Controls.Add(this.radioButton3);
-            this.panel1.Controls.Add(this.radioButton2);
+            this.panel1.Controls.Add(this.btnViewOrder);
+            this.panel1.Controls.Add(this.btnNewOrder);
+            this.panel1.Controls.Add(this.btnViewDealer);
+            this.panel1.Controls.Add(this.btnNewDealer);
             this.panel1.Controls.Add(this.radioButton1);
+            this.panel1.Controls.Add(this.btnLogout);
             this.panel1.Controls.Add(this.lblDept);
             this.panel1.Controls.Add(this.imgLogo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.panel1.Size = new System.Drawing.Size(373, 879);
-            this.panel1.TabIndex = 14;
+            this.panel1.Padding = new System.Windows.Forms.Padding(4);
+            this.panel1.Size = new System.Drawing.Size(419, 1055);
+            this.panel1.TabIndex = 26;
+            // 
+            // btnViewOrder
+            // 
+            this.btnViewOrder.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnViewOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(135)))), ((int)(((byte)(167)))));
+            this.btnViewOrder.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnViewOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewOrder.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.btnViewOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnViewOrder.Location = new System.Drawing.Point(4, 573);
+            this.btnViewOrder.Margin = new System.Windows.Forms.Padding(4);
+            this.btnViewOrder.Name = "btnViewOrder";
+            this.btnViewOrder.Size = new System.Drawing.Size(409, 75);
+            this.btnViewOrder.TabIndex = 11;
+            this.btnViewOrder.TabStop = true;
+            this.btnViewOrder.Text = "View Order";
+            this.btnViewOrder.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnViewOrder.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnViewOrder.UseVisualStyleBackColor = false;
+            // 
+            // btnNewOrder
+            // 
+            this.btnNewOrder.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnNewOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(135)))), ((int)(((byte)(167)))));
+            this.btnNewOrder.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnNewOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNewOrder.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.btnNewOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNewOrder.Location = new System.Drawing.Point(4, 498);
+            this.btnNewOrder.Margin = new System.Windows.Forms.Padding(4);
+            this.btnNewOrder.Name = "btnNewOrder";
+            this.btnNewOrder.Size = new System.Drawing.Size(409, 75);
+            this.btnNewOrder.TabIndex = 10;
+            this.btnNewOrder.TabStop = true;
+            this.btnNewOrder.Text = "New Order";
+            this.btnNewOrder.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnNewOrder.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNewOrder.UseVisualStyleBackColor = false;
+            // 
+            // btnViewDealer
+            // 
+            this.btnViewDealer.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnViewDealer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(135)))), ((int)(((byte)(167)))));
+            this.btnViewDealer.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnViewDealer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewDealer.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.btnViewDealer.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnViewDealer.Location = new System.Drawing.Point(4, 423);
+            this.btnViewDealer.Margin = new System.Windows.Forms.Padding(4);
+            this.btnViewDealer.Name = "btnViewDealer";
+            this.btnViewDealer.Size = new System.Drawing.Size(409, 75);
+            this.btnViewDealer.TabIndex = 9;
+            this.btnViewDealer.TabStop = true;
+            this.btnViewDealer.Text = "View Dealer";
+            this.btnViewDealer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnViewDealer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnViewDealer.UseVisualStyleBackColor = false;
+            // 
+            // btnNewDealer
+            // 
+            this.btnNewDealer.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnNewDealer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(135)))), ((int)(((byte)(167)))));
+            this.btnNewDealer.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnNewDealer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNewDealer.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.btnNewDealer.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNewDealer.Location = new System.Drawing.Point(4, 348);
+            this.btnNewDealer.Margin = new System.Windows.Forms.Padding(4);
+            this.btnNewDealer.Name = "btnNewDealer";
+            this.btnNewDealer.Size = new System.Drawing.Size(409, 75);
+            this.btnNewDealer.TabIndex = 8;
+            this.btnNewDealer.TabStop = true;
+            this.btnNewDealer.Text = "New Dealer";
+            this.btnNewDealer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnNewDealer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNewDealer.UseVisualStyleBackColor = false;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radioButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(135)))), ((int)(((byte)(167)))));
+            this.radioButton1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.radioButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.radioButton1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.radioButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.radioButton1.Location = new System.Drawing.Point(4, 273);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(4);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(409, 75);
+            this.radioButton1.TabIndex = 7;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "User";
+            this.radioButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.radioButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.radioButton1.UseVisualStyleBackColor = false;
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(135)))), ((int)(((byte)(167)))));
+            this.btnLogout.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLogout.Location = new System.Drawing.Point(4, 990);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(409, 59);
+            this.btnLogout.TabIndex = 6;
+            this.btnLogout.TabStop = true;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnLogout.UseVisualStyleBackColor = false;
+            // 
+            // lblDept
+            // 
+            this.lblDept.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblDept.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
+            this.lblDept.Location = new System.Drawing.Point(4, 198);
+            this.lblDept.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDept.Name = "lblDept";
+            this.lblDept.Size = new System.Drawing.Size(409, 75);
+            this.lblDept.TabIndex = 1;
+            this.lblDept.Text = "Sales Office";
+            this.lblDept.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // imgLogo
             // 
-            this.imgLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(236)))), ((int)(((byte)(230)))));
+            this.imgLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(84)))), ((int)(((byte)(129)))));
             this.imgLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.imgLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.imgLogo.Location = new System.Drawing.Point(4, 3);
-            this.imgLogo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.imgLogo.Location = new System.Drawing.Point(4, 4);
+            this.imgLogo.Margin = new System.Windows.Forms.Padding(4);
             this.imgLogo.Name = "imgLogo";
-            this.imgLogo.Size = new System.Drawing.Size(363, 162);
+            this.imgLogo.Size = new System.Drawing.Size(409, 194);
             this.imgLogo.TabIndex = 0;
             this.imgLogo.TabStop = false;
             // 
-            // label1
+            // bar
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Georgia", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(410, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(479, 54);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "Order Information";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.bar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(135)))), ((int)(((byte)(167)))));
+            this.bar.Controls.Add(this.OrderInfor);
+            this.bar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bar.Location = new System.Drawing.Point(419, 0);
+            this.bar.Name = "bar";
+            this.bar.Size = new System.Drawing.Size(1505, 90);
+            this.bar.TabIndex = 32;
+            // 
+            // OrderInfor
+            // 
+            this.OrderInfor.AutoSize = true;
+            this.OrderInfor.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Bold);
+            this.OrderInfor.ForeColor = System.Drawing.Color.White;
+            this.OrderInfor.Location = new System.Drawing.Point(40, 27);
+            this.OrderInfor.Name = "OrderInfor";
+            this.OrderInfor.Size = new System.Drawing.Size(370, 41);
+            this.OrderInfor.TabIndex = 20;
+            this.OrderInfor.Text = "Order Information";
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.Plum;
+            this.btnSave.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.btnSave.Location = new System.Drawing.Point(1724, 970);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(150, 41);
+            this.btnSave.TabIndex = 21;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click_1);
+            // 
+            // dataGridVieworder
+            // 
+            this.dataGridVieworder.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridVieworder.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridVieworder.ColumnHeadersHeight = 25;
+            this.dataGridVieworder.Location = new System.Drawing.Point(466, 128);
+            this.dataGridVieworder.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dataGridVieworder.Name = "dataGridVieworder";
+            this.dataGridVieworder.RowHeadersWidth = 51;
+            this.dataGridVieworder.RowTemplate.Height = 27;
+            this.dataGridVieworder.Size = new System.Drawing.Size(1408, 772);
+            this.dataGridVieworder.TabIndex = 33;
             // 
             // ViewOrder
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(187)))), ((int)(((byte)(171)))));
-            this.ClientSize = new System.Drawing.Size(1710, 879);
-            this.Controls.Add(this.label1);
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1924, 1055);
+            this.Controls.Add(this.dataGridVieworder);
             this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.bar);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblOrderID);
             this.Controls.Add(this.lblDate);
-            this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ViewOrder";
             this.Text = "ViewOrder";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).EndInit();
+            this.bar.ResumeLayout(false);
+            this.bar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridVieworder)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label lblOrderID;
         private System.Windows.Forms.Label lblDate;
-        private System.Windows.Forms.RadioButton radioButton5;
-        private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.Label lblDept;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.RadioButton btnViewOrder;
+        private System.Windows.Forms.RadioButton btnNewOrder;
+        private System.Windows.Forms.RadioButton btnViewDealer;
+        private System.Windows.Forms.RadioButton btnNewDealer;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton btnLogout;
+        private System.Windows.Forms.Label lblDept;
         public System.Windows.Forms.PictureBox imgLogo;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel bar;
+        private System.Windows.Forms.Label OrderInfor;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.DataGridView dataGridVieworder;
     }
 }

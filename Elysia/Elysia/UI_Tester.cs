@@ -16,5 +16,10 @@ namespace Elysia
         {
             InitializeComponent();
         }
+
+        private void lblDept_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
