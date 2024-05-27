@@ -227,6 +227,7 @@
             this.button4.TabIndex = 8;
             this.button4.Text = "Filter";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // dataGridView1
             // 
@@ -238,7 +239,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(1503, 913);
             this.dataGridView1.TabIndex = 26;
             // 
-            // viewDID
+            // ViewDID
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -247,7 +248,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Name = "viewDID";
+            this.Name = "ViewDID";
             this.Text = "viewDID";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).EndInit();

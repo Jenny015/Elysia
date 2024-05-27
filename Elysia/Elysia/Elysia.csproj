@@ -115,6 +115,12 @@
     <Compile Include="DataGridViewExample.Designer.cs">
       <DependentUpon>DataGridViewExample.cs</DependentUpon>
     </Compile>
+    <Compile Include="Filter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Filter.Designer.cs">
+      <DependentUpon>Filter.cs</DependentUpon>
+    </Compile>
     <Compile Include="GoodsInward.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +181,12 @@
     </Compile>
     <Compile Include="UI_Tester.Designer.cs">
       <DependentUpon>UI_Tester.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewDealer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewDealer.Designer.cs">
+      <DependentUpon>ViewDealer.cs</DependentUpon>
     </Compile>
     <Compile Include="viewDID.cs">
       <SubType>Form</SubType>
@@ -237,6 +249,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI_Tester.resx">
       <DependentUpon>UI_Tester.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewDealer.resx">
+      <DependentUpon>ViewDealer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="viewDID.resx">
       <DependentUpon>viewDID.cs</DependentUpon>
