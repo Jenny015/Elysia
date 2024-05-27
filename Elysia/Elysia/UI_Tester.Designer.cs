@@ -76,9 +76,9 @@ namespace Elysia
             this.panel1.Controls.Add(this.imgLogo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Padding = new System.Windows.Forms.Padding(4);
             this.panel1.Size = new System.Drawing.Size(419, 1055);
             this.panel1.TabIndex = 3;
             // 
@@ -91,7 +91,7 @@ namespace Elysia
             this.radioButton5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.radioButton5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.radioButton5.Location = new System.Drawing.Point(4, 990);
-            this.radioButton5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButton5.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton5.Name = "radioButton5";
             this.radioButton5.Size = new System.Drawing.Size(409, 59);
             this.radioButton5.TabIndex = 6;
@@ -109,7 +109,7 @@ namespace Elysia
             this.radioButton1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.radioButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.radioButton1.Location = new System.Drawing.Point(4, 273);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(409, 75);
             this.radioButton1.TabIndex = 2;
@@ -130,6 +130,7 @@ namespace Elysia
             this.lblDept.TabIndex = 1;
             this.lblDept.Text = "Sales Office";
             this.lblDept.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblDept.Click += new System.EventHandler(this.lblDept_Click);
             // 
             // imgLogo
             // 
@@ -137,7 +138,7 @@ namespace Elysia
             this.imgLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.imgLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.imgLogo.Location = new System.Drawing.Point(4, 4);
-            this.imgLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.imgLogo.Margin = new System.Windows.Forms.Padding(4);
             this.imgLogo.Name = "imgLogo";
             this.imgLogo.Size = new System.Drawing.Size(409, 194);
             this.imgLogo.TabIndex = 0;
