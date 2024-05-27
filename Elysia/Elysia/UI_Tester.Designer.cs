@@ -36,12 +36,14 @@ namespace Elysia
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.lblDept = new System.Windows.Forms.Label();
             this.imgLogo = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnSubmit = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnConfirm = new System.Windows.Forms.Button();
+            this.btnSaveAsCSV = new System.Windows.Forms.Button();
+            this.btnPrint = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
             this.SuspendLayout();
@@ -144,91 +146,117 @@ namespace Elysia
             this.imgLogo.TabIndex = 0;
             this.imgLogo.TabStop = false;
             // 
-            // button1
+            // btnSave
             // 
-            this.button1.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.button1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.button1.Location = new System.Drawing.Point(615, 320);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 41);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnSave.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnSave.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.btnSave.Location = new System.Drawing.Point(651, 582);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(150, 41);
+            this.btnSave.TabIndex = 4;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnSubmit
             // 
-            this.button2.BackColor = System.Drawing.Color.Plum;
-            this.button2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.button2.Location = new System.Drawing.Point(788, 320);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(150, 41);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Submit";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnSubmit.BackColor = System.Drawing.Color.Plum;
+            this.btnSubmit.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.btnSubmit.Location = new System.Drawing.Point(851, 378);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(150, 41);
+            this.btnSubmit.TabIndex = 5;
+            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btnCancel
             // 
-            this.button3.BackColor = System.Drawing.Color.Tomato;
-            this.button3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.button3.ForeColor = System.Drawing.SystemColors.Control;
-            this.button3.Location = new System.Drawing.Point(939, 320);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(150, 41);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Cancel";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnCancel.BackColor = System.Drawing.Color.Tomato;
+            this.btnCancel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.btnCancel.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnCancel.Location = new System.Drawing.Point(851, 470);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(150, 41);
+            this.btnCancel.TabIndex = 6;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // btnAdd
             // 
-            this.button4.BackColor = System.Drawing.Color.Gold;
-            this.button4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.button4.Location = new System.Drawing.Point(471, 320);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(100, 41);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "Add";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnAdd.BackColor = System.Drawing.Color.Gold;
+            this.btnAdd.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.btnAdd.Location = new System.Drawing.Point(688, 378);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(100, 41);
+            this.btnAdd.TabIndex = 7;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = false;
             // 
-            // button5
+            // btnClear
             // 
-            this.button5.BackColor = System.Drawing.Color.Tomato;
-            this.button5.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.button5.ForeColor = System.Drawing.SystemColors.Control;
-            this.button5.Location = new System.Drawing.Point(939, 388);
-            this.button5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(150, 41);
-            this.button5.TabIndex = 8;
-            this.button5.Text = "Clear";
-            this.button5.UseVisualStyleBackColor = false;
+            this.btnClear.BackColor = System.Drawing.Color.Tomato;
+            this.btnClear.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.btnClear.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnClear.Location = new System.Drawing.Point(851, 582);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(150, 41);
+            this.btnClear.TabIndex = 8;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = false;
             // 
-            // button6
+            // btnConfirm
             // 
-            this.button6.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.button6.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.button6.Location = new System.Drawing.Point(615, 388);
-            this.button6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(150, 41);
-            this.button6.TabIndex = 9;
-            this.button6.Text = "Confirm";
-            this.button6.UseVisualStyleBackColor = false;
+            this.btnConfirm.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnConfirm.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.btnConfirm.Location = new System.Drawing.Point(651, 470);
+            this.btnConfirm.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.Size = new System.Drawing.Size(150, 41);
+            this.btnConfirm.TabIndex = 9;
+            this.btnConfirm.Text = "Confirm";
+            this.btnConfirm.UseVisualStyleBackColor = false;
+            // 
+            // btnSaveAsCSV
+            // 
+            this.btnSaveAsCSV.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnSaveAsCSV.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.btnSaveAsCSV.Location = new System.Drawing.Point(851, 691);
+            this.btnSaveAsCSV.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSaveAsCSV.Name = "btnSaveAsCSV";
+            this.btnSaveAsCSV.Size = new System.Drawing.Size(150, 41);
+            this.btnSaveAsCSV.TabIndex = 10;
+            this.btnSaveAsCSV.Text = "Save As CSV";
+            this.btnSaveAsCSV.UseVisualStyleBackColor = false;
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.BackColor = System.Drawing.Color.Plum;
+            this.btnPrint.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.btnPrint.Location = new System.Drawing.Point(651, 691);
+            this.btnPrint.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(150, 41);
+            this.btnPrint.TabIndex = 11;
+            this.btnPrint.Text = "Print";
+            this.btnPrint.UseVisualStyleBackColor = false;
             // 
             // UI_Tester
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1923, 1055);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnPrint);
+            this.Controls.Add(this.btnSaveAsCSV);
+            this.Controls.Add(this.btnConfirm);
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnSubmit);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -251,11 +279,13 @@ namespace Elysia
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Label lblDept;
         public System.Windows.Forms.PictureBox imgLogo;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnConfirm;
+        private System.Windows.Forms.Button btnSaveAsCSV;
+        private System.Windows.Forms.Button btnPrint;
     }
 }
