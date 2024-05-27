@@ -1,6 +1,6 @@
 ﻿namespace Elysia
 {
-    partial class viewDID
+    partial class ViewDID
     {
         /// <summary>
         /// Required designer variable.

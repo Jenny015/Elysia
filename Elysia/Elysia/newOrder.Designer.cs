@@ -1,6 +1,6 @@
 ﻿namespace Elysia
 {
-    partial class newOrder
+    partial class NewOrder
     {
         /// <summary>
         /// 設計工具所需的變數。

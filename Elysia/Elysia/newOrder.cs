@@ -14,14 +14,14 @@ using ZstdSharp.Unsafe;
 //TODO: search and combine previous 
 namespace Elysia
 {
-    public partial class newOrder : Form
+    public partial class NewOrder : Form
     {
         private MySqlConnection cnn = new MySqlConnection("server=localhost;database=elysia;uid=root;pwd=\"\";");
         //dicationary to store order item partID and qty
         private Dictionary<String, int> orderParts = new Dictionary<string, int>();
         //store new orderID
         String newOrderID;
-        public newOrder()
+        public NewOrder()
         {
             InitializeComponent();
             LoadInformation();

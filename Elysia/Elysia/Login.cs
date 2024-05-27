@@ -67,7 +67,7 @@ namespace Elysia
                     NewDealer.Show();
                     break;
                 case "SP":
-                    viewDID viewDID = new viewDID();
+                    ViewDID viewDID = new ViewDID();
                     viewDID.Show();
                     break;
                 case "SD":
