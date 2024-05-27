@@ -32,7 +32,7 @@
             this.btnLogout = new System.Windows.Forms.RadioButton();
             this.btnViewOrder = new System.Windows.Forms.RadioButton();
             this.btnNewOrder = new System.Windows.Forms.RadioButton();
-            this.btnViewDealer = new System.Windows.Forms.RadioButton();
+            this.btnDID = new System.Windows.Forms.RadioButton();
             this.btnNewDealer = new System.Windows.Forms.RadioButton();
             this.lblDept = new System.Windows.Forms.Label();
             this.imgLogo = new System.Windows.Forms.PictureBox();
@@ -55,7 +55,7 @@
             this.panel1.Controls.Add(this.btnLogout);
             this.panel1.Controls.Add(this.btnViewOrder);
             this.panel1.Controls.Add(this.btnNewOrder);
-            this.panel1.Controls.Add(this.btnViewDealer);
+            this.panel1.Controls.Add(this.btnDID);
             this.panel1.Controls.Add(this.btnNewDealer);
             this.panel1.Controls.Add(this.lblDept);
             this.panel1.Controls.Add(this.imgLogo);
@@ -123,24 +123,24 @@
             this.btnNewOrder.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnNewOrder.UseVisualStyleBackColor = false;
             // 
-            // btnViewDealer
+            // btnDID
             // 
-            this.btnViewDealer.Appearance = System.Windows.Forms.Appearance.Button;
-            this.btnViewDealer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(135)))), ((int)(((byte)(167)))));
-            this.btnViewDealer.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnViewDealer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnViewDealer.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.btnViewDealer.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnViewDealer.Location = new System.Drawing.Point(4, 348);
-            this.btnViewDealer.Margin = new System.Windows.Forms.Padding(4);
-            this.btnViewDealer.Name = "btnViewDealer";
-            this.btnViewDealer.Size = new System.Drawing.Size(409, 75);
-            this.btnViewDealer.TabIndex = 3;
-            this.btnViewDealer.TabStop = true;
-            this.btnViewDealer.Text = "DID";
-            this.btnViewDealer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnViewDealer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnViewDealer.UseVisualStyleBackColor = false;
+            this.btnDID.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnDID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(135)))), ((int)(((byte)(167)))));
+            this.btnDID.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDID.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.btnDID.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDID.Location = new System.Drawing.Point(4, 348);
+            this.btnDID.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDID.Name = "btnDID";
+            this.btnDID.Size = new System.Drawing.Size(409, 75);
+            this.btnDID.TabIndex = 3;
+            this.btnDID.TabStop = true;
+            this.btnDID.Text = "DID";
+            this.btnDID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnDID.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDID.UseVisualStyleBackColor = false;
             // 
             // btnNewDealer
             // 
@@ -266,7 +266,7 @@
         private System.Windows.Forms.RadioButton btnLogout;
         private System.Windows.Forms.RadioButton btnViewOrder;
         private System.Windows.Forms.RadioButton btnNewOrder;
-        private System.Windows.Forms.RadioButton btnViewDealer;
+        private System.Windows.Forms.RadioButton btnDID;
         private System.Windows.Forms.RadioButton btnNewDealer;
         private System.Windows.Forms.Label lblDept;
         public System.Windows.Forms.PictureBox imgLogo;

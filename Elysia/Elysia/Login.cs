@@ -18,6 +18,7 @@ namespace Elysia
         {
             InitializeComponent();
             setComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
 
         }
 
@@ -34,7 +35,7 @@ namespace Elysia
             string username = tb_username.Text;
             string password = tb_password.Text;
 
-            using (MySqlConnection connection = new MySqlConnection("server=localhost;database=elysia;uid=root;pwd=password;"))
+            using (MySqlConnection connection = new MySqlConnection("server=localhost;database=elysia;uid=root;pwd=\"\";"))
             {
                 connection.Open();
                 MySqlCommand command = new MySqlCommand("SELECT deptID FROM emp WHERE empID = @username AND empPasswd = @password", connection);
@@ -96,6 +97,10 @@ namespace Elysia
                 case "AC":
                     ViewLog viewLog = new ViewLog();
                     viewLog.Show();
+                    break;
+                case "AD":
+                    Admin admin = new Admin();
+                    admin.Show();
                     break;
                 default:
                     MessageBox.Show("Invalid department ID.");

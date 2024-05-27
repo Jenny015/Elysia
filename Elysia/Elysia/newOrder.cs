@@ -25,6 +25,7 @@ namespace Elysia
         {
             InitializeComponent();
             LoadInformation();
+            btnNewOrder.Checked = true;
         }
 
         public void ConnectToSql()

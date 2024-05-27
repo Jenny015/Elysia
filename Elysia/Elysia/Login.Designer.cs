@@ -34,13 +34,15 @@
             this.btn_login = new System.Windows.Forms.Button();
             this.lb_forgetPW = new System.Windows.Forms.Label();
             this.lb_resetPW = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lb_login
             // 
             this.lb_login.AutoSize = true;
             this.lb_login.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Bold);
-            this.lb_login.Location = new System.Drawing.Point(890, 304);
+            this.lb_login.Location = new System.Drawing.Point(357, 120);
             this.lb_login.Name = "lb_login";
             this.lb_login.Size = new System.Drawing.Size(125, 41);
             this.lb_login.TabIndex = 1;
@@ -49,29 +51,28 @@
             // tb_username
             // 
             this.tb_username.BackColor = System.Drawing.Color.MistyRose;
-            this.tb_username.Location = new System.Drawing.Point(721, 456);
-            this.tb_username.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_username.Location = new System.Drawing.Point(238, 274);
+            this.tb_username.Margin = new System.Windows.Forms.Padding(4);
             this.tb_username.Name = "tb_username";
             this.tb_username.ShortcutsEnabled = false;
             this.tb_username.Size = new System.Drawing.Size(448, 29);
             this.tb_username.TabIndex = 2;
-            this.tb_username.Text = "Username";
             // 
             // tb_password
             // 
             this.tb_password.BackColor = System.Drawing.Color.MistyRose;
-            this.tb_password.Location = new System.Drawing.Point(721, 528);
-            this.tb_password.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_password.Location = new System.Drawing.Point(238, 346);
+            this.tb_password.Margin = new System.Windows.Forms.Padding(4);
             this.tb_password.Name = "tb_password";
+            this.tb_password.PasswordChar = '*';
             this.tb_password.Size = new System.Drawing.Size(448, 29);
             this.tb_password.TabIndex = 3;
-            this.tb_password.Text = "Password";
             // 
             // btn_login
             // 
             this.btn_login.BackColor = System.Drawing.Color.Plum;
-            this.btn_login.Location = new System.Drawing.Point(903, 591);
-            this.btn_login.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_login.Location = new System.Drawing.Point(370, 407);
+            this.btn_login.Margin = new System.Windows.Forms.Padding(4);
             this.btn_login.Name = "btn_login";
             this.btn_login.Size = new System.Drawing.Size(112, 32);
             this.btn_login.TabIndex = 4;
@@ -82,7 +83,7 @@
             // lb_forgetPW
             // 
             this.lb_forgetPW.AutoSize = true;
-            this.lb_forgetPW.Location = new System.Drawing.Point(717, 658);
+            this.lb_forgetPW.Location = new System.Drawing.Point(184, 474);
             this.lb_forgetPW.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_forgetPW.Name = "lb_forgetPW";
             this.lb_forgetPW.Size = new System.Drawing.Size(129, 18);
@@ -92,19 +93,40 @@
             // lb_resetPW
             // 
             this.lb_resetPW.AutoSize = true;
-            this.lb_resetPW.Location = new System.Drawing.Point(1045, 658);
+            this.lb_resetPW.Location = new System.Drawing.Point(512, 474);
             this.lb_resetPW.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_resetPW.Name = "lb_resetPW";
             this.lb_resetPW.Size = new System.Drawing.Size(116, 18);
             this.lb_resetPW.TabIndex = 6;
             this.lb_resetPW.Text = "Reset password";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(110, 277);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(88, 18);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Username: ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(110, 349);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(83, 18);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Password: ";
+            // 
             // Login
             // 
+            this.AcceptButton = this.btn_login;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1924, 1055);
+            this.ClientSize = new System.Drawing.Size(825, 618);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lb_resetPW);
             this.Controls.Add(this.lb_forgetPW);
             this.Controls.Add(this.btn_login);
@@ -127,5 +149,7 @@
         private System.Windows.Forms.Button btn_login;
         private System.Windows.Forms.Label lb_forgetPW;
         private System.Windows.Forms.Label lb_resetPW;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
