@@ -11,10 +11,10 @@ using MySql.Data.MySqlClient;
 
 namespace Elysia
 {
-    public partial class viewDID : Form
+    public partial class ViewDID : Form
     {
         string connectionString = "server=localhost;database=elysia;user=root;password=\"\"";
-        public viewDID()
+        public ViewDID()
         {
             InitializeComponent();
             setDataGridView();
