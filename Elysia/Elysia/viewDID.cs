@@ -13,29 +13,26 @@ namespace Elysia
 {
     public partial class viewDID : Form
     {
+        string connectionString = "server=localhost;database=elysia;user=root;password=\"\"";
         public viewDID()
         {
             InitializeComponent();
             setDataGridView();
             this.dataGridView1.CellClick += new DataGridViewCellEventHandler(dataGridView1_CellClick);
+            btnDID.Checked = true;
 
         }
         private void setDataGridView()
         {
-            string connectionString = "server=localhost;database=elysia;user=root;password=\"\"";
+            
             string query = "SELECT * FROM orderpart WHERE opStatus = 'Processing'";
 
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn))
                 {
-                    DataSet ds = new DataSet();
-                    adapter.Fill(ds);
-                    dataGridView1.DataSource = ds.Tables[0];
-                    dataGridView1.Columns[0].ReadOnly = true;
-                    dataGridView1.Columns[1].ReadOnly = true;
 
-
+                    reloadDataGridView();
                     DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn();
                     buttonColumn.HeaderText = "Assemble";
                     buttonColumn.Name = "buttonColumn";
@@ -48,21 +45,89 @@ namespace Elysia
             }
         }
 
+        private void reloadDataGridView()
+        {
+            string query = "SELECT * FROM orderpart WHERE opStatus = 'Processing'";
+
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn))
+                {
+                    DataSet ds = new DataSet();
+                    adapter.Fill(ds);
+                    dataGridView1.DataSource = ds.Tables[0];
+                    dataGridView1.Columns[0].ReadOnly = true;
+                    dataGridView1.Columns[1].ReadOnly = true;
+                }
+            }
+        }
+
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Check if the click is on the button column
-            if (e.ColumnIndex == dataGridView1.Columns["buttonColumn"].Index && e.RowIndex >= 0)
-            {
+            using (MySqlConnection conn = new MySqlConnection(connectionString)) {
+                conn.Open();
+                MySqlCommand cmd = conn.CreateCommand();
 
-                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-                String actDespQtyData = row.Cells["actDespQty"].Value.ToString();
-
-                // Check if the 'actDespQty' data is not null
-                if (actDespQtyData == "")
+                // Check if the click is on the button column
+                if (e.ColumnIndex == dataGridView1.Columns["buttonColumn"].Index && e.RowIndex >= 0)
                 {
-                    // Perform the action you want to take when the button is clicked
-                    MessageBox.Show("The 'actDespQty' value is NULL.");
 
+                    DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                    String actDespQtyData = row.Cells["actDespQty"].Value.ToString();
+                    String orderQtyData = row.Cells["orderQty"].Value.ToString();
+                    String orderID = row.Cells["orderID"].Value.ToString();
+                    String partID = row.Cells["partID"].Value.ToString();
+
+
+                    // Check if the 'actDespQty' data is  null
+                    if (actDespQtyData == "")
+                    {
+                        // Perform the action you want to take when the button is clicked
+                        MessageBox.Show("The 'actDespQty' value is NULL.");
+
+                    }
+                    else if (actDespQtyData == orderQtyData)
+                    {
+                        cmd.CommandText = $"UPDATE `orderpart` SET opStatus = 'Assembled', actDespQty = {actDespQtyData} WHERE orderID = \'{orderID}\' AND partID = \'{partID}\'";
+                        try
+                        {
+                            // Execute the SQl statement
+                            cmd.ExecuteNonQuery();
+                            reloadDataGridView();
+                            return;
+
+                        }
+                        catch (Exception ex)
+                        {
+                            // if error occurs, show fail message
+                            MessageBox.Show("Failed"+ex.Message);
+                        }
+                    }
+                    else
+                    {
+
+                        var confirmResult = MessageBox.Show("Actual Despetch quantity not euqal to order quantity\nAre you sure ?", "Please confirm the quantity!", MessageBoxButtons.YesNo);
+
+                        if (confirmResult == DialogResult.Yes)
+                        {
+                            // If 'Yes', do something here.
+                            cmd.CommandText = $"UPDATE `orderpart` SET opStatus = 'Assembled', actDespQty = {actDespQtyData} WHERE orderID = \'{orderID}\' AND partID = \'{partID}\'";
+                            try
+                            {
+                                // Execute the SQl statement
+                                cmd.ExecuteNonQuery();
+                                reloadDataGridView();
+                                return;
+
+                            }
+                            catch (Exception ex)
+                            {
+                                // if error occurs, show fail message
+                                MessageBox.Show("Failed" + ex.Message);
+                            }
+
+                        }
+                    }
                 }
             }
         }

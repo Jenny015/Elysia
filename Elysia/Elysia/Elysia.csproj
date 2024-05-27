@@ -103,17 +103,47 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin.Designer.cs">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataGridViewExample.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DataGridViewExample.Designer.cs">
       <DependentUpon>DataGridViewExample.cs</DependentUpon>
     </Compile>
+    <Compile Include="GoodsInward.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GoodsInward.Designer.cs">
+      <DependentUpon>GoodsInward.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InvoiceGenerateAndDelivery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InvoiceGenerateAndDelivery.Designer.cs">
+      <DependentUpon>InvoiceGenerateAndDelivery.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewDealer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewDealer.Designer.cs">
+      <DependentUpon>NewDealer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewEmployee.Designer.cs">
+      <DependentUpon>NewEmployee.cs</DependentUpon>
     </Compile>
     <Compile Include="newOrder.cs">
       <SubType>Form</SubType>
@@ -128,6 +158,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Reorder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reorder.Designer.cs">
+      <DependentUpon>Reorder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScrapItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScrapItem.Designer.cs">
+      <DependentUpon>ScrapItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI_Tester.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,17 +182,44 @@
     <Compile Include="viewDID.Designer.cs">
       <DependentUpon>viewDID.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewInvoice.Designer.cs">
+      <DependentUpon>ViewInvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewLog.Designer.cs">
+      <DependentUpon>ViewLog.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewOrder.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ViewOrder.Designer.cs">
       <DependentUpon>ViewOrder.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Admin.resx">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DataGridViewExample.resx">
       <DependentUpon>DataGridViewExample.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GoodsInward.resx">
+      <DependentUpon>GoodsInward.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InvoiceGenerateAndDelivery.resx">
+      <DependentUpon>InvoiceGenerateAndDelivery.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewDealer.resx">
+      <DependentUpon>NewDealer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewEmployee.resx">
+      <DependentUpon>NewEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="newOrder.resx">
       <DependentUpon>newOrder.cs</DependentUpon>
@@ -160,11 +229,23 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reorder.resx">
+      <DependentUpon>Reorder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScrapItem.resx">
+      <DependentUpon>ScrapItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI_Tester.resx">
       <DependentUpon>UI_Tester.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="viewDID.resx">
       <DependentUpon>viewDID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewInvoice.resx">
+      <DependentUpon>ViewInvoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewLog.resx">
+      <DependentUpon>ViewLog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewOrder.resx">
       <DependentUpon>ViewOrder.cs</DependentUpon>
