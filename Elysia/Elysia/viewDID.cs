@@ -131,5 +131,11 @@ namespace Elysia
                 }
             }
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Filter filter = new Filter("DID");
+            filter.Show();
+        }
     }
 }
