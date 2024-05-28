@@ -164,10 +164,16 @@ namespace Elysia
             }
         }
 
+<<<<<<< HEAD
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+=======
         private void button4_Click(object sender, EventArgs e)
         {
             Filter filter = new Filter("DID");
             filter.Show();
+>>>>>>> 61066417ff5f029e244e6f6dec38c9222ba0793c
         }
 
         private void btnLogout_CheckedChanged(object sender, EventArgs e)
