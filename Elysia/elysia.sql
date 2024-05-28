@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 28, 2024 at 12:54 PM
+-- Generation Time: May 28, 2024 at 01:08 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -244,7 +244,8 @@ INSERT INTO `order` (`orderID`, `dealerID`, `orderStatus`, `fromOrder`, `orderDa
 ('N000000002', 'DL00001', 'Despatched', NULL, '2024-03-03'),
 ('N000000003', 'DL00003', 'Despatched', NULL, '2024-04-19'),
 ('N000000004', 'DL00004', 'Assembled', NULL, '2024-05-19'),
-('N000000005', 'DL00002', 'Processing', NULL, '2024-05-21');
+('N000000005', 'DL00002', 'Processing', NULL, '2024-05-21'),
+('O000000001', 'DL00003', 'OStanding', 'N000000003', '2024-04-22');
 
 -- --------------------------------------------------------
 
@@ -279,7 +280,9 @@ INSERT INTO `orderpart` (`orderID`, `partID`, `orderQty`, `actDespQty`, `opStatu
 ('N000000004', 'B00005', 15, 15, 'Assembled', NULL),
 ('N000000005', 'A00001', 3, NULL, 'Processing', NULL),
 ('N000000005', 'B00004', 12, NULL, 'Processing', NULL),
-('N000000005', 'D00002', 75, NULL, 'Processing', NULL);
+('N000000005', 'D00002', 75, NULL, 'Processing', NULL),
+('O000000001', 'C00005', 20, NULL, 'OStanding', NULL),
+('O000000001', 'D00004', 150, NULL, 'OStanding', NULL);
 
 -- --------------------------------------------------------
 
