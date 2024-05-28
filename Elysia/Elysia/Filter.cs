@@ -21,7 +21,7 @@ namespace Elysia
         public void setComponent(String type)
         {
             if (type == "DID") {
-
+                DID.Enabled = true;
             }
         }
     }

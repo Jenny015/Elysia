@@ -185,6 +185,7 @@ namespace Elysia
             ConnectToSql();
             MySqlCommand cmd = cnn.CreateCommand();
             bool outstanding = false;
+            Dictionary<String, int> osParts = new Dictionary<string, int>();
 
             //insert a new order into order DB
             cmd.CommandText = $"INSERT INTO `order` (orderID, dealerID) VALUES (\"{newOrderID}\", \"{cbDealerID.SelectedItem.ToString()}\")";
@@ -199,6 +200,16 @@ namespace Elysia
                 MessageBox.Show("Failed to insert order\n" + ex.Message, "Failed");
             }
 
+            //search all outstanding DID of the dealer and store partID and outstanding qty in dictionary
+            cmd.CommandText = $"SELECT partID, orderQty, actDespQty FROM orderpart OP, `order` O WHERE O.`orderID` = OP.orderID AND opStatus = 'OStanding' AND O.dealerID = '{cbDealerID.SelectedItem.ToString()}'";
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    osParts.Add(reader.GetString(0), reader.GetInt32(1)- reader.GetInt32(2));
+                }
+            }
+
             //loop through orderPart dictionary
             foreach (KeyValuePair<String, int> part in orderParts)
             {
@@ -211,6 +222,13 @@ namespace Elysia
                         stockQty = reader.GetInt32(0);
                     }
                 }
+                //check if outstanding order part currently order
+                /* TODO */
+
+
+                // if outstanding order part + current order part > stock -> add to order 
+                /* TODO */
+
                 //If stock qty > order qty -> Generate DID, status == processing
                 if (stockQty > part.Value)
                 {
@@ -236,7 +254,7 @@ namespace Elysia
             // change order outstanding value to true
             if (outstanding)
             {
-                cmd.CommandText = $"UPDATE `order` SET outstanding = 1 WHERE orderID = \"{newOrderID}\"";
+                cmd.CommandText = $"UPDATE `order` SET outstanding = 'Y' WHERE orderID = \"{newOrderID}\"";
                 try
                 {
                     // Execute the SQl statement
@@ -248,6 +266,8 @@ namespace Elysia
                     MessageBox.Show("Failed to insert DID\n" + ex.Message, "Failed");
                 }
             }
+
+
             updateOrderID(cmd);
             cnn.Close();
             MessageBox.Show("New Order has been inserted successfully.", "Success");
@@ -300,6 +320,12 @@ namespace Elysia
                 }
             }
             cnn.Close();
+        }
+
+        //logout
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            StaticVariable.logout();
         }
     }
 }

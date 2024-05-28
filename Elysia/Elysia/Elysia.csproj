@@ -182,6 +182,7 @@
     <Compile Include="ScrapItem.Designer.cs">
       <DependentUpon>ScrapItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="StaticVariable.cs" />
     <Compile Include="UI_Tester.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -232,6 +233,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EvaluatedList.resx">
       <DependentUpon>EvaluatedList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Filter.resx">
+      <DependentUpon>Filter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GoodsInward.resx">
       <DependentUpon>GoodsInward.cs</DependentUpon>
