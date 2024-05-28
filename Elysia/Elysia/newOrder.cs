@@ -10,8 +10,6 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using ZstdSharp.Unsafe;
 
-
-//TODO: search and combine previous 
 namespace Elysia
 {
     public partial class NewOrder : Form
@@ -81,22 +79,16 @@ namespace Elysia
         //get the larger orderID to calculate new orderID
         private void updateOrderID()
         {
-            MySqlCommand cmd = cnn.CreateCommand();
-            cmd.CommandText = "SELECT MAX(OrderID) FROM `order` WHERE orderID LIKE 'N%';";
-            using (MySqlDataReader reader = cmd.ExecuteReader())
+            var maxOrderID = getOrderID('N');
+            if (maxOrderID != null)
             {
-                var maxOrderID = getOrderID('N');
-                if (maxOrderID != null)
-                {
-                    lblOrderID.Text = maxOrderID;
-                    newOrderID = maxOrderID;
-                }
-                else
-                {
-                    lblOrderID.Text = "N\\A";
-                }
+                lblOrderID.Text = maxOrderID;
+                newOrderID = maxOrderID;
             }
-            cnn.Close();
+            else
+            {
+                lblOrderID.Text = "N\\A";
+            }
         }
         //get the new orderID, type == 'N' or 'O'
         public static String getOrderID(char type)
@@ -104,17 +96,19 @@ namespace Elysia
             ConnectToSql();
             MySqlCommand cmd = cnn.CreateCommand();
             cmd.CommandText = $"SELECT MAX(OrderID) FROM `order` WHERE orderID LIKE '{type}%'";
-            using (MySqlDataReader reader = cmd.ExecuteReader())
+            using (MySqlDataReader reader2 = cmd.ExecuteReader())
             {
-                if (reader.Read())
+                if (reader2.Read())
                 {
-                    var maxOrderID = reader[0];
+                    var maxOrderID = reader2[0];
                     if (maxOrderID != null && maxOrderID != DBNull.Value)
                     {
+                        cnn.Close();
                         return $"{type}{int.Parse(maxOrderID.ToString().Substring(1)) + 1:D9}";
                     }
                 }
-                return "O000000001";
+                cnn.Close();
+                return null;
             }
         }
 
@@ -206,63 +200,51 @@ namespace Elysia
             MySqlCommand cmd = cnn.CreateCommand();
             Dictionary<String, int> osParts = new Dictionary<string, int>();
 
-            //insert a new order into order DB
-            cmd.CommandText = $"INSERT INTO `order` (orderID, dealerID) VALUES (\"{newOrderID}\", \"{cbDealerID.SelectedItem.ToString()}\")";
-            try
-            {
-                // Execute the SQl statement
-                cmd.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                // if error occurs, show fail message
-                MessageBox.Show("Failed to insert order\n" + ex.Message, "Failed");
-            }
-
-            //search all outstanding DID of the dealer and store partID and outstanding qty in dictionary
-            cmd.CommandText = $"SELECT partID, orderQty, actDespQty FROM orderpart OP, `order` O WHERE O.`orderID` = OP.orderID AND opStatus = 'OStanding' AND O.dealerID = '{cbDealerID.SelectedItem.ToString()}'";
+            //check if outstanding order part currently order
+            cmd.CommandText = $"SELECT partID, orderQty FROM `orderpart` OP, `order` O  WHERE O.dealerID = '{cbDealerID.SelectedItem.ToString()}' AND O.orderID LIKE 'O%' AND O.orderID = OP.orderID";
             using (MySqlDataReader reader = cmd.ExecuteReader())
             {
                 while (reader.Read())
                 {
-                    osParts.Add(reader.GetString(0), reader.GetInt32(1)- reader.GetInt32(2));
+                    osParts.Add(reader.GetString(0), reader.GetInt32(1));
                 }
+            }
+
+            //insert a new order into order DB
+            cmd.CommandText = $"INSERT INTO `order` (orderID, dealerID) VALUES (\"{newOrderID}\", \"{cbDealerID.SelectedItem.ToString()}\")";
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to insert order\n" + ex.Message, "Failed");
             }
 
             //loop through orderPart dictionary
             foreach (KeyValuePair<String, int> part in orderParts)
             {
-                int stockQty = 0;
-                cmd.CommandText = $"SELECT partQty FROM part WHERE partID = \"{part.Key}\"";
-                using (MySqlDataReader reader = cmd.ExecuteReader())
+                int orderQty;
+                if (osParts.TryGetValue(part.Key, out orderQty))
                 {
-                    while (reader.Read())
-                    {
-                        stockQty = reader.GetInt32(0);
-                    }
-                }
-                //check if outstanding order part currently order
-                /* TODO */
-                int osQty;
-                if(osParts.TryGetValue(part.Key, out osQty))
+                    //if current order partID contain OSorder partID, add OSorderpart orderQty to OSQty, update OSorderpart addToOrder, status = Added
+                    cmd.CommandText = $"INSERT INTO orderpart VALUES ('{newOrderID}', '{part.Key}', {part.Value}, {osParts[part.Key]}, null, 'Processing', null);" +
+                        $"UPDATE orderpart JOIN `order` ON `order`.`orderID` = `orderpart`.`orderID` SET `orderpart`.`opStatus` = 'Added', `orderpart`.`addToOrder` = '{newOrderID}' WHERE `orderpart`.opStatus = 'OStanding' AND `orderpart`.partID = '{part.Key}' AND `order`.`dealerID` = '{cbDealerID.SelectedItem.ToString()}';";
+                } else
                 {
-                    cmd.CommandText = $"";
+                    cmd.CommandText = $"INSERT INTO orderpart VALUES ('{newOrderID}', '{part.Key}', {part.Value}, 0, null, 'Processing', null)";
                 }
 
                 //Generate DID
                 try
                 {
-                    // Execute the SQl statement
-                    cmd.CommandText = $"INSERT INTO orderpart VALUES ('{newOrderID}', '{part.Key}', {part.Value}, null, 'Processing')";
                     cmd.ExecuteNonQuery();
                 }
                 catch (Exception ex)
                 {
-                    // if error occurs, show fail message
                     MessageBox.Show("Failed to insert DID\n" + ex.Message, "Failed");
                 }
             }
-
             updateOrderID();
             cnn.Close();
             MessageBox.Show("New Order has been inserted successfully.", "Success");
@@ -322,6 +304,12 @@ namespace Elysia
         private void btnLogout_Click(object sender, EventArgs e)
         {
             StaticVariable.logout();
+        }
+
+        private void btnViewOrder_CheckedChanged(object sender, EventArgs e)
+        {
+            ViewOrder vOrder = new ViewOrder();
+            vOrder.Show();
         }
     }
 }

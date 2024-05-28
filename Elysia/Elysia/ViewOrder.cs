@@ -74,6 +74,19 @@ namespace Elysia
                 conn.Close();
             }
         }
+
+        private void btnNewOrder_CheckedChanged(object sender, EventArgs e)
+        {
+            NewOrder newOrder = new NewOrder();
+            newOrder.Show();
+            this.Close();
+        }
+
+        private void btnLogout_CheckedChanged(object sender, EventArgs e)
+        {
+            StaticVariable.logout();
+            this.Close();
+        }
     }
 }
 
