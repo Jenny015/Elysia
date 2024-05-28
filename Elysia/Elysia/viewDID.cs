@@ -11,38 +11,29 @@ using MySql.Data.MySqlClient;
 
 namespace Elysia
 {
-    public partial class viewDID : Form
+    public partial class ViewDID : Form
     {
         string connectionString = "server=localhost;database=elysia;user=root;password=\"\"";
-        public viewDID()
+        public ViewDID()
         {
             InitializeComponent();
             setDataGridView();
             this.dataGridView1.CellClick += new DataGridViewCellEventHandler(dataGridView1_CellClick);
             btnDID.Checked = true;
+            dataGridView1.AllowUserToAddRows = false;
 
         }
         private void setDataGridView()
         {
-            
-            string query = "SELECT * FROM orderpart WHERE opStatus = 'Processing'";
+            reloadDataGridView();
+            DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn();
+            buttonColumn.HeaderText = "Assemble";
+            buttonColumn.Name = "buttonColumn";
+            buttonColumn.Text = "Assemble";
+            buttonColumn.UseColumnTextForButtonValue = true;
 
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
-            {
-                using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn))
-                {
-
-                    reloadDataGridView();
-                    DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn();
-                    buttonColumn.HeaderText = "Assemble";
-                    buttonColumn.Name = "buttonColumn";
-                    buttonColumn.Text = "Assemble";
-                    buttonColumn.UseColumnTextForButtonValue = true; // This will set the button text to "Click Me"
-
-                    // Add the button column to the DataGridView
-                    dataGridView1.Columns.Add(buttonColumn);
-                }
-            }
+            // Add the button column to the DataGridView
+            dataGridView1.Columns.Add(buttonColumn);
         }
 
         private void reloadDataGridView()
@@ -58,6 +49,9 @@ namespace Elysia
                     dataGridView1.DataSource = ds.Tables[0];
                     dataGridView1.Columns[0].ReadOnly = true;
                     dataGridView1.Columns[1].ReadOnly = true;
+                    dataGridView1.Columns[2].ReadOnly = true;
+                    dataGridView1.Columns[4].ReadOnly = true;
+                    dataGridView1.Columns[5].ReadOnly = true;
                 }
             }
         }
@@ -82,13 +76,18 @@ namespace Elysia
                     // Check if the 'actDespQty' data is  null
                     if (actDespQtyData == "")
                     {
-                        // Perform the action you want to take when the button is clicked
                         MessageBox.Show("The 'actDespQty' value is NULL.");
+                        return;
 
                     }
-                    else if (actDespQtyData == orderQtyData)
+                    else if (int.Parse(actDespQtyData) < 0)
                     {
-                        cmd.CommandText = $"UPDATE `orderpart` SET opStatus = 'Assembled', actDespQty = {actDespQtyData} WHERE orderID = \'{orderID}\' AND partID = \'{partID}\'";
+                        MessageBox.Show("The 'actDespQty' value must be positive integer.");
+                        return;
+                    }
+                    else if (int.Parse(actDespQtyData) >= int.Parse(orderQtyData))
+                    {
+                        cmd.CommandText = $"UPDATE `orderpart` SET opStatus = 'Assembled', actDespQty = {orderQtyData} WHERE orderID = \'{orderID}\' AND partID = \'{partID}\'";
                         try
                         {
                             // Execute the SQl statement
@@ -105,13 +104,51 @@ namespace Elysia
                     }
                     else
                     {
-
-                        var confirmResult = MessageBox.Show("Actual Despetch quantity not euqal to order quantity\nAre you sure ?", "Please confirm the quantity!", MessageBoxButtons.YesNo);
-
+                        String osOrderID = "";
+                        String dealerID = "";
+                        var confirmResult = MessageBox.Show("Actual Despetch quantity not euqal to order quantity\nAre you sure to continue?", "Please confirm the quantity!", MessageBoxButtons.YesNo);
+                        // If actual despetch qty < order qty, generate outstanding order, and oustanding orderpart
                         if (confirmResult == DialogResult.Yes)
                         {
-                            // If 'Yes', do something here.
-                            cmd.CommandText = $"UPDATE `orderpart` SET opStatus = 'Assembled', actDespQty = {actDespQtyData} WHERE orderID = \'{orderID}\' AND partID = \'{partID}\'";
+                            //Check if the current order has an outstanding order
+                            cmd.CommandText = $"SELECT orderID, dealerID FROM `order` WHERE fromOrder = '{orderID}'";
+                            using (MySqlDataReader reader = cmd.ExecuteReader())
+                            {
+                                // If there's no outstanding order, create one
+                                if (!reader.Read())
+                                {
+                                    // Close the reader before executing another command
+                                    reader.Close();
+                                    cmd.CommandText = $"SELECT dealerID FROM `order` WHERE orderID = '{orderID}'";
+                                    try
+                                    {
+                                        using (MySqlDataReader reader2 = cmd.ExecuteReader())
+                                        {
+                                            if (reader2.Read())
+                                            {
+                                                dealerID = reader2.GetString(0).ToString();
+                                            }
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        // Handle any errors that occurred
+                                        Console.WriteLine(ex.Message);
+                                    }
+                                    osOrderID = NewOrder.getOrderID('O');
+                                    cmd.CommandText = $"INSERT INTO `order` (orderID, dealerID, orderStatus, fromOrder) VALUES ('{osOrderID}', '{dealerID}', 'OStanding', '{orderID}')";
+                                    // Execute the SQL statement
+                                    cmd.ExecuteNonQuery();
+                                }
+                                else // If there is, get the orderID
+                                {
+                                    osOrderID = reader.GetString(0);
+                                    reader.Close(); // Close the reader before executing another command
+                                }
+                            }
+                            //add did orderQty - actDespQty to o order
+                            cmd.CommandText = $"UPDATE `orderpart` SET opStatus = 'Assembled', actDespQty = {actDespQtyData} WHERE orderID = '{orderID}' AND partID = '{partID}';" +
+                                $"INSERT INTO orderpart (orderID, partID, orderQty, opStatus) VALUES ('{osOrderID}', '{partID}', {int.Parse(orderQtyData)-int.Parse(actDespQtyData)}, 'OStanding')";
                             try
                             {
                                 // Execute the SQl statement
@@ -125,16 +162,22 @@ namespace Elysia
                                 // if error occurs, show fail message
                                 MessageBox.Show("Failed" + ex.Message);
                             }
-
                         }
                     }
                 }
             }
         }
 
+<<<<<<< HEAD
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+=======
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Filter filter = new Filter("DID");
+            filter.Show();
+>>>>>>> 61066417ff5f029e244e6f6dec38c9222ba0793c
         }
     }
 }

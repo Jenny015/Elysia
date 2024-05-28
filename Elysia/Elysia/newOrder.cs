@@ -14,21 +14,21 @@ using ZstdSharp.Unsafe;
 //TODO: search and combine previous 
 namespace Elysia
 {
-    public partial class newOrder : Form
+    public partial class NewOrder : Form
     {
-        private MySqlConnection cnn = new MySqlConnection("server=localhost;database=elysia;uid=root;pwd=\"\";");
+        public static MySqlConnection cnn = new MySqlConnection("server=localhost;database=elysia;uid=root;pwd=\"\";");
         //dicationary to store order item partID and qty
         private Dictionary<String, int> orderParts = new Dictionary<string, int>();
         //store new orderID
         String newOrderID;
-        public newOrder()
+        public NewOrder()
         {
             InitializeComponent();
             LoadInformation();
             btnNewOrder.Checked = true;
         }
 
-        public void ConnectToSql()
+        public static void ConnectToSql()
         {
             try
             {
@@ -68,7 +68,7 @@ namespace Elysia
                 }
             }
 
-            updateOrderID(cmd);
+            updateOrderID();
 
             cnn.Close();
 
@@ -79,9 +79,31 @@ namespace Elysia
 
 
         //get the larger orderID to calculate new orderID
-        private void updateOrderID(MySqlCommand cmd)
+        private void updateOrderID()
         {
-            cmd.CommandText = "SELECT MAX(OrderID) FROM `order`";
+            MySqlCommand cmd = cnn.CreateCommand();
+            cmd.CommandText = "SELECT MAX(OrderID) FROM `order` WHERE orderID LIKE 'N%';";
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                var maxOrderID = getOrderID('N');
+                if (maxOrderID != null)
+                {
+                    lblOrderID.Text = maxOrderID;
+                    newOrderID = maxOrderID;
+                }
+                else
+                {
+                    lblOrderID.Text = "N\\A";
+                }
+            }
+            cnn.Close();
+        }
+        //get the new orderID, type == 'N' or 'O'
+        public static String getOrderID(char type)
+        {
+            ConnectToSql();
+            MySqlCommand cmd = cnn.CreateCommand();
+            cmd.CommandText = $"SELECT MAX(OrderID) FROM `order` WHERE orderID LIKE '{type}%'";
             using (MySqlDataReader reader = cmd.ExecuteReader())
             {
                 if (reader.Read())
@@ -89,12 +111,10 @@ namespace Elysia
                     var maxOrderID = reader[0];
                     if (maxOrderID != null && maxOrderID != DBNull.Value)
                     {
-                        var numberPart = int.Parse(maxOrderID.ToString().Substring(1));
-                        var newNumber = numberPart + 1;
-                        newOrderID = $"N{newNumber:D9}";
-                        lblOrderID.Text = newOrderID;
+                        return $"{type}{int.Parse(maxOrderID.ToString().Substring(1)) + 1:D9}";
                     }
                 }
+                return "O000000001";
             }
         }
 
@@ -166,7 +186,7 @@ namespace Elysia
             }
             cnn.Close();
         }
-
+        //clear form components
         private void btnClear_Click(object sender, EventArgs e)
         {
             cbDealerID.SelectedItem = null;
@@ -175,7 +195,7 @@ namespace Elysia
             nQty.Value = 1;
             orderParts = new Dictionary<string, int>();
         }
-
+        //submit form, create new order
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             if (!checkInput()) 
@@ -184,7 +204,7 @@ namespace Elysia
             };
             ConnectToSql();
             MySqlCommand cmd = cnn.CreateCommand();
-            bool outstanding = false;
+            Dictionary<String, int> osParts = new Dictionary<string, int>();
 
             //insert a new order into order DB
             cmd.CommandText = $"INSERT INTO `order` (orderID, dealerID) VALUES (\"{newOrderID}\", \"{cbDealerID.SelectedItem.ToString()}\")";
@@ -199,6 +219,16 @@ namespace Elysia
                 MessageBox.Show("Failed to insert order\n" + ex.Message, "Failed");
             }
 
+            //search all outstanding DID of the dealer and store partID and outstanding qty in dictionary
+            cmd.CommandText = $"SELECT partID, orderQty, actDespQty FROM orderpart OP, `order` O WHERE O.`orderID` = OP.orderID AND opStatus = 'OStanding' AND O.dealerID = '{cbDealerID.SelectedItem.ToString()}'";
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    osParts.Add(reader.GetString(0), reader.GetInt32(1)- reader.GetInt32(2));
+                }
+            }
+
             //loop through orderPart dictionary
             foreach (KeyValuePair<String, int> part in orderParts)
             {
@@ -211,20 +241,19 @@ namespace Elysia
                         stockQty = reader.GetInt32(0);
                     }
                 }
-                //If stock qty > order qty -> Generate DID, status == processing
-                if (stockQty > part.Value)
+                //check if outstanding order part currently order
+                /* TODO */
+                int osQty;
+                if(osParts.TryGetValue(part.Key, out osQty))
                 {
-                    cmd.CommandText = $"INSERT INTO orderpart VALUES (\"{newOrderID}\", \"{part.Key}\", {part.Value}, null, \"Processing\")";
+                    cmd.CommandText = $"";
                 }
-                else //DID status == OStanding, outstanding = true
-                {
-                    outstanding = true;
-                    cmd.CommandText = $"INSERT INTO orderpart VALUES (\"{newOrderID}\", \"{part.Key}\", {part.Value}, null, \"OStanding\")";
-                }
-                //insert a new DID to orderpart DB
+
+                //Generate DID
                 try
                 {
                     // Execute the SQl statement
+                    cmd.CommandText = $"INSERT INTO orderpart VALUES ('{newOrderID}', '{part.Key}', {part.Value}, null, 'Processing')";
                     cmd.ExecuteNonQuery();
                 }
                 catch (Exception ex)
@@ -233,26 +262,13 @@ namespace Elysia
                     MessageBox.Show("Failed to insert DID\n" + ex.Message, "Failed");
                 }
             }
-            // change order outstanding value to true
-            if (outstanding)
-            {
-                cmd.CommandText = $"UPDATE `order` SET outstanding = 1 WHERE orderID = \"{newOrderID}\"";
-                try
-                {
-                    // Execute the SQl statement
-                    cmd.ExecuteNonQuery();
-                }
-                catch (Exception ex)
-                {
-                    // if error occurs, show fail message
-                    MessageBox.Show("Failed to insert DID\n" + ex.Message, "Failed");
-                }
-            }
-            updateOrderID(cmd);
+
+            updateOrderID();
             cnn.Close();
             MessageBox.Show("New Order has been inserted successfully.", "Success");
             btnClear_Click(null, null);
         }
+
         //check if every necessary data has been input
         private bool checkInput()
         {
@@ -300,6 +316,12 @@ namespace Elysia
                 }
             }
             cnn.Close();
+        }
+
+        //logout
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            StaticVariable.logout();
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Elysia
 {
-    partial class ScrapItem
+    partial class EvaluatedList
     {
         /// <summary>
         /// Required designer variable.
@@ -31,17 +31,15 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnScrapItem = new System.Windows.Forms.RadioButton();
+            this.btnEvaluatedList = new System.Windows.Forms.RadioButton();
+            this.btnSparePart = new System.Windows.Forms.RadioButton();
+            this.btnViewLog = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.btnLogout = new System.Windows.Forms.RadioButton();
             this.lblDept = new System.Windows.Forms.Label();
             this.imgLogo = new System.Windows.Forms.PictureBox();
-            this.btnClear = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lbPartID = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.btnPrint = new System.Windows.Forms.Button();
+            this.btnSaveAsCSV = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
@@ -55,7 +53,7 @@
             this.panel2.Location = new System.Drawing.Point(419, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1504, 90);
-            this.panel2.TabIndex = 31;
+            this.panel2.TabIndex = 33;
             // 
             // label4
             // 
@@ -64,15 +62,17 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(40, 27);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(221, 41);
+            this.label4.Size = new System.Drawing.Size(280, 41);
             this.label4.TabIndex = 20;
-            this.label4.Text = "Scrap Item";
+            this.label4.Text = "Evaluated List";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(84)))), ((int)(((byte)(129)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.btnScrapItem);
+            this.panel1.Controls.Add(this.btnEvaluatedList);
+            this.panel1.Controls.Add(this.btnSparePart);
+            this.panel1.Controls.Add(this.btnViewLog);
             this.panel1.Controls.Add(this.radioButton1);
             this.panel1.Controls.Add(this.btnLogout);
             this.panel1.Controls.Add(this.lblDept);
@@ -83,26 +83,64 @@
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(4);
             this.panel1.Size = new System.Drawing.Size(419, 1055);
-            this.panel1.TabIndex = 30;
+            this.panel1.TabIndex = 32;
             // 
-            // btnScrapItem
+            // btnEvaluatedList
             // 
-            this.btnScrapItem.Appearance = System.Windows.Forms.Appearance.Button;
-            this.btnScrapItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(135)))), ((int)(((byte)(167)))));
-            this.btnScrapItem.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnScrapItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnScrapItem.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.btnScrapItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnScrapItem.Location = new System.Drawing.Point(4, 348);
-            this.btnScrapItem.Margin = new System.Windows.Forms.Padding(4);
-            this.btnScrapItem.Name = "btnScrapItem";
-            this.btnScrapItem.Size = new System.Drawing.Size(409, 75);
-            this.btnScrapItem.TabIndex = 8;
-            this.btnScrapItem.TabStop = true;
-            this.btnScrapItem.Text = "Scrap Item";
-            this.btnScrapItem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnScrapItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnScrapItem.UseVisualStyleBackColor = false;
+            this.btnEvaluatedList.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnEvaluatedList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(135)))), ((int)(((byte)(167)))));
+            this.btnEvaluatedList.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEvaluatedList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEvaluatedList.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.btnEvaluatedList.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEvaluatedList.Location = new System.Drawing.Point(4, 498);
+            this.btnEvaluatedList.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEvaluatedList.Name = "btnEvaluatedList";
+            this.btnEvaluatedList.Size = new System.Drawing.Size(409, 75);
+            this.btnEvaluatedList.TabIndex = 10;
+            this.btnEvaluatedList.TabStop = true;
+            this.btnEvaluatedList.Text = "Evaluated List";
+            this.btnEvaluatedList.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnEvaluatedList.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEvaluatedList.UseVisualStyleBackColor = false;
+            // 
+            // btnSparePart
+            // 
+            this.btnSparePart.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnSparePart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(135)))), ((int)(((byte)(167)))));
+            this.btnSparePart.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSparePart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSparePart.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.btnSparePart.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSparePart.Location = new System.Drawing.Point(4, 423);
+            this.btnSparePart.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSparePart.Name = "btnSparePart";
+            this.btnSparePart.Size = new System.Drawing.Size(409, 75);
+            this.btnSparePart.TabIndex = 9;
+            this.btnSparePart.TabStop = true;
+            this.btnSparePart.Text = "Spare Part";
+            this.btnSparePart.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnSparePart.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSparePart.UseVisualStyleBackColor = false;
+            // 
+            // btnViewLog
+            // 
+            this.btnViewLog.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnViewLog.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(135)))), ((int)(((byte)(167)))));
+            this.btnViewLog.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnViewLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewLog.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.btnViewLog.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnViewLog.Location = new System.Drawing.Point(4, 348);
+            this.btnViewLog.Margin = new System.Windows.Forms.Padding(4);
+            this.btnViewLog.Name = "btnViewLog";
+            this.btnViewLog.Size = new System.Drawing.Size(409, 75);
+            this.btnViewLog.TabIndex = 8;
+            this.btnViewLog.TabStop = true;
+            this.btnViewLog.Text = "View Log";
+            this.btnViewLog.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnViewLog.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnViewLog.UseVisualStyleBackColor = false;
             // 
             // radioButton1
             // 
@@ -150,7 +188,7 @@
             this.lblDept.Name = "lblDept";
             this.lblDept.Size = new System.Drawing.Size(409, 75);
             this.lblDept.TabIndex = 1;
-            this.lblDept.Text = "Stock Record Clerk";
+            this.lblDept.Text = "Accountant";
             this.lblDept.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // imgLogo
@@ -165,88 +203,46 @@
             this.imgLogo.TabIndex = 0;
             this.imgLogo.TabStop = false;
             // 
-            // btnClear
+            // btnPrint
             // 
-            this.btnClear.BackColor = System.Drawing.Color.Tomato;
-            this.btnClear.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.btnClear.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnClear.Location = new System.Drawing.Point(1307, 779);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(150, 41);
-            this.btnClear.TabIndex = 33;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnPrint.BackColor = System.Drawing.Color.Plum;
+            this.btnPrint.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.btnPrint.Location = new System.Drawing.Point(1501, 939);
+            this.btnPrint.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(150, 41);
+            this.btnPrint.TabIndex = 35;
+            this.btnPrint.Text = "Print";
+            this.btnPrint.UseVisualStyleBackColor = false;
             // 
-            // btnSave
+            // btnSaveAsCSV
             // 
-            this.btnSave.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnSave.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.btnSave.Location = new System.Drawing.Point(1107, 779);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(150, 41);
-            this.btnSave.TabIndex = 32;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSaveAsCSV.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnSaveAsCSV.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.btnSaveAsCSV.Location = new System.Drawing.Point(1701, 939);
+            this.btnSaveAsCSV.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSaveAsCSV.Name = "btnSaveAsCSV";
+            this.btnSaveAsCSV.Size = new System.Drawing.Size(150, 41);
+            this.btnSaveAsCSV.TabIndex = 34;
+            this.btnSaveAsCSV.Text = "Save As CSV";
+            this.btnSaveAsCSV.UseVisualStyleBackColor = false;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(460, 274);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(122, 32);
-            this.label2.TabIndex = 34;
-            this.label2.Text = "Quantity";
-            // 
-            // lbPartID
-            // 
-            this.lbPartID.AutoSize = true;
-            this.lbPartID.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
-            this.lbPartID.Location = new System.Drawing.Point(460, 153);
-            this.lbPartID.Name = "lbPartID";
-            this.lbPartID.Size = new System.Drawing.Size(104, 32);
-            this.lbPartID.TabIndex = 35;
-            this.lbPartID.Text = "Part ID";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Arial", 14F);
-            this.textBox1.Location = new System.Drawing.Point(466, 188);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(791, 40);
-            this.textBox1.TabIndex = 36;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Arial", 14F);
-            this.textBox2.Location = new System.Drawing.Point(466, 309);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(791, 40);
-            this.textBox2.TabIndex = 37;
-            // 
-            // ScrapItem
+            // EvaluatedList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1923, 1055);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.lbPartID);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnClear);
-            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnPrint);
+            this.Controls.Add(this.btnSaveAsCSV);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Name = "ScrapItem";
-            this.Text = "ScrapItem";
+            this.Name = "EvaluatedList";
+            this.Text = "EvaluatedList";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -255,16 +251,14 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.RadioButton btnScrapItem;
+        private System.Windows.Forms.RadioButton btnEvaluatedList;
+        private System.Windows.Forms.RadioButton btnSparePart;
+        private System.Windows.Forms.RadioButton btnViewLog;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton btnLogout;
         private System.Windows.Forms.Label lblDept;
         public System.Windows.Forms.PictureBox imgLogo;
-        private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lbPartID;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button btnPrint;
+        private System.Windows.Forms.Button btnSaveAsCSV;
     }
 }

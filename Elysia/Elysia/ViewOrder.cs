@@ -20,15 +20,7 @@ namespace Elysia
         {
             InitializeComponent();
             setDataGridView();
-
-            if (dataGridVieworder != null)
-            {
-                setDataGridView();
-            }
-            else
-            {
-                MessageBox.Show("dataGridView1 is null");
-            }
+            dataGridVieworder.AllowUserToAddRows = false;
         }
         private void setDataGridView()
         {
@@ -70,7 +62,15 @@ namespace Elysia
                 }
             }
         }
+<<<<<<< HEAD
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e){
+=======
+        private void btnSave_Click_1(object sender, EventArgs e)
+        {
+            string connectionString = "server=localhost;database=elysia;user=root;password=\"\"";
+            string query = "UPDATE order SET orderStatus = @orderStatus  WHERE orderID=@orderID";
+
+>>>>>>> 61066417ff5f029e244e6f6dec38c9222ba0793c
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
