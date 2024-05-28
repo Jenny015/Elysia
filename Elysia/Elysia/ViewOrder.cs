@@ -16,12 +16,7 @@ namespace Elysia
     {
         string connectionString = "server=localhost;database=elysia;user=root;password=\"\"";
 
-        public ViewOrder()
-        {
-            InitializeComponent();
-            setDataGridView();
-            dataGridVieworder.AllowUserToAddRows = false;
-        }
+
         private void setDataGridView()
         {
 
@@ -62,15 +57,8 @@ namespace Elysia
                 }
             }
         }
-<<<<<<< HEAD
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e){
-=======
-        private void btnSave_Click_1(object sender, EventArgs e)
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            string connectionString = "server=localhost;database=elysia;user=root;password=\"\"";
-            string query = "UPDATE order SET orderStatus = @orderStatus  WHERE orderID=@orderID";
-
->>>>>>> 61066417ff5f029e244e6f6dec38c9222ba0793c
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
@@ -82,19 +70,21 @@ namespace Elysia
 
                     DataGridViewRow row = dataGridVieworder.Rows[e.RowIndex];
                     String orderID = row.Cells["orderID"].Value.ToString();
-                    String partID = row.Cells["XXXXX"].Value.ToString();
+                    String orderStatus = row.Cells["orderStatus"].Value.ToString();
 
 
-                    // Check if the 'actDespQty' data is  null
-                    if (actDespQtyData == "")
+                    // Check if the 'orderStatus' data is  null
+                    if (orderStatus == "Assembled" || orderStatus == "Despatched")
                     {
                         // Perform the action you want to take when the button is clicked
-                        MessageBox.Show("The 'actDespQty' value is NULL.");
+                        MessageBox.Show("The 'orderStatus' can't change.");
 
                     }
-                    else if (actDespQtyData == orderQtyData)
+                    else if (orderStatus == "Assembled")
                     {
-                        cmd.CommandText = $"UPDATE `orderpart` SET opStatus = 'Assembled', actDespQty = {actDespQtyData} WHERE orderID = \'{orderID}\' AND partID = \'{partID}\'";
+                        cmd.CommandText = "UPDATE `order` SET opStatus = 'Assembled', orderStatus = @orderStatus WHERE orderID = @orderID AND partID = @partID";
+                        cmd.Parameters.AddWithValue("@orderStatus", orderStatus);
+                        cmd.Parameters.AddWithValue("@orderID", orderID);
                         try
                         {
                             // Execute the SQl statement
@@ -111,7 +101,11 @@ namespace Elysia
                     }
 
                 }
+            }
+        }
+    }
 }
- 
-   
+
+
+
 
