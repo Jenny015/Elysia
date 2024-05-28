@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 25, 2024 at 07:36 AM
+-- Generation Time: May 28, 2024 at 07:12 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -231,7 +231,7 @@ CREATE TABLE `order` (
   `orderID` char(10) NOT NULL,
   `dealerID` char(7) NOT NULL,
   `orderStatus` varchar(10) NOT NULL DEFAULT 'Processing',
-  `OutStanding` tinyint(1) NOT NULL DEFAULT 0,
+  `OutStanding` char(1) NOT NULL DEFAULT 'N',
   `orderDate` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -240,11 +240,11 @@ CREATE TABLE `order` (
 --
 
 INSERT INTO `order` (`orderID`, `dealerID`, `orderStatus`, `OutStanding`, `orderDate`) VALUES
-('N000000001', 'DL00002', 'Cancelled', 0, '2023-10-12'),
-('N000000002', 'DL00001', 'Despatched', 0, '2024-03-03'),
-('N000000003', 'DL00003', 'Despatched', 1, '2024-04-19'),
-('N000000004', 'DL00004', 'Assembled', 0, '2024-05-19'),
-('N000000005', 'DL00002', 'Processing', 0, '2024-05-21');
+('N000000001', 'DL00002', 'Cancelled', 'N', '2023-10-12'),
+('N000000002', 'DL00001', 'Despatched', 'N', '2024-03-03'),
+('N000000003', 'DL00003', 'Despatched', 'Y', '2024-04-19'),
+('N000000004', 'DL00004', 'Assembled', 'N', '2024-05-19'),
+('N000000005', 'DL00002', 'Processing', 'N', '2024-05-21');
 
 -- --------------------------------------------------------
 
@@ -257,28 +257,29 @@ CREATE TABLE `orderpart` (
   `partID` char(6) NOT NULL,
   `orderQty` int(8) NOT NULL,
   `actDespQty` int(8) DEFAULT NULL,
-  `opStatus` varchar(10) NOT NULL
+  `opStatus` varchar(10) NOT NULL,
+  `addToOrder` char(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `orderpart`
 --
 
-INSERT INTO `orderpart` (`orderID`, `partID`, `orderQty`, `actDespQty`, `opStatus`) VALUES
-('N000000001', 'A00001', 5, NULL, 'Cancelled'),
-('N000000001', 'C00001', 50, NULL, 'Cancelled'),
-('N000000001', 'C00003', 10, NULL, 'Cancelled'),
-('N000000002', 'A00002', 3, 3, 'Assembled'),
-('N000000002', 'A00003', 3, 3, 'Assembled'),
-('N000000003', 'B00002', 20, 20, 'Assembled'),
-('N000000003', 'C00005', 20, 0, 'OStanding'),
-('N000000003', 'D00002', 150, 150, 'Assembled'),
-('N000000003', 'D00004', 200, 50, 'OStanding'),
-('N000000004', 'B00003', 15, 15, 'Assembled'),
-('N000000004', 'B00005', 15, 15, 'Assembled'),
-('N000000005', 'A00001', 3, NULL, 'Processing'),
-('N000000005', 'B00004', 12, NULL, 'Processing'),
-('N000000005', 'D00002', 75, NULL, 'Processing');
+INSERT INTO `orderpart` (`orderID`, `partID`, `orderQty`, `actDespQty`, `opStatus`, `addToOrder`) VALUES
+('N000000001', 'A00001', 5, NULL, 'Cancelled', NULL),
+('N000000001', 'C00001', 50, NULL, 'Cancelled', NULL),
+('N000000001', 'C00003', 10, NULL, 'Cancelled', NULL),
+('N000000002', 'A00002', 3, 3, 'Assembled', NULL),
+('N000000002', 'A00003', 3, 3, 'Assembled', NULL),
+('N000000003', 'B00002', 20, 20, 'Assembled', NULL),
+('N000000003', 'C00005', 20, 0, 'OStanding', NULL),
+('N000000003', 'D00002', 150, 150, 'Assembled', NULL),
+('N000000003', 'D00004', 200, 50, 'OStanding', NULL),
+('N000000004', 'B00003', 15, 15, 'Assembled', NULL),
+('N000000004', 'B00005', 15, 15, 'Assembled', NULL),
+('N000000005', 'A00001', 3, NULL, 'Processing', NULL),
+('N000000005', 'B00004', 12, NULL, 'Processing', NULL),
+('N000000005', 'D00002', 75, NULL, 'Processing', NULL);
 
 -- --------------------------------------------------------
 
