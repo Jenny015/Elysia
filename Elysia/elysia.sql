@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 28, 2024 at 07:12 AM
+-- Generation Time: May 28, 2024 at 12:54 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -231,7 +231,7 @@ CREATE TABLE `order` (
   `orderID` char(10) NOT NULL,
   `dealerID` char(7) NOT NULL,
   `orderStatus` varchar(10) NOT NULL DEFAULT 'Processing',
-  `OutStanding` char(1) NOT NULL DEFAULT 'N',
+  `fromOrder` char(10) DEFAULT NULL,
   `orderDate` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -239,12 +239,12 @@ CREATE TABLE `order` (
 -- Dumping data for table `order`
 --
 
-INSERT INTO `order` (`orderID`, `dealerID`, `orderStatus`, `OutStanding`, `orderDate`) VALUES
-('N000000001', 'DL00002', 'Cancelled', 'N', '2023-10-12'),
-('N000000002', 'DL00001', 'Despatched', 'N', '2024-03-03'),
-('N000000003', 'DL00003', 'Despatched', 'Y', '2024-04-19'),
-('N000000004', 'DL00004', 'Assembled', 'N', '2024-05-19'),
-('N000000005', 'DL00002', 'Processing', 'N', '2024-05-21');
+INSERT INTO `order` (`orderID`, `dealerID`, `orderStatus`, `fromOrder`, `orderDate`) VALUES
+('N000000001', 'DL00002', 'Cancelled', NULL, '2023-10-12'),
+('N000000002', 'DL00001', 'Despatched', NULL, '2024-03-03'),
+('N000000003', 'DL00003', 'Despatched', NULL, '2024-04-19'),
+('N000000004', 'DL00004', 'Assembled', NULL, '2024-05-19'),
+('N000000005', 'DL00002', 'Processing', NULL, '2024-05-21');
 
 -- --------------------------------------------------------
 
@@ -272,9 +272,9 @@ INSERT INTO `orderpart` (`orderID`, `partID`, `orderQty`, `actDespQty`, `opStatu
 ('N000000002', 'A00002', 3, 3, 'Assembled', NULL),
 ('N000000002', 'A00003', 3, 3, 'Assembled', NULL),
 ('N000000003', 'B00002', 20, 20, 'Assembled', NULL),
-('N000000003', 'C00005', 20, 0, 'OStanding', NULL),
+('N000000003', 'C00005', 20, 0, 'Assembled', NULL),
 ('N000000003', 'D00002', 150, 150, 'Assembled', NULL),
-('N000000003', 'D00004', 200, 50, 'OStanding', NULL),
+('N000000003', 'D00004', 200, 50, 'Assembled', NULL),
 ('N000000004', 'B00003', 15, 15, 'Assembled', NULL),
 ('N000000004', 'B00005', 15, 15, 'Assembled', NULL),
 ('N000000005', 'A00001', 3, NULL, 'Processing', NULL),

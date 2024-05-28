@@ -32,15 +32,7 @@ namespace Elysia
         {
             InitializeComponent();
             setDataGridView();
-
-            if (dataGridVieworder != null)
-            {
-                setDataGridView();
-            }
-            else
-            {
-                MessageBox.Show("dataGridView1 is null");
-            }
+            dataGridVieworder.AllowUserToAddRows = false;
         }
 
         private void setDataGridView()
@@ -62,10 +54,6 @@ namespace Elysia
                 }
             }
         }
-
-
-
-
         private void btnSave_Click_1(object sender, EventArgs e)
         {
             string connectionString = "server=localhost;database=elysia;user=root;password=\"\"";
