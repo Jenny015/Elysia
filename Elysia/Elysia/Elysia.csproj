@@ -157,11 +157,11 @@
     <Compile Include="NewEmployee.Designer.cs">
       <DependentUpon>NewEmployee.cs</DependentUpon>
     </Compile>
-    <Compile Include="newOrder.cs">
+    <Compile Include="NewOrder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="newOrder.Designer.cs">
-      <DependentUpon>newOrder.cs</DependentUpon>
+    <Compile Include="NewOrder.Designer.cs">
+      <DependentUpon>NewOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -195,11 +195,11 @@
     <Compile Include="ViewDealer.Designer.cs">
       <DependentUpon>ViewDealer.cs</DependentUpon>
     </Compile>
-    <Compile Include="viewDID.cs">
+    <Compile Include="ViewDID.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="viewDID.Designer.cs">
-      <DependentUpon>viewDID.cs</DependentUpon>
+    <Compile Include="ViewDID.Designer.cs">
+      <DependentUpon>ViewDID.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewEmployee.cs">
       <SubType>Form</SubType>
@@ -252,8 +252,8 @@
     <EmbeddedResource Include="NewEmployee.resx">
       <DependentUpon>NewEmployee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="newOrder.resx">
-      <DependentUpon>newOrder.cs</DependentUpon>
+    <EmbeddedResource Include="NewOrder.resx">
+      <DependentUpon>NewOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -272,8 +272,8 @@
     <EmbeddedResource Include="ViewDealer.resx">
       <DependentUpon>ViewDealer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="viewDID.resx">
-      <DependentUpon>viewDID.cs</DependentUpon>
+    <EmbeddedResource Include="ViewDID.resx">
+      <DependentUpon>ViewDID.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewEmployee.resx">
       <DependentUpon>ViewEmployee.cs</DependentUpon>

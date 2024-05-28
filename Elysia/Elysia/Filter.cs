@@ -12,6 +12,8 @@ namespace Elysia
 {
     public partial class Filter : Form
     {
+        public string queryString { get; private set; }
+        public event EventHandler Query;
         public Filter(String type)
         {
             InitializeComponent();
@@ -23,6 +25,17 @@ namespace Elysia
             if (type == "DID") {
                 DID.Enabled = true;
             }
+            if(type == "Order")
+            {
+                Order.Enabled = true;
+            }
+        }
+
+        public void btnSearch_Click(object sender, EventArgs e)
+        {
+            queryString = "";
+            Query?.Invoke(this, EventArgs.Empty);
+            this.Close();
         }
     }
 }

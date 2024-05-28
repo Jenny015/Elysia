@@ -22,6 +22,13 @@ namespace Elysia
             btnDID.Checked = true;
             dataGridView1.AllowUserToAddRows = false;
 
+            dataGridView1.Columns[0].ReadOnly = true;
+            dataGridView1.Columns[1].ReadOnly = true;
+            dataGridView1.Columns[2].ReadOnly = true;
+            dataGridView1.Columns[3].ReadOnly = true;
+            dataGridView1.Columns[5].ReadOnly = true;
+            dataGridView1.Columns[6].ReadOnly = true;
+
         }
         private void setDataGridView()
         {
@@ -47,11 +54,6 @@ namespace Elysia
                     DataSet ds = new DataSet();
                     adapter.Fill(ds);
                     dataGridView1.DataSource = ds.Tables[0];
-                    dataGridView1.Columns[0].ReadOnly = true;
-                    dataGridView1.Columns[1].ReadOnly = true;
-                    dataGridView1.Columns[2].ReadOnly = true;
-                    dataGridView1.Columns[4].ReadOnly = true;
-                    dataGridView1.Columns[5].ReadOnly = true;
                 }
             }
         }
@@ -65,29 +67,23 @@ namespace Elysia
                 // Check if the click is on the button column
                 if (e.ColumnIndex == dataGridView1.Columns["buttonColumn"].Index && e.RowIndex >= 0)
                 {
-
                     DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
                     String actDespQtyData = row.Cells["actDespQty"].Value.ToString();
-                    String orderQtyData = row.Cells["orderQty"].Value.ToString();
+                    int totalQty = int.Parse(row.Cells["orderQty"].Value.ToString())+int.Parse(row.Cells["OSQty"].Value.ToString());
                     String orderID = row.Cells["orderID"].Value.ToString();
                     String partID = row.Cells["partID"].Value.ToString();
 
 
                     // Check if the 'actDespQty' data is  null
-                    if (actDespQtyData == "")
+                    if (actDespQtyData == "" || int.Parse(actDespQtyData) < 0)
                     {
-                        MessageBox.Show("The 'actDespQty' value is NULL.");
+                        MessageBox.Show("The 'actDespQty' value should be positive integer.");
                         return;
 
                     }
-                    else if (int.Parse(actDespQtyData) < 0)
+                    else if (int.Parse(actDespQtyData) >= totalQty)
                     {
-                        MessageBox.Show("The 'actDespQty' value must be positive integer.");
-                        return;
-                    }
-                    else if (int.Parse(actDespQtyData) >= int.Parse(orderQtyData))
-                    {
-                        cmd.CommandText = $"UPDATE `orderpart` SET opStatus = 'Assembled', actDespQty = {orderQtyData} WHERE orderID = \'{orderID}\' AND partID = \'{partID}\'";
+                        cmd.CommandText = $"UPDATE `orderpart` SET opStatus = 'Assembled', actDespQty = {totalQty} WHERE orderID = \'{orderID}\' AND partID = \'{partID}\'";
                         try
                         {
                             // Execute the SQl statement
@@ -146,9 +142,9 @@ namespace Elysia
                                     reader.Close(); // Close the reader before executing another command
                                 }
                             }
-                            //add did orderQty - actDespQty to o order
+                            //add new did that belongs to new OSorder, new orderQty = (currentOrderQty - currentActDespQty)
                             cmd.CommandText = $"UPDATE `orderpart` SET opStatus = 'Assembled', actDespQty = {actDespQtyData} WHERE orderID = '{orderID}' AND partID = '{partID}';" +
-                                $"INSERT INTO orderpart (orderID, partID, orderQty, opStatus) VALUES ('{osOrderID}', '{partID}', {int.Parse(orderQtyData)-int.Parse(actDespQtyData)}, 'OStanding')";
+                                $"INSERT INTO orderpart (orderID, partID, orderQty, opStatus) VALUES ('{osOrderID}', '{partID}', {totalQty - int.Parse(actDespQtyData)}, 'OStanding')";
                             try
                             {
                                 // Execute the SQl statement
@@ -172,6 +168,12 @@ namespace Elysia
         {
             Filter filter = new Filter("DID");
             filter.Show();
+        }
+
+        private void btnLogout_CheckedChanged(object sender, EventArgs e)
+        {
+            StaticVariable.logout();
+            this.Close();
         }
     }
 }
