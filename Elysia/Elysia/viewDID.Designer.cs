@@ -1,6 +1,6 @@
 ﻿namespace Elysia
 {
-    partial class viewDID
+    partial class ViewDID
     {
         /// <summary>
         /// Required designer variable.
@@ -222,6 +222,7 @@
             this.button4.TabIndex = 8;
             this.button4.Text = "Filter";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // dataGridView1
             // 
@@ -235,7 +236,7 @@
             this.dataGridView1.TabIndex = 26;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // viewDID
+            // ViewDID
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -244,8 +245,12 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+<<<<<<< HEAD
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "viewDID";
+=======
+            this.Name = "ViewDID";
+>>>>>>> 61066417ff5f029e244e6f6dec38c9222ba0793c
             this.Text = "viewDID";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).EndInit();

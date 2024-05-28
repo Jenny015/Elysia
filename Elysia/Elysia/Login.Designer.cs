@@ -42,7 +42,7 @@
             // 
             this.lb_login.AutoSize = true;
             this.lb_login.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Bold);
-            this.lb_login.Location = new System.Drawing.Point(357, 120);
+            this.lb_login.Location = new System.Drawing.Point(363, 120);
             this.lb_login.Name = "lb_login";
             this.lb_login.Size = new System.Drawing.Size(125, 41);
             this.lb_login.TabIndex = 1;
@@ -51,30 +51,33 @@
             // tb_username
             // 
             this.tb_username.BackColor = System.Drawing.Color.MistyRose;
+            this.tb_username.Font = new System.Drawing.Font("Arial", 12F);
             this.tb_username.Location = new System.Drawing.Point(238, 274);
             this.tb_username.Margin = new System.Windows.Forms.Padding(4);
             this.tb_username.Name = "tb_username";
             this.tb_username.ShortcutsEnabled = false;
-            this.tb_username.Size = new System.Drawing.Size(448, 29);
+            this.tb_username.Size = new System.Drawing.Size(448, 35);
             this.tb_username.TabIndex = 2;
             // 
             // tb_password
             // 
             this.tb_password.BackColor = System.Drawing.Color.MistyRose;
+            this.tb_password.Font = new System.Drawing.Font("Arial", 12F);
             this.tb_password.Location = new System.Drawing.Point(238, 346);
             this.tb_password.Margin = new System.Windows.Forms.Padding(4);
             this.tb_password.Name = "tb_password";
             this.tb_password.PasswordChar = '*';
-            this.tb_password.Size = new System.Drawing.Size(448, 29);
+            this.tb_password.Size = new System.Drawing.Size(448, 35);
             this.tb_password.TabIndex = 3;
             // 
             // btn_login
             // 
             this.btn_login.BackColor = System.Drawing.Color.Plum;
+            this.btn_login.Font = new System.Drawing.Font("Arial", 12F);
             this.btn_login.Location = new System.Drawing.Point(370, 407);
             this.btn_login.Margin = new System.Windows.Forms.Padding(4);
             this.btn_login.Name = "btn_login";
-            this.btn_login.Size = new System.Drawing.Size(112, 32);
+            this.btn_login.Size = new System.Drawing.Size(150, 40);
             this.btn_login.TabIndex = 4;
             this.btn_login.Text = "Login Now";
             this.btn_login.UseVisualStyleBackColor = false;
@@ -83,38 +86,44 @@
             // lb_forgetPW
             // 
             this.lb_forgetPW.AutoSize = true;
-            this.lb_forgetPW.Location = new System.Drawing.Point(184, 474);
+            this.lb_forgetPW.Font = new System.Drawing.Font("Arial", 9F);
+            this.lb_forgetPW.ForeColor = System.Drawing.Color.Purple;
+            this.lb_forgetPW.Location = new System.Drawing.Point(234, 474);
             this.lb_forgetPW.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_forgetPW.Name = "lb_forgetPW";
-            this.lb_forgetPW.Size = new System.Drawing.Size(129, 18);
+            this.lb_forgetPW.Size = new System.Drawing.Size(154, 21);
             this.lb_forgetPW.TabIndex = 5;
             this.lb_forgetPW.Text = "Forget password?";
             // 
             // lb_resetPW
             // 
             this.lb_resetPW.AutoSize = true;
-            this.lb_resetPW.Location = new System.Drawing.Point(512, 474);
+            this.lb_resetPW.Font = new System.Drawing.Font("Arial", 9F);
+            this.lb_resetPW.ForeColor = System.Drawing.Color.Purple;
+            this.lb_resetPW.Location = new System.Drawing.Point(547, 474);
             this.lb_resetPW.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_resetPW.Name = "lb_resetPW";
-            this.lb_resetPW.Size = new System.Drawing.Size(116, 18);
+            this.lb_resetPW.Size = new System.Drawing.Size(139, 21);
             this.lb_resetPW.TabIndex = 6;
             this.lb_resetPW.Text = "Reset password";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(110, 277);
+            this.label1.Font = new System.Drawing.Font("Arial", 12F);
+            this.label1.Location = new System.Drawing.Point(100, 277);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 18);
+            this.label1.Size = new System.Drawing.Size(136, 27);
             this.label1.TabIndex = 7;
             this.label1.Text = "Username: ";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(110, 349);
+            this.label2.Font = new System.Drawing.Font("Arial", 12F);
+            this.label2.Location = new System.Drawing.Point(105, 349);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 18);
+            this.label2.Size = new System.Drawing.Size(131, 27);
             this.label2.TabIndex = 8;
             this.label2.Text = "Password: ";
             // 

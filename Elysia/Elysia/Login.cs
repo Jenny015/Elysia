@@ -17,17 +17,8 @@ namespace Elysia
         public Login()
         {
             InitializeComponent();
-            setComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
 
-        }
-
-        public void setComponent()
-        {
-            tb_username.AutoSize = false;
-            tb_password.AutoSize = false;
-            tb_username.Size = new System.Drawing.Size(250, 30);
-            tb_password.Size = new System.Drawing.Size(250, 30);
         }
 
         private void btn_login_Click(object sender, EventArgs e)
@@ -63,42 +54,52 @@ namespace Elysia
             switch (deptID)
             {
                 case "SO":
-                    NewDealer NewDealer = new NewDealer();
-                    NewDealer.Show();
+                    StaticVariable.department = "SO";
+                    ViewOrder viewOrder = new ViewOrder();
+                    viewOrder.Show();
                     break;
                 case "SP":
-                    viewDID viewDID = new viewDID();
+                    StaticVariable.department = "SP";
+                    ViewDID viewDID = new ViewDID();
                     viewDID.Show();
                     break;
                 case "SD":
+                    StaticVariable.department = "SD";
                     InvoiceGenerateAndDelivery invoiceGenerateAndDelivery = new InvoiceGenerateAndDelivery();
                     invoiceGenerateAndDelivery.Show();
                     break;
                 case "IS":
+                    StaticVariable.department = "IS";
                     ViewInvoice viewInvoice = new ViewInvoice();
                     viewInvoice.Show();
                     break;
                 case "SR":
+                    StaticVariable.department = "SR";
                     ScrapItem scrapItem = new ScrapItem();
                     scrapItem.Show();
                     break;
                 case "PD":
+                    StaticVariable.department = "PD";
                     Reorder reorder = new Reorder();
                     reorder.Show();
                     break;
                 case "GI":
+                    StaticVariable.department = "GI";
                     GoodsInward goodsInward = new GoodsInward();
                     goodsInward.Show();
                     break;
                 case "HR":
+                    StaticVariable.department = "HR";
                     NewEmployee newEmployee = new NewEmployee();
                     newEmployee.Show();
                     break;
                 case "AC":
+                    StaticVariable.department = "AC";
                     ViewLog viewLog = new ViewLog();
                     viewLog.Show();
                     break;
                 case "AD":
+                    StaticVariable.department = "AD";
                     Admin admin = new Admin();
                     admin.Show();
                     break;
