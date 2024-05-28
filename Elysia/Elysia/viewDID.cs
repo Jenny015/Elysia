@@ -136,7 +136,6 @@ namespace Elysia
                                         Console.WriteLine(ex.Message);
                                     }
                                     osOrderID = NewOrder.getOrderID('O');
-                                    MessageBox.Show($"New orderID: {osOrderID}\ndealerID: {dealerID}\norigin orderID: {orderID}", "Error");
                                     cmd.CommandText = $"INSERT INTO `order` (orderID, dealerID, orderStatus, fromOrder) VALUES ('{osOrderID}', '{dealerID}', 'OStanding', '{orderID}')";
                                     // Execute the SQL statement
                                     cmd.ExecuteNonQuery();
@@ -148,7 +147,6 @@ namespace Elysia
                                 }
                             }
                             //add did orderQty - actDespQty to o order
-                            /* TODO */
                             cmd.CommandText = $"UPDATE `orderpart` SET opStatus = 'Assembled', actDespQty = {actDespQtyData} WHERE orderID = '{orderID}' AND partID = '{partID}';" +
                                 $"INSERT INTO orderpart (orderID, partID, orderQty, opStatus) VALUES ('{osOrderID}', '{partID}', {int.Parse(orderQtyData)-int.Parse(actDespQtyData)}, 'OStanding')";
                             try
