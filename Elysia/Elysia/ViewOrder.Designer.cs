@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblOrderID = new System.Windows.Forms.Label();
-            this.lblDate = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnViewOrder = new System.Windows.Forms.RadioButton();
             this.btnNewOrder = new System.Windows.Forms.RadioButton();
@@ -39,33 +37,17 @@
             this.btnLogout = new System.Windows.Forms.RadioButton();
             this.lblDept = new System.Windows.Forms.Label();
             this.imgLogo = new System.Windows.Forms.PictureBox();
+            this.lblOrderID = new System.Windows.Forms.Label();
+            this.lblDate = new System.Windows.Forms.Label();
             this.bar = new System.Windows.Forms.Panel();
             this.OrderInfor = new System.Windows.Forms.Label();
-            this.btnSave = new System.Windows.Forms.Button();
             this.dataGridVieworder = new System.Windows.Forms.DataGridView();
+            this.btnSave = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
             this.bar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridVieworder)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lblOrderID
-            // 
-            this.lblOrderID.AutoSize = true;
-            this.lblOrderID.Location = new System.Drawing.Point(418, -57);
-            this.lblOrderID.Name = "lblOrderID";
-            this.lblOrderID.Size = new System.Drawing.Size(41, 15);
-            this.lblOrderID.TabIndex = 23;
-            this.lblOrderID.Text = "label1";
-            // 
-            // lblDate
-            // 
-            this.lblDate.AutoSize = true;
-            this.lblDate.Location = new System.Drawing.Point(609, -57);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(41, 15);
-            this.lblDate.TabIndex = 22;
-            this.lblDate.Text = "label1";
             // 
             // panel1
             // 
@@ -80,12 +62,12 @@
             this.panel1.Controls.Add(this.lblDept);
             this.panel1.Controls.Add(this.imgLogo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(0, 75);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.panel1.Size = new System.Drawing.Size(373, 879);
-            this.panel1.TabIndex = 26;
+            this.panel1.Size = new System.Drawing.Size(373, 804);
+            this.panel1.TabIndex = 37;
             // 
             // btnViewOrder
             // 
@@ -191,7 +173,7 @@
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLogout.Location = new System.Drawing.Point(4, 825);
+            this.btnLogout.Location = new System.Drawing.Point(4, 750);
             this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(363, 49);
@@ -226,16 +208,34 @@
             this.imgLogo.TabIndex = 0;
             this.imgLogo.TabStop = false;
             // 
+            // lblOrderID
+            // 
+            this.lblOrderID.AutoSize = true;
+            this.lblOrderID.Location = new System.Drawing.Point(418, -29);
+            this.lblOrderID.Name = "lblOrderID";
+            this.lblOrderID.Size = new System.Drawing.Size(41, 15);
+            this.lblOrderID.TabIndex = 36;
+            this.lblOrderID.Text = "label1";
+            // 
+            // lblDate
+            // 
+            this.lblDate.AutoSize = true;
+            this.lblDate.Location = new System.Drawing.Point(609, -29);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(41, 15);
+            this.lblDate.TabIndex = 35;
+            this.lblDate.Text = "label1";
+            // 
             // bar
             // 
             this.bar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(135)))), ((int)(((byte)(167)))));
             this.bar.Controls.Add(this.OrderInfor);
             this.bar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bar.Location = new System.Drawing.Point(373, 0);
+            this.bar.Location = new System.Drawing.Point(0, 0);
             this.bar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bar.Name = "bar";
-            this.bar.Size = new System.Drawing.Size(1337, 75);
-            this.bar.TabIndex = 32;
+            this.bar.Size = new System.Drawing.Size(1710, 75);
+            this.bar.TabIndex = 38;
             // 
             // OrderInfor
             // 
@@ -248,29 +248,28 @@
             this.OrderInfor.TabIndex = 20;
             this.OrderInfor.Text = "Order Information";
             // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.Plum;
-            this.btnSave.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.btnSave.Location = new System.Drawing.Point(1532, 808);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(133, 34);
-            this.btnSave.TabIndex = 21;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click_1);
-            // 
             // dataGridVieworder
             // 
             this.dataGridVieworder.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridVieworder.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridVieworder.ColumnHeadersHeight = 25;
-            this.dataGridVieworder.Location = new System.Drawing.Point(414, 107);
+            this.dataGridVieworder.Location = new System.Drawing.Point(414, 135);
             this.dataGridVieworder.Name = "dataGridVieworder";
             this.dataGridVieworder.RowHeadersWidth = 51;
             this.dataGridVieworder.RowTemplate.Height = 27;
             this.dataGridVieworder.Size = new System.Drawing.Size(1252, 643);
-            this.dataGridVieworder.TabIndex = 33;
+            this.dataGridVieworder.TabIndex = 39;
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.Plum;
+            this.btnSave.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.btnSave.Location = new System.Drawing.Point(1532, 836);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(133, 34);
+            this.btnSave.TabIndex = 34;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = false;
             // 
             // ViewOrder
             // 
@@ -279,12 +278,12 @@
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1710, 879);
-            this.Controls.Add(this.dataGridVieworder);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.bar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblOrderID);
             this.Controls.Add(this.lblDate);
+            this.Controls.Add(this.bar);
+            this.Controls.Add(this.dataGridVieworder);
+            this.Controls.Add(this.btnSave);
             this.Name = "ViewOrder";
             this.Text = "ViewOrder";
             this.panel1.ResumeLayout(false);
@@ -298,8 +297,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label lblOrderID;
-        private System.Windows.Forms.Label lblDate;
+
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.RadioButton btnViewOrder;
         private System.Windows.Forms.RadioButton btnNewOrder;
@@ -309,9 +307,11 @@
         private System.Windows.Forms.RadioButton btnLogout;
         private System.Windows.Forms.Label lblDept;
         public System.Windows.Forms.PictureBox imgLogo;
+        private System.Windows.Forms.Label lblOrderID;
+        private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Panel bar;
         private System.Windows.Forms.Label OrderInfor;
-        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.DataGridView dataGridVieworder;
+        private System.Windows.Forms.Button btnSave;
     }
 }
