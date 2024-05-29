@@ -21,5 +21,11 @@ namespace Elysia
         {
 
         }
+
+        private void radioButton5_CheckedChanged(object sender, EventArgs e)
+        {
+            StaticVariable.logout();
+            this.Close();
+        }
     }
 }

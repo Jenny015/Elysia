@@ -18,16 +18,17 @@ namespace Elysia
         {
             InitializeComponent();
             setComponent(type);
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         public void setComponent(String type)
         {
             if (type == "DID") {
-                DID.Enabled = true;
+                DID.Visible = true;
             }
             if(type == "Order")
             {
-                Order.Enabled = true;
+                Order.Visible = true;
             }
         }
 

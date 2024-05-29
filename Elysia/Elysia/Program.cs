@@ -17,11 +17,7 @@ namespace Elysia
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-<<<<<<< HEAD
-            Application.Run(new viewDID());
-=======
             Application.Run(new Login());
->>>>>>> 61066417ff5f029e244e6f6dec38c9222ba0793c
         }
     }
 }

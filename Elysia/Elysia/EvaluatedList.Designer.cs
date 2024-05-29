@@ -52,7 +52,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(419, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1504, 90);
+            this.panel2.Size = new System.Drawing.Size(1504, 100);
             this.panel2.TabIndex = 33;
             // 
             // label4
@@ -60,7 +60,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(40, 27);
+            this.label4.Location = new System.Drawing.Point(40, 30);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(280, 41);
             this.label4.TabIndex = 20;
@@ -82,7 +82,7 @@
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(4);
-            this.panel1.Size = new System.Drawing.Size(419, 1055);
+            this.panel1.Size = new System.Drawing.Size(419, 1172);
             this.panel1.TabIndex = 32;
             // 
             // btnEvaluatedList
@@ -93,10 +93,10 @@
             this.btnEvaluatedList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEvaluatedList.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnEvaluatedList.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEvaluatedList.Location = new System.Drawing.Point(4, 498);
+            this.btnEvaluatedList.Location = new System.Drawing.Point(4, 552);
             this.btnEvaluatedList.Margin = new System.Windows.Forms.Padding(4);
             this.btnEvaluatedList.Name = "btnEvaluatedList";
-            this.btnEvaluatedList.Size = new System.Drawing.Size(409, 75);
+            this.btnEvaluatedList.Size = new System.Drawing.Size(409, 83);
             this.btnEvaluatedList.TabIndex = 10;
             this.btnEvaluatedList.TabStop = true;
             this.btnEvaluatedList.Text = "Evaluated List";
@@ -112,10 +112,10 @@
             this.btnSparePart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSparePart.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnSparePart.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSparePart.Location = new System.Drawing.Point(4, 423);
+            this.btnSparePart.Location = new System.Drawing.Point(4, 469);
             this.btnSparePart.Margin = new System.Windows.Forms.Padding(4);
             this.btnSparePart.Name = "btnSparePart";
-            this.btnSparePart.Size = new System.Drawing.Size(409, 75);
+            this.btnSparePart.Size = new System.Drawing.Size(409, 83);
             this.btnSparePart.TabIndex = 9;
             this.btnSparePart.TabStop = true;
             this.btnSparePart.Text = "Spare Part";
@@ -131,10 +131,10 @@
             this.btnViewLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnViewLog.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnViewLog.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnViewLog.Location = new System.Drawing.Point(4, 348);
+            this.btnViewLog.Location = new System.Drawing.Point(4, 386);
             this.btnViewLog.Margin = new System.Windows.Forms.Padding(4);
             this.btnViewLog.Name = "btnViewLog";
-            this.btnViewLog.Size = new System.Drawing.Size(409, 75);
+            this.btnViewLog.Size = new System.Drawing.Size(409, 83);
             this.btnViewLog.TabIndex = 8;
             this.btnViewLog.TabStop = true;
             this.btnViewLog.Text = "View Log";
@@ -150,10 +150,10 @@
             this.radioButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.radioButton1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.radioButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radioButton1.Location = new System.Drawing.Point(4, 273);
+            this.radioButton1.Location = new System.Drawing.Point(4, 303);
             this.radioButton1.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(409, 75);
+            this.radioButton1.Size = new System.Drawing.Size(409, 83);
             this.radioButton1.TabIndex = 7;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "User";
@@ -169,24 +169,25 @@
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLogout.Location = new System.Drawing.Point(4, 990);
+            this.btnLogout.Location = new System.Drawing.Point(4, 1100);
             this.btnLogout.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(409, 59);
+            this.btnLogout.Size = new System.Drawing.Size(409, 66);
             this.btnLogout.TabIndex = 6;
             this.btnLogout.TabStop = true;
             this.btnLogout.Text = "Logout";
             this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.CheckedChanged += new System.EventHandler(this.btnLogout_CheckedChanged);
             // 
             // lblDept
             // 
             this.lblDept.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblDept.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
-            this.lblDept.Location = new System.Drawing.Point(4, 198);
+            this.lblDept.Location = new System.Drawing.Point(4, 220);
             this.lblDept.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDept.Name = "lblDept";
-            this.lblDept.Size = new System.Drawing.Size(409, 75);
+            this.lblDept.Size = new System.Drawing.Size(409, 83);
             this.lblDept.TabIndex = 1;
             this.lblDept.Text = "Accountant";
             this.lblDept.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -199,7 +200,7 @@
             this.imgLogo.Location = new System.Drawing.Point(4, 4);
             this.imgLogo.Margin = new System.Windows.Forms.Padding(4);
             this.imgLogo.Name = "imgLogo";
-            this.imgLogo.Size = new System.Drawing.Size(409, 194);
+            this.imgLogo.Size = new System.Drawing.Size(409, 216);
             this.imgLogo.TabIndex = 0;
             this.imgLogo.TabStop = false;
             // 
@@ -207,10 +208,10 @@
             // 
             this.btnPrint.BackColor = System.Drawing.Color.Plum;
             this.btnPrint.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.btnPrint.Location = new System.Drawing.Point(1501, 939);
+            this.btnPrint.Location = new System.Drawing.Point(1501, 1043);
             this.btnPrint.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(150, 41);
+            this.btnPrint.Size = new System.Drawing.Size(150, 46);
             this.btnPrint.TabIndex = 35;
             this.btnPrint.Text = "Print";
             this.btnPrint.UseVisualStyleBackColor = false;
@@ -219,19 +220,19 @@
             // 
             this.btnSaveAsCSV.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnSaveAsCSV.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.btnSaveAsCSV.Location = new System.Drawing.Point(1701, 939);
+            this.btnSaveAsCSV.Location = new System.Drawing.Point(1701, 1043);
             this.btnSaveAsCSV.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSaveAsCSV.Name = "btnSaveAsCSV";
-            this.btnSaveAsCSV.Size = new System.Drawing.Size(150, 41);
+            this.btnSaveAsCSV.Size = new System.Drawing.Size(150, 46);
             this.btnSaveAsCSV.TabIndex = 34;
             this.btnSaveAsCSV.Text = "Save As CSV";
             this.btnSaveAsCSV.UseVisualStyleBackColor = false;
             // 
             // EvaluatedList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1923, 1055);
+            this.ClientSize = new System.Drawing.Size(1923, 1172);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.btnSaveAsCSV);
             this.Controls.Add(this.panel2);

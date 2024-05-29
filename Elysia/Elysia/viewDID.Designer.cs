@@ -38,12 +38,12 @@
             this.imgLogo = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvDID = new System.Windows.Forms.DataGridView();
+            this.btnFilter = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDID)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -59,9 +59,10 @@
             this.panel1.Controls.Add(this.imgLogo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.panel1.Size = new System.Drawing.Size(280, 762);
+            this.panel1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel1.Size = new System.Drawing.Size(419, 1172);
             this.panel1.TabIndex = 3;
             // 
             // btnLogout
@@ -72,9 +73,10 @@
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLogout.Location = new System.Drawing.Point(3, 714);
+            this.btnLogout.Location = new System.Drawing.Point(4, 1099);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(272, 43);
+            this.btnLogout.Size = new System.Drawing.Size(409, 66);
             this.btnLogout.TabIndex = 6;
             this.btnLogout.TabStop = true;
             this.btnLogout.Text = "Logout";
@@ -90,9 +92,10 @@
             this.btnViewOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnViewOrder.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnViewOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnViewOrder.Location = new System.Drawing.Point(3, 359);
+            this.btnViewOrder.Location = new System.Drawing.Point(4, 552);
+            this.btnViewOrder.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnViewOrder.Name = "btnViewOrder";
-            this.btnViewOrder.Size = new System.Drawing.Size(272, 54);
+            this.btnViewOrder.Size = new System.Drawing.Size(409, 83);
             this.btnViewOrder.TabIndex = 5;
             this.btnViewOrder.TabStop = true;
             this.btnViewOrder.Text = "Late Delivery";
@@ -108,9 +111,10 @@
             this.btnNewOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewOrder.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnNewOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNewOrder.Location = new System.Drawing.Point(3, 305);
+            this.btnNewOrder.Location = new System.Drawing.Point(4, 469);
+            this.btnNewOrder.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnNewOrder.Name = "btnNewOrder";
-            this.btnNewOrder.Size = new System.Drawing.Size(272, 54);
+            this.btnNewOrder.Size = new System.Drawing.Size(409, 83);
             this.btnNewOrder.TabIndex = 4;
             this.btnNewOrder.TabStop = true;
             this.btnNewOrder.Text = "Spare Part";
@@ -126,9 +130,10 @@
             this.btnDID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDID.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnDID.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDID.Location = new System.Drawing.Point(3, 251);
+            this.btnDID.Location = new System.Drawing.Point(4, 386);
+            this.btnDID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnDID.Name = "btnDID";
-            this.btnDID.Size = new System.Drawing.Size(272, 54);
+            this.btnDID.Size = new System.Drawing.Size(409, 83);
             this.btnDID.TabIndex = 3;
             this.btnDID.TabStop = true;
             this.btnDID.Text = "DID";
@@ -144,9 +149,10 @@
             this.btnNewDealer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewDealer.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnNewDealer.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNewDealer.Location = new System.Drawing.Point(3, 197);
+            this.btnNewDealer.Location = new System.Drawing.Point(4, 303);
+            this.btnNewDealer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnNewDealer.Name = "btnNewDealer";
-            this.btnNewDealer.Size = new System.Drawing.Size(272, 54);
+            this.btnNewDealer.Size = new System.Drawing.Size(409, 83);
             this.btnNewDealer.TabIndex = 2;
             this.btnNewDealer.TabStop = true;
             this.btnNewDealer.Text = "User";
@@ -158,9 +164,10 @@
             // 
             this.lblDept.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblDept.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
-            this.lblDept.Location = new System.Drawing.Point(3, 143);
+            this.lblDept.Location = new System.Drawing.Point(4, 220);
+            this.lblDept.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDept.Name = "lblDept";
-            this.lblDept.Size = new System.Drawing.Size(272, 54);
+            this.lblDept.Size = new System.Drawing.Size(409, 83);
             this.lblDept.TabIndex = 1;
             this.lblDept.Text = "Storemen";
             this.lblDept.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -170,9 +177,10 @@
             this.imgLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(84)))), ((int)(((byte)(129)))));
             this.imgLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.imgLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.imgLogo.Location = new System.Drawing.Point(3, 3);
+            this.imgLogo.Location = new System.Drawing.Point(4, 5);
+            this.imgLogo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.imgLogo.Name = "imgLogo";
-            this.imgLogo.Size = new System.Drawing.Size(272, 140);
+            this.imgLogo.Size = new System.Drawing.Size(409, 215);
             this.imgLogo.TabIndex = 0;
             this.imgLogo.TabStop = false;
             // 
@@ -181,10 +189,9 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(135)))), ((int)(((byte)(167)))));
             this.panel2.Controls.Add(this.label4);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(280, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Location = new System.Drawing.Point(419, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1002, 65);
+            this.panel2.Size = new System.Drawing.Size(1504, 100);
             this.panel2.TabIndex = 24;
             // 
             // label4
@@ -192,69 +199,50 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(27, 20);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(40, 31);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(525, 29);
+            this.label4.Size = new System.Drawing.Size(787, 41);
             this.label4.TabIndex = 20;
             this.label4.Text = "Order Processing System (Assemble DID)";
             // 
-            // panel3
+            // dgvDID
             // 
-            this.panel3.AutoSize = true;
-            this.panel3.Controls.Add(this.button4);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(280, 65);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1002, 34);
-            this.panel3.TabIndex = 25;
+            this.dgvDID.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDID.Location = new System.Drawing.Point(439, 126);
+            this.dgvDID.Name = "dgvDID";
+            this.dgvDID.RowHeadersWidth = 62;
+            this.dgvDID.RowTemplate.Height = 31;
+            this.dgvDID.Size = new System.Drawing.Size(1459, 969);
+            this.dgvDID.TabIndex = 26;
             // 
-            // button4
+            // btnFilter
             // 
-            this.button4.BackColor = System.Drawing.Color.White;
-            this.button4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.button4.Location = new System.Drawing.Point(469, 1);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(67, 30);
-            this.button4.TabIndex = 8;
-            this.button4.Text = "Filter";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(280, 103);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 31;
-            this.dataGridView1.Size = new System.Drawing.Size(1002, 659);
-            this.dataGridView1.TabIndex = 26;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.btnFilter.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.btnFilter.Location = new System.Drawing.Point(1748, 1113);
+            this.btnFilter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnFilter.Name = "btnFilter";
+            this.btnFilter.Size = new System.Drawing.Size(150, 45);
+            this.btnFilter.TabIndex = 34;
+            this.btnFilter.Text = "Filter";
+            this.btnFilter.UseVisualStyleBackColor = true;
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
             // ViewDID
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1282, 762);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(1923, 1172);
+            this.Controls.Add(this.btnFilter);
+            this.Controls.Add(this.dgvDID);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-<<<<<<< HEAD
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "viewDID";
-=======
             this.Name = "ViewDID";
->>>>>>> 61066417ff5f029e244e6f6dec38c9222ba0793c
             this.Text = "viewDID";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDID)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -271,7 +259,7 @@
         public System.Windows.Forms.PictureBox imgLogo;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvDID;
+        private System.Windows.Forms.Button btnFilter;
     }
 }

@@ -18,16 +18,17 @@ namespace Elysia
         {
             InitializeComponent();
             setDataGridView();
-            this.dataGridView1.CellClick += new DataGridViewCellEventHandler(dataGridView1_CellClick);
+            this.StartPosition = FormStartPosition.CenterScreen;
+            lblDept.Text = StaticVariable.dept_full();
+            this.dgvDID.CellClick += new DataGridViewCellEventHandler(dataGridView1_CellClick);
             btnDID.Checked = true;
-            dataGridView1.AllowUserToAddRows = false;
+            dgvDID.AllowUserToAddRows = false;
 
-            dataGridView1.Columns[0].ReadOnly = true;
-            dataGridView1.Columns[1].ReadOnly = true;
-            dataGridView1.Columns[2].ReadOnly = true;
-            dataGridView1.Columns[3].ReadOnly = true;
-            dataGridView1.Columns[5].ReadOnly = true;
-            dataGridView1.Columns[6].ReadOnly = true;
+            dgvDID.Columns[0].ReadOnly = true;
+            dgvDID.Columns[1].ReadOnly = true;
+            dgvDID.Columns[2].ReadOnly = true;
+            dgvDID.Columns[4].ReadOnly = true;
+            dgvDID.Columns[5].ReadOnly = true;
 
         }
         private void setDataGridView()
@@ -40,12 +41,12 @@ namespace Elysia
             buttonColumn.UseColumnTextForButtonValue = true;
 
             // Add the button column to the DataGridView
-            dataGridView1.Columns.Add(buttonColumn);
+            dgvDID.Columns.Add(buttonColumn);
         }
 
         private void reloadDataGridView()
         {
-            string query = "SELECT * FROM orderpart WHERE opStatus = 'Processing'";
+            string query = "SELECT OP.orderID, OP.partID, (OP.orderQty+OP.OSQty) AS TotalQty, actDespQty, opStatus FROM orderpart OP, `order` O WHERE opStatus = 'Processing' AND OP.orderID = O.orderID ORDER BY O.orderDate DESC;";
 
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
@@ -53,7 +54,7 @@ namespace Elysia
                 {
                     DataSet ds = new DataSet();
                     adapter.Fill(ds);
-                    dataGridView1.DataSource = ds.Tables[0];
+                    dgvDID.DataSource = ds.Tables[0];
                 }
             }
         }
@@ -65,11 +66,11 @@ namespace Elysia
                 MySqlCommand cmd = conn.CreateCommand();
 
                 // Check if the click is on the button column
-                if (e.ColumnIndex == dataGridView1.Columns["buttonColumn"].Index && e.RowIndex >= 0)
+                if (e.ColumnIndex == dgvDID.Columns["buttonColumn"].Index && e.RowIndex >= 0)
                 {
-                    DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                    DataGridViewRow row = dgvDID.Rows[e.RowIndex];
                     String actDespQtyData = row.Cells["actDespQty"].Value.ToString();
-                    int totalQty = int.Parse(row.Cells["orderQty"].Value.ToString())+int.Parse(row.Cells["OSQty"].Value.ToString());
+                    int totalQty = int.Parse(row.Cells["TotalQty"].Value.ToString());
                     String orderID = row.Cells["orderID"].Value.ToString();
                     String partID = row.Cells["partID"].Value.ToString();
 
@@ -164,16 +165,11 @@ namespace Elysia
             }
         }
 
-<<<<<<< HEAD
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
-=======
-        private void button4_Click(object sender, EventArgs e)
+        private void btnFilter_Click(object sender, EventArgs e)
         {
             Filter filter = new Filter("DID");
             filter.Show();
->>>>>>> 61066417ff5f029e244e6f6dec38c9222ba0793c
         }
 
         private void btnLogout_CheckedChanged(object sender, EventArgs e)

@@ -54,7 +54,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(419, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1504, 90);
+            this.panel2.Size = new System.Drawing.Size(1504, 100);
             this.panel2.TabIndex = 31;
             // 
             // label4
@@ -62,7 +62,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(40, 27);
+            this.label4.Location = new System.Drawing.Point(40, 30);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(221, 41);
             this.label4.TabIndex = 20;
@@ -82,7 +82,7 @@
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(4);
-            this.panel1.Size = new System.Drawing.Size(419, 1055);
+            this.panel1.Size = new System.Drawing.Size(419, 1172);
             this.panel1.TabIndex = 30;
             // 
             // btnScrapItem
@@ -93,10 +93,10 @@
             this.btnScrapItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnScrapItem.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnScrapItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnScrapItem.Location = new System.Drawing.Point(4, 348);
+            this.btnScrapItem.Location = new System.Drawing.Point(4, 386);
             this.btnScrapItem.Margin = new System.Windows.Forms.Padding(4);
             this.btnScrapItem.Name = "btnScrapItem";
-            this.btnScrapItem.Size = new System.Drawing.Size(409, 75);
+            this.btnScrapItem.Size = new System.Drawing.Size(409, 83);
             this.btnScrapItem.TabIndex = 8;
             this.btnScrapItem.TabStop = true;
             this.btnScrapItem.Text = "Scrap Item";
@@ -112,10 +112,10 @@
             this.radioButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.radioButton1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.radioButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radioButton1.Location = new System.Drawing.Point(4, 273);
+            this.radioButton1.Location = new System.Drawing.Point(4, 303);
             this.radioButton1.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(409, 75);
+            this.radioButton1.Size = new System.Drawing.Size(409, 83);
             this.radioButton1.TabIndex = 7;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "User";
@@ -131,24 +131,25 @@
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLogout.Location = new System.Drawing.Point(4, 990);
+            this.btnLogout.Location = new System.Drawing.Point(4, 1100);
             this.btnLogout.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(409, 59);
+            this.btnLogout.Size = new System.Drawing.Size(409, 66);
             this.btnLogout.TabIndex = 6;
             this.btnLogout.TabStop = true;
             this.btnLogout.Text = "Logout";
             this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.CheckedChanged += new System.EventHandler(this.btnLogout_CheckedChanged);
             // 
             // lblDept
             // 
             this.lblDept.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblDept.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
-            this.lblDept.Location = new System.Drawing.Point(4, 198);
+            this.lblDept.Location = new System.Drawing.Point(4, 220);
             this.lblDept.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDept.Name = "lblDept";
-            this.lblDept.Size = new System.Drawing.Size(409, 75);
+            this.lblDept.Size = new System.Drawing.Size(409, 83);
             this.lblDept.TabIndex = 1;
             this.lblDept.Text = "Stock Record Clerk";
             this.lblDept.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -161,7 +162,7 @@
             this.imgLogo.Location = new System.Drawing.Point(4, 4);
             this.imgLogo.Margin = new System.Windows.Forms.Padding(4);
             this.imgLogo.Name = "imgLogo";
-            this.imgLogo.Size = new System.Drawing.Size(409, 194);
+            this.imgLogo.Size = new System.Drawing.Size(409, 216);
             this.imgLogo.TabIndex = 0;
             this.imgLogo.TabStop = false;
             // 
@@ -170,10 +171,10 @@
             this.btnClear.BackColor = System.Drawing.Color.Tomato;
             this.btnClear.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.btnClear.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnClear.Location = new System.Drawing.Point(1307, 779);
+            this.btnClear.Location = new System.Drawing.Point(1307, 866);
             this.btnClear.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(150, 41);
+            this.btnClear.Size = new System.Drawing.Size(150, 46);
             this.btnClear.TabIndex = 33;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
@@ -182,10 +183,10 @@
             // 
             this.btnSave.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnSave.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.btnSave.Location = new System.Drawing.Point(1107, 779);
+            this.btnSave.Location = new System.Drawing.Point(1107, 866);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(150, 41);
+            this.btnSave.Size = new System.Drawing.Size(150, 46);
             this.btnSave.TabIndex = 32;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
@@ -194,7 +195,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(460, 274);
+            this.label2.Location = new System.Drawing.Point(460, 304);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(122, 32);
             this.label2.TabIndex = 34;
@@ -204,7 +205,7 @@
             // 
             this.lbPartID.AutoSize = true;
             this.lbPartID.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
-            this.lbPartID.Location = new System.Drawing.Point(460, 153);
+            this.lbPartID.Location = new System.Drawing.Point(460, 170);
             this.lbPartID.Name = "lbPartID";
             this.lbPartID.Size = new System.Drawing.Size(104, 32);
             this.lbPartID.TabIndex = 35;
@@ -213,7 +214,7 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Arial", 14F);
-            this.textBox1.Location = new System.Drawing.Point(466, 188);
+            this.textBox1.Location = new System.Drawing.Point(466, 209);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(791, 40);
             this.textBox1.TabIndex = 36;
@@ -221,16 +222,16 @@
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Arial", 14F);
-            this.textBox2.Location = new System.Drawing.Point(466, 309);
+            this.textBox2.Location = new System.Drawing.Point(466, 343);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(791, 40);
             this.textBox2.TabIndex = 37;
             // 
             // ScrapItem
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1923, 1055);
+            this.ClientSize = new System.Drawing.Size(1923, 1172);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lbPartID);

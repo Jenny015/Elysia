@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- 主機： 127.0.0.1
--- 產生時間： 2024-05-28 17:35:47
--- 伺服器版本： 10.4.32-MariaDB
--- PHP 版本： 8.2.12
+-- Host: 127.0.0.1
+-- Generation Time: May 29, 2024 at 04:03 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- 資料庫： `elysia`
+-- Database: `elysia`
 --
 
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `category`
+-- Table structure for table `category`
 --
 
 CREATE TABLE `category` (
@@ -33,7 +33,7 @@ CREATE TABLE `category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- 傾印資料表的資料 `category`
+-- Dumping data for table `category`
 --
 
 INSERT INTO `category` (`categoryID`, `categoryName`) VALUES
@@ -45,7 +45,7 @@ INSERT INTO `category` (`categoryID`, `categoryName`) VALUES
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `dealer`
+-- Table structure for table `dealer`
 --
 
 CREATE TABLE `dealer` (
@@ -59,7 +59,7 @@ CREATE TABLE `dealer` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- 傾印資料表的資料 `dealer`
+-- Dumping data for table `dealer`
 --
 
 INSERT INTO `dealer` (`dealerID`, `dName`, `dCompany`, `dPhone`, `dEmail`, `dComAdd`, `dDelivAdd`) VALUES
@@ -72,7 +72,7 @@ INSERT INTO `dealer` (`dealerID`, `dName`, `dCompany`, `dPhone`, `dEmail`, `dCom
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `dept`
+-- Table structure for table `dept`
 --
 
 CREATE TABLE `dept` (
@@ -81,7 +81,7 @@ CREATE TABLE `dept` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- 傾印資料表的資料 `dept`
+-- Dumping data for table `dept`
 --
 
 INSERT INTO `dept` (`deptID`, `deptName`) VALUES
@@ -99,7 +99,7 @@ INSERT INTO `dept` (`deptID`, `deptName`) VALUES
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `emp`
+-- Table structure for table `emp`
 --
 
 CREATE TABLE `emp` (
@@ -115,7 +115,7 @@ CREATE TABLE `emp` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- 傾印資料表的資料 `emp`
+-- Dumping data for table `emp`
 --
 
 INSERT INTO `emp` (`empID`, `empName`, `empGander`, `empPhone`, `empEmail`, `deptID`, `empPostion`, `empPasswd`, `empStatus`) VALUES
@@ -133,7 +133,7 @@ INSERT INTO `emp` (`empID`, `empName`, `empGander`, `empPhone`, `empEmail`, `dep
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `goodinwardpart`
+-- Table structure for table `goodinwardpart`
 --
 
 CREATE TABLE `goodinwardpart` (
@@ -145,7 +145,7 @@ CREATE TABLE `goodinwardpart` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- 傾印資料表的資料 `goodinwardpart`
+-- Dumping data for table `goodinwardpart`
 --
 
 INSERT INTO `goodinwardpart` (`reorderID`, `partID`, `receiveDate`, `roQty`, `actGiQty`) VALUES
@@ -158,7 +158,7 @@ INSERT INTO `goodinwardpart` (`reorderID`, `partID`, `receiveDate`, `roQty`, `ac
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `invoice`
+-- Table structure for table `invoice`
 --
 
 CREATE TABLE `invoice` (
@@ -168,7 +168,7 @@ CREATE TABLE `invoice` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- 傾印資料表的資料 `invoice`
+-- Dumping data for table `invoice`
 --
 
 INSERT INTO `invoice` (`orderID`, `copyID`, `invStatus`) VALUES
@@ -188,7 +188,7 @@ INSERT INTO `invoice` (`orderID`, `copyID`, `invStatus`) VALUES
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `log`
+-- Table structure for table `log`
 --
 
 CREATE TABLE `log` (
@@ -200,7 +200,7 @@ CREATE TABLE `log` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- 傾印資料表的資料 `log`
+-- Dumping data for table `log`
 --
 
 INSERT INTO `log` (`logID`, `empID`, `partID`, `logChanges`, `logDes`) VALUES
@@ -224,7 +224,7 @@ INSERT INTO `log` (`logID`, `empID`, `partID`, `logChanges`, `logDes`) VALUES
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `order`
+-- Table structure for table `order`
 --
 
 CREATE TABLE `order` (
@@ -236,7 +236,7 @@ CREATE TABLE `order` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- 傾印資料表的資料 `order`
+-- Dumping data for table `order`
 --
 
 INSERT INTO `order` (`orderID`, `dealerID`, `orderStatus`, `fromOrder`, `orderDate`) VALUES
@@ -250,21 +250,21 @@ INSERT INTO `order` (`orderID`, `dealerID`, `orderStatus`, `fromOrder`, `orderDa
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `orderpart`
+-- Table structure for table `orderpart`
 --
 
 CREATE TABLE `orderpart` (
   `orderID` char(10) NOT NULL,
   `partID` char(6) NOT NULL,
   `orderQty` int(8) NOT NULL,
-  `OSQty` int(12) NOT NULL DEFAULT 0,
+  `OSQty` int(8) NOT NULL DEFAULT 0,
   `actDespQty` int(8) DEFAULT NULL,
   `opStatus` varchar(10) NOT NULL,
   `addToOrder` char(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- 傾印資料表的資料 `orderpart`
+-- Dumping data for table `orderpart`
 --
 
 INSERT INTO `orderpart` (`orderID`, `partID`, `orderQty`, `OSQty`, `actDespQty`, `opStatus`, `addToOrder`) VALUES
@@ -283,12 +283,12 @@ INSERT INTO `orderpart` (`orderID`, `partID`, `orderQty`, `OSQty`, `actDespQty`,
 ('N000000005', 'B00004', 12, 0, NULL, 'Processing', NULL),
 ('N000000005', 'D00002', 75, 0, NULL, 'Processing', NULL),
 ('O000000001', 'C00005', 20, 0, NULL, 'OStanding', NULL),
-('O000000001', 'D00004', 150, 0, NULL, 'Added', 'N000000006');
+('O000000001', 'D00004', 150, 0, NULL, 'OStanding', NULL);
 
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `part`
+-- Table structure for table `part`
 --
 
 CREATE TABLE `part` (
@@ -301,7 +301,7 @@ CREATE TABLE `part` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- 傾印資料表的資料 `part`
+-- Dumping data for table `part`
 --
 
 INSERT INTO `part` (`partID`, `categoryID`, `partName`, `price`, `partQty`, `partStatus`) VALUES
@@ -329,7 +329,7 @@ INSERT INTO `part` (`partID`, `categoryID`, `partName`, `price`, `partQty`, `par
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `reorder`
+-- Table structure for table `reorder`
 --
 
 CREATE TABLE `reorder` (
@@ -340,7 +340,7 @@ CREATE TABLE `reorder` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- 傾印資料表的資料 `reorder`
+-- Dumping data for table `reorder`
 --
 
 INSERT INTO `reorder` (`reorderID`, `roDate`, `supplierID`, `roStatus`) VALUES
@@ -353,7 +353,7 @@ INSERT INTO `reorder` (`reorderID`, `roDate`, `supplierID`, `roStatus`) VALUES
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `supplier`
+-- Table structure for table `supplier`
 --
 
 CREATE TABLE `supplier` (
@@ -363,7 +363,7 @@ CREATE TABLE `supplier` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- 傾印資料表的資料 `supplier`
+-- Dumping data for table `supplier`
 --
 
 INSERT INTO `supplier` (`supplierID`, `sComName`, `sAdd`) VALUES
@@ -377,7 +377,7 @@ INSERT INTO `supplier` (`supplierID`, `sComName`, `sAdd`) VALUES
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `supplierpart`
+-- Table structure for table `supplierpart`
 --
 
 CREATE TABLE `supplierpart` (
@@ -387,7 +387,7 @@ CREATE TABLE `supplierpart` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- 傾印資料表的資料 `supplierpart`
+-- Dumping data for table `supplierpart`
 --
 
 INSERT INTO `supplierpart` (`supplierID`, `partID`, `purPrice`) VALUES
@@ -413,49 +413,49 @@ INSERT INTO `supplierpart` (`supplierID`, `partID`, `purPrice`) VALUES
 ('S40100', 'D00004', 235);
 
 --
--- 已傾印資料表的索引
+-- Indexes for dumped tables
 --
 
 --
--- 資料表索引 `category`
+-- Indexes for table `category`
 --
 ALTER TABLE `category`
   ADD PRIMARY KEY (`categoryID`);
 
 --
--- 資料表索引 `dealer`
+-- Indexes for table `dealer`
 --
 ALTER TABLE `dealer`
   ADD PRIMARY KEY (`dealerID`);
 
 --
--- 資料表索引 `dept`
+-- Indexes for table `dept`
 --
 ALTER TABLE `dept`
   ADD PRIMARY KEY (`deptID`);
 
 --
--- 資料表索引 `emp`
+-- Indexes for table `emp`
 --
 ALTER TABLE `emp`
   ADD PRIMARY KEY (`empID`),
   ADD KEY `emp_dept_fk` (`deptID`);
 
 --
--- 資料表索引 `goodinwardpart`
+-- Indexes for table `goodinwardpart`
 --
 ALTER TABLE `goodinwardpart`
   ADD PRIMARY KEY (`reorderID`,`partID`),
   ADD KEY `goodInwardPart_part_fk` (`partID`);
 
 --
--- 資料表索引 `invoice`
+-- Indexes for table `invoice`
 --
 ALTER TABLE `invoice`
   ADD PRIMARY KEY (`orderID`,`copyID`);
 
 --
--- 資料表索引 `log`
+-- Indexes for table `log`
 --
 ALTER TABLE `log`
   ADD PRIMARY KEY (`logID`),
@@ -463,103 +463,103 @@ ALTER TABLE `log`
   ADD KEY `log_part_fk` (`partID`);
 
 --
--- 資料表索引 `order`
+-- Indexes for table `order`
 --
 ALTER TABLE `order`
   ADD PRIMARY KEY (`orderID`),
   ADD KEY `order_dealer_fk` (`dealerID`);
 
 --
--- 資料表索引 `orderpart`
+-- Indexes for table `orderpart`
 --
 ALTER TABLE `orderpart`
   ADD PRIMARY KEY (`orderID`,`partID`),
   ADD KEY `orderpart_part_fk` (`partID`);
 
 --
--- 資料表索引 `part`
+-- Indexes for table `part`
 --
 ALTER TABLE `part`
   ADD PRIMARY KEY (`partID`),
   ADD KEY `part_category_fk` (`categoryID`);
 
 --
--- 資料表索引 `reorder`
+-- Indexes for table `reorder`
 --
 ALTER TABLE `reorder`
   ADD PRIMARY KEY (`reorderID`),
   ADD KEY `reorder_supplier_fk` (`supplierID`);
 
 --
--- 資料表索引 `supplier`
+-- Indexes for table `supplier`
 --
 ALTER TABLE `supplier`
   ADD PRIMARY KEY (`supplierID`);
 
 --
--- 資料表索引 `supplierpart`
+-- Indexes for table `supplierpart`
 --
 ALTER TABLE `supplierpart`
   ADD PRIMARY KEY (`supplierID`,`partID`),
   ADD KEY `supplierPart_part_fk` (`partID`);
 
 --
--- 已傾印資料表的限制式
+-- Constraints for dumped tables
 --
 
 --
--- 資料表的限制式 `emp`
+-- Constraints for table `emp`
 --
 ALTER TABLE `emp`
   ADD CONSTRAINT `emp_dept_fk` FOREIGN KEY (`deptID`) REFERENCES `dept` (`deptID`);
 
 --
--- 資料表的限制式 `goodinwardpart`
+-- Constraints for table `goodinwardpart`
 --
 ALTER TABLE `goodinwardpart`
   ADD CONSTRAINT `goodInwardPart_part_fk` FOREIGN KEY (`partID`) REFERENCES `part` (`partID`),
   ADD CONSTRAINT `goodInwardPart_reorder_fk` FOREIGN KEY (`reorderID`) REFERENCES `reorder` (`reorderID`);
 
 --
--- 資料表的限制式 `invoice`
+-- Constraints for table `invoice`
 --
 ALTER TABLE `invoice`
   ADD CONSTRAINT `invoice_order_fk` FOREIGN KEY (`orderID`) REFERENCES `order` (`orderID`);
 
 --
--- 資料表的限制式 `log`
+-- Constraints for table `log`
 --
 ALTER TABLE `log`
   ADD CONSTRAINT `log_emp_fk` FOREIGN KEY (`empID`) REFERENCES `emp` (`empID`),
   ADD CONSTRAINT `log_part_fk` FOREIGN KEY (`partID`) REFERENCES `part` (`partID`);
 
 --
--- 資料表的限制式 `order`
+-- Constraints for table `order`
 --
 ALTER TABLE `order`
   ADD CONSTRAINT `order_dealer_fk` FOREIGN KEY (`dealerID`) REFERENCES `dealer` (`dealerID`);
 
 --
--- 資料表的限制式 `orderpart`
+-- Constraints for table `orderpart`
 --
 ALTER TABLE `orderpart`
   ADD CONSTRAINT `orderpart_order_fk` FOREIGN KEY (`orderID`) REFERENCES `order` (`orderID`),
   ADD CONSTRAINT `orderpart_part_fk` FOREIGN KEY (`partID`) REFERENCES `part` (`partID`);
 
 --
--- 資料表的限制式 `part`
+-- Constraints for table `part`
 --
 ALTER TABLE `part`
   ADD CONSTRAINT `part_category_fk` FOREIGN KEY (`categoryID`) REFERENCES `category` (`categoryID`);
 
 --
--- 資料表的限制式 `reorder`
+-- Constraints for table `reorder`
 --
 ALTER TABLE `reorder`
   ADD CONSTRAINT `reorder_supplier_fk` FOREIGN KEY (`supplierID`) REFERENCES `supplier` (`supplierID`);
 
 --
--- 資料表的限制式 `supplierpart`
+-- Constraints for table `supplierpart`
 --
 ALTER TABLE `supplierpart`
   ADD CONSTRAINT `supplierPart_part_fk` FOREIGN KEY (`partID`) REFERENCES `part` (`partID`),
