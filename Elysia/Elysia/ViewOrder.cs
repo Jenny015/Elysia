@@ -19,7 +19,7 @@ namespace Elysia
         public ViewOrder()
         {
             InitializeComponent();
-            reloadDataGridView();
+            reloadDataGridView("");
             setDataGridView();
             this.StartPosition = FormStartPosition.CenterScreen;
             lblDept.Text = StaticVariable.dept_full();
@@ -38,9 +38,9 @@ namespace Elysia
             // Add the button column to the DataGridView
             dataGridVieworder.Columns.Add(buttonColumn);
         }
-        private void reloadDataGridView()
+        private void reloadDataGridView(String query)
         {
-            string query = "SELECT * FROM `order` ORDER BY orderDate DESC";
+            query = query == "" ? "SELECT * FROM `order` ORDER BY orderDate DESC" : query;
 
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
@@ -85,7 +85,7 @@ namespace Elysia
                         {
                             // Execute the SQl statement
                             cmd.ExecuteNonQuery();
-                            reloadDataGridView();
+                            reloadDataGridView("");
                             MessageBox.Show($"Order: {orderID} has been cancelled.");
                             return;
 
@@ -124,7 +124,7 @@ namespace Elysia
         private void filter_Query(object sender, EventArgs e)
         {
             string query = filter.queryString;
-            MessageBox.Show(query);
+            reloadDataGridView(query);
         }
     }
 }
