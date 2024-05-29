@@ -24,6 +24,8 @@ namespace Elysia
             InitializeComponent();
             LoadInformation();
             btnNewOrder.Checked = true;
+            this.StartPosition = FormStartPosition.CenterScreen;
+            lblDept.Text = StaticVariable.dept_full();
         }
 
         public static void ConnectToSql()
@@ -310,6 +312,12 @@ namespace Elysia
         {
             ViewOrder vOrder = new ViewOrder();
             vOrder.Show();
+        }
+
+        private void btnLogout_CheckedChanged(object sender, EventArgs e)
+        {
+            StaticVariable.logout();
+            this.Close();
         }
     }
 }

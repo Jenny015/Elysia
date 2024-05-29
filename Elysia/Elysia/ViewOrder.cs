@@ -15,19 +15,22 @@ namespace Elysia
     public partial class ViewOrder : Form
     {
         string connectionString = "server=localhost;database=elysia;user=root;password=\"\"";
+        public ViewOrder()
+        {
+            InitializeComponent();
+            reloadDataGridView();
+            setDataGridView();
+            this.StartPosition = FormStartPosition.CenterScreen;
+            lblDept.Text = StaticVariable.dept_full();
 
-
+        }
         private void setDataGridView()
         {
-
             string query = "SELECT * FROM orderpart WHERE opStatus = 'Processing'";
-
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn))
                 {
-
-                    reloadDataGridView();
                     DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn();
                     buttonColumn.HeaderText = "Cancel";
                     buttonColumn.Name = "buttonColumn";
@@ -50,14 +53,12 @@ namespace Elysia
                     DataSet ds = new DataSet();
                     adapter.Fill(ds);
                     dataGridVieworder.DataSource = ds.Tables[0];
-                    dataGridVieworder.Columns[0].ReadOnly = true;
-                    dataGridVieworder.Columns[1].ReadOnly = true;
-                    dataGridVieworder.Columns[4].ReadOnly = true;
+                    dataGridVieworder.ReadOnly = true;
 
                 }
             }
         }
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridVieworder_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
@@ -74,22 +75,25 @@ namespace Elysia
 
 
                     // Check if the 'orderStatus' data is  null
-                    if (orderStatus == "Assembled" || orderStatus == "Despatched")
+                    if (orderStatus != "Processing" && orderStatus != "OStanding")
                     {
                         // Perform the action you want to take when the button is clicked
-                        MessageBox.Show("The 'orderStatus' can't change.");
+                        MessageBox.Show("This order status cannot be changed.");
+                        conn.Close();
+                        return;
 
                     }
-                    else if (orderStatus == "Assembled")
+                    else
                     {
-                        cmd.CommandText = "UPDATE `order` SET opStatus = 'Assembled', orderStatus = @orderStatus WHERE orderID = @orderID AND partID = @partID";
-                        cmd.Parameters.AddWithValue("@orderStatus", orderStatus);
+                        cmd.CommandText = "UPDATE `order` SET orderStatus = 'Cancelled' WHERE orderID = @orderID";
                         cmd.Parameters.AddWithValue("@orderID", orderID);
                         try
                         {
                             // Execute the SQl statement
                             cmd.ExecuteNonQuery();
                             reloadDataGridView();
+                            MessageBox.Show($"Order: {orderID} has been cancelled.");
+                            conn.Close();
                             return;
 
                         }

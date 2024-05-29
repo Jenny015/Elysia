@@ -18,7 +18,9 @@ namespace Elysia
         {
             InitializeComponent();
             setDataGridView();
+            this.StartPosition = FormStartPosition.CenterScreen;
             this.dataGridView1.CellClick += new DataGridViewCellEventHandler(dataGridView1_CellClick);
+            lblDept.Text = StaticVariable.dept_full();
         }
         private void setDataGridView()
         {

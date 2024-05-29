@@ -18,13 +18,20 @@ namespace Elysia
         public InvoiceGenerateAndDelivery()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
             dgvOrder.AllowUserToAddRows = false;
             dgvOrder.ReadOnly = true;
-            LoadDataFromDatabase("SELECT * FROM `order`");
+            LoadDataFromDatabase("");
+            btnInvGen.Checked = true;
+            lblDept.Text = StaticVariable.dept_full();
 
         }
         private void LoadDataFromDatabase(string query)
         {
+            if(query == "")
+            {
+                query = "SELECT * FROM `order`";
+            }
             using (MySqlCommand cmd = new MySqlCommand(query, cnn))
             {
                 using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
@@ -36,6 +43,18 @@ namespace Elysia
                     dgvOrder.DataSource = dt;
                 }
             }
+        }
+        private void setDataGridView()
+        {
+            LoadDataFromDatabase("");
+            DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn();
+            buttonColumn.HeaderText = "...";
+            buttonColumn.Name = "detailButton";
+            buttonColumn.Text = "Detail";
+            buttonColumn.UseColumnTextForButtonValue = true;
+
+            // Add the button column to the DataGridView
+            dgvOrder.Columns.Add(buttonColumn);
         }
         private void btnFilter_Click(object sender, EventArgs e)
         {
