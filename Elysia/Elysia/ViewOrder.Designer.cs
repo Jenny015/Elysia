@@ -42,7 +42,7 @@
             this.bar = new System.Windows.Forms.Panel();
             this.OrderInfor = new System.Windows.Forms.Label();
             this.dataGridVieworder = new System.Windows.Forms.DataGridView();
-            this.btnSave = new System.Windows.Forms.Button();
+            this.btnFilter = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
             this.bar.SuspendLayout();
@@ -261,17 +261,17 @@
             this.dataGridVieworder.TabIndex = 39;
             this.dataGridVieworder.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridVieworder_CellClick);
             // 
-            // btnSave
+            // btnFilter
             // 
-            this.btnSave.BackColor = System.Drawing.Color.Plum;
-            this.btnSave.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.btnSave.Location = new System.Drawing.Point(1724, 1115);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(150, 45);
-            this.btnSave.TabIndex = 34;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnFilter.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.btnFilter.Location = new System.Drawing.Point(1724, 1089);
+            this.btnFilter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnFilter.Name = "btnFilter";
+            this.btnFilter.Size = new System.Drawing.Size(150, 45);
+            this.btnFilter.TabIndex = 41;
+            this.btnFilter.Text = "Filter";
+            this.btnFilter.UseVisualStyleBackColor = true;
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
             // ViewOrder
             // 
@@ -280,12 +280,12 @@
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1924, 1172);
+            this.Controls.Add(this.btnFilter);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblOrderID);
             this.Controls.Add(this.lblDate);
             this.Controls.Add(this.bar);
             this.Controls.Add(this.dataGridVieworder);
-            this.Controls.Add(this.btnSave);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ViewOrder";
             this.Text = "ViewOrder";
@@ -315,6 +315,6 @@
         private System.Windows.Forms.Panel bar;
         private System.Windows.Forms.Label OrderInfor;
         private System.Windows.Forms.DataGridView dataGridVieworder;
-        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnFilter;
     }
 }

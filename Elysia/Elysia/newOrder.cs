@@ -14,7 +14,7 @@ namespace Elysia
 {
     public partial class NewOrder : Form
     {
-        public static MySqlConnection cnn = new MySqlConnection("server=localhost;database=elysia;uid=root;pwd=\"\";");
+        public static string connectionString = "server=localhost;database=elysia;user=root;password=\"\"";
         //dicationary to store order item partID and qty
         private Dictionary<String, int> orderParts = new Dictionary<string, int>();
         //store new orderID
@@ -28,49 +28,38 @@ namespace Elysia
             lblDept.Text = StaticVariable.dept_full();
         }
 
-        public static void ConnectToSql()
-        {
-            try
-            {
-                cnn.Open();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Fail to connect MySQL\n"+ex.Message);
-            }
-        }
-
         public void LoadInformation()
         {
-            ConnectToSql();
-            MySqlCommand cmd = cnn.CreateCommand();
+            using(MySqlConnection conn = new MySqlConnection(connectionString)) {
+                conn.Open();
+                MySqlCommand cmd = conn.CreateCommand();
 
-            //load dealerIDs
-            cmd.CommandText = "SELECT dealerID FROM dealer";
-            using (MySqlDataReader reader = cmd.ExecuteReader())
-            {
-                cbDealerID.Items.Clear();
-
-                while (reader.Read())
+                //load dealerIDs
+                cmd.CommandText = "SELECT dealerID FROM dealer";
+                using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
-                    cbDealerID.Items.Add(reader.GetString(0));
-                }
-            }
-            //load partIDs
-            cmd.CommandText = "SELECT partID FROM part";
-            using (MySqlDataReader reader = cmd.ExecuteReader())
-            {
-                cbPartID.Items.Clear();
+                    cbDealerID.Items.Clear();
 
-                while (reader.Read())
+                    while (reader.Read())
+                    {
+                        cbDealerID.Items.Add(reader.GetString(0));
+                    }
+                }
+                //load partIDs
+                cmd.CommandText = "SELECT partID FROM part";
+                using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
-                    cbPartID.Items.Add(reader.GetString(0));
+                    cbPartID.Items.Clear();
+
+                    while (reader.Read())
+                    {
+                        cbPartID.Items.Add(reader.GetString(0));
+                    }
                 }
+
+                updateOrderID();
+
             }
-
-            updateOrderID();
-
-            cnn.Close();
 
             //display date of the order
             lblDate.Text = DateTime.Today.ToString("d");
@@ -95,21 +84,22 @@ namespace Elysia
         //get the new orderID, type == 'N' or 'O'
         public static String getOrderID(char type)
         {
-            ConnectToSql();
-            MySqlCommand cmd = cnn.CreateCommand();
-            cmd.CommandText = $"SELECT MAX(OrderID) FROM `order` WHERE orderID LIKE '{type}%'";
-            using (MySqlDataReader reader2 = cmd.ExecuteReader())
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
-                if (reader2.Read())
+                conn.Open();
+                MySqlCommand cmd = conn.CreateCommand();
+                cmd.CommandText = $"SELECT MAX(OrderID) FROM `order` WHERE orderID LIKE '{type}%'";
+                using (MySqlDataReader reader2 = cmd.ExecuteReader())
                 {
-                    var maxOrderID = reader2[0];
-                    if (maxOrderID != null && maxOrderID != DBNull.Value)
+                    if (reader2.Read())
                     {
-                        cnn.Close();
-                        return $"{type}{int.Parse(maxOrderID.ToString().Substring(1)) + 1:D9}";
+                        var maxOrderID = reader2[0];
+                        if (maxOrderID != null && maxOrderID != DBNull.Value)
+                        {
+                            return $"{type}{int.Parse(maxOrderID.ToString().Substring(1)) + 1:D9}";
+                        }
                     }
                 }
-                cnn.Close();
                 return null;
             }
         }
@@ -166,21 +156,23 @@ namespace Elysia
                 lblDealerCompany.Text = "N\\A";
                 return;
             }
-            ConnectToSql();
-            MySqlCommand cmd = cnn.CreateCommand();
-
-            //load dealer info
-            String dealerID = cbDealerID.SelectedItem.ToString();
-            cmd.CommandText = $"SELECT dName, dCompany FROM dealer WHERE dealerID = \"{dealerID}\"";
-            using (MySqlDataReader reader = cmd.ExecuteReader())
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
-                while (reader.Read())
+                conn.Open();
+                MySqlCommand cmd = conn.CreateCommand();
+
+                //load dealer info
+                String dealerID = cbDealerID.SelectedItem.ToString();
+                cmd.CommandText = $"SELECT dName, dCompany FROM dealer WHERE dealerID = \"{dealerID}\"";
+                using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
-                    lblDealerName.Text = reader.GetString(0);
-                    lblDealerCompany.Text = reader.GetString(1);
+                    while (reader.Read())
+                    {
+                        lblDealerName.Text = reader.GetString(0);
+                        lblDealerCompany.Text = reader.GetString(1);
+                    }
                 }
             }
-            cnn.Close();
         }
         //clear form components
         private void btnClear_Click(object sender, EventArgs e)
@@ -198,57 +190,60 @@ namespace Elysia
             { 
                 return;
             };
-            ConnectToSql();
-            MySqlCommand cmd = cnn.CreateCommand();
-            Dictionary<String, int> osParts = new Dictionary<string, int>();
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                MySqlCommand cmd = conn.CreateCommand();
+                Dictionary<String, int> osParts = new Dictionary<string, int>();
 
-            //check if outstanding order part currently order
-            cmd.CommandText = $"SELECT partID, orderQty FROM `orderpart` OP, `order` O  WHERE O.dealerID = '{cbDealerID.SelectedItem.ToString()}' AND O.orderID LIKE 'O%' AND O.orderID = OP.orderID";
-            using (MySqlDataReader reader = cmd.ExecuteReader())
-            {
-                while (reader.Read())
+                //check if outstanding order part currently order
+                cmd.CommandText = $"SELECT partID, orderQty FROM `orderpart` OP, `order` O  WHERE O.dealerID = '{cbDealerID.SelectedItem.ToString()}' AND O.orderID LIKE 'O%' AND O.orderID = OP.orderID";
+                using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
-                    osParts.Add(reader.GetString(0), reader.GetInt32(1));
-                }
-            }
-
-            //insert a new order into order DB
-            cmd.CommandText = $"INSERT INTO `order` (orderID, dealerID) VALUES (\"{newOrderID}\", \"{cbDealerID.SelectedItem.ToString()}\")";
-            try
-            {
-                cmd.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Failed to insert order\n" + ex.Message, "Failed");
-            }
-
-            //loop through orderPart dictionary
-            foreach (KeyValuePair<String, int> part in orderParts)
-            {
-                int orderQty;
-                if (osParts.TryGetValue(part.Key, out orderQty))
-                {
-                    //if current order partID contain OSorder partID, add OSorderpart orderQty to OSQty, update OSorderpart addToOrder, status = Added
-                    cmd.CommandText = $"INSERT INTO orderpart VALUES ('{newOrderID}', '{part.Key}', {part.Value}, {osParts[part.Key]}, null, 'Processing', null);" +
-                        $"UPDATE orderpart JOIN `order` ON `order`.`orderID` = `orderpart`.`orderID` SET `orderpart`.`opStatus` = 'Added', `orderpart`.`addToOrder` = '{newOrderID}' WHERE `orderpart`.opStatus = 'OStanding' AND `orderpart`.partID = '{part.Key}' AND `order`.`dealerID` = '{cbDealerID.SelectedItem.ToString()}';";
-                } else
-                {
-                    cmd.CommandText = $"INSERT INTO orderpart VALUES ('{newOrderID}', '{part.Key}', {part.Value}, 0, null, 'Processing', null)";
+                    while (reader.Read())
+                    {
+                        osParts.Add(reader.GetString(0), reader.GetInt32(1));
+                    }
                 }
 
-                //Generate DID
+                //insert a new order into order DB
+                cmd.CommandText = $"INSERT INTO `order` (orderID, dealerID) VALUES (\"{newOrderID}\", \"{cbDealerID.SelectedItem.ToString()}\")";
                 try
                 {
                     cmd.ExecuteNonQuery();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Failed to insert DID\n" + ex.Message, "Failed");
+                    MessageBox.Show("Failed to insert order\n" + ex.Message, "Failed");
+                }
+
+                //loop through orderPart dictionary
+                foreach (KeyValuePair<String, int> part in orderParts)
+                {
+                    int orderQty;
+                    if (osParts.TryGetValue(part.Key, out orderQty))
+                    {
+                        //if current order partID contain OSorder partID, add OSorderpart orderQty to OSQty, update OSorderpart addToOrder, status = Added
+                        cmd.CommandText = $"INSERT INTO orderpart VALUES ('{newOrderID}', '{part.Key}', {part.Value}, {osParts[part.Key]}, null, 'Processing', null);" +
+                            $"UPDATE orderpart JOIN `order` ON `order`.`orderID` = `orderpart`.`orderID` SET `orderpart`.`opStatus` = 'Added', `orderpart`.`addToOrder` = '{newOrderID}' WHERE `orderpart`.opStatus = 'OStanding' AND `orderpart`.partID = '{part.Key}' AND `order`.`dealerID` = '{cbDealerID.SelectedItem.ToString()}';";
+                    }
+                    else
+                    {
+                        cmd.CommandText = $"INSERT INTO orderpart VALUES ('{newOrderID}', '{part.Key}', {part.Value}, 0, null, 'Processing', null)";
+                    }
+
+                    //Generate DID
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Failed to insert DID\n" + ex.Message, "Failed");
+                    }
                 }
             }
             updateOrderID();
-            cnn.Close();
             MessageBox.Show("New Order has been inserted successfully.", "Success");
             btnClear_Click(null, null);
         }
@@ -285,21 +280,23 @@ namespace Elysia
                 lblStock.Text = "N\\A";
                 return;
             }
-            ConnectToSql();
-            MySqlCommand cmd = cnn.CreateCommand();
-
-            //load dealer info
-            String partID = cbPartID.SelectedItem.ToString();
-            cmd.CommandText = $"SELECT partName, partQty FROM part WHERE partID = \"{partID}\"";
-            using (MySqlDataReader reader = cmd.ExecuteReader())
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
-                while (reader.Read())
+                conn.Open();
+                MySqlCommand cmd = conn.CreateCommand();
+
+                //load dealer info
+                String partID = cbPartID.SelectedItem.ToString();
+                cmd.CommandText = $"SELECT partName, partQty FROM part WHERE partID = \"{partID}\"";
+                using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
-                    lblpartName.Text = reader.GetString(0);
-                    lblStock.Text = reader.GetInt32(1).ToString();
+                    while (reader.Read())
+                    {
+                        lblpartName.Text = reader.GetString(0);
+                        lblStock.Text = reader.GetInt32(1).ToString();
+                    }
                 }
             }
-            cnn.Close();
         }
 
         //logout
@@ -311,6 +308,7 @@ namespace Elysia
         private void btnViewOrder_CheckedChanged(object sender, EventArgs e)
         {
             ViewOrder vOrder = new ViewOrder();
+            this.Close();
             vOrder.Show();
         }
 

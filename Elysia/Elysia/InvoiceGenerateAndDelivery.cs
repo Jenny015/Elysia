@@ -30,7 +30,7 @@ namespace Elysia
         {
             if(query == "")
             {
-                query = "SELECT * FROM `order`";
+                query = "SELECT * FROM `order` WHERE orderStatus = 'Assembled' ORDER BY orderDate DESC";
             }
             using (MySqlCommand cmd = new MySqlCommand(query, cnn))
             {
@@ -68,6 +68,7 @@ namespace Elysia
         private void filter_Query(object sender, EventArgs e)
         {
             string query = filter.queryString;
+            LoadDataFromDatabase(query);
         }
 
         private void btnLogout_CheckedChanged(object sender, EventArgs e)

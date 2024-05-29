@@ -103,8 +103,8 @@ namespace Elysia
                     {
                         String osOrderID = "";
                         String dealerID = "";
-                        var confirmResult = MessageBox.Show("Actual Despetch quantity not euqal to order quantity\nAre you sure to continue?", "Please confirm the quantity!", MessageBoxButtons.YesNo);
-                        // If actual despetch qty < order qty, generate outstanding order, and oustanding orderpart
+                        var confirmResult = MessageBox.Show("Actual Despatch quantity not euqal to order quantity\nAre you sure to continue?", "Please confirm the quantity!", MessageBoxButtons.YesNo);
+                        // If actual despatch qty < order qty, generate outstanding order, and oustanding orderpart
                         if (confirmResult == DialogResult.Yes)
                         {
                             //Check if the current order has an outstanding order

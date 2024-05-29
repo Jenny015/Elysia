@@ -15,6 +15,7 @@ namespace Elysia
     public partial class ViewOrder : Form
     {
         string connectionString = "server=localhost;database=elysia;user=root;password=\"\"";
+        private Filter filter;
         public ViewOrder()
         {
             InitializeComponent();
@@ -22,29 +23,24 @@ namespace Elysia
             setDataGridView();
             this.StartPosition = FormStartPosition.CenterScreen;
             lblDept.Text = StaticVariable.dept_full();
+            dataGridVieworder.AllowUserToAddRows = false;
+            btnViewOrder.Checked = true;
 
         }
         private void setDataGridView()
         {
-            string query = "SELECT * FROM orderpart WHERE opStatus = 'Processing'";
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
-            {
-                using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn))
-                {
-                    DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn();
-                    buttonColumn.HeaderText = "Cancel";
-                    buttonColumn.Name = "buttonColumn";
-                    buttonColumn.Text = "Cancel";
-                    buttonColumn.UseColumnTextForButtonValue = true; // This will set the button text to "Click Me"
+            DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn();
+            buttonColumn.HeaderText = "Cancel";
+            buttonColumn.Name = "buttonColumn";
+            buttonColumn.Text = "Cancel";
+            buttonColumn.UseColumnTextForButtonValue = true; // This will set the button text to "Click Me"
 
-                    // Add the button column to the DataGridView
-                    dataGridVieworder.Columns.Add(buttonColumn);
-                }
-            }
+            // Add the button column to the DataGridView
+            dataGridVieworder.Columns.Add(buttonColumn);
         }
         private void reloadDataGridView()
         {
-            string query = "SELECT * FROM `order`";
+            string query = "SELECT * FROM `order` ORDER BY orderDate DESC";
 
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
@@ -62,7 +58,6 @@ namespace Elysia
         {
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
-                conn.Open();
                 MySqlCommand cmd = conn.CreateCommand();
 
                 // Check if the click is on the button column
@@ -79,7 +74,6 @@ namespace Elysia
                     {
                         // Perform the action you want to take when the button is clicked
                         MessageBox.Show("This order status cannot be changed.");
-                        conn.Close();
                         return;
 
                     }
@@ -93,7 +87,6 @@ namespace Elysia
                             cmd.ExecuteNonQuery();
                             reloadDataGridView();
                             MessageBox.Show($"Order: {orderID} has been cancelled.");
-                            conn.Close();
                             return;
 
                         }
@@ -119,6 +112,19 @@ namespace Elysia
         {
             StaticVariable.logout();
             this.Close();
+        }
+
+        private void btnFilter_Click(object sender, EventArgs e)
+        {
+            filter = new Filter("Order");
+            filter.Query += filter_Query;
+            filter.Show();
+        }
+
+        private void filter_Query(object sender, EventArgs e)
+        {
+            string query = filter.queryString;
+            MessageBox.Show(query);
         }
     }
 }
