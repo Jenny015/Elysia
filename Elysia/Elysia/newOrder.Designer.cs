@@ -87,10 +87,10 @@
             this.panel1.Controls.Add(this.imgLogo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.panel1.Size = new System.Drawing.Size(419, 1055);
+            this.panel1.Padding = new System.Windows.Forms.Padding(4);
+            this.panel1.Size = new System.Drawing.Size(419, 1172);
             this.panel1.TabIndex = 2;
             // 
             // btnViewOrder
@@ -102,7 +102,7 @@
             this.btnViewOrder.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnViewOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnViewOrder.Location = new System.Drawing.Point(4, 635);
-            this.btnViewOrder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnViewOrder.Margin = new System.Windows.Forms.Padding(4);
             this.btnViewOrder.Name = "btnViewOrder";
             this.btnViewOrder.Size = new System.Drawing.Size(409, 83);
             this.btnViewOrder.TabIndex = 11;
@@ -122,7 +122,7 @@
             this.btnNewOrder.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnNewOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNewOrder.Location = new System.Drawing.Point(4, 552);
-            this.btnNewOrder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNewOrder.Margin = new System.Windows.Forms.Padding(4);
             this.btnNewOrder.Name = "btnNewOrder";
             this.btnNewOrder.Size = new System.Drawing.Size(409, 83);
             this.btnNewOrder.TabIndex = 10;
@@ -141,7 +141,7 @@
             this.btnViewDealer.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnViewDealer.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnViewDealer.Location = new System.Drawing.Point(4, 469);
-            this.btnViewDealer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnViewDealer.Margin = new System.Windows.Forms.Padding(4);
             this.btnViewDealer.Name = "btnViewDealer";
             this.btnViewDealer.Size = new System.Drawing.Size(409, 83);
             this.btnViewDealer.TabIndex = 9;
@@ -160,7 +160,7 @@
             this.btnNewDealer.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnNewDealer.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNewDealer.Location = new System.Drawing.Point(4, 386);
-            this.btnNewDealer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNewDealer.Margin = new System.Windows.Forms.Padding(4);
             this.btnNewDealer.Name = "btnNewDealer";
             this.btnNewDealer.Size = new System.Drawing.Size(409, 83);
             this.btnNewDealer.TabIndex = 8;
@@ -179,7 +179,7 @@
             this.radioButton1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.radioButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.radioButton1.Location = new System.Drawing.Point(4, 303);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(409, 83);
             this.radioButton1.TabIndex = 7;
@@ -197,8 +197,8 @@
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLogout.Location = new System.Drawing.Point(4, 982);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogout.Location = new System.Drawing.Point(4, 1099);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(409, 67);
             this.btnLogout.TabIndex = 6;
@@ -227,7 +227,7 @@
             this.imgLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.imgLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.imgLogo.Location = new System.Drawing.Point(4, 4);
-            this.imgLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.imgLogo.Margin = new System.Windows.Forms.Padding(4);
             this.imgLogo.Name = "imgLogo";
             this.imgLogo.Size = new System.Drawing.Size(409, 216);
             this.imgLogo.TabIndex = 0;
@@ -299,7 +299,7 @@
             this.lbItems.Location = new System.Drawing.Point(35, 83);
             this.lbItems.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lbItems.Name = "lbItems";
-            this.lbItems.Size = new System.Drawing.Size(220, 292);
+            this.lbItems.Size = new System.Drawing.Size(220, 324);
             this.lbItems.Sorted = true;
             this.lbItems.TabIndex = 9;
             // 
@@ -307,7 +307,7 @@
             // 
             this.lblDate.AutoSize = true;
             this.lblDate.Font = new System.Drawing.Font("Times New Roman", 14F);
-            this.lblDate.Location = new System.Drawing.Point(631, 104);
+            this.lblDate.Location = new System.Drawing.Point(619, 104);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(61, 33);
             this.lblDate.TabIndex = 10;
@@ -364,7 +364,7 @@
             // 
             this.lblDealerName.AutoSize = true;
             this.lblDealerName.Font = new System.Drawing.Font("Times New Roman", 14F);
-            this.lblDealerName.Location = new System.Drawing.Point(655, 247);
+            this.lblDealerName.Location = new System.Drawing.Point(643, 247);
             this.lblDealerName.Name = "lblDealerName";
             this.lblDealerName.Size = new System.Drawing.Size(62, 33);
             this.lblDealerName.TabIndex = 15;
@@ -408,7 +408,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(467, 107);
+            this.label3.Location = new System.Drawing.Point(455, 107);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(158, 32);
             this.label3.TabIndex = 19;
@@ -459,7 +459,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(467, 247);
+            this.label5.Location = new System.Drawing.Point(455, 247);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(182, 32);
             this.label5.TabIndex = 20;
@@ -564,7 +564,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(419, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1504, 100);
+            this.panel2.Size = new System.Drawing.Size(1505, 100);
             this.panel2.TabIndex = 23;
             // 
             // NewOrder
@@ -572,7 +572,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1923, 1055);
+            this.ClientSize = new System.Drawing.Size(1924, 1172);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.groupBox1);
