@@ -19,12 +19,12 @@ namespace Elysia
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+            lblDept.Text = StaticVariable.dept_full();
+            btnInvGen.Checked = true;
             dgvOrder.AllowUserToAddRows = false;
             dgvOrder.ReadOnly = true;
             LoadDataFromDatabase("");
-            btnInvGen.Checked = true;
-            lblDept.Text = StaticVariable.dept_full();
-
+            setDataGridView();
         }
         private void LoadDataFromDatabase(string query)
         {
@@ -48,13 +48,15 @@ namespace Elysia
         {
             LoadDataFromDatabase("");
             DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn();
-            buttonColumn.HeaderText = "...";
+            buttonColumn.HeaderText = "Detail";
             buttonColumn.Name = "detailButton";
-            buttonColumn.Text = "Detail";
+            buttonColumn.Text = "...";
             buttonColumn.UseColumnTextForButtonValue = true;
 
             // Add the button column to the DataGridView
             dgvOrder.Columns.Add(buttonColumn);
+
+            //set background color
         }
         private void btnFilter_Click(object sender, EventArgs e)
         {
@@ -72,6 +74,14 @@ namespace Elysia
         {
             StaticVariable.logout();
             this.Close();
+        }
+
+        private void dgvOrder_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if(e.RowIndex % 2 == 0)
+            {
+                dgvOrder.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.MistyRose;
+            }
         }
     }
 }
