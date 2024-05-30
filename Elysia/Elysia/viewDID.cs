@@ -23,12 +23,8 @@ namespace Elysia
             this.dgvDID.CellClick += new DataGridViewCellEventHandler(dataGridView1_CellClick);
             btnDID.Checked = true;
             dgvDID.AllowUserToAddRows = false;
-
-            dgvDID.Columns[0].ReadOnly = true;
-            dgvDID.Columns[1].ReadOnly = true;
-            dgvDID.Columns[2].ReadOnly = true;
-            dgvDID.Columns[4].ReadOnly = true;
-            dgvDID.Columns[5].ReadOnly = true;
+            dgvDID.ReadOnly = true;
+            dgvDID.Columns[3].ReadOnly = false;
 
         }
         private void setDataGridView()
