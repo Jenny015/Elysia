@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -170,5 +171,69 @@ namespace Elysia
 
         }
 
+        private int currentRowIndex = 0;
+        private bool morePagesToPrint = false;
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            printPrev.Document = printDoc;
+            printPrev.ShowDialog();
+        }
+        private void printDoc_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            try
+            {
+                // Define the start and end points of the area you want to print
+                Point startPoint = new Point(426, 105); // You need to determine the correct coordinates
+                Point endPoint = new Point(1908, 975); // You need to determine the correct coordinates
+
+                // Calculate the height of the content to be printed
+                int contentHeight = endPoint.Y - startPoint.Y;
+
+                // Check if the content fits on one page or needs to be split across multiple pages
+                if (contentHeight <= e.MarginBounds.Height)
+                {
+                    // Content fits on one page, draw the content here...
+                    // You can use e.Graphics.DrawString or e.Graphics.DrawImage as needed
+                }
+                else
+                {
+                    // Content spans multiple pages
+                    // You need to implement logic to handle multiple pages
+                    // This may involve drawing a portion of the content and setting e.HasMorePages to true
+                }
+            }
+            /*try
+            {
+                int start = e.MarginBounds.Top;
+                while (currentRowIndex < dgv.Rows.Count)
+                {
+                    DataGridViewRow row = dgv.Rows[currentRowIndex];
+                    int rowHeight = row.Height;
+                    // Check if the current row will fit on the page
+                    if (startY + rowHeight >= e.MarginBounds.Bottom)
+                    {
+                        morePagesToPrint = true;
+                        break;
+                    }
+                    // Draw the row here...
+                    startY += rowHeight;
+                    currentRowIndex++;
+                }
+                if (morePagesToPrint)
+                    e.HasMorePages = true;
+                else
+                    e.HasMorePages = false;
+            }*/
+            catch (Exception ex)
+            {
+                MessageBox.Show("Exception: "+ex.Message);
+            }
+        }
+
+        private void printDoc_BeginPrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        {
+            currentRowIndex = 0;
+            morePagesToPrint = false;
+        }
     }
 }
