@@ -32,7 +32,6 @@ namespace Elysia
             {
                 case "DID":
                     DID.Visible = true;
-                    DID.Enabled = true;
                     break;
                 case "Order":
                     setComponent_Order();
@@ -57,7 +56,6 @@ namespace Elysia
         public void setComponent_Order()
         {
             Order.Visible = true;
-            Order.Enabled = true;
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
@@ -94,13 +92,11 @@ namespace Elysia
             List<MySqlParameter> parameters = new List<MySqlParameter>();
             if (cbOrderID.SelectedIndex != -1)
             {
-                queryBuilder.Append(" AND orderID = @Value1");
-                parameters.Add(new MySqlParameter("@Value1", cbOrderID.SelectedItem));
+                queryBuilder.Append($" AND orderID = '{cbOrderID.SelectedItem}'");
             }
             if (cbDealerID.SelectedIndex != -1)
             {
-                queryBuilder.Append(" AND dealerID = @Value2");
-                parameters.Add(new MySqlParameter("@Value2", cbDealerID.SelectedItem));
+                queryBuilder.Append($" AND dealerID = '{cbDealerID.SelectedItem}'");
             }
             if (!rbOStatusAll.Checked) {
                 if (rbOStatusA.Checked)
@@ -124,8 +120,18 @@ namespace Elysia
                     queryBuilder.Append(" AND orderStatus = 'OStanding'");
                 }
             }
+            if (cbDate.Checked && oDateTo.Value.Date >= oDateFrom.Value.Date)
+            {
+                
+                queryBuilder.Append($" AND orderDate BETWEEN '{oDateFrom.Value.ToString("yyyy-MM-dd")}' AND '{oDateTo.Value.ToString("yyyy-MM-dd")}'");
+            }
             queryBuilder.Append(" ORDER BY orderDate DESC");
             queryString = queryBuilder.ToString();
+        }
+
+        private void cbDate_CheckedChanged(object sender, EventArgs e)
+        {
+            orderDateContainer.Visible = cbDate.Checked;
         }
     }
 }

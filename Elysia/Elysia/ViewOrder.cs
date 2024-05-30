@@ -23,7 +23,6 @@ namespace Elysia
             setDataGridView();
             this.StartPosition = FormStartPosition.CenterScreen;
             lblDept.Text = StaticVariable.dept_full();
-            dataGridVieworder.AllowUserToAddRows = false;
             btnViewOrder.Checked = true;
 
         }
@@ -49,7 +48,6 @@ namespace Elysia
                     DataSet ds = new DataSet();
                     adapter.Fill(ds);
                     dataGridVieworder.DataSource = ds.Tables[0];
-                    dataGridVieworder.ReadOnly = true;
 
                 }
             }
