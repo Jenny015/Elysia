@@ -1,6 +1,6 @@
 ﻿namespace Elysia
 {
-    partial class Reorder
+    partial class DangerLevel
     {
         /// <summary>
         /// Required designer variable.
@@ -40,9 +40,11 @@
             this.btnLogout = new System.Windows.Forms.RadioButton();
             this.lblDept = new System.Windows.Forms.Label();
             this.imgLogo = new System.Windows.Forms.PictureBox();
+            this.dgvDangerLevel = new System.Windows.Forms.DataGridView();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDangerLevel)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -52,8 +54,8 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(419, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1505, 100);
-            this.panel2.TabIndex = 31;
+            this.panel2.Size = new System.Drawing.Size(1504, 100);
+            this.panel2.TabIndex = 33;
             // 
             // label4
             // 
@@ -62,9 +64,9 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(40, 31);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(188, 41);
+            this.label4.Size = new System.Drawing.Size(263, 41);
             this.label4.TabIndex = 20;
-            this.label4.Text = "Re-order";
+            this.label4.Text = "Danger Level";
             // 
             // panel1
             // 
@@ -84,8 +86,8 @@
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.panel1.Size = new System.Drawing.Size(419, 1062);
-            this.panel1.TabIndex = 30;
+            this.panel1.Size = new System.Drawing.Size(419, 1055);
+            this.panel1.TabIndex = 32;
             // 
             // btnDangerLevel
             // 
@@ -105,7 +107,6 @@
             this.btnDangerLevel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnDangerLevel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDangerLevel.UseVisualStyleBackColor = false;
-            this.btnDangerLevel.CheckedChanged += new System.EventHandler(this.btnDangerLevel_CheckedChanged);
             // 
             // btnViewReorder
             // 
@@ -210,7 +211,7 @@
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLogout.Location = new System.Drawing.Point(4, 989);
+            this.btnLogout.Location = new System.Drawing.Point(4, 982);
             this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(409, 66);
@@ -219,7 +220,6 @@
             this.btnLogout.Text = "Logout";
             this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnLogout.UseVisualStyleBackColor = false;
-            this.btnLogout.CheckedChanged += new System.EventHandler(this.btnLogout_CheckedChanged);
             // 
             // lblDept
             // 
@@ -245,19 +245,32 @@
             this.imgLogo.TabIndex = 0;
             this.imgLogo.TabStop = false;
             // 
-            // Reorder
+            // dgvDangerLevel
+            // 
+            this.dgvDangerLevel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDangerLevel.Location = new System.Drawing.Point(447, 117);
+            this.dgvDangerLevel.Name = "dgvDangerLevel";
+            this.dgvDangerLevel.RowHeadersWidth = 62;
+            this.dgvDangerLevel.RowTemplate.Height = 31;
+            this.dgvDangerLevel.Size = new System.Drawing.Size(1420, 878);
+            this.dgvDangerLevel.TabIndex = 34;
+            this.dgvDangerLevel.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDangerLevel_CellClick);
+            // 
+            // DangerLevel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1924, 1062);
+            this.ClientSize = new System.Drawing.Size(1923, 1055);
+            this.Controls.Add(this.dgvDangerLevel);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Name = "Reorder";
-            this.Text = "Reorder";
+            this.Name = "DangerLevel";
+            this.Text = "DangerLevel";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDangerLevel)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -267,6 +280,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.RadioButton btnDangerLevel;
         private System.Windows.Forms.RadioButton btnViewReorder;
         private System.Windows.Forms.RadioButton btnReorder;
         private System.Windows.Forms.RadioButton btnViewSupplier;
@@ -275,6 +289,6 @@
         private System.Windows.Forms.RadioButton btnLogout;
         private System.Windows.Forms.Label lblDept;
         public System.Windows.Forms.PictureBox imgLogo;
-        private System.Windows.Forms.RadioButton btnDangerLevel;
+        private System.Windows.Forms.DataGridView dgvDangerLevel;
     }
 }
