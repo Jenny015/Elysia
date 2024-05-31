@@ -10,12 +10,15 @@ namespace Elysia
     //To store global variable that every form could access to
     public static class StaticVariable
     {
+        public static readonly int reOrder = 50000;
+        public static readonly int danger = 30000;
+        public static readonly int outOfStock = 0;
         //Store the user's department in short form
-        public static string department {  get; set; }
+        public static string dept {  get; set; }
         //Return the full name of department
         public static string dept_full()
         {
-            switch (department) {
+            switch (dept) {
                 case "SO":
                     return "Sales Office";
                 case "ST":

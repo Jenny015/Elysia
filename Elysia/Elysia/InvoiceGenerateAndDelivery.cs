@@ -167,7 +167,6 @@ namespace Elysia
 
             }
             lblOrderID.Text = orderID;
-            lblToday.Text = DateTime.Today.ToString("d");
 
         }
 
@@ -234,6 +233,19 @@ namespace Elysia
         {
             currentRowIndex = 0;
             morePagesToPrint = false;
+        }
+
+        private void btnViewInvoice_CheckedChanged(object sender, EventArgs e)
+        {
+            ViewInvoice vi = new ViewInvoice();
+            vi.Show();
+            this.Close();
+        }
+
+        private void btnLogout_CheckedChanged_1(object sender, EventArgs e)
+        {
+            StaticVariable.logout();
+            this.Close();
         }
     }
 }

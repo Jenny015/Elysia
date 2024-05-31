@@ -21,6 +21,13 @@ namespace Elysia
             reloadDataGridView("");
             setDataGridView();
             lblDept.Text = StaticVariable.dept_full();
+            btnViewInvoice.Checked = true;
+            if (StaticVariable.dept == "SD")
+            {
+                btnIG.Visible = true;
+                btnLD.Visible = true;
+                btnVO.Visible = true;
+            }
         }
 
         private void reloadDataGridView(String query)
@@ -34,7 +41,7 @@ namespace Elysia
                     {
                         DataSet ds = new DataSet();
                         adapter.Fill(ds);
-                        dataGridVieworder.DataSource = ds.Tables[0];
+                        dgvInv.DataSource = ds.Tables[0];
                     }
                 }
             }
@@ -43,39 +50,34 @@ namespace Elysia
                 MessageBox.Show(ex.Message);
             }
         }
-
         private void setDataGridView()
         {
-            string query = "SELECT * FROM emp";
-            try
-            {
-                using (MySqlConnection conn = new MySqlConnection(connectionString))
-                {
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn))
-                    {
-                        DataSet ds = new DataSet();
-                        adapter.Fill(ds);
-                        dataGridVieworder.DataSource = ds.Tables[0];
-                        dataGridVieworder.Columns[0].ReadOnly = true;
+            DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn();
+            buttonColumn.HeaderText = "View";
+            buttonColumn.Name = "buttonColumn";
+            buttonColumn.Text = "View";
+            buttonColumn.UseColumnTextForButtonValue = true;
 
-                        if (!dataGridVieworder.Columns.Contains("buttonColumn"))
-                        {
-                            DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn();
-                            buttonColumn.HeaderText = "Assemble";
-                            buttonColumn.Name = "buttonColumn";
-                            buttonColumn.Text = "Assemble";
-                            buttonColumn.UseColumnTextForButtonValue = true;
-                            dataGridVieworder.Columns.Add(buttonColumn);
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
+            // Add the button column to the DataGridView
+            dgvInv.Columns.Add(buttonColumn);
+
+            DataGridViewButtonColumn buttonColumn2 = new DataGridViewButtonColumn();
+            buttonColumn2.UseColumnTextForButtonValue = true;
+            if (StaticVariable.dept == "IS")
             {
-                MessageBox.Show(ex.Message);
+                buttonColumn2.HeaderText = "Sign";
+                buttonColumn2.Name = "Sign";
+                buttonColumn2.Text = "Sign";
+            } else if (StaticVariable.dept == "SD")
+            {
+                buttonColumn2.HeaderText = "Send";
+                buttonColumn2.Name = "Send";
+                buttonColumn2.Text = "Send";
             }
+            dgvInv.Columns.Add(buttonColumn2);
+            reloadDataGridView("");
+
         }
-
         private void btnLogout_CheckedChanged(object sender, EventArgs e)
         {
             StaticVariable.logout();
