@@ -10,11 +10,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-using Microsoft.Office.Interop.Word;
 using System.Reflection;
 using static System.Net.Mime.MediaTypeNames;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.IO;
 
 
 namespace Elysia
@@ -62,7 +64,7 @@ namespace Elysia
             DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn();
             buttonColumn.HeaderText = "Detail";
             buttonColumn.Name = "detailButton";
-            buttonColumn.Text = "...";
+            buttonColumn.Text = "Detail";
             buttonColumn.UseColumnTextForButtonValue = true;
 
             // Add the button column to the DataGridView
@@ -180,129 +182,6 @@ namespace Elysia
             }
             lblOrderID.Text = orderID;
         }
-        private void btnPrint_Click(object sender, EventArgs e)
-        {
-            _Application wordApp = new Microsoft.Office.Interop.Word.Application();
-            try
-            {
-                wordApp.Visible = true;
-                Document doc = wordApp.Documents.Add();
-                doc.PageSetup.Orientation = WdOrientation.wdOrientLandscape;
-
-                //print heading
-                var heading = doc.Shapes.AddTextbox(
-                            Microsoft.Office.Core.MsoTextOrientation.msoTextOrientationHorizontal,
-                            compName.Location.X * 72 / 96 + 55, compName.Location.Y * 72 / 96 + 20, 414, 30);
-                heading.TextFrame.TextRange.Text = compName.Text;
-                heading.TextFrame.TextRange.Font.Name = "Georgia";
-                heading.TextFrame.TextRange.Font.Size = 18;
-                heading.TextFrame.TextRange.Font.Bold = 1;
-                heading.Line.Visible = Microsoft.Office.Core.MsoTriState.msoFalse;
-
-                float maxY = 0;
-                float x = 0;
-                // Add textbox to the document
-                foreach (Control ctrl in InvPreview.Controls)
-                {
-                    if (ctrl is Label)
-                    {
-                        
-                        System.Drawing.Point loc = ctrl.Location;
-                        string text = ctrl.Text;
-
-                        // Convert pixels to points
-                        float wordX = loc.X * 72 / 96 + 30;
-                        float wordY = loc.Y * 72 / 96 + 90;
-                        maxY = wordY > maxY ? wordY : maxY;
-                        x = wordX;
-                        var textbox = doc.Shapes.AddTextbox(
-                            Microsoft.Office.Core.MsoTextOrientation.msoTextOrientationHorizontal,
-                            wordX, wordY, ctrl.Size.Width*72/96+10, ctrl.Size.Height * 72 / 96+10);
-                        textbox.TextFrame.TextRange.Text = text;
-                        textbox.Line.Visible = Microsoft.Office.Core.MsoTriState.msoFalse;
-                        textbox.TextFrame.TextRange.Font.Name = "Times New Roman";
-                        textbox.TextFrame.TextRange.Font.Size = 10;
-                        textbox.TextFrame.TextRange.ParagraphFormat.LineSpacing = 10;
-                        if (ctrl.Name.Contains("B"))
-                        {
-                            textbox.TextFrame.TextRange.Font.Bold = 1;
-                        }
-                    }
-                }
-                object endOfDoc = "\\endofdoc"; // Predefined bookmark
-                Range wordRange = doc.Bookmarks.get_Item(ref endOfDoc).Range;
-                wordRange.InsertBreak(WdBreakType.wdPageBreak);
-
-                // Add the table after the page break
-                Range tableRange = null;
-                try
-                {
-                    tableRange = wordRange.Next(Microsoft.Office.Interop.Word.WdUnits.wdParagraph, 1);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("An error occurred while setting the table range: " + ex.Message);
-                    return; // Exit the method if the range cannot be set
-                }
-                //Microsoft.Office.Interop.Word.Range tableRange = doc.Range(dgv.Location.X*72/96, dgv.Location.Y * 72 / 96);
-                Table table = doc.Tables.Add(tableRange, dgv.Rows.Count, dgv.Columns.Count);
-
-                // Add data to the table from DataGridView
-                foreach(DataGridViewColumn col in dgv.Columns) {
-                    string text = col.Name;
-                    table.Cell(0, col.Index+1).Range.Text = text;
-                }
-                for (int r = 1; r <= dgv.Rows.Count; r++)
-                {
-                    for (int c = 0; c < dgv.Columns.Count; c++)
-                    {
-                        string text = dgv.Rows[r].Cells[c].Value.ToString();
-                        table.Cell(r + 1, c + 1).Range.Text = text;
-                        table.Cell(r + 1, c + 1).Range.Bold = 1;
-                    }
-                }
-                table.Borders.Enable = 1;
-
-                // Add footer to the document
-                foreach (Control ctrl in footer.Controls)
-                {
-                    if (ctrl is Label)
-                    {
-
-                        System.Drawing.Point loc = ctrl.Location;
-                        string text = ctrl.Text;
-
-                        // Convert pixels to points
-                        float wordX = loc.X * 72 / 96 -20;
-                        float wordY = loc.Y * 72 / 96 + 50;
-                        var textbox = doc.Shapes.AddTextbox(
-                            Microsoft.Office.Core.MsoTextOrientation.msoTextOrientationHorizontal,
-                            wordX, wordY, ctrl.Size.Width * 72 / 96 + 10, ctrl.Size.Height * 72 / 96 + 10);
-                        textbox.TextFrame.TextRange.Text = text;
-                        textbox.Line.Visible = Microsoft.Office.Core.MsoTriState.msoFalse;
-                        textbox.TextFrame.TextRange.Font.Name = "Times New Roman";
-                        textbox.TextFrame.TextRange.Font.Size = 10;
-                        textbox.TextFrame.TextRange.ParagraphFormat.LineSpacing = 10;
-                        if (ctrl.Name.Contains("B"))
-                        {
-                            textbox.TextFrame.TextRange.Font.Bold = 1;
-                        }
-                    }
-                }
-
-                doc.BuiltInDocumentProperties["Title"] = orderID;
-                System.Runtime.InteropServices.Marshal.ReleaseComObject(doc);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("An error occurred: " + ex.Message);
-            }
-            finally
-            {
-                wordApp.Quit();
-                System.Runtime.InteropServices.Marshal.ReleaseComObject(wordApp);
-            }
-        }
 
         private void btnViewInvoice_CheckedChanged(object sender, EventArgs e)
         {
@@ -315,6 +194,121 @@ namespace Elysia
         {
             StaticVariable.logout();
             this.Close();
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            Document document = new Document();
+            PdfWriter writer = PdfWriter.GetInstance(document, new FileStream($"../../../invoice/{orderID}.pdf", FileMode.Create));
+            document.Open();
+
+            Paragraph header = new Paragraph(compName.Text, FontFactory.GetFont("Times New Roman", 16, iTextSharp.text.Font.BOLD));
+            header.Alignment = Element.ALIGN_CENTER;
+            document.Add(header);
+
+            iTextSharp.text.Font boldFont = FontFactory.GetFont("Times-Roman", 12, iTextSharp.text.Font.BOLD);
+            iTextSharp.text.Font normalFont = FontFactory.GetFont("Times-Roman", 12);
+
+            string[] leftComponent = {"BOrderID", "lblOrderID", "BOrderDate", "lblOrderDate", "BDCom", "lblDCom", "BDName", "lblDName", "BDPhone", "lblDPhone", "BDAddr", "lblAddr" };
+            string[] rightComponent = { "BAddr", "addr", "Btel", "tel", "Bemail", "email" };
+
+            List<Control> leftComponentList = leftComponent.Select(controlName => InvPreview.Controls[controlName]).ToList();
+            List<Control> rightComponentList = rightComponent.Select(controlName => InvPreview.Controls[controlName]).ToList();
+
+            float columnWidth = document.PageSize.Width / 2;
+            float columnHeight = document.PageSize.Height - 72;
+            iTextSharp.text.Rectangle leftColumnRect = new iTextSharp.text.Rectangle(60, 60, columnWidth, columnHeight);
+            iTextSharp.text.Rectangle rightColumnRect = new iTextSharp.text.Rectangle(columnWidth + 60, 60, document.PageSize.Width - 60, columnHeight);
+            
+            ColumnText left = new ColumnText(writer.DirectContent);
+            left.SetSimpleColumn(leftColumnRect);
+            for(int i = 0; i < leftComponentList.Count; i+=2)
+            {
+                Phrase p = new Phrase();
+                p.Add(new Chunk(leftComponentList[i].Text, boldFont));
+                p.Add(new Chunk(leftComponentList[i + 1].Text, normalFont));
+                left.AddElement(p);
+            }
+            left.Go();
+
+            ColumnText right = new ColumnText(writer.DirectContent);
+            right.SetSimpleColumn(rightColumnRect);
+            for (int i = 0; i < rightComponentList.Count; i += 2)
+            {
+                Phrase p = new Phrase();
+                p.Add(new Chunk(rightComponentList[i].Text, boldFont));
+                p.Add(new Chunk(rightComponentList[i + 1].Text, normalFont));
+                right.AddElement(p);
+            }
+            right.Go();
+
+            float yPos = Math.Min(left.YLine, right.YLine) - 10;
+
+            PdfPTable table = new PdfPTable(dgv.ColumnCount);
+            table.TotalWidth = document.PageSize.Width - document.LeftMargin - document.RightMargin;
+            table.LockedWidth = true;
+            foreach (DataGridViewColumn col in dgv.Columns)
+            {
+                PdfPCell cell = new PdfPCell(new Phrase(col.Name, boldFont));
+                cell.HorizontalAlignment = Element.ALIGN_CENTER;
+                cell.Padding = 5;
+                table.AddCell(cell);
+            }
+            for(int r = 0; r < dgv.RowCount; r++)
+            {
+                for(int c = 0; c < dgv.ColumnCount; c++)
+                {
+                    PdfPCell cell = new PdfPCell(new Phrase(dgv.Rows[r].Cells[c].Value.ToString(), normalFont));
+                    cell.HorizontalAlignment = Element.ALIGN_CENTER;
+                    cell.Padding = 5;
+                    table.AddCell(cell);
+                }
+            }
+            table.WriteSelectedRows(0, -1, document.LeftMargin, yPos, writer.DirectContent);
+            float endPositionFirstTable = yPos - table.TotalHeight;
+            if (yPos - table.TotalHeight < document.BottomMargin)
+            {
+                document.NewPage();
+                yPos = document.PageSize.Height - document.TopMargin; 
+            }
+            PdfPTable newTable = new PdfPTable(4);
+            PdfPCell cell1 = new PdfPCell(new Phrase(BItems.Text, boldFont));
+            PdfPCell cell2 = new PdfPCell(new Phrase(lblItems.Text, normalFont));
+            PdfPCell cell3 = new PdfPCell(new Phrase(BPrice.Text, boldFont));
+            PdfPCell cell4 = new PdfPCell(new Phrase(lblPrice.Text, normalFont));
+            cell1.Border = PdfPCell.NO_BORDER;
+            cell2.Border = PdfPCell.NO_BORDER;
+            cell3.Border = PdfPCell.NO_BORDER;
+            cell4.Border = PdfPCell.NO_BORDER;
+            newTable.AddCell(cell1);
+            newTable.AddCell(cell2);
+            newTable.AddCell(cell3);
+            newTable.AddCell(cell4);
+            newTable.DefaultCell.Border = PdfPCell.NO_BORDER;
+            newTable.TotalWidth = (float)((document.PageSize.Width - document.LeftMargin - document.RightMargin) / 1.5);
+            newTable.LockedWidth = true;
+
+            float startPositionNewTable = endPositionFirstTable - 20;
+            if (startPositionNewTable < document.BottomMargin + 20)
+            {
+                document.NewPage();
+                startPositionNewTable = document.PageSize.Height - document.TopMargin - 20;
+            }
+
+            newTable.WriteSelectedRows(0, -1, document.LeftMargin, startPositionNewTable, writer.DirectContent);
+            float endPositionNewTable = startPositionNewTable - newTable.TotalHeight;
+            if (endPositionNewTable < document.BottomMargin)
+            {
+                document.NewPage(); 
+                endPositionNewTable = document.PageSize.Height - document.TopMargin;
+            }
+
+            ColumnText signColumn = new ColumnText(writer.DirectContent);
+            signColumn.SetSimpleColumn(new Phrase(Bsign.Text + "___________________", boldFont), document.LeftMargin, endPositionNewTable - 20, document.PageSize.Width - document.RightMargin, 0, 15, Element.ALIGN_RIGHT);
+            signColumn.Go();
+
+            MessageBox.Show("Invoice is generate successfully.", "Success");
+            document.Close();
         }
     }
 }
