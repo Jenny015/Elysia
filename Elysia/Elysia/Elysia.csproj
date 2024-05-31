@@ -38,7 +38,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
-      <HintPath>..\packages\BouncyCastle.Cryptography.2.3.1\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+      <HintPath>..\packages\BouncyCastle.Cryptography.2.4.0\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
     </Reference>
     <Reference Include="Google.Protobuf, Version=3.26.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Protobuf.3.26.1\lib\net45\Google.Protobuf.dll</HintPath>
@@ -54,6 +54,10 @@
     </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Word.15.0.4797.1004\lib\net20\Microsoft.Office.Interop.Word.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="MySql.Data, Version=8.4.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.8.4.0\lib\net462\MySql.Data.dll</HintPath>
@@ -109,12 +113,6 @@
     <Compile Include="Admin.Designer.cs">
       <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataGridViewExample.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DataGridViewExample.Designer.cs">
-      <DependentUpon>DataGridViewExample.cs</DependentUpon>
-    </Compile>
     <Compile Include="EvaluatedList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,11 +131,11 @@
     <Compile Include="GoodsInward.Designer.cs">
       <DependentUpon>GoodsInward.cs</DependentUpon>
     </Compile>
-    <Compile Include="InvoiceGenerateAndDelivery.cs">
+    <Compile Include="InvoiceGenerate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InvoiceGenerateAndDelivery.Designer.cs">
-      <DependentUpon>InvoiceGenerateAndDelivery.cs</DependentUpon>
+    <Compile Include="InvoiceGenerate.Designer.cs">
+      <DependentUpon>InvoiceGenerate.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -228,9 +226,6 @@
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DataGridViewExample.resx">
-      <DependentUpon>DataGridViewExample.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="EvaluatedList.resx">
       <DependentUpon>EvaluatedList.cs</DependentUpon>
     </EmbeddedResource>
@@ -240,8 +235,8 @@
     <EmbeddedResource Include="GoodsInward.resx">
       <DependentUpon>GoodsInward.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InvoiceGenerateAndDelivery.resx">
-      <DependentUpon>InvoiceGenerateAndDelivery.cs</DependentUpon>
+    <EmbeddedResource Include="InvoiceGenerate.resx">
+      <DependentUpon>InvoiceGenerate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -300,6 +295,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
