@@ -47,9 +47,10 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(135)))), ((int)(((byte)(167)))));
             this.panel2.Controls.Add(this.label4);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(419, 0);
+            this.panel2.Location = new System.Drawing.Point(280, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1504, 100);
+            this.panel2.Size = new System.Drawing.Size(1003, 65);
             this.panel2.TabIndex = 31;
             // 
             // label4
@@ -57,9 +58,10 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(40, 30);
+            this.label4.Location = new System.Drawing.Point(27, 20);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(280, 41);
+            this.label4.Size = new System.Drawing.Size(187, 29);
             this.label4.TabIndex = 20;
             this.label4.Text = "Goods Inward";
             // 
@@ -75,10 +77,9 @@
             this.panel1.Controls.Add(this.imgLogo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(4);
-            this.panel1.Size = new System.Drawing.Size(419, 1172);
+            this.panel1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.panel1.Size = new System.Drawing.Size(280, 690);
             this.panel1.TabIndex = 30;
             // 
             // btnViewReorder
@@ -89,10 +90,9 @@
             this.btnViewReorder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnViewReorder.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnViewReorder.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnViewReorder.Location = new System.Drawing.Point(4, 469);
-            this.btnViewReorder.Margin = new System.Windows.Forms.Padding(4);
+            this.btnViewReorder.Location = new System.Drawing.Point(3, 305);
             this.btnViewReorder.Name = "btnViewReorder";
-            this.btnViewReorder.Size = new System.Drawing.Size(409, 83);
+            this.btnViewReorder.Size = new System.Drawing.Size(272, 54);
             this.btnViewReorder.TabIndex = 9;
             this.btnViewReorder.TabStop = true;
             this.btnViewReorder.Text = "View Reorder";
@@ -108,10 +108,9 @@
             this.btnGoodsInward.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGoodsInward.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnGoodsInward.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnGoodsInward.Location = new System.Drawing.Point(4, 386);
-            this.btnGoodsInward.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGoodsInward.Location = new System.Drawing.Point(3, 251);
             this.btnGoodsInward.Name = "btnGoodsInward";
-            this.btnGoodsInward.Size = new System.Drawing.Size(409, 83);
+            this.btnGoodsInward.Size = new System.Drawing.Size(272, 54);
             this.btnGoodsInward.TabIndex = 8;
             this.btnGoodsInward.TabStop = true;
             this.btnGoodsInward.Text = "Goods Inward";
@@ -127,10 +126,9 @@
             this.radioButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.radioButton1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.radioButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radioButton1.Location = new System.Drawing.Point(4, 303);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(4);
+            this.radioButton1.Location = new System.Drawing.Point(3, 197);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(409, 83);
+            this.radioButton1.Size = new System.Drawing.Size(272, 54);
             this.radioButton1.TabIndex = 7;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "User";
@@ -146,10 +144,9 @@
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLogout.Location = new System.Drawing.Point(4, 1100);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLogout.Location = new System.Drawing.Point(3, 642);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(409, 66);
+            this.btnLogout.Size = new System.Drawing.Size(272, 43);
             this.btnLogout.TabIndex = 6;
             this.btnLogout.TabStop = true;
             this.btnLogout.Text = "Logout";
@@ -161,10 +158,9 @@
             // 
             this.lblDept.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblDept.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold);
-            this.lblDept.Location = new System.Drawing.Point(4, 220);
-            this.lblDept.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDept.Location = new System.Drawing.Point(3, 143);
             this.lblDept.Name = "lblDept";
-            this.lblDept.Size = new System.Drawing.Size(409, 83);
+            this.lblDept.Size = new System.Drawing.Size(272, 54);
             this.lblDept.TabIndex = 1;
             this.lblDept.Text = "Goods Inward Department";
             this.lblDept.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -174,20 +170,20 @@
             this.imgLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(84)))), ((int)(((byte)(129)))));
             this.imgLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.imgLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.imgLogo.Location = new System.Drawing.Point(4, 4);
-            this.imgLogo.Margin = new System.Windows.Forms.Padding(4);
+            this.imgLogo.Location = new System.Drawing.Point(3, 3);
             this.imgLogo.Name = "imgLogo";
-            this.imgLogo.Size = new System.Drawing.Size(409, 216);
+            this.imgLogo.Size = new System.Drawing.Size(272, 140);
             this.imgLogo.TabIndex = 0;
             this.imgLogo.TabStop = false;
             // 
             // GoodsInward
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1923, 1172);
+            this.ClientSize = new System.Drawing.Size(1283, 690);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "GoodsInward";
             this.Text = "GoodsInward";
             this.panel2.ResumeLayout(false);

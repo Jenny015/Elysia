@@ -54,52 +54,52 @@ namespace Elysia
             switch (deptID)
             {
                 case "SO":
-                    StaticVariable.department = "SO";
+                    StaticVariable.dept = "SO";
                     ViewOrder viewOrder = new ViewOrder();
                     viewOrder.Show();
                     break;
                 case "SP":
-                    StaticVariable.department = "SP";
+                    StaticVariable.dept = "SP";
                     ViewDID viewDID = new ViewDID();
                     viewDID.Show();
                     break;
                 case "SD":
-                    StaticVariable.department = "SD";
+                    StaticVariable.dept = "SD";
                     InvoiceGenerateAndDelivery invoiceGenerateAndDelivery = new InvoiceGenerateAndDelivery();
                     invoiceGenerateAndDelivery.Show();
                     break;
                 case "IS":
-                    StaticVariable.department = "IS";
+                    StaticVariable.dept = "IS";
                     ViewInvoice viewInvoice = new ViewInvoice();
                     viewInvoice.Show();
                     break;
                 case "SR":
-                    StaticVariable.department = "SR";
+                    StaticVariable.dept = "SR";
                     ScrapItem scrapItem = new ScrapItem();
                     scrapItem.Show();
                     break;
                 case "PD":
-                    StaticVariable.department = "PD";
+                    StaticVariable.dept = "PD";
                     Reorder reorder = new Reorder();
                     reorder.Show();
                     break;
                 case "GI":
-                    StaticVariable.department = "GI";
+                    StaticVariable.dept = "GI";
                     GoodsInward goodsInward = new GoodsInward();
                     goodsInward.Show();
                     break;
                 case "HR":
-                    StaticVariable.department = "HR";
+                    StaticVariable.dept = "HR";
                     NewEmployee newEmployee = new NewEmployee();
                     newEmployee.Show();
                     break;
                 case "AC":
-                    StaticVariable.department = "AC";
+                    StaticVariable.dept = "AC";
                     ViewLog viewLog = new ViewLog();
                     viewLog.Show();
                     break;
                 case "AD":
-                    StaticVariable.department = "AD";
+                    StaticVariable.dept = "AD";
                     Admin admin = new Admin();
                     admin.Show();
                     break;

@@ -132,6 +132,7 @@ namespace Elysia
         private void cbDate_CheckedChanged(object sender, EventArgs e)
         {
             orderDateContainer.Visible = cbDate.Checked;
+            orderDateContainer.Enabled = cbDate.Checked;
         }
     }
 }
