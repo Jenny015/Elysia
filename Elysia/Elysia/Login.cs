@@ -65,7 +65,7 @@ namespace Elysia
                     break;
                 case "SD":
                     StaticVariable.dept = "SD";
-                    InvoiceGenerateAndDelivery invoiceGenerateAndDelivery = new InvoiceGenerateAndDelivery();
+                    InvoiceGenerate invoiceGenerateAndDelivery = new InvoiceGenerate();
                     invoiceGenerateAndDelivery.Show();
                     break;
                 case "IS":
