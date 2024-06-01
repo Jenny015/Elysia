@@ -37,6 +37,7 @@
             this.lblDept = new System.Windows.Forms.Label();
             this.imgLogo = new System.Windows.Forms.PictureBox();
             this.dgvInv = new System.Windows.Forms.DataGridView();
+            this.btnFilter = new System.Windows.Forms.Button();
             this.btnIG = new System.Windows.Forms.RadioButton();
             this.btnLD = new System.Windows.Forms.RadioButton();
             this.btnVO = new System.Windows.Forms.RadioButton();
@@ -236,11 +237,23 @@
             this.btnVO.UseVisualStyleBackColor = false;
             this.btnVO.Visible = false;
             // 
+            // btnFilter
+            // 
+            this.btnFilter.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.btnFilter.Location = new System.Drawing.Point(1541, 747);
+            this.btnFilter.Name = "btnFilter";
+            this.btnFilter.Size = new System.Drawing.Size(133, 33);
+            this.btnFilter.TabIndex = 42;
+            this.btnFilter.Text = "Filter";
+            this.btnFilter.UseVisualStyleBackColor = true;
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
+            // 
             // ViewInvoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1283, 690);
+            this.ClientSize = new System.Drawing.Size(1711, 796);
+            this.Controls.Add(this.btnFilter);
             this.Controls.Add(this.dgvInv);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.isSide);
@@ -270,5 +283,6 @@
         private System.Windows.Forms.RadioButton btnVO;
         private System.Windows.Forms.RadioButton btnLD;
         private System.Windows.Forms.RadioButton btnIG;
+        private System.Windows.Forms.Button btnFilter;
     }
 }
