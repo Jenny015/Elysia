@@ -58,13 +58,12 @@
             this.Bsign = new System.Windows.Forms.Label();
             this.BPrice = new System.Windows.Forms.Label();
             this.BItems = new System.Windows.Forms.Label();
-            this.btnPrint = new System.Windows.Forms.Button();
+            this.btnPDF = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnViewOrder = new System.Windows.Forms.RadioButton();
             this.btnLateDelivery = new System.Windows.Forms.RadioButton();
-            this.btnViewInvoice = new System.Windows.Forms.RadioButton();
             this.btnInvGen = new System.Windows.Forms.RadioButton();
+            this.btnViewInvoice = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.btnLogout = new System.Windows.Forms.RadioButton();
             this.lblDept = new System.Windows.Forms.Label();
@@ -392,19 +391,19 @@
             this.BItems.TabIndex = 30;
             this.BItems.Text = "Total Items: ";
             // 
-            // btnPrint
+            // btnPDF
             // 
-            this.btnPrint.BackColor = System.Drawing.Color.Plum;
-            this.btnPrint.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.btnPrint.Location = new System.Drawing.Point(1413, 746);
-            this.btnPrint.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(133, 34);
-            this.btnPrint.TabIndex = 35;
-            this.btnPrint.Text = "Print";
-            this.btnPrint.UseVisualStyleBackColor = false;
-            this.btnPrint.Visible = false;
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            this.btnPDF.BackColor = System.Drawing.Color.Plum;
+            this.btnPDF.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.btnPDF.Location = new System.Drawing.Point(1413, 746);
+            this.btnPDF.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnPDF.Name = "btnPDF";
+            this.btnPDF.Size = new System.Drawing.Size(133, 34);
+            this.btnPDF.TabIndex = 35;
+            this.btnPDF.Text = "Save as PDF";
+            this.btnPDF.UseVisualStyleBackColor = false;
+            this.btnPDF.Visible = false;
+            this.btnPDF.Click += new System.EventHandler(this.btnPDF_Click);
             // 
             // btnBack
             // 
@@ -423,10 +422,9 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(84)))), ((int)(((byte)(129)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.btnViewOrder);
             this.panel1.Controls.Add(this.btnLateDelivery);
-            this.panel1.Controls.Add(this.btnViewInvoice);
             this.panel1.Controls.Add(this.btnInvGen);
+            this.panel1.Controls.Add(this.btnViewInvoice);
             this.panel1.Controls.Add(this.radioButton1);
             this.panel1.Controls.Add(this.btnLogout);
             this.panel1.Controls.Add(this.lblDept);
@@ -438,25 +436,6 @@
             this.panel1.Padding = new System.Windows.Forms.Padding(4);
             this.panel1.Size = new System.Drawing.Size(373, 791);
             this.panel1.TabIndex = 45;
-            // 
-            // btnViewOrder
-            // 
-            this.btnViewOrder.Appearance = System.Windows.Forms.Appearance.Button;
-            this.btnViewOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(135)))), ((int)(((byte)(167)))));
-            this.btnViewOrder.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnViewOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnViewOrder.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.btnViewOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnViewOrder.Location = new System.Drawing.Point(4, 475);
-            this.btnViewOrder.Margin = new System.Windows.Forms.Padding(4);
-            this.btnViewOrder.Name = "btnViewOrder";
-            this.btnViewOrder.Size = new System.Drawing.Size(363, 62);
-            this.btnViewOrder.TabIndex = 11;
-            this.btnViewOrder.TabStop = true;
-            this.btnViewOrder.Text = "View Order";
-            this.btnViewOrder.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnViewOrder.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnViewOrder.UseVisualStyleBackColor = false;
             // 
             // btnLateDelivery
             // 
@@ -470,12 +449,31 @@
             this.btnLateDelivery.Margin = new System.Windows.Forms.Padding(4);
             this.btnLateDelivery.Name = "btnLateDelivery";
             this.btnLateDelivery.Size = new System.Drawing.Size(363, 62);
-            this.btnLateDelivery.TabIndex = 10;
+            this.btnLateDelivery.TabIndex = 12;
             this.btnLateDelivery.TabStop = true;
             this.btnLateDelivery.Text = "Late Delivery";
             this.btnLateDelivery.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnLateDelivery.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLateDelivery.UseVisualStyleBackColor = false;
+            // 
+            // btnInvGen
+            // 
+            this.btnInvGen.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnInvGen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(135)))), ((int)(((byte)(167)))));
+            this.btnInvGen.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnInvGen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInvGen.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.btnInvGen.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnInvGen.Location = new System.Drawing.Point(4, 351);
+            this.btnInvGen.Margin = new System.Windows.Forms.Padding(4);
+            this.btnInvGen.Name = "btnInvGen";
+            this.btnInvGen.Size = new System.Drawing.Size(363, 62);
+            this.btnInvGen.TabIndex = 11;
+            this.btnInvGen.TabStop = true;
+            this.btnInvGen.Text = "Invoice Generate";
+            this.btnInvGen.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnInvGen.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnInvGen.UseVisualStyleBackColor = false;
             // 
             // btnViewInvoice
             // 
@@ -485,7 +483,7 @@
             this.btnViewInvoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnViewInvoice.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnViewInvoice.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnViewInvoice.Location = new System.Drawing.Point(4, 351);
+            this.btnViewInvoice.Location = new System.Drawing.Point(4, 289);
             this.btnViewInvoice.Margin = new System.Windows.Forms.Padding(4);
             this.btnViewInvoice.Name = "btnViewInvoice";
             this.btnViewInvoice.Size = new System.Drawing.Size(363, 62);
@@ -496,25 +494,6 @@
             this.btnViewInvoice.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnViewInvoice.UseVisualStyleBackColor = false;
             this.btnViewInvoice.CheckedChanged += new System.EventHandler(this.btnViewInvoice_CheckedChanged);
-            // 
-            // btnInvGen
-            // 
-            this.btnInvGen.Appearance = System.Windows.Forms.Appearance.Button;
-            this.btnInvGen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(135)))), ((int)(((byte)(167)))));
-            this.btnInvGen.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnInvGen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInvGen.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.btnInvGen.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnInvGen.Location = new System.Drawing.Point(4, 289);
-            this.btnInvGen.Margin = new System.Windows.Forms.Padding(4);
-            this.btnInvGen.Name = "btnInvGen";
-            this.btnInvGen.Size = new System.Drawing.Size(363, 62);
-            this.btnInvGen.TabIndex = 8;
-            this.btnInvGen.TabStop = true;
-            this.btnInvGen.Text = "Invoice Generate";
-            this.btnInvGen.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnInvGen.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnInvGen.UseVisualStyleBackColor = false;
             // 
             // radioButton1
             // 
@@ -552,7 +531,7 @@
             this.btnLogout.Text = "Logout";
             this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnLogout.UseVisualStyleBackColor = false;
-            this.btnLogout.CheckedChanged += new System.EventHandler(this.btnLogout_CheckedChanged_1);
+            this.btnLogout.CheckedChanged += new System.EventHandler(this.btnLogout_CheckedChanged);
             // 
             // lblDept
             // 
@@ -595,9 +574,9 @@
             this.lblTitle.ForeColor = System.Drawing.Color.White;
             this.lblTitle.Location = new System.Drawing.Point(36, 22);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(214, 35);
+            this.lblTitle.Size = new System.Drawing.Size(279, 35);
             this.lblTitle.TabIndex = 20;
-            this.lblTitle.Text = "View Invoice";
+            this.lblTitle.Text = "Invoice Generate";
             // 
             // InvPreview
             // 
@@ -666,7 +645,7 @@
             this.Controls.Add(this.bar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnBack);
-            this.Controls.Add(this.btnPrint);
+            this.Controls.Add(this.btnPDF);
             this.Controls.Add(this.btnFilter);
             this.Controls.Add(this.dgvOrder);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -692,7 +671,7 @@
         private System.Windows.Forms.DataGridView dgvOrder;
         private System.Windows.Forms.Button btnFilter;
         private System.Windows.Forms.Label compName;
-        private System.Windows.Forms.Button btnPrint;
+        private System.Windows.Forms.Button btnPDF;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Label BDAddr;
         private System.Windows.Forms.Label BDPhone;
@@ -720,10 +699,7 @@
         private System.Windows.Forms.Label BPrice;
         private System.Windows.Forms.Label BItems;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.RadioButton btnViewOrder;
-        private System.Windows.Forms.RadioButton btnLateDelivery;
         private System.Windows.Forms.RadioButton btnViewInvoice;
-        private System.Windows.Forms.RadioButton btnInvGen;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton btnLogout;
         private System.Windows.Forms.Label lblDept;
@@ -733,5 +709,7 @@
         private System.Windows.Forms.Panel InvPreview;
         private System.Windows.Forms.Panel heading;
         private System.Windows.Forms.Panel footer;
+        private System.Windows.Forms.RadioButton btnLateDelivery;
+        private System.Windows.Forms.RadioButton btnInvGen;
     }
 }

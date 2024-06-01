@@ -1,14 +1,7 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
-using ZstdSharp.Unsafe;
 
 namespace Elysia
 {
@@ -30,7 +23,8 @@ namespace Elysia
 
         public void LoadInformation()
         {
-            using(MySqlConnection conn = new MySqlConnection(connectionString)) {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
                 conn.Open();
                 MySqlCommand cmd = conn.CreateCommand();
 
@@ -107,7 +101,7 @@ namespace Elysia
         //add item to list and dictionary
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            if(cbPartID.SelectedItem != null && nQty.Value > 0)
+            if (cbPartID.SelectedItem != null && nQty.Value > 0)
             {
                 String addPart = (String)cbPartID.SelectedItem;
                 int qty = Decimal.ToInt32(nQty.Value);
@@ -115,7 +109,7 @@ namespace Elysia
                 foreach (var parts in orderParts)
                 {
                     // if partID already in list, add qty to existing item
-                    if(parts.Key == addPart)
+                    if (parts.Key == addPart)
                     {
                         lbItems.Items.Remove(addPart + " (" + parts.Value + ")");
                         orderParts[addPart] += qty;
@@ -150,7 +144,7 @@ namespace Elysia
         //Update dealer information after dealerID changed
         private void cbDealerID_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(cbDealerID.SelectedItem == null)
+            if (cbDealerID.SelectedItem == null)
             {
                 lblDealerName.Text = "N\\A";
                 lblDealerCompany.Text = "N\\A";
@@ -186,8 +180,8 @@ namespace Elysia
         //submit form, create new order
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            if (!checkInput()) 
-            { 
+            if (!checkInput())
+            {
                 return;
             };
             using (MySqlConnection conn = new MySqlConnection(connectionString))
@@ -252,15 +246,15 @@ namespace Elysia
         private bool checkInput()
         {
             String msg = "";
-            if(cbDealerID.SelectedItem == null)
+            if (cbDealerID.SelectedItem == null)
             {
                 msg += "Please enter DealerID\n";
             }
-            if (orderParts.Count == 0) 
+            if (orderParts.Count == 0)
             {
                 msg += "Please enter partID and quantity\n";
             }
-            if (msg.Length > 0) 
+            if (msg.Length > 0)
             {
                 MessageBox.Show(msg, "Missing information");
                 return false;

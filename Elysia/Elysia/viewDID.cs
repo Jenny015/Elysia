@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 namespace Elysia
 {
@@ -43,7 +37,7 @@ namespace Elysia
         private void reloadDataGridView()
         {
             string query = "SELECT OP.orderID, OP.partID, (OP.orderQty+OP.OSQty) AS TotalQty, actDespQty, opStatus FROM orderpart OP, `order` O WHERE opStatus = 'Processing' AND OP.orderID = O.orderID ORDER BY O.orderDate DESC;";
-            
+
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn))
@@ -57,7 +51,8 @@ namespace Elysia
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            using (MySqlConnection conn = new MySqlConnection(connectionString)) {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
                 conn.Open();
                 MySqlCommand cmd = conn.CreateCommand();
 
@@ -92,7 +87,7 @@ namespace Elysia
                         catch (Exception ex)
                         {
                             // if error occurs, show fail message
-                            MessageBox.Show("Failed"+ex.Message);
+                            MessageBox.Show("Failed" + ex.Message);
                         }
                     }
                     else
@@ -146,6 +141,8 @@ namespace Elysia
                             {
                                 // Execute the SQl statement
                                 cmd.ExecuteNonQuery();
+                                conn.Close();
+                                assembledOrder(orderID);
                                 reloadDataGridView();
                                 return;
 
@@ -155,6 +152,30 @@ namespace Elysia
                                 // if error occurs, show fail message
                                 MessageBox.Show("Failed" + ex.Message);
                             }
+                        }
+                    }
+                }
+            }
+        }
+        private void assembledOrder(String orderID)
+        {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+
+                string query = $"SELECT COUNT(*) FROM `orderpart` WHERE orderID = {orderID} AND opStatus != 'Assembled');";
+
+                using (MySqlCommand checkStatusCmd = new MySqlCommand(query, conn))
+                {
+                    int nonCompliantEntries = Convert.ToInt32(checkStatusCmd.ExecuteScalar());
+
+                    if (nonCompliantEntries == 0)
+                    {
+                        query = $"UPDATE order SET orderStatus = 'Assembled' WHERE orderID = {orderID}";
+                        using (MySqlCommand insertCmd = new MySqlCommand(query, conn))
+                        {
+                            insertCmd.ExecuteNonQuery();
+                            conn.Close();
                         }
                     }
                 }
