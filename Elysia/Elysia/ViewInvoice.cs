@@ -14,6 +14,7 @@ namespace Elysia
     public partial class ViewInvoice : Form
     {
         private string connectionString = "server=localhost;database=elysia;user=root;password=\"\"";
+        private Filter filter;
         public ViewInvoice()
         {
             InitializeComponent();
@@ -82,6 +83,26 @@ namespace Elysia
         {
             StaticVariable.logout();
             this.Close();
+        }
+
+        private void btnIG_CheckedChanged(object sender, EventArgs e)
+        {
+            InvoiceGenerate ig = new InvoiceGenerate();
+            ig.Show();
+            this.Close();
+        }
+
+        private void btnFilter_Click(object sender, EventArgs e)
+        {
+            filter = new Filter("Order");
+            filter.Query += filter_Query;
+            filter.Show();
+        }
+
+        private void filter_Query(object sender, EventArgs e)
+        {
+            string query = filter.queryString;
+            reloadDataGridView(query);
         }
     }
 }
