@@ -17,7 +17,6 @@ namespace Elysia
             btnDangerLevel.Checked = true;
             dgvDangerLevel.AllowUserToAddRows = false;
             dgvDangerLevel.ReadOnly = true;
-            dgvDangerLevel.Columns[3].ReadOnly = false;
 
         }
 
@@ -32,11 +31,14 @@ namespace Elysia
 
             // Add the button column to the DataGridView
             dgvDangerLevel.Columns.Add(buttonColumn);
+
+            dgvDangerLevel.Columns["purPrice"].DefaultCellStyle.Format = "N2";
+            dgvDangerLevel.Columns["partQty"].DefaultCellStyle.Format = "N0";
         }
 
         private void reloadDataGridView()
         {
-            string query = "SELECT partID, categoryID, partName, price, partQty, partStatus FROM part";
+            string query = "SELECT p.partID, categoryID, partName, purPrice, partQty, partStatus FROM part p, supplierPart sp WHERE p.partID = sp.partID ORDER BY p.partID";
 
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
@@ -44,25 +46,6 @@ namespace Elysia
                 {
                     DataSet ds = new DataSet();
                     adapter.Fill(ds);
-                    dgvDangerLevel.DataSource = ds.Tables[0];
-
-                    // Add the "dangerLevelColumn" to the DataTable
-                    ds.Tables[0].Columns.Add("dangerLevel", typeof(int));
-                    foreach (DataRow row in ds.Tables[0].Rows)
-                    {
-                        int partQty = (int)row["partQty"];
-                        int dangerLevel = 0;
-                        if (partQty <= 30000)
-                        {
-                            dangerLevel = 30000 - partQty;
-                        }
-                        else if (partQty <= 50000)
-                        {
-                            dangerLevel = 50000 - partQty;
-                        }
-                        row["dangerLevel"] = dangerLevel;
-                    }
-
                     dgvDangerLevel.DataSource = ds.Tables[0];
 
                     // Subscribe to the CellFormatting event
@@ -76,7 +59,6 @@ namespace Elysia
             if (e.ColumnIndex == dgvDangerLevel.Columns["partStatus"].Index)
             {
                 string partStatus = dgvDangerLevel.Rows[e.RowIndex].Cells["partStatus"].Value.ToString();
-                int dangerLevel = (int)dgvDangerLevel.Rows[e.RowIndex].Cells["dangerLevel"].Value;
 
                 if (partStatus == "Out-of-stock")
                 {
@@ -101,7 +83,7 @@ namespace Elysia
             if (e.ColumnIndex == dgvDangerLevel.Columns["buttonColumn"].Index)
             {
                 // Navigate to the Reorder form
-                Reorder reorder = new Reorder();
+                Reorder reorder = new Reorder(dgvDangerLevel.Rows[e.RowIndex].Cells["partID"].Value.ToString(), StaticVariable.reOrder - (int)dgvDangerLevel.Rows[e.RowIndex].Cells["partQty"].Value);
                 reorder.Show();
                 this.Close();
             }

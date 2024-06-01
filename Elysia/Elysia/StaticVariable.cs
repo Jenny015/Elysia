@@ -1,4 +1,8 @@
-﻿namespace Elysia
+﻿using MySql.Data.MySqlClient;
+using Mysqlx.Crud;
+using System;
+
+namespace Elysia
 {
     //To store global variable that every form could access to
     public static class StaticVariable
@@ -42,6 +46,46 @@
         {
             Login login = new Login();
             login.Show();
+        }
+        public static void updatePartStatus()
+        {
+            using (MySqlConnection conn = new MySqlConnection("server=localhost;database=elysia;user=root;password=\"\""))
+            {
+                conn.Open();
+                MySqlCommand cmd = conn.CreateCommand();
+
+                cmd.CommandText = "SELECT partID, partQty FROM part";
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    string query = "UPDATE part SET partStatus = @status WHERE partID = @partID;";
+                    while (reader.Read())
+                    {
+                        string partID = reader["partID"].ToString();
+                        int partQty = Convert.ToInt32(reader["partQty"]);
+
+                        using (MySqlCommand cmd2 = new MySqlCommand(query, conn))
+                        {
+                            if (partQty < reOrder)
+                            {
+                                cmd2.Parameters.AddWithValue("@status", "Reorder");
+                            }
+                            else if (partQty < danger)
+                            {
+                                cmd2.Parameters.AddWithValue("@status", "Danger");
+                            }
+                            else if (partQty == 0)
+                            {
+                                cmd2.Parameters.AddWithValue("@status", "Out-of-stock");
+                            }
+
+                            cmd2.Parameters.AddWithValue("@partID", partID);
+                            cmd2.ExecuteNonQuery();
+                            cmd2.Parameters.Clear();
+                        }
+                    }
+                    conn.Close();
+                }
+            }
         }
     }
 }
