@@ -75,7 +75,8 @@ namespace Elysia
                     }
                     else if (int.Parse(actDespQtyData) >= totalQty)
                     {
-                        cmd.CommandText = $"UPDATE `orderpart` SET opStatus = 'Assembled', actDespQty = {totalQty} WHERE orderID = \'{orderID}\' AND partID = \'{partID}\'";
+                        cmd.CommandText = $"UPDATE `orderpart` SET opStatus = 'Assembled', actDespQty = {totalQty} WHERE orderID = '{orderID}' AND partID = '{partID}';" +
+                            $"UPDATE part SET partQty = partQty - {totalQty} WHERE partID = '{partID}';";
                         try
                         {
                             // Execute the SQl statement
@@ -105,8 +106,8 @@ namespace Elysia
                                 // If there's no outstanding order, create one
                                 if (!reader.Read())
                                 {
-                                    // Close the reader before executing another command
                                     reader.Close();
+                                    //get dealerID of the current order
                                     cmd.CommandText = $"SELECT dealerID FROM `order` WHERE orderID = '{orderID}'";
                                     try
                                     {
@@ -123,25 +124,28 @@ namespace Elysia
                                         // Handle any errors that occurred
                                         Console.WriteLine(ex.Message);
                                     }
+                                    //create a new outstanding order
                                     osOrderID = NewOrder.getOrderID('O');
                                     cmd.CommandText = $"INSERT INTO `order` (orderID, dealerID, orderStatus, fromOrder) VALUES ('{osOrderID}', '{dealerID}', 'OStanding', '{orderID}')";
                                     // Execute the SQL statement
                                     cmd.ExecuteNonQuery();
                                 }
-                                else // If there is, get the orderID
+                                else // If there has an outstanding order for this order, get the outstanding orderID
                                 {
                                     osOrderID = reader.GetString(0);
-                                    reader.Close(); // Close the reader before executing another command
+                                    reader.Close();
                                 }
                             }
                             //add new did that belongs to new OSorder, new orderQty = (currentOrderQty - currentActDespQty)
                             cmd.CommandText = $"UPDATE `orderpart` SET opStatus = 'Assembled', actDespQty = {actDespQtyData} WHERE orderID = '{orderID}' AND partID = '{partID}';" +
+                                $"UPDATE part SET partQty = partQty - {actDespQtyData} WHERE partID = '{partID}';" +
                                 $"INSERT INTO orderpart (orderID, partID, orderQty, opStatus) VALUES ('{osOrderID}', '{partID}', {totalQty - int.Parse(actDespQtyData)}, 'OStanding')";
                             try
                             {
                                 // Execute the SQl statement
                                 cmd.ExecuteNonQuery();
                                 conn.Close();
+                                StaticVariable.updatePartStatus();
                                 assembledOrder(orderID);
                                 reloadDataGridView();
                                 return;
