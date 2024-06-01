@@ -135,5 +135,145 @@ namespace Elysia
             orderDateContainer.Visible = cbDate.Checked;
             orderDateContainer.Enabled = cbDate.Checked;
         }
+
+        private void DID_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void cbPartID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbDIDOrderID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton4_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton5_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rbOStatusAll_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rbOStatusA_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rbOStatusP_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rbOStatusO_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rbOStatusC_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rbOStatusD_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Order_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void orderDateContainer_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void oDateTo_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void oDateFrom_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbDealerID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbOrderID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
