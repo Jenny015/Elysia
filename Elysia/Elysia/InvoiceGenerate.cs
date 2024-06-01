@@ -1,22 +1,13 @@
-﻿using System;
-using System.Collections;
+﻿using iTextSharp.text;
+using iTextSharp.text.pdf;
+using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Drawing.Printing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using MySql.Data.MySqlClient;
-using System.Reflection;
-using static System.Net.Mime.MediaTypeNames;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using iTextSharp.text;
-using iTextSharp.text.pdf;
 using System.IO;
+using System.Linq;
+using System.Windows.Forms;
 
 
 namespace Elysia
@@ -24,7 +15,7 @@ namespace Elysia
     public partial class InvoiceGenerate : Form
     {
         String connectionString = "server=localhost;database=elysia;uid=root;pwd=\"\";";
-        private Filter filter;
+        private Filter filter; //filter
         private string orderID;
         public InvoiceGenerate()
         {
@@ -39,7 +30,7 @@ namespace Elysia
         }
         private void LoadDataFromDatabase(string query)
         {
-            if(query == "")
+            if (query == "")
             {
                 query = "SELECT * FROM `order` WHERE orderStatus = 'Assembled' ORDER BY orderDate DESC";
             }
@@ -72,17 +63,17 @@ namespace Elysia
 
             //set background color
         }
+        //filter
         private void btnFilter_Click(object sender, EventArgs e)
         {
             filter = new Filter("Order");
             filter.Query += filter_Query;
             filter.Show();
         }
-
+        //filter
         private void filter_Query(object sender, EventArgs e)
         {
-            string query = filter.queryString;
-            LoadDataFromDatabase(query);
+            LoadDataFromDatabase(filter.queryString);
         }
 
         private void btnLogout_CheckedChanged(object sender, EventArgs e)
@@ -93,12 +84,11 @@ namespace Elysia
 
         private void dgvOrder_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if(e.RowIndex % 2 == 0)
+            if (e.RowIndex % 2 == 0)
             {
                 dgvOrder.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.MistyRose;
             }
-        }
-
+        }// hide the dgv and display the detailed of order
         private void dgvOrder_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             using (MySqlConnection conn = new MySqlConnection(connectionString))
@@ -111,7 +101,7 @@ namespace Elysia
                 {
                     btnFilter.Visible = false;
                     dgvOrder.Visible = false;
-                    btnPrint.Visible = true;
+                    btnPDF.Visible = true;
                     btnBack.Visible = true;
                     InvPreview.Visible = true;
                     heading.Visible = true;
@@ -121,18 +111,18 @@ namespace Elysia
                 }
             }
         }
-
+        //display dgv, hide detailed
         private void btnBack_Click(object sender, EventArgs e)
         {
             btnFilter.Visible = true;
             dgvOrder.Visible = true;
-            btnPrint.Visible = false;
+            btnPDF.Visible = false;
             btnBack.Visible = false;
             InvPreview.Visible = false;
             heading.Visible = false;
             footer.Visible = false;
         }
-
+        //set components of detail page
         private void setInvoice(String orderID)
         {
             using (MySqlConnection conn = new MySqlConnection(connectionString))
@@ -142,7 +132,7 @@ namespace Elysia
                 cmd.CommandText = $"SELECT O.orderDate, D.dCompany, D.dName, D.dPhone, D.dComAdd, D.dDelivAdd FROM `order` O, `orderpart` OP, dealer D, part P WHERE O.orderID = OP.orderID AND O.dealerID = D.dealerID AND P.partID = OP.partID AND O.orderID = '{orderID}';";
                 try
                 {
-                    using(MySqlDataReader reader = cmd.ExecuteReader())
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
                         {
@@ -166,8 +156,8 @@ namespace Elysia
 
                     double totalPrice = 0;
                     int totalQty = 0;
-                    foreach (DataGridViewRow row in dgv.Rows) 
-                    { 
+                    foreach (DataGridViewRow row in dgv.Rows)
+                    {
                         totalPrice += Double.Parse(row.Cells["Subtotal"].Value.ToString());
                         totalQty += int.Parse(row.Cells["Despatch Quantity"].Value.ToString());
                     }
@@ -182,21 +172,15 @@ namespace Elysia
             }
             lblOrderID.Text = orderID;
         }
-
+        //jump to View Invoice form
         private void btnViewInvoice_CheckedChanged(object sender, EventArgs e)
         {
             ViewInvoice vi = new ViewInvoice();
             vi.Show();
             this.Close();
         }
-
-        private void btnLogout_CheckedChanged_1(object sender, EventArgs e)
-        {
-            StaticVariable.logout();
-            this.Close();
-        }
-
-        private void btnPrint_Click(object sender, EventArgs e)
+        //generate invoice as pdf file
+        private void btnPDF_Click(object sender, EventArgs e)
         {
             Document document = new Document();
             PdfWriter writer = PdfWriter.GetInstance(document, new FileStream($"../../../invoice/{orderID}.pdf", FileMode.Create));
@@ -209,7 +193,7 @@ namespace Elysia
             iTextSharp.text.Font boldFont = FontFactory.GetFont("Times-Roman", 12, iTextSharp.text.Font.BOLD);
             iTextSharp.text.Font normalFont = FontFactory.GetFont("Times-Roman", 12);
 
-            string[] leftComponent = {"BOrderID", "lblOrderID", "BOrderDate", "lblOrderDate", "BDCom", "lblDCom", "BDName", "lblDName", "BDPhone", "lblDPhone", "BDAddr", "lblAddr" };
+            string[] leftComponent = { "BOrderID", "lblOrderID", "BOrderDate", "lblOrderDate", "BDCom", "lblDCom", "BDName", "lblDName", "BDPhone", "lblDPhone", "BDAddr", "lblAddr" };
             string[] rightComponent = { "BAddr", "addr", "Btel", "tel", "Bemail", "email" };
 
             List<Control> leftComponentList = leftComponent.Select(controlName => InvPreview.Controls[controlName]).ToList();
@@ -219,10 +203,10 @@ namespace Elysia
             float columnHeight = document.PageSize.Height - 72;
             iTextSharp.text.Rectangle leftColumnRect = new iTextSharp.text.Rectangle(60, 60, columnWidth, columnHeight);
             iTextSharp.text.Rectangle rightColumnRect = new iTextSharp.text.Rectangle(columnWidth + 60, 60, document.PageSize.Width - 60, columnHeight);
-            
+
             ColumnText left = new ColumnText(writer.DirectContent);
             left.SetSimpleColumn(leftColumnRect);
-            for(int i = 0; i < leftComponentList.Count; i+=2)
+            for (int i = 0; i < leftComponentList.Count; i += 2)
             {
                 Phrase p = new Phrase();
                 p.Add(new Chunk(leftComponentList[i].Text, boldFont));
@@ -254,9 +238,9 @@ namespace Elysia
                 cell.Padding = 5;
                 table.AddCell(cell);
             }
-            for(int r = 0; r < dgv.RowCount; r++)
+            for (int r = 0; r < dgv.RowCount; r++)
             {
-                for(int c = 0; c < dgv.ColumnCount; c++)
+                for (int c = 0; c < dgv.ColumnCount; c++)
                 {
                     PdfPCell cell = new PdfPCell(new Phrase(dgv.Rows[r].Cells[c].Value.ToString(), normalFont));
                     cell.HorizontalAlignment = Element.ALIGN_CENTER;
@@ -269,7 +253,7 @@ namespace Elysia
             if (yPos - table.TotalHeight < document.BottomMargin)
             {
                 document.NewPage();
-                yPos = document.PageSize.Height - document.TopMargin; 
+                yPos = document.PageSize.Height - document.TopMargin;
             }
             PdfPTable newTable = new PdfPTable(4);
             PdfPCell cell1 = new PdfPCell(new Phrase(BItems.Text, boldFont));
@@ -299,7 +283,7 @@ namespace Elysia
             float endPositionNewTable = startPositionNewTable - newTable.TotalHeight;
             if (endPositionNewTable < document.BottomMargin)
             {
-                document.NewPage(); 
+                document.NewPage();
                 endPositionNewTable = document.PageSize.Height - document.TopMargin;
             }
 
@@ -307,8 +291,40 @@ namespace Elysia
             signColumn.SetSimpleColumn(new Phrase(Bsign.Text + "___________________", boldFont), document.LeftMargin, endPositionNewTable - 20, document.PageSize.Width - document.RightMargin, 0, 15, Element.ALIGN_RIGHT);
             signColumn.Go();
 
-            MessageBox.Show("Invoice is generate successfully.", "Success");
             document.Close();
+            MessageBox.Show("Invoice is generate successfully.", "Success");
+            uploadPdfToSql();
+        }
+        //upload invoice to sql
+        private void uploadPdfToSql()
+        {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+
+                string query = $"SELECT invStatus FROM `invoice` WHERE orderID = {orderID}";
+                using (MySqlCommand statusCmd = new MySqlCommand(query, conn))
+                {
+                    if ((string)statusCmd.ExecuteScalar() == "Assembled")
+                    {
+                        byte[] pdfBytes;
+                        using (FileStream fs = new FileStream($"../../../invoice/{orderID}.pdf", FileMode.Open, FileAccess.Read))
+                        {
+                            pdfBytes = new byte[fs.Length];
+                            fs.Read(pdfBytes, 0, pdfBytes.Length);
+                        }
+                        // Upload pdf to MySql by bytes
+                        query = $"INSERT INTO invoice ('orderID', 'invoice', 'invStatus') VALUES ('{orderID}', '@pdfData', 'Wait'); " +
+                            $"Update `order` SET orderStatus = 'Despatched' WHERE 'orderID' = '{orderID}';";
+                        using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@pdfData", pdfBytes);
+                            cmd.ExecuteNonQuery();
+                            conn.Close();
+                        }
+                    }
+                }
+            }
         }
     }
 }

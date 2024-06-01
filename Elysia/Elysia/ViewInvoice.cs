@@ -1,20 +1,15 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Elysia
 {
     public partial class ViewInvoice : Form
     {
-        private string connectionString = "server=localhost;database=elysia;user=root;password=\"\"";
         private Filter filter;
+        private string connectionString = "server=localhost;database=elysia;user=root;password=\"\"";
         public ViewInvoice()
         {
             InitializeComponent();
@@ -27,13 +22,12 @@ namespace Elysia
             {
                 btnIG.Visible = true;
                 btnLD.Visible = true;
-                btnVO.Visible = true;
             }
         }
 
         private void reloadDataGridView(String query)
         {
-            query = query == "" ? "SELECT * FROM `invoice` ORDER BY invStatus DESC" : query;
+            query = query == "" ? "SELECT orderID, invStatus FROM `invoice` ORDER BY invStatus DESC" : query;
             try
             {
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
@@ -54,22 +48,23 @@ namespace Elysia
         private void setDataGridView()
         {
             DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn();
-            buttonColumn.HeaderText = "View";
-            buttonColumn.Name = "buttonColumn";
-            buttonColumn.Text = "View";
+            buttonColumn.HeaderText = "Download Invoice";
+            buttonColumn.Name = "Download";
+            buttonColumn.Text = "Download";
             buttonColumn.UseColumnTextForButtonValue = true;
 
             // Add the button column to the DataGridView
             dgvInv.Columns.Add(buttonColumn);
 
+
             DataGridViewButtonColumn buttonColumn2 = new DataGridViewButtonColumn();
             buttonColumn2.UseColumnTextForButtonValue = true;
             if (StaticVariable.dept == "IS")
             {
-                buttonColumn2.HeaderText = "Sign";
-                buttonColumn2.Name = "Sign";
-                buttonColumn2.Text = "Sign";
-            } else if (StaticVariable.dept == "SD")
+                buttonColumn2.HeaderText = "Upload";
+                buttonColumn2.Name = "Upload";
+                buttonColumn2.Text = "Upload";
+            } else
             {
                 buttonColumn2.HeaderText = "Send";
                 buttonColumn2.Name = "Send";
@@ -85,24 +80,98 @@ namespace Elysia
             this.Close();
         }
 
-        private void btnIG_CheckedChanged(object sender, EventArgs e)
+        private void dgvInv_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            InvoiceGenerate ig = new InvoiceGenerate();
-            ig.Show();
-            this.Close();
+            string orderID = dgvInv.Rows[e.RowIndex].Cells["orderID"].Value.ToString();
+            //Download invoice
+            if (e.ColumnIndex == dgvInv.Columns["Download"].Index && e.RowIndex >= 0)
+            {
+                byte[] pdfData = null;
+                string query = $"SELECT invoice, signedInvoice FROM invoice WHERE orderID = '{orderID}'";
+
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
+                {
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    conn.Open();
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+
+                            pdfData = reader.IsDBNull(reader.GetOrdinal("signedInvoice")) ? (byte[])reader["invoice"] : (byte[])reader["signedInvoice"];
+                        }
+                    }
+                    using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+                    {
+                        string startupPath = Application.StartupPath;
+                        string invoicePath = Path.GetFullPath(Path.Combine(startupPath, @"..\..\..\invoice\"));
+
+                        Directory.CreateDirectory(invoicePath);
+                        saveFileDialog.Filter = "PDF Files|*.pdf";
+                        saveFileDialog.Title = "Save Invoice PDF";
+                        saveFileDialog.InitialDirectory = invoicePath;
+                        saveFileDialog.FileName = $"{orderID}.pdf";
+
+                        if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                        {
+                            string filename = saveFileDialog.FileName;
+                            File.WriteAllBytes(filename, pdfData);
+                            MessageBox.Show($"Invoice of {orderID} downloaded successfully.", "Success");
+                        }
+                    }
+                }
+            } 
+            else if(e.ColumnIndex == dgvInv.Columns["Upload"].Index && e.RowIndex >= 0) //Upload signed invoice
+            {
+                using (OpenFileDialog openFileDialog = new OpenFileDialog())
+                {
+                    openFileDialog.Filter = "PDF Files|*.pdf";
+                    openFileDialog.Title = $"Upload Signed Invoice of {orderID}";
+                    if (openFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        string filePath = openFileDialog.FileName;
+                        byte[] pdfData = File.ReadAllBytes(filePath);
+                        using (MySqlConnection conn = new MySqlConnection(connectionString))
+                        {
+                            string query = "UPDATE invoice SET signedInvoice = @pdfData, invStatus = 'Sign' WHERE orderID = @orderID";
+                            using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                            {
+                                cmd.Parameters.AddWithValue("@pdfData", pdfData);
+                                cmd.Parameters.AddWithValue("@orderID", orderID);
+                                conn.Open();
+                                cmd.ExecuteNonQuery();
+                                conn.Close();
+                            }
+                        }
+                        MessageBox.Show($"Invoice of {orderID} uploaded successfully!", "Success!");
+                    }
+                }
+            } else if (e.ColumnIndex == dgvInv.Columns["Send"].Index && e.RowIndex >= 0)
+            {
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
+                {
+                    string query = "UPDATE invoice SET invStatus = 'Send' WHERE orderID = @orderID";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@orderID", orderID);
+                        conn.Open();
+                        cmd.ExecuteNonQuery();
+                        conn.Close();
+                    }
+                }
+            }
         }
 
         private void btnFilter_Click(object sender, EventArgs e)
         {
-            filter = new Filter("Order");
+            filter = new Filter("invoice");
             filter.Query += filter_Query;
             filter.Show();
         }
-
+        //filter
         private void filter_Query(object sender, EventArgs e)
         {
-            string query = filter.queryString;
-            reloadDataGridView(query);
+            reloadDataGridView(filter.queryString);
         }
     }
 }
