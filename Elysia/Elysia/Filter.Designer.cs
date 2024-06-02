@@ -38,34 +38,33 @@
             this.didA = new System.Windows.Forms.RadioButton();
             this.didP = new System.Windows.Forms.RadioButton();
             this.didO = new System.Windows.Forms.RadioButton();
-            this.didC = new System.Windows.Forms.RadioButton();
             this.btnSearch = new System.Windows.Forms.Button();
             this.invoice = new System.Windows.Forms.Panel();
             this.invOrderID = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.invSign = new System.Windows.Forms.RadioButton();
             this.invAll = new System.Windows.Forms.RadioButton();
             this.invSend = new System.Windows.Forms.RadioButton();
             this.invW = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rbOStatusAll = new System.Windows.Forms.RadioButton();
+            this.rbOStatusA = new System.Windows.Forms.RadioButton();
+            this.rbOStatusP = new System.Windows.Forms.RadioButton();
+            this.rbOStatusO = new System.Windows.Forms.RadioButton();
+            this.rbOStatusC = new System.Windows.Forms.RadioButton();
+            this.rbOStatusD = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.cbOrderID = new System.Windows.Forms.ComboBox();
             this.cbDealerID = new System.Windows.Forms.ComboBox();
             this.cbDate = new System.Windows.Forms.CheckBox();
             this.orderDateContainer = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.oDateFrom = new System.Windows.Forms.DateTimePicker();
             this.oDateTo = new System.Windows.Forms.DateTimePicker();
+            this.oDateFrom = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.Order = new System.Windows.Forms.Panel();
-            this.rbOStatusAll = new System.Windows.Forms.RadioButton();
-            this.rbOStatusD = new System.Windows.Forms.RadioButton();
-            this.rbOStatusA = new System.Windows.Forms.RadioButton();
-            this.rbOStatusC = new System.Windows.Forms.RadioButton();
-            this.rbOStatusO = new System.Windows.Forms.RadioButton();
-            this.rbOStatusP = new System.Windows.Forms.RadioButton();
-            this.invSign = new System.Windows.Forms.RadioButton();
             this.DID.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.invoice.SuspendLayout();
@@ -85,7 +84,7 @@
             this.DID.Location = new System.Drawing.Point(494, 283);
             this.DID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DID.Name = "DID";
-            this.DID.Size = new System.Drawing.Size(460, 292);
+            this.DID.Size = new System.Drawing.Size(356, 292);
             this.DID.TabIndex = 6;
             this.DID.Visible = false;
             // 
@@ -135,13 +134,12 @@
             this.groupBox2.Controls.Add(this.didA);
             this.groupBox2.Controls.Add(this.didP);
             this.groupBox2.Controls.Add(this.didO);
-            this.groupBox2.Controls.Add(this.didC);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.groupBox2.Location = new System.Drawing.Point(25, 142);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(408, 122);
+            this.groupBox2.Size = new System.Drawing.Size(303, 122);
             this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "DID Status";
@@ -150,7 +148,7 @@
             // 
             this.didAll.AutoSize = true;
             this.didAll.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.didAll.Location = new System.Drawing.Point(276, 61);
+            this.didAll.Location = new System.Drawing.Point(147, 78);
             this.didAll.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.didAll.Name = "didAll";
             this.didAll.Size = new System.Drawing.Size(102, 23);
@@ -195,18 +193,6 @@
             this.didO.TabIndex = 16;
             this.didO.Text = "OStanding";
             this.didO.UseVisualStyleBackColor = true;
-            // 
-            // didC
-            // 
-            this.didC.AutoSize = true;
-            this.didC.Font = new System.Drawing.Font("Times New Roman", 10F);
-            this.didC.Location = new System.Drawing.Point(147, 78);
-            this.didC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.didC.Name = "didC";
-            this.didC.Size = new System.Drawing.Size(98, 23);
-            this.didC.TabIndex = 15;
-            this.didC.Text = "Cancelled";
-            this.didC.UseVisualStyleBackColor = true;
             // 
             // btnSearch
             // 
@@ -268,6 +254,18 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Invoice Status";
             // 
+            // invSign
+            // 
+            this.invSign.AutoSize = true;
+            this.invSign.Font = new System.Drawing.Font("Times New Roman", 10F);
+            this.invSign.Location = new System.Drawing.Point(38, 83);
+            this.invSign.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.invSign.Name = "invSign";
+            this.invSign.Size = new System.Drawing.Size(60, 23);
+            this.invSign.TabIndex = 20;
+            this.invSign.Text = "Sign";
+            this.invSign.UseVisualStyleBackColor = true;
+            // 
             // invAll
             // 
             this.invAll.AutoSize = true;
@@ -323,6 +321,80 @@
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Order Status";
+            // 
+            // rbOStatusAll
+            // 
+            this.rbOStatusAll.AutoSize = true;
+            this.rbOStatusAll.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbOStatusAll.Location = new System.Drawing.Point(276, 78);
+            this.rbOStatusAll.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbOStatusAll.Name = "rbOStatusAll";
+            this.rbOStatusAll.Size = new System.Drawing.Size(102, 23);
+            this.rbOStatusAll.TabIndex = 19;
+            this.rbOStatusAll.Text = "All Status";
+            this.rbOStatusAll.UseVisualStyleBackColor = true;
+            // 
+            // rbOStatusA
+            // 
+            this.rbOStatusA.AutoSize = true;
+            this.rbOStatusA.Font = new System.Drawing.Font("Times New Roman", 10F);
+            this.rbOStatusA.Location = new System.Drawing.Point(147, 36);
+            this.rbOStatusA.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbOStatusA.Name = "rbOStatusA";
+            this.rbOStatusA.Size = new System.Drawing.Size(105, 23);
+            this.rbOStatusA.TabIndex = 18;
+            this.rbOStatusA.Text = "Assembled";
+            this.rbOStatusA.UseVisualStyleBackColor = true;
+            // 
+            // rbOStatusP
+            // 
+            this.rbOStatusP.AutoSize = true;
+            this.rbOStatusP.Checked = true;
+            this.rbOStatusP.Font = new System.Drawing.Font("Times New Roman", 10F);
+            this.rbOStatusP.Location = new System.Drawing.Point(20, 36);
+            this.rbOStatusP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbOStatusP.Name = "rbOStatusP";
+            this.rbOStatusP.Size = new System.Drawing.Size(106, 23);
+            this.rbOStatusP.TabIndex = 17;
+            this.rbOStatusP.TabStop = true;
+            this.rbOStatusP.Text = "Processing";
+            this.rbOStatusP.UseVisualStyleBackColor = true;
+            // 
+            // rbOStatusO
+            // 
+            this.rbOStatusO.AutoSize = true;
+            this.rbOStatusO.Font = new System.Drawing.Font("Times New Roman", 10F);
+            this.rbOStatusO.Location = new System.Drawing.Point(20, 78);
+            this.rbOStatusO.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbOStatusO.Name = "rbOStatusO";
+            this.rbOStatusO.Size = new System.Drawing.Size(100, 23);
+            this.rbOStatusO.TabIndex = 16;
+            this.rbOStatusO.Text = "OStanding";
+            this.rbOStatusO.UseVisualStyleBackColor = true;
+            // 
+            // rbOStatusC
+            // 
+            this.rbOStatusC.AutoSize = true;
+            this.rbOStatusC.Font = new System.Drawing.Font("Times New Roman", 10F);
+            this.rbOStatusC.Location = new System.Drawing.Point(147, 78);
+            this.rbOStatusC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbOStatusC.Name = "rbOStatusC";
+            this.rbOStatusC.Size = new System.Drawing.Size(98, 23);
+            this.rbOStatusC.TabIndex = 15;
+            this.rbOStatusC.Text = "Cancelled";
+            this.rbOStatusC.UseVisualStyleBackColor = true;
+            // 
+            // rbOStatusD
+            // 
+            this.rbOStatusD.AutoSize = true;
+            this.rbOStatusD.Font = new System.Drawing.Font("Times New Roman", 10F);
+            this.rbOStatusD.Location = new System.Drawing.Point(276, 36);
+            this.rbOStatusD.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbOStatusD.Name = "rbOStatusD";
+            this.rbOStatusD.Size = new System.Drawing.Size(109, 23);
+            this.rbOStatusD.TabIndex = 14;
+            this.rbOStatusD.Text = "Despatched";
+            this.rbOStatusD.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -391,25 +463,16 @@
             this.orderDateContainer.TabIndex = 16;
             this.orderDateContainer.Visible = false;
             // 
-            // label1
+            // oDateTo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 10F);
-            this.label1.Location = new System.Drawing.Point(16, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 19);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "From";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 10F);
-            this.label4.Location = new System.Drawing.Point(16, 62);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(26, 19);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "To";
+            this.oDateTo.CustomFormat = "yyyy-MM-dd";
+            this.oDateTo.Font = new System.Drawing.Font("Times New Roman", 10F);
+            this.oDateTo.Location = new System.Drawing.Point(76, 58);
+            this.oDateTo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.oDateTo.Name = "oDateTo";
+            this.oDateTo.Size = new System.Drawing.Size(276, 27);
+            this.oDateTo.TabIndex = 3;
+            this.oDateTo.Value = new System.DateTime(2024, 5, 30, 0, 0, 0, 0);
             // 
             // oDateFrom
             // 
@@ -422,16 +485,25 @@
             this.oDateFrom.TabIndex = 2;
             this.oDateFrom.Value = new System.DateTime(2024, 5, 30, 0, 0, 0, 0);
             // 
-            // oDateTo
+            // label4
             // 
-            this.oDateTo.CustomFormat = "yyyy-MM-dd";
-            this.oDateTo.Font = new System.Drawing.Font("Times New Roman", 10F);
-            this.oDateTo.Location = new System.Drawing.Point(76, 58);
-            this.oDateTo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.oDateTo.Name = "oDateTo";
-            this.oDateTo.Size = new System.Drawing.Size(276, 27);
-            this.oDateTo.TabIndex = 3;
-            this.oDateTo.Value = new System.DateTime(2024, 5, 30, 0, 0, 0, 0);
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 10F);
+            this.label4.Location = new System.Drawing.Point(16, 62);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(26, 19);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "To";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 10F);
+            this.label1.Location = new System.Drawing.Point(16, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 19);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "From";
             // 
             // Order
             // 
@@ -448,92 +520,6 @@
             this.Order.Size = new System.Drawing.Size(460, 442);
             this.Order.TabIndex = 7;
             this.Order.Visible = false;
-            // 
-            // rbOStatusAll
-            // 
-            this.rbOStatusAll.AutoSize = true;
-            this.rbOStatusAll.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbOStatusAll.Location = new System.Drawing.Point(276, 78);
-            this.rbOStatusAll.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.rbOStatusAll.Name = "rbOStatusAll";
-            this.rbOStatusAll.Size = new System.Drawing.Size(102, 23);
-            this.rbOStatusAll.TabIndex = 19;
-            this.rbOStatusAll.Text = "All Status";
-            this.rbOStatusAll.UseVisualStyleBackColor = true;
-            // 
-            // rbOStatusD
-            // 
-            this.rbOStatusD.AutoSize = true;
-            this.rbOStatusD.Font = new System.Drawing.Font("Times New Roman", 10F);
-            this.rbOStatusD.Location = new System.Drawing.Point(276, 36);
-            this.rbOStatusD.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.rbOStatusD.Name = "rbOStatusD";
-            this.rbOStatusD.Size = new System.Drawing.Size(109, 23);
-            this.rbOStatusD.TabIndex = 14;
-            this.rbOStatusD.Text = "Despatched";
-            this.rbOStatusD.UseVisualStyleBackColor = true;
-            // 
-            // rbOStatusA
-            // 
-            this.rbOStatusA.AutoSize = true;
-            this.rbOStatusA.Font = new System.Drawing.Font("Times New Roman", 10F);
-            this.rbOStatusA.Location = new System.Drawing.Point(147, 36);
-            this.rbOStatusA.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.rbOStatusA.Name = "rbOStatusA";
-            this.rbOStatusA.Size = new System.Drawing.Size(105, 23);
-            this.rbOStatusA.TabIndex = 18;
-            this.rbOStatusA.Text = "Assembled";
-            this.rbOStatusA.UseVisualStyleBackColor = true;
-            // 
-            // rbOStatusC
-            // 
-            this.rbOStatusC.AutoSize = true;
-            this.rbOStatusC.Font = new System.Drawing.Font("Times New Roman", 10F);
-            this.rbOStatusC.Location = new System.Drawing.Point(147, 78);
-            this.rbOStatusC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.rbOStatusC.Name = "rbOStatusC";
-            this.rbOStatusC.Size = new System.Drawing.Size(98, 23);
-            this.rbOStatusC.TabIndex = 15;
-            this.rbOStatusC.Text = "Cancelled";
-            this.rbOStatusC.UseVisualStyleBackColor = true;
-            // 
-            // rbOStatusO
-            // 
-            this.rbOStatusO.AutoSize = true;
-            this.rbOStatusO.Font = new System.Drawing.Font("Times New Roman", 10F);
-            this.rbOStatusO.Location = new System.Drawing.Point(20, 78);
-            this.rbOStatusO.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.rbOStatusO.Name = "rbOStatusO";
-            this.rbOStatusO.Size = new System.Drawing.Size(100, 23);
-            this.rbOStatusO.TabIndex = 16;
-            this.rbOStatusO.Text = "OStanding";
-            this.rbOStatusO.UseVisualStyleBackColor = true;
-            // 
-            // rbOStatusP
-            // 
-            this.rbOStatusP.AutoSize = true;
-            this.rbOStatusP.Checked = true;
-            this.rbOStatusP.Font = new System.Drawing.Font("Times New Roman", 10F);
-            this.rbOStatusP.Location = new System.Drawing.Point(20, 36);
-            this.rbOStatusP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.rbOStatusP.Name = "rbOStatusP";
-            this.rbOStatusP.Size = new System.Drawing.Size(106, 23);
-            this.rbOStatusP.TabIndex = 17;
-            this.rbOStatusP.TabStop = true;
-            this.rbOStatusP.Text = "Processing";
-            this.rbOStatusP.UseVisualStyleBackColor = true;
-            // 
-            // invSign
-            // 
-            this.invSign.AutoSize = true;
-            this.invSign.Font = new System.Drawing.Font("Times New Roman", 10F);
-            this.invSign.Location = new System.Drawing.Point(38, 83);
-            this.invSign.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.invSign.Name = "invSign";
-            this.invSign.Size = new System.Drawing.Size(60, 23);
-            this.invSign.TabIndex = 20;
-            this.invSign.Text = "Sign";
-            this.invSign.UseVisualStyleBackColor = true;
             // 
             // Filter
             // 
@@ -581,7 +567,6 @@
         private System.Windows.Forms.RadioButton didA;
         private System.Windows.Forms.RadioButton didP;
         private System.Windows.Forms.RadioButton didO;
-        private System.Windows.Forms.RadioButton didC;
         private System.Windows.Forms.Panel invoice;
         private System.Windows.Forms.ComboBox invOrderID;
         private System.Windows.Forms.Label label8;

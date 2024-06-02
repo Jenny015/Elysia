@@ -38,7 +38,7 @@ namespace Elysia
 
         private void reloadDataGridView()
         {
-            string query = "SELECT p.partID, categoryID, partName, purPrice, partQty, partStatus FROM part p, supplierPart sp WHERE p.partID = sp.partID ORDER BY p.partID";
+            string query = "SELECT p.partID, categoryID, partName, purPrice, partQty, partStatus FROM part p, supplierPart sp WHERE p.partID = sp.partID ORDER BY p.partID AND partStatus != 'Normal'";
 
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {

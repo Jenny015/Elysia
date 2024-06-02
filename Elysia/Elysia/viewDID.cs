@@ -7,6 +7,7 @@ namespace Elysia
 {
     public partial class ViewDID : Form
     {
+        private Filter filter;
         string connectionString = "server=localhost;database=elysia;user=root;password=\"\"";
         public ViewDID()
         {
@@ -23,7 +24,7 @@ namespace Elysia
         }
         private void setDataGridView()
         {
-            reloadDataGridView();
+            reloadDataGridView("");
             DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn();
             buttonColumn.HeaderText = "Assemble";
             buttonColumn.Name = "buttonColumn";
@@ -34,9 +35,9 @@ namespace Elysia
             dgvDID.Columns.Add(buttonColumn);
         }
 
-        private void reloadDataGridView()
+        private void reloadDataGridView(String query)
         {
-            string query = "SELECT OP.orderID, OP.partID, (OP.orderQty+OP.OSQty) AS TotalQty, actDespQty, opStatus FROM orderpart OP, `order` O WHERE opStatus = 'Processing' AND OP.orderID = O.orderID ORDER BY O.orderDate DESC;";
+            query = query == "" ? "SELECT OP.orderID, OP.partID, (OP.orderQty+OP.OSQty) AS TotalQty, actDespQty, opStatus FROM orderpart OP, `order` O WHERE opStatus = 'Processing' AND OP.orderID = O.orderID ORDER BY O.orderDate DESC;" : query;
 
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
@@ -81,7 +82,7 @@ namespace Elysia
                         {
                             // Execute the SQl statement
                             cmd.ExecuteNonQuery();
-                            reloadDataGridView();
+                            reloadDataGridView("");
                             return;
 
                         }
@@ -147,7 +148,7 @@ namespace Elysia
                                 conn.Close();
                                 StaticVariable.updatePartStatus();
                                 assembledOrder(orderID);
-                                reloadDataGridView();
+                                reloadDataGridView("");
                                 return;
 
                             }
@@ -189,8 +190,13 @@ namespace Elysia
 
         private void btnFilter_Click(object sender, EventArgs e)
         {
-            Filter filter = new Filter("DID");
+            filter = new Filter("DID");
+            filter.Query += filter_Query;
             filter.Show();
+        }
+        private void filter_Query(object sender, EventArgs e)
+        {
+            reloadDataGridView(filter.queryString);
         }
 
         private void btnLogout_CheckedChanged(object sender, EventArgs e)

@@ -79,10 +79,9 @@ namespace Elysia
         {
             DID.Location = new System.Drawing.Point(9, 9);
             DID.Visible = true;
-            btnSearch.Location = new System.Drawing.Point(158, 305);
+            btnSearch.Location = new System.Drawing.Point(90, 220);
             loadDataFromDatabase("orderID", "order", didOrderID);
             loadDataFromDatabase("partID", "part", didPartID);
-
         }
         private void setComponent_Order()
         {
@@ -101,8 +100,32 @@ namespace Elysia
         }
         private void search_DID()
         {
-            StringBuilder queryBuilder = new StringBuilder("SELECT * FROM `orderpart` WHERE 1=1");
+            StringBuilder queryBuilder = new StringBuilder("SELECT OP.orderID, OP.partID, (OP.orderQty+OP.OSQty) AS TotalQty, actDespQty, opStatus FROM `orderpart` OP, `order` O WHERE OP.orderID = O.orderID");
             List<MySqlParameter> parameters = new List<MySqlParameter>();
+            if (didOrderID.SelectedIndex != -1)
+            {
+                queryBuilder.Append($" AND OP.orderID = '{didOrderID.SelectedItem}'");
+            }
+            if (didPartID.SelectedIndex != -1)
+            {
+                queryBuilder.Append($" AND partID = '{didPartID.SelectedItem}'");
+            }
+            if (!didAll.Checked)
+            {
+                if (didA.Checked)
+                {
+                    queryBuilder.Append(" AND opStatus = 'Assembled'");
+                }
+                if (didP.Checked)
+                {
+                    queryBuilder.Append(" AND opStatus = 'Processing'");
+                }
+                if (didO.Checked)
+                {
+                    queryBuilder.Append(" AND opStatus = 'OStanding'");
+                }
+            }
+            queryBuilder.Append(" ORDER BY O.orderDate DESC");
             queryString = queryBuilder.ToString();
         }
         private void search_order()
@@ -121,23 +144,23 @@ namespace Elysia
             {
                 if (rbOStatusA.Checked)
                 {
-                    queryBuilder.Append(" OR orderStatus = 'Assembled'");
+                    queryBuilder.Append(" AND orderStatus = 'Assembled'");
                 }
                 if (rbOStatusC.Checked)
                 {
-                    queryBuilder.Append(" OR orderStatus = 'Cancelled'");
+                    queryBuilder.Append(" AND orderStatus = 'Cancelled'");
                 }
                 if (rbOStatusD.Checked)
                 {
-                    queryBuilder.Append(" OR orderStatus = 'Despatched'");
+                    queryBuilder.Append(" AND orderStatus = 'Despatched'");
                 }
                 if (rbOStatusP.Checked)
                 {
-                    queryBuilder.Append(" OR orderStatus = 'Processing'");
+                    queryBuilder.Append(" AND orderStatus = 'Processing'");
                 }
                 if (rbOStatusO.Checked)
                 {
-                    queryBuilder.Append(" OR orderStatus = 'OStanding'");
+                    queryBuilder.Append(" AND orderStatus = 'OStanding'");
                 }
             }
             if (cbDate.Checked && oDateTo.Value.Date >= oDateFrom.Value.Date)
