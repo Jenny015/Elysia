@@ -65,6 +65,19 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.Order = new System.Windows.Forms.Panel();
+            this.inward = new System.Windows.Forms.Panel();
+            this.iwDatePanel = new System.Windows.Forms.Panel();
+            this.iwTo = new System.Windows.Forms.DateTimePicker();
+            this.iwFrom = new System.Windows.Forms.DateTimePicker();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.iwDate = new System.Windows.Forms.CheckBox();
+            this.iwSupplierID = new System.Windows.Forms.ComboBox();
+            this.iwID = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.iwPartID = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.DID.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.invoice.SuspendLayout();
@@ -72,6 +85,8 @@
             this.groupBox1.SuspendLayout();
             this.orderDateContainer.SuspendLayout();
             this.Order.SuspendLayout();
+            this.inward.SuspendLayout();
+            this.iwDatePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // DID
@@ -81,7 +96,7 @@
             this.DID.Controls.Add(this.label2);
             this.DID.Controls.Add(this.label6);
             this.DID.Controls.Add(this.groupBox2);
-            this.DID.Location = new System.Drawing.Point(494, 283);
+            this.DID.Location = new System.Drawing.Point(367, 13);
             this.DID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DID.Name = "DID";
             this.DID.Size = new System.Drawing.Size(356, 292);
@@ -198,7 +213,7 @@
             // 
             this.btnSearch.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnSearch.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.btnSearch.Location = new System.Drawing.Point(176, 476);
+            this.btnSearch.Location = new System.Drawing.Point(110, 361);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(133, 33);
             this.btnSearch.TabIndex = 10;
@@ -211,7 +226,7 @@
             this.invoice.Controls.Add(this.invOrderID);
             this.invoice.Controls.Add(this.label8);
             this.invoice.Controls.Add(this.groupBox3);
-            this.invoice.Location = new System.Drawing.Point(494, 11);
+            this.invoice.Location = new System.Drawing.Point(12, 410);
             this.invoice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.invoice.Name = "invoice";
             this.invoice.Size = new System.Drawing.Size(356, 242);
@@ -514,12 +529,158 @@
             this.Order.Controls.Add(this.label5);
             this.Order.Controls.Add(this.label3);
             this.Order.Controls.Add(this.groupBox1);
-            this.Order.Location = new System.Drawing.Point(9, 9);
+            this.Order.Location = new System.Drawing.Point(739, 11);
             this.Order.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Order.Name = "Order";
             this.Order.Size = new System.Drawing.Size(460, 442);
             this.Order.TabIndex = 7;
             this.Order.Visible = false;
+            // 
+            // inward
+            // 
+            this.inward.Controls.Add(this.iwPartID);
+            this.inward.Controls.Add(this.iwDatePanel);
+            this.inward.Controls.Add(this.label12);
+            this.inward.Controls.Add(this.iwDate);
+            this.inward.Controls.Add(this.iwSupplierID);
+            this.inward.Controls.Add(this.iwID);
+            this.inward.Controls.Add(this.label10);
+            this.inward.Controls.Add(this.label11);
+            this.inward.Location = new System.Drawing.Point(12, 11);
+            this.inward.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.inward.Name = "inward";
+            this.inward.Size = new System.Drawing.Size(349, 345);
+            this.inward.TabIndex = 17;
+            this.inward.Visible = false;
+            // 
+            // iwDatePanel
+            // 
+            this.iwDatePanel.Controls.Add(this.iwTo);
+            this.iwDatePanel.Controls.Add(this.iwFrom);
+            this.iwDatePanel.Controls.Add(this.label7);
+            this.iwDatePanel.Controls.Add(this.label9);
+            this.iwDatePanel.Enabled = false;
+            this.iwDatePanel.Location = new System.Drawing.Point(22, 219);
+            this.iwDatePanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.iwDatePanel.Name = "iwDatePanel";
+            this.iwDatePanel.Size = new System.Drawing.Size(303, 102);
+            this.iwDatePanel.TabIndex = 16;
+            this.iwDatePanel.Visible = false;
+            // 
+            // iwTo
+            // 
+            this.iwTo.CustomFormat = "yyyy-MM-dd";
+            this.iwTo.Font = new System.Drawing.Font("Times New Roman", 10F);
+            this.iwTo.Location = new System.Drawing.Point(76, 58);
+            this.iwTo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.iwTo.Name = "iwTo";
+            this.iwTo.Size = new System.Drawing.Size(183, 27);
+            this.iwTo.TabIndex = 3;
+            this.iwTo.Value = new System.DateTime(2024, 5, 30, 0, 0, 0, 0);
+            // 
+            // iwFrom
+            // 
+            this.iwFrom.CustomFormat = "yyyy-MM-dd";
+            this.iwFrom.Font = new System.Drawing.Font("Times New Roman", 10F);
+            this.iwFrom.Location = new System.Drawing.Point(76, 18);
+            this.iwFrom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.iwFrom.Name = "iwFrom";
+            this.iwFrom.Size = new System.Drawing.Size(183, 27);
+            this.iwFrom.TabIndex = 2;
+            this.iwFrom.Value = new System.DateTime(2024, 5, 30, 0, 0, 0, 0);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 10F);
+            this.label7.Location = new System.Drawing.Point(16, 62);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(26, 19);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "To";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 10F);
+            this.label9.Location = new System.Drawing.Point(16, 25);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(46, 19);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "From";
+            // 
+            // iwDate
+            // 
+            this.iwDate.AutoSize = true;
+            this.iwDate.Font = new System.Drawing.Font("Times New Roman", 10F);
+            this.iwDate.Location = new System.Drawing.Point(31, 192);
+            this.iwDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.iwDate.Name = "iwDate";
+            this.iwDate.Size = new System.Drawing.Size(153, 23);
+            this.iwDate.TabIndex = 15;
+            this.iwDate.Text = "Querying by date?";
+            this.iwDate.UseVisualStyleBackColor = true;
+            this.iwDate.CheckedChanged += new System.EventHandler(this.iwDate_CheckedChanged);
+            // 
+            // iwSupplierID
+            // 
+            this.iwSupplierID.Font = new System.Drawing.Font("Times New Roman", 10F);
+            this.iwSupplierID.FormattingEnabled = true;
+            this.iwSupplierID.Location = new System.Drawing.Point(144, 82);
+            this.iwSupplierID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.iwSupplierID.Name = "iwSupplierID";
+            this.iwSupplierID.Size = new System.Drawing.Size(179, 27);
+            this.iwSupplierID.TabIndex = 14;
+            // 
+            // iwID
+            // 
+            this.iwID.Font = new System.Drawing.Font("Times New Roman", 10F);
+            this.iwID.FormattingEnabled = true;
+            this.iwID.Location = new System.Drawing.Point(144, 27);
+            this.iwID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.iwID.Name = "iwID";
+            this.iwID.Size = new System.Drawing.Size(179, 27);
+            this.iwID.TabIndex = 13;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.label10.Location = new System.Drawing.Point(27, 87);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(117, 23);
+            this.label10.TabIndex = 10;
+            this.label10.Text = "Supplier ID: ";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.label11.Location = new System.Drawing.Point(27, 31);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(107, 23);
+            this.label11.TabIndex = 7;
+            this.label11.Text = "Inward ID: ";
+            // 
+            // iwPartID
+            // 
+            this.iwPartID.Font = new System.Drawing.Font("Times New Roman", 10F);
+            this.iwPartID.FormattingEnabled = true;
+            this.iwPartID.Location = new System.Drawing.Point(144, 139);
+            this.iwPartID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.iwPartID.Name = "iwPartID";
+            this.iwPartID.Size = new System.Drawing.Size(179, 27);
+            this.iwPartID.TabIndex = 21;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.label12.Location = new System.Drawing.Point(27, 144);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(85, 23);
+            this.label12.TabIndex = 20;
+            this.label12.Text = "Part ID: ";
             // 
             // Filter
             // 
@@ -527,7 +688,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1130, 675);
+            this.ClientSize = new System.Drawing.Size(1316, 675);
+            this.Controls.Add(this.inward);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.DID);
             this.Controls.Add(this.invoice);
@@ -551,6 +713,10 @@
             this.orderDateContainer.PerformLayout();
             this.Order.ResumeLayout(false);
             this.Order.PerformLayout();
+            this.inward.ResumeLayout(false);
+            this.inward.PerformLayout();
+            this.iwDatePanel.ResumeLayout(false);
+            this.iwDatePanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -593,5 +759,18 @@
         private System.Windows.Forms.RadioButton rbOStatusD;
         private System.Windows.Forms.RadioButton rbOStatusP;
         private System.Windows.Forms.RadioButton invSign;
+        private System.Windows.Forms.Panel inward;
+        private System.Windows.Forms.Panel iwDatePanel;
+        private System.Windows.Forms.DateTimePicker iwTo;
+        private System.Windows.Forms.DateTimePicker iwFrom;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.CheckBox iwDate;
+        private System.Windows.Forms.ComboBox iwSupplierID;
+        private System.Windows.Forms.ComboBox iwID;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ComboBox iwPartID;
+        private System.Windows.Forms.Label label12;
     }
 }

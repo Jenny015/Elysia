@@ -78,11 +78,12 @@
             this.isSide.Controls.Add(this.btnLogout);
             this.isSide.Controls.Add(this.lblDept);
             this.isSide.Controls.Add(this.imgLogo);
+            this.isSide.Dock = System.Windows.Forms.DockStyle.Left;
             this.isSide.Location = new System.Drawing.Point(0, 0);
             this.isSide.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.isSide.Name = "isSide";
             this.isSide.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.isSide.Size = new System.Drawing.Size(373, 791);
+            this.isSide.Size = new System.Drawing.Size(373, 796);
             this.isSide.TabIndex = 30;
             // 
             // btnLD
@@ -171,7 +172,7 @@
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLogout.Location = new System.Drawing.Point(4, 736);
+            this.btnLogout.Location = new System.Drawing.Point(4, 741);
             this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(363, 50);

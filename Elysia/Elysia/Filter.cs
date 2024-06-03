@@ -35,6 +35,9 @@ namespace Elysia
                 case "invoice":
                     setComponent_invoice();
                     break;
+                case "inward":
+                    setComponent_inward();
+                    break;
             }
         }
 
@@ -50,6 +53,9 @@ namespace Elysia
                     break;
                 case "invoice":
                     search_invoice();
+                    break;
+                case "inward":
+                    search_inward();
                     break;
             }
             Query?.Invoke(this, EventArgs.Empty);
@@ -97,6 +103,15 @@ namespace Elysia
             invoice.Visible = true;
             btnSearch.Location = new System.Drawing.Point(105, 180);
             loadDataFromDatabase("orderID", "order", invOrderID);
+        }
+        private void setComponent_inward()
+        {
+            inward.Location = new System.Drawing.Point(9, 9);
+            inward.Visible = true;
+            btnSearch.Location = new System.Drawing.Point(110, 361);
+            loadDataFromDatabase("inwardsID", "inwardsOrder", iwID);
+            loadDataFromDatabase("supplierID", "inwardsOrder", iwSupplierID);
+            loadDataFromDatabase("partID", "inwardspart", iwPartID);
         }
         private void search_DID()
         {
@@ -201,6 +216,34 @@ namespace Elysia
             }
             queryBuilder.Append(" ORDER BY o.`orderDate` DESC");
             queryString = queryBuilder.ToString();
+        }
+        private void search_inward()
+        {
+            StringBuilder queryBuilder = new StringBuilder("SELECT `io`.inwardsID, `io`.supplierID, `io`.inwardsDate FROM inwardsorder `io`, inwardspart `ip` WHERE `io`.inwardsID = `ip`.inwardsID");
+            List<MySqlParameter> parameters = new List<MySqlParameter>();
+            if (iwID.SelectedIndex != -1)
+            {
+                queryBuilder.Append($" AND `io`.inwardsID = '{iwID.SelectedItem}'");
+            }
+            if (iwSupplierID.SelectedIndex != -1)
+            {
+                queryBuilder.Append($" AND `io`.supplierID = '{iwSupplierID.SelectedItem}'");
+            }
+            if (iwPartID.SelectedIndex != -1)
+            {
+                queryBuilder.Append($" AND `ip`.partID = '{iwPartID.SelectedItem}'");
+            }
+            if (iwDate.Checked && iwTo.Value.Date >= iwFrom.Value.Date)
+            {
+                queryBuilder.Append($" AND inwardsDate BETWEEN '{iwFrom.Value.ToString("yyyy-MM-dd")}' AND '{iwTo.Value.ToString("yyyy-MM-dd")}'");
+            }
+            queryBuilder.Append(" ORDER BY `io`.inwardsDate DESC");
+            queryString = queryBuilder.ToString();
+        }
+        private void iwDate_CheckedChanged(object sender, EventArgs e)
+        {
+            iwDatePanel.Visible = iwDate.Checked;
+            iwDatePanel.Enabled = iwDate.Checked;
         }
     }
 }

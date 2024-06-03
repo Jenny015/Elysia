@@ -77,8 +77,8 @@ namespace Elysia
                     break;
                 case "GI":
                     StaticVariable.dept = "GI";
-                    GoodsInward goodsInward = new GoodsInward();
-                    goodsInward.Show();
+                    ViewInwards vi = new ViewInwards();
+                    vi.Show();
                     break;
                 case "HR":
                     StaticVariable.dept = "HR";
@@ -89,11 +89,6 @@ namespace Elysia
                     StaticVariable.dept = "AC";
                     ViewLog viewLog = new ViewLog();
                     viewLog.Show();
-                    break;
-                case "AD":
-                    StaticVariable.dept = "AD";
-                    Admin admin = new Admin();
-                    admin.Show();
                     break;
                 default:
                     MessageBox.Show("Invalid department ID.");
