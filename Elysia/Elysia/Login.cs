@@ -72,8 +72,8 @@ namespace Elysia
                     break;
                 case "PD":
                     StaticVariable.dept = "PD";
-                    Reorder reorder = new Reorder();
-                    reorder.Show();
+                    DangerLevel dangerLevel = new DangerLevel();
+                    dangerLevel.Show();
                     break;
                 case "GI":
                     StaticVariable.dept = "GI";

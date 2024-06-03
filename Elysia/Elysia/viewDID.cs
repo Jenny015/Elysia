@@ -20,6 +20,7 @@ namespace Elysia
             dgvDID.AllowUserToAddRows = false;
             dgvDID.ReadOnly = true;
             dgvDID.Columns[3].ReadOnly = false;
+            this.WindowState = FormWindowState.Maximized;
 
         }
         private void setDataGridView()

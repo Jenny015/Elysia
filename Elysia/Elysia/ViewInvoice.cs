@@ -15,7 +15,10 @@ namespace Elysia
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             reloadDataGridView("");
+            dgvInv.ReadOnly = true;
             setDataGridView();
+            this.WindowState = FormWindowState.Maximized;
+
             lblDept.Text = StaticVariable.dept_full();
             btnViewInvoice.Checked = true;
             if (StaticVariable.dept == "SD")

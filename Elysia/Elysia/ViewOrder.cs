@@ -17,6 +17,7 @@ namespace Elysia
             this.StartPosition = FormStartPosition.CenterScreen;
             lblDept.Text = StaticVariable.dept_full();
             btnViewOrder.Checked = true;
+            this.WindowState = FormWindowState.Maximized;
 
         }
         private void setDataGridView()

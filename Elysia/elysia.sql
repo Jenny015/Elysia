@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2024-06-01 16:01:49
+-- 產生時間： 2024-06-03 11:06:28
 -- 伺服器版本： 10.4.32-MariaDB
 -- PHP 版本： 8.2.12
 
@@ -133,27 +133,26 @@ INSERT INTO `emp` (`empID`, `empName`, `empGander`, `empPhone`, `empEmail`, `dep
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `goodinwardpart`
+-- 資料表結構 `goodinward`
 --
 
-CREATE TABLE `goodinwardpart` (
-  `reorderID` char(10) NOT NULL,
+CREATE TABLE `goodinward` (
+  `inwardID` char(10) NOT NULL,
   `partID` char(6) NOT NULL,
-  `receiveDate` date DEFAULT NULL,
-  `roQty` int(12) NOT NULL,
-  `actGiQty` int(12) DEFAULT NULL
+  `supplierID` char(6) NOT NULL,
+  `receiveDate` date DEFAULT curdate(),
+  `iwQty` int(9) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- 傾印資料表的資料 `goodinwardpart`
+-- 傾印資料表的資料 `goodinward`
 --
 
-INSERT INTO `goodinwardpart` (`reorderID`, `partID`, `receiveDate`, `roQty`, `actGiQty`) VALUES
-('R000000101', 'D00004', '2023-10-21', 15736, 15736),
-('R159357462', 'C00003', '2023-04-01', 985, 985),
-('R231021410', 'A00001', '2024-05-20', 62358, 62358),
-('R426813975', 'B00002', '2023-12-21', 4562, 4562),
-('R799135460', 'A00005', NULL, 52035, NULL);
+INSERT INTO `goodinward` (`inwardID`, `partID`, `supplierID`, `receiveDate`, `iwQty`) VALUES
+('R000000101', 'D00004', 'S40100', '2023-10-21', 15736),
+('R159357462', 'C00003', 'S02030', '2023-04-01', 985),
+('R231021410', 'A00001', 'S04009', '2024-05-20', 62358),
+('R426813975', 'B00002', 'S01021', '2023-12-21', 4562);
 
 -- --------------------------------------------------------
 
@@ -321,30 +320,6 @@ INSERT INTO `part` (`partID`, `categoryID`, `partName`, `price`, `partQty`, `par
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `reorder`
---
-
-CREATE TABLE `reorder` (
-  `reorderID` char(10) NOT NULL,
-  `roDate` date NOT NULL DEFAULT current_timestamp(),
-  `supplierID` char(6) NOT NULL,
-  `roStatus` varchar(7) NOT NULL DEFAULT 'send'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- 傾印資料表的資料 `reorder`
---
-
-INSERT INTO `reorder` (`reorderID`, `roDate`, `supplierID`, `roStatus`) VALUES
-('R000000101', '2023-09-28', 'S40100', 'paid'),
-('R159357462', '2023-02-03', 'S02030', 'paid'),
-('R231021410', '2024-04-01', 'S04009', 'receive'),
-('R426813975', '2023-10-21', 'S01021', 'paid'),
-('R799135460', '2024-05-20', 'S21021', 'send');
-
--- --------------------------------------------------------
-
---
 -- 資料表結構 `supplier`
 --
 
@@ -434,11 +409,12 @@ ALTER TABLE `emp`
   ADD KEY `emp_dept_fk` (`deptID`);
 
 --
--- 資料表索引 `goodinwardpart`
+-- 資料表索引 `goodinward`
 --
-ALTER TABLE `goodinwardpart`
-  ADD PRIMARY KEY (`reorderID`,`partID`),
-  ADD KEY `goodInwardPart_part_fk` (`partID`);
+ALTER TABLE `goodinward`
+  ADD PRIMARY KEY (`inwardID`),
+  ADD KEY `goodInward_supplier_fk` (`supplierID`),
+  ADD KEY `goodInward_part_fk` (`partID`);
 
 --
 -- 資料表索引 `invoice`
@@ -476,13 +452,6 @@ ALTER TABLE `part`
   ADD KEY `part_category_fk` (`categoryID`);
 
 --
--- 資料表索引 `reorder`
---
-ALTER TABLE `reorder`
-  ADD PRIMARY KEY (`reorderID`),
-  ADD KEY `reorder_supplier_fk` (`supplierID`);
-
---
 -- 資料表索引 `supplier`
 --
 ALTER TABLE `supplier`
@@ -506,11 +475,11 @@ ALTER TABLE `emp`
   ADD CONSTRAINT `emp_dept_fk` FOREIGN KEY (`deptID`) REFERENCES `dept` (`deptID`);
 
 --
--- 資料表的限制式 `goodinwardpart`
+-- 資料表的限制式 `goodinward`
 --
-ALTER TABLE `goodinwardpart`
-  ADD CONSTRAINT `goodInwardPart_part_fk` FOREIGN KEY (`partID`) REFERENCES `part` (`partID`),
-  ADD CONSTRAINT `goodInwardPart_reorder_fk` FOREIGN KEY (`reorderID`) REFERENCES `reorder` (`reorderID`);
+ALTER TABLE `goodinward`
+  ADD CONSTRAINT `goodInward_part_fk` FOREIGN KEY (`partID`) REFERENCES `part` (`partID`),
+  ADD CONSTRAINT `goodInward_supplier_fk` FOREIGN KEY (`supplierID`) REFERENCES `supplier` (`supplierID`);
 
 --
 -- 資料表的限制式 `invoice`
@@ -543,12 +512,6 @@ ALTER TABLE `orderpart`
 --
 ALTER TABLE `part`
   ADD CONSTRAINT `part_category_fk` FOREIGN KEY (`categoryID`) REFERENCES `category` (`categoryID`);
-
---
--- 資料表的限制式 `reorder`
---
-ALTER TABLE `reorder`
-  ADD CONSTRAINT `reorder_supplier_fk` FOREIGN KEY (`supplierID`) REFERENCES `supplier` (`supplierID`);
 
 --
 -- 資料表的限制式 `supplierpart`

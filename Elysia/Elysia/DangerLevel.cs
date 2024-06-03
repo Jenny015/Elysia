@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using System;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
@@ -11,7 +12,8 @@ namespace Elysia
         public DangerLevel()
         {
             InitializeComponent();
-            setDataGridView();
+            reloadDataGridView();
+            this.WindowState = FormWindowState.Maximized;
             this.StartPosition = FormStartPosition.CenterScreen;
             lblDept.Text = StaticVariable.dept_full();
             btnDangerLevel.Checked = true;
@@ -20,25 +22,9 @@ namespace Elysia
 
         }
 
-        private void setDataGridView()
-        {
-            reloadDataGridView();
-            DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn();
-            buttonColumn.HeaderText = "Reorder";
-            buttonColumn.Name = "buttonColumn";
-            buttonColumn.Text = "Reorder";
-            buttonColumn.UseColumnTextForButtonValue = true;
-
-            // Add the button column to the DataGridView
-            dgvDangerLevel.Columns.Add(buttonColumn);
-
-            dgvDangerLevel.Columns["purPrice"].DefaultCellStyle.Format = "N2";
-            dgvDangerLevel.Columns["partQty"].DefaultCellStyle.Format = "N0";
-        }
-
         private void reloadDataGridView()
         {
-            string query = "SELECT p.partID, categoryID, partName, purPrice, partQty, partStatus FROM part p, supplierPart sp WHERE p.partID = sp.partID ORDER BY p.partID AND partStatus != 'Normal'";
+            string query = "SELECT p.partID, categoryID, partName, purPrice, partQty, partStatus FROM part p, supplierPart sp WHERE p.partID = sp.partID AND partStatus != 'Normal' ORDER BY p.partID";
 
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
@@ -77,19 +63,14 @@ namespace Elysia
                     e.CellStyle.BackColor = Color.LightGreen;
                 }
             }
+            dgvDangerLevel.Columns["purPrice"].DefaultCellStyle.Format = "N2";
+            dgvDangerLevel.Columns["partQty"].DefaultCellStyle.Format = "N0";
         }
-        private void dgvDangerLevel_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void btnLogout_CheckedChanged(object sender, EventArgs e)
         {
-            if (e.ColumnIndex == dgvDangerLevel.Columns["buttonColumn"].Index)
-            {
-                // Navigate to the Reorder form
-                Reorder reorder = new Reorder(dgvDangerLevel.Rows[e.RowIndex].Cells["partID"].Value.ToString(), StaticVariable.reOrder - (int)dgvDangerLevel.Rows[e.RowIndex].Cells["partQty"].Value);
-                reorder.Show();
-                this.Close();
-            }
+            StaticVariable.logout();
+            this.Close();
         }
-
-
 
     }
 }

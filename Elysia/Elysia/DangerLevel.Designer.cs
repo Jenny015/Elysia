@@ -32,8 +32,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnDangerLevel = new System.Windows.Forms.RadioButton();
-            this.btnViewReorder = new System.Windows.Forms.RadioButton();
-            this.btnReorder = new System.Windows.Forms.RadioButton();
             this.btnViewSupplier = new System.Windows.Forms.RadioButton();
             this.btnAddSupplier = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
@@ -54,7 +52,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(419, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1504, 100);
+            this.panel2.Size = new System.Drawing.Size(1504, 90);
             this.panel2.TabIndex = 33;
             // 
             // label4
@@ -62,9 +60,9 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(40, 31);
+            this.label4.Location = new System.Drawing.Point(40, 28);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(263, 41);
+            this.label4.Size = new System.Drawing.Size(219, 35);
             this.label4.TabIndex = 20;
             this.label4.Text = "Danger Level";
             // 
@@ -73,8 +71,6 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(84)))), ((int)(((byte)(129)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.btnDangerLevel);
-            this.panel1.Controls.Add(this.btnViewReorder);
-            this.panel1.Controls.Add(this.btnReorder);
             this.panel1.Controls.Add(this.btnViewSupplier);
             this.panel1.Controls.Add(this.btnAddSupplier);
             this.panel1.Controls.Add(this.radioButton1);
@@ -83,10 +79,10 @@
             this.panel1.Controls.Add(this.imgLogo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.panel1.Size = new System.Drawing.Size(419, 1055);
+            this.panel1.Padding = new System.Windows.Forms.Padding(4);
+            this.panel1.Size = new System.Drawing.Size(419, 949);
             this.panel1.TabIndex = 32;
             // 
             // btnDangerLevel
@@ -97,54 +93,16 @@
             this.btnDangerLevel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDangerLevel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnDangerLevel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDangerLevel.Location = new System.Drawing.Point(4, 718);
-            this.btnDangerLevel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnDangerLevel.Location = new System.Drawing.Point(4, 498);
+            this.btnDangerLevel.Margin = new System.Windows.Forms.Padding(4);
             this.btnDangerLevel.Name = "btnDangerLevel";
-            this.btnDangerLevel.Size = new System.Drawing.Size(409, 83);
+            this.btnDangerLevel.Size = new System.Drawing.Size(409, 75);
             this.btnDangerLevel.TabIndex = 12;
             this.btnDangerLevel.TabStop = true;
             this.btnDangerLevel.Text = "Danger Level";
             this.btnDangerLevel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnDangerLevel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDangerLevel.UseVisualStyleBackColor = false;
-            // 
-            // btnViewReorder
-            // 
-            this.btnViewReorder.Appearance = System.Windows.Forms.Appearance.Button;
-            this.btnViewReorder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(135)))), ((int)(((byte)(167)))));
-            this.btnViewReorder.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnViewReorder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnViewReorder.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.btnViewReorder.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnViewReorder.Location = new System.Drawing.Point(4, 635);
-            this.btnViewReorder.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnViewReorder.Name = "btnViewReorder";
-            this.btnViewReorder.Size = new System.Drawing.Size(409, 83);
-            this.btnViewReorder.TabIndex = 11;
-            this.btnViewReorder.TabStop = true;
-            this.btnViewReorder.Text = "View Re-order";
-            this.btnViewReorder.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnViewReorder.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnViewReorder.UseVisualStyleBackColor = false;
-            // 
-            // btnReorder
-            // 
-            this.btnReorder.Appearance = System.Windows.Forms.Appearance.Button;
-            this.btnReorder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(135)))), ((int)(((byte)(167)))));
-            this.btnReorder.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnReorder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReorder.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.btnReorder.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnReorder.Location = new System.Drawing.Point(4, 552);
-            this.btnReorder.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnReorder.Name = "btnReorder";
-            this.btnReorder.Size = new System.Drawing.Size(409, 83);
-            this.btnReorder.TabIndex = 10;
-            this.btnReorder.TabStop = true;
-            this.btnReorder.Text = "Re-Order";
-            this.btnReorder.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnReorder.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnReorder.UseVisualStyleBackColor = false;
             // 
             // btnViewSupplier
             // 
@@ -154,10 +112,10 @@
             this.btnViewSupplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnViewSupplier.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnViewSupplier.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnViewSupplier.Location = new System.Drawing.Point(4, 469);
-            this.btnViewSupplier.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnViewSupplier.Location = new System.Drawing.Point(4, 423);
+            this.btnViewSupplier.Margin = new System.Windows.Forms.Padding(4);
             this.btnViewSupplier.Name = "btnViewSupplier";
-            this.btnViewSupplier.Size = new System.Drawing.Size(409, 83);
+            this.btnViewSupplier.Size = new System.Drawing.Size(409, 75);
             this.btnViewSupplier.TabIndex = 9;
             this.btnViewSupplier.TabStop = true;
             this.btnViewSupplier.Text = "View Supplier";
@@ -173,10 +131,10 @@
             this.btnAddSupplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddSupplier.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnAddSupplier.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAddSupplier.Location = new System.Drawing.Point(4, 386);
-            this.btnAddSupplier.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnAddSupplier.Location = new System.Drawing.Point(4, 348);
+            this.btnAddSupplier.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddSupplier.Name = "btnAddSupplier";
-            this.btnAddSupplier.Size = new System.Drawing.Size(409, 83);
+            this.btnAddSupplier.Size = new System.Drawing.Size(409, 75);
             this.btnAddSupplier.TabIndex = 8;
             this.btnAddSupplier.TabStop = true;
             this.btnAddSupplier.Text = "Add Supplier";
@@ -192,10 +150,10 @@
             this.radioButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.radioButton1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.radioButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radioButton1.Location = new System.Drawing.Point(4, 303);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.radioButton1.Location = new System.Drawing.Point(4, 273);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(409, 83);
+            this.radioButton1.Size = new System.Drawing.Size(409, 75);
             this.radioButton1.TabIndex = 7;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "User";
@@ -211,24 +169,25 @@
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLogout.Location = new System.Drawing.Point(4, 982);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnLogout.Location = new System.Drawing.Point(4, 884);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(409, 66);
+            this.btnLogout.Size = new System.Drawing.Size(409, 59);
             this.btnLogout.TabIndex = 6;
             this.btnLogout.TabStop = true;
             this.btnLogout.Text = "Logout";
             this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.CheckedChanged += new System.EventHandler(this.btnLogout_CheckedChanged);
             // 
             // lblDept
             // 
             this.lblDept.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblDept.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold);
-            this.lblDept.Location = new System.Drawing.Point(4, 220);
+            this.lblDept.Location = new System.Drawing.Point(4, 198);
             this.lblDept.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDept.Name = "lblDept";
-            this.lblDept.Size = new System.Drawing.Size(409, 83);
+            this.lblDept.Size = new System.Drawing.Size(409, 75);
             this.lblDept.TabIndex = 1;
             this.lblDept.Text = "Purchasing Department";
             this.lblDept.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -238,29 +197,29 @@
             this.imgLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(84)))), ((int)(((byte)(129)))));
             this.imgLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.imgLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.imgLogo.Location = new System.Drawing.Point(4, 5);
-            this.imgLogo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.imgLogo.Location = new System.Drawing.Point(4, 4);
+            this.imgLogo.Margin = new System.Windows.Forms.Padding(4);
             this.imgLogo.Name = "imgLogo";
-            this.imgLogo.Size = new System.Drawing.Size(409, 215);
+            this.imgLogo.Size = new System.Drawing.Size(409, 194);
             this.imgLogo.TabIndex = 0;
             this.imgLogo.TabStop = false;
             // 
             // dgvDangerLevel
             // 
+            this.dgvDangerLevel.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDangerLevel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDangerLevel.Location = new System.Drawing.Point(447, 117);
+            this.dgvDangerLevel.Location = new System.Drawing.Point(447, 105);
             this.dgvDangerLevel.Name = "dgvDangerLevel";
             this.dgvDangerLevel.RowHeadersWidth = 62;
             this.dgvDangerLevel.RowTemplate.Height = 31;
-            this.dgvDangerLevel.Size = new System.Drawing.Size(1420, 878);
+            this.dgvDangerLevel.Size = new System.Drawing.Size(1420, 790);
             this.dgvDangerLevel.TabIndex = 34;
-            this.dgvDangerLevel.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDangerLevel_CellClick);
             // 
             // DangerLevel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1923, 1055);
+            this.ClientSize = new System.Drawing.Size(1923, 949);
             this.Controls.Add(this.dgvDangerLevel);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -281,8 +240,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.RadioButton btnDangerLevel;
-        private System.Windows.Forms.RadioButton btnViewReorder;
-        private System.Windows.Forms.RadioButton btnReorder;
         private System.Windows.Forms.RadioButton btnViewSupplier;
         private System.Windows.Forms.RadioButton btnAddSupplier;
         private System.Windows.Forms.RadioButton radioButton1;

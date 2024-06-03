@@ -27,6 +27,7 @@ namespace Elysia
             dgvOrder.ReadOnly = true;
             LoadDataFromDatabase("");
             setDataGridView();
+            this.WindowState = FormWindowState.Maximized;
         }
         private void LoadDataFromDatabase(string query)
         {
@@ -302,7 +303,7 @@ namespace Elysia
             {
                 conn.Open();
 
-                string query = $"SELECT invStatus FROM `invoice` WHERE orderID = {orderID}";
+                string query = $"SELECT invStatus FROM `invoice` WHERE orderID = '{orderID}'";
                 using (MySqlCommand statusCmd = new MySqlCommand(query, conn))
                 {
                     if ((string)statusCmd.ExecuteScalar() == "Assembled")

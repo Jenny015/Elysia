@@ -19,6 +19,7 @@ namespace Elysia
             btnNewOrder.Checked = true;
             this.StartPosition = FormStartPosition.CenterScreen;
             lblDept.Text = StaticVariable.dept_full();
+            this.WindowState = FormWindowState.Maximized;
         }
 
         public void LoadInformation()
