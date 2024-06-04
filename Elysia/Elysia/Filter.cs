@@ -1,8 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
-using Mysqlx.Crud;
 using System;
 using System.Collections.Generic;
-using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
 
@@ -61,7 +59,7 @@ namespace Elysia
             Query?.Invoke(this, EventArgs.Empty);
             this.Close();
         }
-        
+
         private void loadDataFromDatabase(String col, String table, ComboBox cb)
         {
             using (MySqlConnection conn = new MySqlConnection(connectionString))
@@ -198,7 +196,7 @@ namespace Elysia
             if (invOrderID.SelectedIndex != -1)
             {
                 queryBuilder.Append($" AND i.orderID = '{invOrderID.SelectedItem}'");
-            } 
+            }
             if (!invAll.Checked)
             {
                 if (invW.Checked)
@@ -219,7 +217,7 @@ namespace Elysia
         }
         private void search_inward()
         {
-            StringBuilder queryBuilder = new StringBuilder("SELECT `io`.inwardsID, `io`.supplierID, `io`.inwardsDate FROM inwardsorder `io`, inwardspart `ip` WHERE `io`.inwardsID = `ip`.inwardsID");
+            StringBuilder queryBuilder = new StringBuilder("SELECT DISTINCT `io`.inwardsID, `io`.supplierID, `io`.inwardsDate FROM inwardsorder `io`, inwardspart `ip` WHERE `io`.inwardsID = `ip`.inwardsID");
             List<MySqlParameter> parameters = new List<MySqlParameter>();
             if (iwID.SelectedIndex != -1)
             {

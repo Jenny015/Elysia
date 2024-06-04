@@ -1,9 +1,7 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Data;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
-using Mysqlx.Crud;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Elysia
 {
@@ -36,7 +34,7 @@ namespace Elysia
         }
         private void reloadDataGridView(String query)
         {
-            query = query == "" ? "SELECT * FROM `inwardsOrder` ORDER BY receiveDate DESC" : query;
+            query = query == "" ? "SELECT * FROM `inwardsOrder` ORDER BY inwardsDate DESC" : query;
 
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
@@ -63,7 +61,7 @@ namespace Elysia
         {
             string query = filter.queryString;
             reloadDataGridView(query);
-            int columnIndex = dgvGI.Columns["btnDetail"].Index; 
+            int columnIndex = dgvGI.Columns["btnDetail"].Index;
             int lastPosition = dgvGI.Columns.Count - 1;
             dgvGI.Columns[columnIndex].DisplayIndex = lastPosition;
         }

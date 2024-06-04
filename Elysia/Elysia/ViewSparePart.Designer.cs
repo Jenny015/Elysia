@@ -1,6 +1,6 @@
 ﻿namespace Elysia
 {
-    partial class ViewDID
+    partial class ViewSparePart
     {
         /// <summary>
         /// Required designer variable.
@@ -38,12 +38,12 @@
             this.imgLogo = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.dgvDID = new System.Windows.Forms.DataGridView();
+            this.dgvPart = new System.Windows.Forms.DataGridView();
             this.btnFilter = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPart)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -62,8 +62,8 @@
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.panel1.Size = new System.Drawing.Size(419, 949);
-            this.panel1.TabIndex = 3;
+            this.panel1.Size = new System.Drawing.Size(419, 1055);
+            this.panel1.TabIndex = 4;
             // 
             // btnLogout
             // 
@@ -73,7 +73,7 @@
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLogout.Location = new System.Drawing.Point(4, 882);
+            this.btnLogout.Location = new System.Drawing.Point(4, 988);
             this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(409, 60);
@@ -82,7 +82,6 @@
             this.btnLogout.Text = "Logout";
             this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnLogout.UseVisualStyleBackColor = false;
-            this.btnLogout.CheckedChanged += new System.EventHandler(this.btnLogout_CheckedChanged);
             // 
             // btnViewOrder
             // 
@@ -121,7 +120,6 @@
             this.btnNewOrder.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnNewOrder.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnNewOrder.UseVisualStyleBackColor = false;
-            this.btnNewOrder.CheckedChanged += new System.EventHandler(this.btnNewOrder_CheckedChanged);
             // 
             // btnDID
             // 
@@ -141,6 +139,7 @@
             this.btnDID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnDID.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDID.UseVisualStyleBackColor = false;
+            this.btnDID.CheckedChanged += new System.EventHandler(this.btnDID_CheckedChanged);
             // 
             // btnNewDealer
             // 
@@ -194,7 +193,7 @@
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1505, 90);
-            this.panel2.TabIndex = 24;
+            this.panel2.TabIndex = 25;
             // 
             // label4
             // 
@@ -203,50 +202,48 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(40, 28);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(967, 41);
+            this.label4.Size = new System.Drawing.Size(315, 41);
             this.label4.TabIndex = 20;
-            this.label4.Text = "Order Processing System (View and Assemble DID)";
+            this.label4.Text = "View Spare Part";
             // 
-            // dgvDID
+            // dgvPart
             // 
-            this.dgvDID.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDID.Location = new System.Drawing.Point(440, 113);
-            this.dgvDID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dgvDID.Name = "dgvDID";
-            this.dgvDID.RowHeadersWidth = 62;
-            this.dgvDID.RowTemplate.Height = 31;
-            this.dgvDID.Size = new System.Drawing.Size(1460, 784);
-            this.dgvDID.TabIndex = 26;
+            this.dgvPart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPart.Location = new System.Drawing.Point(442, 118);
+            this.dgvPart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvPart.Name = "dgvPart";
+            this.dgvPart.RowHeadersWidth = 62;
+            this.dgvPart.RowTemplate.Height = 31;
+            this.dgvPart.Size = new System.Drawing.Size(1460, 846);
+            this.dgvPart.TabIndex = 27;
             // 
             // btnFilter
             // 
             this.btnFilter.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.btnFilter.Location = new System.Drawing.Point(1750, 907);
+            this.btnFilter.Location = new System.Drawing.Point(1752, 989);
             this.btnFilter.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnFilter.Name = "btnFilter";
             this.btnFilter.Size = new System.Drawing.Size(150, 41);
-            this.btnFilter.TabIndex = 34;
+            this.btnFilter.TabIndex = 35;
             this.btnFilter.Text = "Filter";
             this.btnFilter.UseVisualStyleBackColor = true;
-            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
-            // ViewDID
+            // ViewSparePart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1924, 949);
+            this.ClientSize = new System.Drawing.Size(1924, 1055);
             this.Controls.Add(this.btnFilter);
-            this.Controls.Add(this.dgvDID);
+            this.Controls.Add(this.dgvPart);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "ViewDID";
-            this.Text = "viewDID";
+            this.Name = "ViewSparePart";
+            this.Text = "ViewSparePart";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPart)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -263,7 +260,7 @@
         public System.Windows.Forms.PictureBox imgLogo;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridView dgvDID;
+        private System.Windows.Forms.DataGridView dgvPart;
         private System.Windows.Forms.Button btnFilter;
     }
 }

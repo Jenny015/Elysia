@@ -21,7 +21,6 @@ namespace Elysia
             dgvDID.ReadOnly = true;
             dgvDID.Columns[3].ReadOnly = false;
             this.WindowState = FormWindowState.Maximized;
-
         }
         private void setDataGridView()
         {
@@ -203,6 +202,13 @@ namespace Elysia
         private void btnLogout_CheckedChanged(object sender, EventArgs e)
         {
             StaticVariable.logout();
+            this.Close();
+        }
+
+        private void btnNewOrder_CheckedChanged(object sender, EventArgs e)
+        {
+            ViewSparePart sp = new ViewSparePart();
+            sp.Show();
             this.Close();
         }
     }

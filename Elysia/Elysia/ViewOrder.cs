@@ -18,6 +18,7 @@ namespace Elysia
             lblDept.Text = StaticVariable.dept_full();
             btnViewOrder.Checked = true;
             this.WindowState = FormWindowState.Maximized;
+            dataGridVieworder.ReadOnly = true;
         }
         private void setDataGridView()
         {

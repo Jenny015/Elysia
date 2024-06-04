@@ -67,7 +67,8 @@ namespace Elysia
                 buttonColumn2.HeaderText = "Upload";
                 buttonColumn2.Name = "Upload";
                 buttonColumn2.Text = "Upload";
-            } else
+            }
+            else
             {
                 buttonColumn2.HeaderText = "Send";
                 buttonColumn2.Name = "Send";
@@ -123,8 +124,8 @@ namespace Elysia
                         }
                     }
                 }
-            } 
-            else if(e.ColumnIndex == dgvInv.Columns["Upload"].Index && e.RowIndex >= 0) //Upload signed invoice
+            }
+            else if (e.ColumnIndex == dgvInv.Columns["Upload"].Index && e.RowIndex >= 0) //Upload signed invoice
             {
                 using (OpenFileDialog openFileDialog = new OpenFileDialog())
                 {
@@ -149,7 +150,8 @@ namespace Elysia
                         MessageBox.Show($"Invoice of {orderID} uploaded successfully!", "Success!");
                     }
                 }
-            } else if (e.ColumnIndex == dgvInv.Columns["Send"].Index && e.RowIndex >= 0)
+            }
+            else if (e.ColumnIndex == dgvInv.Columns["Send"].Index && e.RowIndex >= 0)
             {
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {

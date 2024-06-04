@@ -1,5 +1,4 @@
 ﻿using MySql.Data.MySqlClient;
-using Mysqlx.Crud;
 using System;
 
 namespace Elysia

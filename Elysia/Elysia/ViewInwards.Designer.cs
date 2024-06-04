@@ -58,9 +58,9 @@
             this.panel1.Controls.Add(this.imgLogo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Padding = new System.Windows.Forms.Padding(4);
             this.panel1.Size = new System.Drawing.Size(419, 955);
             this.panel1.TabIndex = 31;
             // 
@@ -73,7 +73,7 @@
             this.btnViewGoodsInward.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnViewGoodsInward.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnViewGoodsInward.Location = new System.Drawing.Point(4, 420);
-            this.btnViewGoodsInward.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnViewGoodsInward.Margin = new System.Windows.Forms.Padding(4);
             this.btnViewGoodsInward.Name = "btnViewGoodsInward";
             this.btnViewGoodsInward.Size = new System.Drawing.Size(409, 74);
             this.btnViewGoodsInward.TabIndex = 9;
@@ -92,7 +92,7 @@
             this.btnGoodsInward.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnGoodsInward.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGoodsInward.Location = new System.Drawing.Point(4, 346);
-            this.btnGoodsInward.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGoodsInward.Margin = new System.Windows.Forms.Padding(4);
             this.btnGoodsInward.Name = "btnGoodsInward";
             this.btnGoodsInward.Size = new System.Drawing.Size(409, 74);
             this.btnGoodsInward.TabIndex = 8;
@@ -112,7 +112,7 @@
             this.radioButton1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.radioButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.radioButton1.Location = new System.Drawing.Point(4, 272);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(409, 74);
             this.radioButton1.TabIndex = 7;
@@ -131,7 +131,7 @@
             this.btnLogout.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLogout.Location = new System.Drawing.Point(4, 889);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(409, 60);
             this.btnLogout.TabIndex = 6;
@@ -158,7 +158,7 @@
             this.imgLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.imgLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.imgLogo.Location = new System.Drawing.Point(4, 4);
-            this.imgLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.imgLogo.Margin = new System.Windows.Forms.Padding(4);
             this.imgLogo.Name = "imgLogo";
             this.imgLogo.Size = new System.Drawing.Size(409, 194);
             this.imgLogo.TabIndex = 0;

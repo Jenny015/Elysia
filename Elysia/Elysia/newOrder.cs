@@ -7,7 +7,7 @@ namespace Elysia
 {
     public partial class NewOrder : Form
     {
-        public static string connectionString = "server=localhost;database=elysia;user=root;password=\"\"";
+        public static string connectionString = "server=localhost;database=elysia;user=root;password=''";
         //dicationary to store order item partID and qty
         private Dictionary<String, int> orderParts = new Dictionary<string, int>();
         //store new orderID
@@ -95,7 +95,7 @@ namespace Elysia
                         }
                     }
                 }
-                return null;
+                return $"{type}000000001";
             }
         }
 
@@ -158,7 +158,7 @@ namespace Elysia
 
                 //load dealer info
                 String dealerID = cbDealerID.SelectedItem.ToString();
-                cmd.CommandText = $"SELECT dName, dCompany FROM dealer WHERE dealerID = \"{dealerID}\"";
+                cmd.CommandText = $"SELECT dName, dCompany FROM dealer WHERE dealerID = '{dealerID}'";
                 using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
@@ -202,7 +202,7 @@ namespace Elysia
                 }
 
                 //insert a new order into order DB
-                cmd.CommandText = $"INSERT INTO `order` (orderID, dealerID) VALUES (\"{newOrderID}\", \"{cbDealerID.SelectedItem.ToString()}\")";
+                cmd.CommandText = $"INSERT INTO `order` (orderID, dealerID) VALUES ('{newOrderID}', '{cbDealerID.SelectedItem.ToString()}')";
                 try
                 {
                     cmd.ExecuteNonQuery();
@@ -282,7 +282,7 @@ namespace Elysia
 
                 //load dealer info
                 String partID = cbPartID.SelectedItem.ToString();
-                cmd.CommandText = $"SELECT partName, partQty FROM part WHERE partID = \"{partID}\"";
+                cmd.CommandText = $"SELECT partName, partQty FROM part WHERE partID = '{partID}'";
                 using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
