@@ -246,6 +246,12 @@
     <Compile Include="ViewInwards.Designer.cs">
       <DependentUpon>ViewInwards.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewLateDeleveryAlarm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewLateDeleveryAlarm.Designer.cs">
+      <DependentUpon>ViewLateDeleveryAlarm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewLog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -310,6 +316,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ViewInwards.resx">
       <DependentUpon>ViewInwards.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewLateDeleveryAlarm.resx">
+      <DependentUpon>ViewLateDeleveryAlarm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewLog.resx">
       <DependentUpon>ViewLog.cs</DependentUpon>

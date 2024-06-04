@@ -327,5 +327,12 @@ namespace Elysia
                 }
             }
         }
+
+        private void btnLateDelivery_CheckedChanged(object sender, EventArgs e)
+        {
+            ViewLateDeleveryAlarm viewLateDeliveryAlarm = new ViewLateDeleveryAlarm();
+            viewLateDeliveryAlarm.Show();
+            this.Close();
+        }
     }
 }
