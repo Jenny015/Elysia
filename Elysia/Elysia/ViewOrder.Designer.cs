@@ -61,10 +61,10 @@
             this.panel1.Controls.Add(this.imgLogo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.panel1.Size = new System.Drawing.Size(373, 796);
+            this.panel1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Size = new System.Drawing.Size(419, 955);
             this.panel1.TabIndex = 37;
             // 
             // btnViewOrder
@@ -75,10 +75,10 @@
             this.btnViewOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnViewOrder.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnViewOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnViewOrder.Location = new System.Drawing.Point(4, 475);
-            this.btnViewOrder.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnViewOrder.Location = new System.Drawing.Point(4, 568);
+            this.btnViewOrder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnViewOrder.Name = "btnViewOrder";
-            this.btnViewOrder.Size = new System.Drawing.Size(363, 62);
+            this.btnViewOrder.Size = new System.Drawing.Size(409, 74);
             this.btnViewOrder.TabIndex = 11;
             this.btnViewOrder.TabStop = true;
             this.btnViewOrder.Text = "View Order";
@@ -94,10 +94,10 @@
             this.btnNewOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewOrder.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnNewOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNewOrder.Location = new System.Drawing.Point(4, 413);
-            this.btnNewOrder.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnNewOrder.Location = new System.Drawing.Point(4, 494);
+            this.btnNewOrder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnNewOrder.Name = "btnNewOrder";
-            this.btnNewOrder.Size = new System.Drawing.Size(363, 62);
+            this.btnNewOrder.Size = new System.Drawing.Size(409, 74);
             this.btnNewOrder.TabIndex = 10;
             this.btnNewOrder.TabStop = true;
             this.btnNewOrder.Text = "New Order";
@@ -114,10 +114,10 @@
             this.btnViewDealer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnViewDealer.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnViewDealer.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnViewDealer.Location = new System.Drawing.Point(4, 351);
-            this.btnViewDealer.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnViewDealer.Location = new System.Drawing.Point(4, 420);
+            this.btnViewDealer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnViewDealer.Name = "btnViewDealer";
-            this.btnViewDealer.Size = new System.Drawing.Size(363, 62);
+            this.btnViewDealer.Size = new System.Drawing.Size(409, 74);
             this.btnViewDealer.TabIndex = 9;
             this.btnViewDealer.TabStop = true;
             this.btnViewDealer.Text = "View Dealer";
@@ -133,10 +133,10 @@
             this.btnNewDealer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewDealer.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnNewDealer.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNewDealer.Location = new System.Drawing.Point(4, 289);
-            this.btnNewDealer.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnNewDealer.Location = new System.Drawing.Point(4, 346);
+            this.btnNewDealer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnNewDealer.Name = "btnNewDealer";
-            this.btnNewDealer.Size = new System.Drawing.Size(363, 62);
+            this.btnNewDealer.Size = new System.Drawing.Size(409, 74);
             this.btnNewDealer.TabIndex = 8;
             this.btnNewDealer.TabStop = true;
             this.btnNewDealer.Text = "New Dealer";
@@ -152,10 +152,10 @@
             this.radioButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.radioButton1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.radioButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radioButton1.Location = new System.Drawing.Point(4, 227);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.radioButton1.Location = new System.Drawing.Point(4, 272);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(363, 62);
+            this.radioButton1.Size = new System.Drawing.Size(409, 74);
             this.radioButton1.TabIndex = 7;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "User";
@@ -171,10 +171,10 @@
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLogout.Location = new System.Drawing.Point(4, 743);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnLogout.Location = new System.Drawing.Point(4, 891);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(363, 48);
+            this.btnLogout.Size = new System.Drawing.Size(409, 58);
             this.btnLogout.TabIndex = 6;
             this.btnLogout.TabStop = true;
             this.btnLogout.Text = "Logout";
@@ -186,10 +186,10 @@
             // 
             this.lblDept.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblDept.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
-            this.lblDept.Location = new System.Drawing.Point(4, 165);
+            this.lblDept.Location = new System.Drawing.Point(4, 198);
             this.lblDept.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDept.Name = "lblDept";
-            this.lblDept.Size = new System.Drawing.Size(363, 62);
+            this.lblDept.Size = new System.Drawing.Size(409, 74);
             this.lblDept.TabIndex = 1;
             this.lblDept.Text = "Sales Office";
             this.lblDept.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -199,10 +199,10 @@
             this.imgLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(84)))), ((int)(((byte)(129)))));
             this.imgLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.imgLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.imgLogo.Location = new System.Drawing.Point(4, 3);
-            this.imgLogo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.imgLogo.Location = new System.Drawing.Point(4, 4);
+            this.imgLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.imgLogo.Name = "imgLogo";
-            this.imgLogo.Size = new System.Drawing.Size(363, 162);
+            this.imgLogo.Size = new System.Drawing.Size(409, 194);
             this.imgLogo.TabIndex = 0;
             this.imgLogo.TabStop = false;
             // 
@@ -213,22 +213,24 @@
             this.dataGridVieworder.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridVieworder.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridVieworder.ColumnHeadersHeight = 25;
-            this.dataGridVieworder.Location = new System.Drawing.Point(418, 92);
+            this.dataGridVieworder.Location = new System.Drawing.Point(466, 135);
+            this.dataGridVieworder.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridVieworder.Name = "dataGridVieworder";
             this.dataGridVieworder.ReadOnly = true;
             this.dataGridVieworder.RowHeadersWidth = 51;
             this.dataGridVieworder.RowTemplate.Height = 27;
             this.dataGridVieworder.ShowEditingIcon = false;
-            this.dataGridVieworder.Size = new System.Drawing.Size(1252, 643);
+            this.dataGridVieworder.Size = new System.Drawing.Size(1408, 772);
             this.dataGridVieworder.TabIndex = 39;
             this.dataGridVieworder.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridVieworder_CellClick);
             // 
             // btnFilter
             // 
             this.btnFilter.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.btnFilter.Location = new System.Drawing.Point(1537, 751);
+            this.btnFilter.Location = new System.Drawing.Point(1729, 901);
+            this.btnFilter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(133, 33);
+            this.btnFilter.Size = new System.Drawing.Size(150, 40);
             this.btnFilter.TabIndex = 41;
             this.btnFilter.Text = "Filter";
             this.btnFilter.UseVisualStyleBackColor = true;
@@ -239,10 +241,10 @@
             this.bar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(135)))), ((int)(((byte)(167)))));
             this.bar.Controls.Add(this.OrderInfor);
             this.bar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bar.Location = new System.Drawing.Point(373, 0);
+            this.bar.Location = new System.Drawing.Point(419, 0);
             this.bar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bar.Name = "bar";
-            this.bar.Size = new System.Drawing.Size(1338, 75);
+            this.bar.Size = new System.Drawing.Size(1506, 90);
             this.bar.TabIndex = 42;
             // 
             // OrderInfor
@@ -250,23 +252,24 @@
             this.OrderInfor.AutoSize = true;
             this.OrderInfor.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Bold);
             this.OrderInfor.ForeColor = System.Drawing.Color.White;
-            this.OrderInfor.Location = new System.Drawing.Point(36, 22);
+            this.OrderInfor.Location = new System.Drawing.Point(40, 26);
             this.OrderInfor.Name = "OrderInfor";
-            this.OrderInfor.Size = new System.Drawing.Size(309, 35);
+            this.OrderInfor.Size = new System.Drawing.Size(370, 41);
             this.OrderInfor.TabIndex = 20;
             this.OrderInfor.Text = "Order Information";
             // 
             // ViewOrder
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1711, 796);
+            this.ClientSize = new System.Drawing.Size(1925, 955);
             this.Controls.Add(this.bar);
             this.Controls.Add(this.btnFilter);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridVieworder);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ViewOrder";
             this.Text = "ViewOrder";
             this.panel1.ResumeLayout(false);
