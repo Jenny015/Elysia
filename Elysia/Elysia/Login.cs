@@ -25,17 +25,25 @@ namespace Elysia
                 command.Parameters.AddWithValue("@username", username);
                 command.Parameters.AddWithValue("@password", password);
 
-                string deptID = (string)command.ExecuteScalar();
 
-                if (deptID != null)
+
+                using (MySqlDataReader reader = command.ExecuteReader())
                 {
-                    // Login successful, redirect to appropriate department-specific UI
-                    RedirectToDepartmentUI(deptID);
-                }
-                else
-                {
-                    // Login failed, display error message
-                    MessageBox.Show("Invalid username or password.");
+                    if (reader.Read())
+                    {
+                        string deptID = reader.GetString("deptID");
+
+                        // Store the employee ID in the StaticVariable class
+                        StaticVariable.empID = username;
+
+                        // Redirect to the appropriate department-specific UI
+                        RedirectToDepartmentUI(deptID);
+                    }
+                    else
+                    {
+                        // Login failed, display error message
+                        MessageBox.Show("Invalid username or password.");
+                    }
                 }
             }
         }

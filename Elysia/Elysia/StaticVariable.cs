@@ -13,6 +13,7 @@ namespace Elysia
         //Store the user's department in short form
         public static string dept { get; set; }
         //Return the full name of department
+        public static string empID { get; set; }
         public static string dept_full()
         {
             switch (dept)
