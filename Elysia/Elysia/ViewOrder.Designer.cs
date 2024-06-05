@@ -61,9 +61,9 @@
             this.panel1.Controls.Add(this.imgLogo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Padding = new System.Windows.Forms.Padding(4);
             this.panel1.Size = new System.Drawing.Size(419, 955);
             this.panel1.TabIndex = 37;
             // 
@@ -76,7 +76,7 @@
             this.btnViewOrder.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnViewOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnViewOrder.Location = new System.Drawing.Point(4, 568);
-            this.btnViewOrder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnViewOrder.Margin = new System.Windows.Forms.Padding(4);
             this.btnViewOrder.Name = "btnViewOrder";
             this.btnViewOrder.Size = new System.Drawing.Size(409, 74);
             this.btnViewOrder.TabIndex = 11;
@@ -95,7 +95,7 @@
             this.btnNewOrder.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnNewOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNewOrder.Location = new System.Drawing.Point(4, 494);
-            this.btnNewOrder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNewOrder.Margin = new System.Windows.Forms.Padding(4);
             this.btnNewOrder.Name = "btnNewOrder";
             this.btnNewOrder.Size = new System.Drawing.Size(409, 74);
             this.btnNewOrder.TabIndex = 10;
@@ -115,7 +115,7 @@
             this.btnViewDealer.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnViewDealer.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnViewDealer.Location = new System.Drawing.Point(4, 420);
-            this.btnViewDealer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnViewDealer.Margin = new System.Windows.Forms.Padding(4);
             this.btnViewDealer.Name = "btnViewDealer";
             this.btnViewDealer.Size = new System.Drawing.Size(409, 74);
             this.btnViewDealer.TabIndex = 9;
@@ -124,6 +124,7 @@
             this.btnViewDealer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnViewDealer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnViewDealer.UseVisualStyleBackColor = false;
+            this.btnViewDealer.CheckedChanged += new System.EventHandler(this.btnViewDealer_CheckedChanged);
             // 
             // btnNewDealer
             // 
@@ -134,7 +135,7 @@
             this.btnNewDealer.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnNewDealer.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNewDealer.Location = new System.Drawing.Point(4, 346);
-            this.btnNewDealer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNewDealer.Margin = new System.Windows.Forms.Padding(4);
             this.btnNewDealer.Name = "btnNewDealer";
             this.btnNewDealer.Size = new System.Drawing.Size(409, 74);
             this.btnNewDealer.TabIndex = 8;
@@ -153,7 +154,7 @@
             this.radioButton1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.radioButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.radioButton1.Location = new System.Drawing.Point(4, 272);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(409, 74);
             this.radioButton1.TabIndex = 7;
@@ -172,7 +173,7 @@
             this.btnLogout.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLogout.Location = new System.Drawing.Point(4, 891);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(409, 58);
             this.btnLogout.TabIndex = 6;
@@ -200,7 +201,7 @@
             this.imgLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.imgLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.imgLogo.Location = new System.Drawing.Point(4, 4);
-            this.imgLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.imgLogo.Margin = new System.Windows.Forms.Padding(4);
             this.imgLogo.Name = "imgLogo";
             this.imgLogo.Size = new System.Drawing.Size(409, 194);
             this.imgLogo.TabIndex = 0;

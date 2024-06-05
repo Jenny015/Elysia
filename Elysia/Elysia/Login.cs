@@ -90,8 +90,8 @@ namespace Elysia
                     break;
                 case "HR":
                     StaticVariable.dept = "HR";
-                    NewEmployee newEmployee = new NewEmployee();
-                    newEmployee.Show();
+                    ViewEmployee viewEmployee = new ViewEmployee();
+                    viewEmployee.Show();
                     break;
                 case "AC":
                     StaticVariable.dept = "AC";
