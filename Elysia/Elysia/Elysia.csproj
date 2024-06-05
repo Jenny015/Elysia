@@ -170,6 +170,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AssembleDID.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AssembleDID.Designer.cs">
+      <DependentUpon>AssembleDID.cs</DependentUpon>
+    </Compile>
     <Compile Include="DangerLevel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -195,10 +201,22 @@
       <DependentUpon>GoodsInward.cs</DependentUpon>
     </Compile>
     <Compile Include="InvoiceGenerate.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="InvoiceGenerate.Designer.cs">
       <DependentUpon>InvoiceGenerate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InvoicingSection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InvoicingSection.Designer.cs">
+      <DependentUpon>InvoicingSection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SparesDespatch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SparesDespatch.Designer.cs">
+      <DependentUpon>SparesDespatch.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -207,7 +225,7 @@
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="NewDealer.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="NewDealer.Designer.cs">
       <DependentUpon>NewDealer.cs</DependentUpon>
@@ -219,16 +237,22 @@
       <DependentUpon>NewEmployee.cs</DependentUpon>
     </Compile>
     <Compile Include="NewOrder.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="NewOrder.Designer.cs">
       <DependentUpon>NewOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="NewSparePart.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="NewSparePart.Designer.cs">
       <DependentUpon>NewSparePart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewSupplier.Designer.cs">
+      <DependentUpon>NewSupplier.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -237,11 +261,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="ScrapItem.cs">
+    <Compile Include="SalesOffice.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesOffice.Designer.cs">
+      <DependentUpon>SalesOffice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScrapItem.cs">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ScrapItem.Designer.cs">
       <DependentUpon>ScrapItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StoreRecordClerk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StoreRecordClerk.Designer.cs">
+      <DependentUpon>StoreRecordClerk.cs</DependentUpon>
     </Compile>
     <Compile Include="StaticVariable.cs" />
     <Compile Include="UI_Tester.cs">
@@ -250,17 +286,23 @@
     <Compile Include="UI_Tester.Designer.cs">
       <DependentUpon>UI_Tester.cs</DependentUpon>
     </Compile>
+    <Compile Include="User.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User.Designer.cs">
+      <DependentUpon>User.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewDealer.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ViewDealer.Designer.cs">
       <DependentUpon>ViewDealer.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewDID.cs">
+    <Compile Include="Storemen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ViewDID.Designer.cs">
-      <DependentUpon>ViewDID.cs</DependentUpon>
+    <Compile Include="Storemen.Designer.cs">
+      <DependentUpon>Storemen.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewEmployee.cs">
       <SubType>Form</SubType>
@@ -269,7 +311,7 @@
       <DependentUpon>ViewEmployee.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewInvoice.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ViewInvoice.Designer.cs">
       <DependentUpon>ViewInvoice.cs</DependentUpon>
@@ -281,7 +323,7 @@
       <DependentUpon>ViewInwards.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewLateDeliveryAlarm.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ViewLateDeliveryAlarm.Designer.cs">
       <DependentUpon>ViewLateDeliveryAlarm.cs</DependentUpon>
@@ -293,17 +335,26 @@
       <DependentUpon>ViewLog.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewOrder.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ViewOrder.Designer.cs">
       <DependentUpon>ViewOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewSparePart.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ViewSparePart.Designer.cs">
       <DependentUpon>ViewSparePart.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewSupplier.Designer.cs">
+      <DependentUpon>ViewSupplier.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AssembleDID.resx">
+      <DependentUpon>AssembleDID.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DangerLevel.resx">
       <DependentUpon>DangerLevel.cs</DependentUpon>
     </EmbeddedResource>
@@ -319,6 +370,12 @@
     <EmbeddedResource Include="InvoiceGenerate.resx">
       <DependentUpon>InvoiceGenerate.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InvoicingSection.resx">
+      <DependentUpon>InvoicingSection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SparesDespatch.resx">
+      <DependentUpon>SparesDespatch.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -331,22 +388,34 @@
     <EmbeddedResource Include="NewOrder.resx">
       <DependentUpon>NewOrder.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NewSparePart.resx">
+      <DependentUpon>NewSparePart.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="SalesOffice.resx">
+      <DependentUpon>SalesOffice.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ScrapItem.resx">
       <DependentUpon>ScrapItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StoreRecordClerk.resx">
+      <DependentUpon>StoreRecordClerk.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI_Tester.resx">
       <DependentUpon>UI_Tester.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="User.resx">
+      <DependentUpon>User.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ViewDealer.resx">
       <DependentUpon>ViewDealer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewDID.resx">
-      <DependentUpon>ViewDID.cs</DependentUpon>
+    <EmbeddedResource Include="Storemen.resx">
+      <DependentUpon>Storemen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewEmployee.resx">
       <DependentUpon>ViewEmployee.cs</DependentUpon>

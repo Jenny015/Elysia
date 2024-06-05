@@ -1,27 +1,26 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Elysia
 {
-    public partial class DangerLevel : Form
+    public partial class DangerLevel : UserControl
     {
         string connectionString = "server=localhost;database=elysia;user=root;password=\"\"";
         public DangerLevel()
         {
             InitializeComponent();
             reloadDataGridView();
-            this.WindowState = FormWindowState.Maximized;
-            this.StartPosition = FormStartPosition.CenterScreen;
-            lblDept.Text = StaticVariable.dept_full();
-            btnDangerLevel.Checked = true;
             dgvDangerLevel.AllowUserToAddRows = false;
             dgvDangerLevel.ReadOnly = true;
-
         }
-
         private void reloadDataGridView()
         {
             string query = "SELECT p.partID, categoryID, partName, purPrice, partQty, partStatus FROM part p, supplierPart sp WHERE p.partID = sp.partID AND partStatus != 'Normal' ORDER BY p.partID";
@@ -66,11 +65,5 @@ namespace Elysia
             dgvDangerLevel.Columns["purPrice"].DefaultCellStyle.Format = "N2";
             dgvDangerLevel.Columns["partQty"].DefaultCellStyle.Format = "N0";
         }
-        private void btnLogout_CheckedChanged(object sender, EventArgs e)
-        {
-            StaticVariable.logout();
-            this.Close();
-        }
-
     }
 }

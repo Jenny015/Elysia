@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace Elysia
 {
-    public partial class ViewOrder : Form
+    public partial class ViewOrder : UserControl
     {
         string connectionString = "server=localhost;database=elysia;user=root;password=\"\"";
         private Filter filter;
@@ -14,10 +14,6 @@ namespace Elysia
             InitializeComponent();
             reloadDataGridView("");
             setDataGridView();
-            this.StartPosition = FormStartPosition.CenterScreen;
-            lblDept.Text = StaticVariable.dept_full();
-            btnViewOrder.Checked = true;
-            this.WindowState = FormWindowState.Maximized;
             dataGridVieworder.ReadOnly = true;
         }
         private void setDataGridView()
@@ -91,19 +87,6 @@ namespace Elysia
 
                 }
             }
-        }
-
-        private void btnNewOrder_CheckedChanged(object sender, EventArgs e)
-        {
-            NewOrder newOrder = new NewOrder();
-            newOrder.Show();
-            this.Close();
-        }
-
-        private void btnLogout_CheckedChanged(object sender, EventArgs e)
-        {
-            StaticVariable.logout();
-            this.Close();
         }
 
         private void btnFilter_Click(object sender, EventArgs e)

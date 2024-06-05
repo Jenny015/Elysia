@@ -1,6 +1,6 @@
 ﻿namespace Elysia
 {
-    partial class ViewInwards
+    partial class PurchasingDepartment
     {
         /// <summary>
         /// Required designer variable.
@@ -30,20 +30,16 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnViewGoodsInward = new System.Windows.Forms.RadioButton();
-            this.btnGoodsInward = new System.Windows.Forms.RadioButton();
+            this.btnDangerLevel = new System.Windows.Forms.RadioButton();
+            this.btnViewSupplier = new System.Windows.Forms.RadioButton();
+            this.btnNewSupplier = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.btnLogout = new System.Windows.Forms.RadioButton();
             this.lblDept = new System.Windows.Forms.Label();
             this.imgLogo = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.dgvGI = new System.Windows.Forms.DataGridView();
-            this.btnFilter = new System.Windows.Forms.Button();
-            this.btnBack = new System.Windows.Forms.Button();
+            this.contentPanel = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGI)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -51,7 +47,9 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(84)))), ((int)(((byte)(129)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.btnViewGoodsInward);
-            this.panel1.Controls.Add(this.btnGoodsInward);
+            this.panel1.Controls.Add(this.btnDangerLevel);
+            this.panel1.Controls.Add(this.btnViewSupplier);
+            this.panel1.Controls.Add(this.btnNewSupplier);
             this.panel1.Controls.Add(this.radioButton1);
             this.panel1.Controls.Add(this.btnLogout);
             this.panel1.Controls.Add(this.lblDept);
@@ -61,8 +59,8 @@
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(4);
-            this.panel1.Size = new System.Drawing.Size(419, 955);
-            this.panel1.TabIndex = 31;
+            this.panel1.Size = new System.Drawing.Size(419, 1055);
+            this.panel1.TabIndex = 32;
             // 
             // btnViewGoodsInward
             // 
@@ -72,36 +70,76 @@
             this.btnViewGoodsInward.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnViewGoodsInward.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnViewGoodsInward.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnViewGoodsInward.Location = new System.Drawing.Point(4, 420);
+            this.btnViewGoodsInward.Location = new System.Drawing.Point(4, 568);
             this.btnViewGoodsInward.Margin = new System.Windows.Forms.Padding(4);
             this.btnViewGoodsInward.Name = "btnViewGoodsInward";
             this.btnViewGoodsInward.Size = new System.Drawing.Size(409, 74);
-            this.btnViewGoodsInward.TabIndex = 9;
+            this.btnViewGoodsInward.TabIndex = 13;
             this.btnViewGoodsInward.TabStop = true;
             this.btnViewGoodsInward.Text = "View Goods Inward";
             this.btnViewGoodsInward.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnViewGoodsInward.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnViewGoodsInward.UseVisualStyleBackColor = false;
+            this.btnViewGoodsInward.CheckedChanged += new System.EventHandler(this.btnViewGoodsInward_CheckedChanged);
             // 
-            // btnGoodsInward
+            // btnDangerLevel
             // 
-            this.btnGoodsInward.Appearance = System.Windows.Forms.Appearance.Button;
-            this.btnGoodsInward.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(135)))), ((int)(((byte)(167)))));
-            this.btnGoodsInward.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnGoodsInward.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGoodsInward.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.btnGoodsInward.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnGoodsInward.Location = new System.Drawing.Point(4, 346);
-            this.btnGoodsInward.Margin = new System.Windows.Forms.Padding(4);
-            this.btnGoodsInward.Name = "btnGoodsInward";
-            this.btnGoodsInward.Size = new System.Drawing.Size(409, 74);
-            this.btnGoodsInward.TabIndex = 8;
-            this.btnGoodsInward.TabStop = true;
-            this.btnGoodsInward.Text = "Goods Inward";
-            this.btnGoodsInward.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnGoodsInward.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnGoodsInward.UseVisualStyleBackColor = false;
-            this.btnGoodsInward.CheckedChanged += new System.EventHandler(this.btnGoodsInward_CheckedChanged);
+            this.btnDangerLevel.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnDangerLevel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(135)))), ((int)(((byte)(167)))));
+            this.btnDangerLevel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDangerLevel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDangerLevel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.btnDangerLevel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDangerLevel.Location = new System.Drawing.Point(4, 494);
+            this.btnDangerLevel.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDangerLevel.Name = "btnDangerLevel";
+            this.btnDangerLevel.Size = new System.Drawing.Size(409, 74);
+            this.btnDangerLevel.TabIndex = 12;
+            this.btnDangerLevel.TabStop = true;
+            this.btnDangerLevel.Text = "Danger Level";
+            this.btnDangerLevel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnDangerLevel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDangerLevel.UseVisualStyleBackColor = false;
+            this.btnDangerLevel.CheckedChanged += new System.EventHandler(this.btnDangerLevel_CheckedChanged);
+            // 
+            // btnViewSupplier
+            // 
+            this.btnViewSupplier.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnViewSupplier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(135)))), ((int)(((byte)(167)))));
+            this.btnViewSupplier.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnViewSupplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewSupplier.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.btnViewSupplier.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnViewSupplier.Location = new System.Drawing.Point(4, 420);
+            this.btnViewSupplier.Margin = new System.Windows.Forms.Padding(4);
+            this.btnViewSupplier.Name = "btnViewSupplier";
+            this.btnViewSupplier.Size = new System.Drawing.Size(409, 74);
+            this.btnViewSupplier.TabIndex = 9;
+            this.btnViewSupplier.TabStop = true;
+            this.btnViewSupplier.Text = "View Supplier";
+            this.btnViewSupplier.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnViewSupplier.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnViewSupplier.UseVisualStyleBackColor = false;
+            // 
+            // btnNewSupplier
+            // 
+            this.btnNewSupplier.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnNewSupplier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(135)))), ((int)(((byte)(167)))));
+            this.btnNewSupplier.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnNewSupplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNewSupplier.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.btnNewSupplier.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNewSupplier.Location = new System.Drawing.Point(4, 346);
+            this.btnNewSupplier.Margin = new System.Windows.Forms.Padding(4);
+            this.btnNewSupplier.Name = "btnNewSupplier";
+            this.btnNewSupplier.Size = new System.Drawing.Size(409, 74);
+            this.btnNewSupplier.TabIndex = 8;
+            this.btnNewSupplier.TabStop = true;
+            this.btnNewSupplier.Text = "New Supplier";
+            this.btnNewSupplier.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnNewSupplier.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNewSupplier.UseVisualStyleBackColor = false;
+            this.btnNewSupplier.CheckedChanged += new System.EventHandler(this.btnNewSupplier_CheckedChanged);
             // 
             // radioButton1
             // 
@@ -121,6 +159,7 @@
             this.radioButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.radioButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.radioButton1.UseVisualStyleBackColor = false;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // btnLogout
             // 
@@ -130,15 +169,16 @@
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLogout.Location = new System.Drawing.Point(4, 889);
+            this.btnLogout.Location = new System.Drawing.Point(4, 990);
             this.btnLogout.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(409, 60);
+            this.btnLogout.Size = new System.Drawing.Size(409, 59);
             this.btnLogout.TabIndex = 6;
             this.btnLogout.TabStop = true;
             this.btnLogout.Text = "Logout";
             this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.CheckedChanged += new System.EventHandler(this.btnLogout_CheckedChanged);
             // 
             // lblDept
             // 
@@ -149,7 +189,7 @@
             this.lblDept.Name = "lblDept";
             this.lblDept.Size = new System.Drawing.Size(409, 74);
             this.lblDept.TabIndex = 1;
-            this.lblDept.Text = "Goods Inward Department";
+            this.lblDept.Text = "Purchasing Department";
             this.lblDept.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // imgLogo
@@ -164,107 +204,39 @@
             this.imgLogo.TabIndex = 0;
             this.imgLogo.TabStop = false;
             // 
-            // panel2
+            // contentPanel
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(135)))), ((int)(((byte)(167)))));
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(419, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1505, 90);
-            this.panel2.TabIndex = 32;
+            this.contentPanel.Location = new System.Drawing.Point(421, 0);
+            this.contentPanel.Name = "contentPanel";
+            this.contentPanel.Size = new System.Drawing.Size(1503, 1055);
+            this.contentPanel.TabIndex = 51;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Bold);
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(40, 28);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(381, 41);
-            this.label4.TabIndex = 20;
-            this.label4.Text = "View Goods Inward";
-            // 
-            // dgvGI
-            // 
-            this.dgvGI.AllowUserToAddRows = false;
-            this.dgvGI.AllowUserToDeleteRows = false;
-            this.dgvGI.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvGI.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dgvGI.ColumnHeadersHeight = 25;
-            this.dgvGI.Location = new System.Drawing.Point(468, 116);
-            this.dgvGI.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dgvGI.Name = "dgvGI";
-            this.dgvGI.ReadOnly = true;
-            this.dgvGI.RowHeadersWidth = 51;
-            this.dgvGI.RowTemplate.Height = 27;
-            this.dgvGI.ShowEditingIcon = false;
-            this.dgvGI.Size = new System.Drawing.Size(1408, 772);
-            this.dgvGI.TabIndex = 40;
-            this.dgvGI.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGI_CellClick);
-            // 
-            // btnFilter
-            // 
-            this.btnFilter.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.btnFilter.Location = new System.Drawing.Point(1727, 902);
-            this.btnFilter.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(150, 41);
-            this.btnFilter.TabIndex = 41;
-            this.btnFilter.Text = "Filter";
-            this.btnFilter.UseVisualStyleBackColor = true;
-            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
-            // 
-            // btnBack
-            // 
-            this.btnBack.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.btnBack.Location = new System.Drawing.Point(1727, 902);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(150, 41);
-            this.btnBack.TabIndex = 43;
-            this.btnBack.Text = "Back";
-            this.btnBack.UseVisualStyleBackColor = true;
-            this.btnBack.Visible = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
-            // ViewInwards
+            // PurchasingDepartment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1924, 955);
-            this.Controls.Add(this.btnBack);
-            this.Controls.Add(this.btnFilter);
-            this.Controls.Add(this.dgvGI);
-            this.Controls.Add(this.panel2);
+            this.ClientSize = new System.Drawing.Size(1924, 1055);
+            this.Controls.Add(this.contentPanel);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "ViewInwards";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ViewInwards";
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Name = "PurchasingDepartment";
+            this.Text = "DangerLevel";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGI)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.RadioButton btnViewGoodsInward;
-        private System.Windows.Forms.RadioButton btnGoodsInward;
+        private System.Windows.Forms.RadioButton btnDangerLevel;
+        private System.Windows.Forms.RadioButton btnViewSupplier;
+        private System.Windows.Forms.RadioButton btnNewSupplier;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton btnLogout;
         private System.Windows.Forms.Label lblDept;
         public System.Windows.Forms.PictureBox imgLogo;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridView dgvGI;
-        private System.Windows.Forms.Button btnFilter;
-        private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.RadioButton btnViewGoodsInward;
+        private System.Windows.Forms.Panel contentPanel;
     }
 }

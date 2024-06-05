@@ -55,51 +55,48 @@ namespace Elysia
             {
                 case "SO":
                     StaticVariable.dept = "SO";
-                    ViewOrder viewOrder = new ViewOrder();
-                    viewOrder.Show();
+                    SalesOffice SO = new SalesOffice();
+                    SO.Show();
                     break;
                 case "SP":
                     StaticVariable.dept = "SP";
-                    ViewDID viewDID = new ViewDID();
-                    viewDID.Show();
+                    Storemen SP = new Storemen();
+                    SP.Show();
                     break;
                 case "SD":
                     StaticVariable.dept = "SD";
-                    InvoiceGenerate invoiceGenerateAndDelivery = new InvoiceGenerate();
-                    invoiceGenerateAndDelivery.Show();
+                    SparesDespatch SD = new SparesDespatch();
+                    SD.Show();
                     break;
                 case "IS":
                     StaticVariable.dept = "IS";
-                    ViewInvoice viewInvoice = new ViewInvoice();
-                    viewInvoice.Show();
+                    InvoicingSection IS = new InvoicingSection();
+                    IS.Show();
                     break;
-                case "SR":
+                case "SR": 
                     StaticVariable.dept = "SR";
-                    ScrapItem scrapItem = new ScrapItem();
-                    scrapItem.Show();
+                    StoreRecordClerk SR = new StoreRecordClerk();
+                    SR.Show();
                     break;
                 case "PD":
                     StaticVariable.dept = "PD";
-                    DangerLevel dangerLevel = new DangerLevel();
-                    dangerLevel.Show();
+                    PurchasingDepartment PD = new PurchasingDepartment();
+                    PD.Show();
                     break;
                 case "GI":
                     StaticVariable.dept = "GI";
-                    ViewInwards vi = new ViewInwards();
-                    vi.Show();
+                    GoodsInwardDepartment GI = new GoodsInwardDepartment();
+                    GI.Show();
                     break;
                 case "HR":
                     StaticVariable.dept = "HR";
-                    NewEmployee newEmployee = new NewEmployee();
-                    newEmployee.Show();
+                    NewEmployee HR = new NewEmployee();
+                    HR.Show();
                     break;
                 case "AC":
                     StaticVariable.dept = "AC";
                     ViewLog viewLog = new ViewLog();
                     viewLog.Show();
-                    break;
-                default:
-                    MessageBox.Show("Invalid department ID.");
                     break;
             }
         }

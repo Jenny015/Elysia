@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Windows.Forms;
 
 namespace Elysia
 {
@@ -19,10 +20,10 @@ namespace Elysia
             {
                 case "SO":
                     return "Sales Office";
-                case "ST":
+                case "SP":
                     return "Spare Parts Store";
                 case "SD":
-                    return "Spares Dispatch Department";
+                    return "Spares Despatch Department";
                 case "IS":
                     return "Invoicing Section";
                 case "SR":
@@ -47,6 +48,12 @@ namespace Elysia
             Login login = new Login();
             login.Show();
         }
+        public static void displayContent(Control control ,UserControl userControl)
+        {
+            control.Controls.Clear();
+            control.Controls.Add(userControl);
+        }
+
         public static void updatePartStatus()
         {
             using (MySqlConnection conn = new MySqlConnection("server=localhost;database=elysia;user=root;password=\"\""))

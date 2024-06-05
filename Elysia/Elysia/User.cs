@@ -1,5 +1,4 @@
-﻿using MySql.Data.MySqlClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,14 +10,11 @@ using System.Windows.Forms;
 
 namespace Elysia
 {
-    public partial class NewSparePart : UserControl
+    public partial class User : UserControl
     {
-        public static string connectionString = "server=localhost;database=elysia;user=root;password=''";
-        private Filter filter;
-        public NewSparePart()
+        public User()
         {
             InitializeComponent();
         }
-        
     }
 }

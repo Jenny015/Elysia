@@ -5,21 +5,17 @@ using System.Windows.Forms;
 
 namespace Elysia
 {
-    public partial class ViewInwards : Form
+    public partial class ViewGoodsInward : UserControl
     {
         string connectionString = "server=localhost;database=elysia;user=root;password=\"\"";
         private Filter filter;
         string inwardsID;
-        public ViewInwards()
+        public ViewGoodsInward()
         {
             InitializeComponent();
             reloadDataGridView("");
             setDataGridView();
-            this.StartPosition = FormStartPosition.CenterScreen;
-            lblDept.Text = StaticVariable.dept_full();
-            btnViewGoodsInward.Checked = true;
             dgvGI.ReadOnly = true;
-            this.WindowState = FormWindowState.Maximized;
         }
         private void setDataGridView()
         {
@@ -46,11 +42,6 @@ namespace Elysia
                 }
             }
         }
-        private void btnLogout_CheckedChanged(object sender, EventArgs e)
-        {
-            StaticVariable.logout();
-            this.Close();
-        }
         private void btnFilter_Click(object sender, EventArgs e)
         {
             filter = new Filter("inward");
@@ -64,13 +55,6 @@ namespace Elysia
             int columnIndex = dgvGI.Columns["btnDetail"].Index;
             int lastPosition = dgvGI.Columns.Count - 1;
             dgvGI.Columns[columnIndex].DisplayIndex = lastPosition;
-        }
-
-        private void btnGoodsInward_CheckedChanged(object sender, EventArgs e)
-        {
-            GoodsInward gi = new GoodsInward();
-            gi.Show();
-            this.Close();
         }
         private void dgvGI_CellClick(object sender, DataGridViewCellEventArgs e)
         {

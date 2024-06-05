@@ -28,15 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnViewGoodsInward = new System.Windows.Forms.RadioButton();
-            this.btnGoodsInward = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.btnLogout = new System.Windows.Forms.RadioButton();
-            this.lblDept = new System.Windows.Forms.Label();
-            this.imgLogo = new System.Windows.Forms.PictureBox();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -59,160 +50,19 @@
             this.cbPartID = new System.Windows.Forms.ComboBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.nQty = new System.Windows.Forms.NumericUpDown();
-            this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nQty)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(135)))), ((int)(((byte)(167)))));
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(419, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1505, 90);
-            this.panel2.TabIndex = 31;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Bold);
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(40, 28);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(280, 41);
-            this.label4.TabIndex = 20;
-            this.label4.Text = "Goods Inward";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(84)))), ((int)(((byte)(129)))));
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.btnViewGoodsInward);
-            this.panel1.Controls.Add(this.btnGoodsInward);
-            this.panel1.Controls.Add(this.radioButton1);
-            this.panel1.Controls.Add(this.btnLogout);
-            this.panel1.Controls.Add(this.lblDept);
-            this.panel1.Controls.Add(this.imgLogo);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
-            this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(4);
-            this.panel1.Size = new System.Drawing.Size(419, 1055);
-            this.panel1.TabIndex = 30;
-            // 
-            // btnViewGoodsInward
-            // 
-            this.btnViewGoodsInward.Appearance = System.Windows.Forms.Appearance.Button;
-            this.btnViewGoodsInward.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(135)))), ((int)(((byte)(167)))));
-            this.btnViewGoodsInward.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnViewGoodsInward.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnViewGoodsInward.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.btnViewGoodsInward.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnViewGoodsInward.Location = new System.Drawing.Point(4, 420);
-            this.btnViewGoodsInward.Margin = new System.Windows.Forms.Padding(4);
-            this.btnViewGoodsInward.Name = "btnViewGoodsInward";
-            this.btnViewGoodsInward.Size = new System.Drawing.Size(409, 74);
-            this.btnViewGoodsInward.TabIndex = 9;
-            this.btnViewGoodsInward.TabStop = true;
-            this.btnViewGoodsInward.Text = "View Goods Inward";
-            this.btnViewGoodsInward.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnViewGoodsInward.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnViewGoodsInward.UseVisualStyleBackColor = false;
-            this.btnViewGoodsInward.CheckedChanged += new System.EventHandler(this.btnViewGoodsInward_CheckedChanged);
-            // 
-            // btnGoodsInward
-            // 
-            this.btnGoodsInward.Appearance = System.Windows.Forms.Appearance.Button;
-            this.btnGoodsInward.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(135)))), ((int)(((byte)(167)))));
-            this.btnGoodsInward.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnGoodsInward.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGoodsInward.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.btnGoodsInward.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnGoodsInward.Location = new System.Drawing.Point(4, 346);
-            this.btnGoodsInward.Margin = new System.Windows.Forms.Padding(4);
-            this.btnGoodsInward.Name = "btnGoodsInward";
-            this.btnGoodsInward.Size = new System.Drawing.Size(409, 74);
-            this.btnGoodsInward.TabIndex = 8;
-            this.btnGoodsInward.TabStop = true;
-            this.btnGoodsInward.Text = "Goods Inward";
-            this.btnGoodsInward.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnGoodsInward.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnGoodsInward.UseVisualStyleBackColor = false;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(135)))), ((int)(((byte)(167)))));
-            this.radioButton1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.radioButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.radioButton1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.radioButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radioButton1.Location = new System.Drawing.Point(4, 272);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(4);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(409, 74);
-            this.radioButton1.TabIndex = 7;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "User";
-            this.radioButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.radioButton1.UseVisualStyleBackColor = false;
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.Appearance = System.Windows.Forms.Appearance.Button;
-            this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(135)))), ((int)(((byte)(167)))));
-            this.btnLogout.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogout.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLogout.Location = new System.Drawing.Point(4, 989);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(4);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(409, 60);
-            this.btnLogout.TabIndex = 6;
-            this.btnLogout.TabStop = true;
-            this.btnLogout.Text = "Logout";
-            this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnLogout.UseVisualStyleBackColor = false;
-            this.btnLogout.CheckedChanged += new System.EventHandler(this.btnLogout_CheckedChanged);
-            // 
-            // lblDept
-            // 
-            this.lblDept.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblDept.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold);
-            this.lblDept.Location = new System.Drawing.Point(4, 198);
-            this.lblDept.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblDept.Name = "lblDept";
-            this.lblDept.Size = new System.Drawing.Size(409, 74);
-            this.lblDept.TabIndex = 1;
-            this.lblDept.Text = "Goods Inward Department";
-            this.lblDept.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // imgLogo
-            // 
-            this.imgLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(84)))), ((int)(((byte)(129)))));
-            this.imgLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.imgLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.imgLogo.Location = new System.Drawing.Point(4, 4);
-            this.imgLogo.Margin = new System.Windows.Forms.Padding(4);
-            this.imgLogo.Name = "imgLogo";
-            this.imgLogo.Size = new System.Drawing.Size(409, 194);
-            this.imgLogo.TabIndex = 0;
-            this.imgLogo.TabStop = false;
             // 
             // btnSubmit
             // 
             this.btnSubmit.BackColor = System.Drawing.Color.Plum;
             this.btnSubmit.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.btnSubmit.Location = new System.Drawing.Point(1724, 944);
+            this.btnSubmit.Location = new System.Drawing.Point(1293, 963);
             this.btnSubmit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(150, 40);
@@ -226,7 +76,7 @@
             this.btnClear.BackColor = System.Drawing.Color.Tomato;
             this.btnClear.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.btnClear.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnClear.Location = new System.Drawing.Point(1511, 944);
+            this.btnClear.Location = new System.Drawing.Point(1080, 963);
             this.btnClear.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(150, 40);
@@ -246,7 +96,7 @@
             this.groupBox1.Controls.Add(this.cbSupplierID);
             this.groupBox1.Controls.Add(this.lblDate);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
-            this.groupBox1.Location = new System.Drawing.Point(466, 123);
+            this.groupBox1.Location = new System.Drawing.Point(35, 142);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1407, 323);
             this.groupBox1.TabIndex = 34;
@@ -347,7 +197,7 @@
             this.groupBox2.Controls.Add(this.btnAdd);
             this.groupBox2.Controls.Add(this.nQty);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
-            this.groupBox2.Location = new System.Drawing.Point(466, 498);
+            this.groupBox2.Location = new System.Drawing.Point(35, 517);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(1407, 400);
             this.groupBox2.TabIndex = 35;
@@ -475,44 +325,51 @@
             0,
             0});
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(135)))), ((int)(((byte)(167)))));
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1503, 90);
+            this.panel2.TabIndex = 50;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(40, 26);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(188, 41);
+            this.label4.TabIndex = 20;
+            this.label4.Text = "幫手改thx";
+            // 
             // GoodsInward
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1924, 1055);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "GoodsInward";
-            this.Text = "GoodsInward";
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).EndInit();
+            this.Size = new System.Drawing.Size(1503, 1055);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nQty)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.RadioButton btnGoodsInward;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton btnLogout;
-        private System.Windows.Forms.Label lblDept;
-        public System.Windows.Forms.PictureBox imgLogo;
-        private System.Windows.Forms.RadioButton btnViewGoodsInward;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -535,5 +392,7 @@
         private System.Windows.Forms.ComboBox cbPartID;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.NumericUpDown nQty;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label4;
     }
 }

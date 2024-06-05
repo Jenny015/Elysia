@@ -1,30 +1,25 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
 namespace Elysia
 {
-    public partial class ViewLog : Form
+    public partial class ViewLog : UserControl
     {
         string connectionString = "server=localhost;database=elysia;user=root;password=\"\"";
         private Filter filter;
         public ViewLog()
         {
             InitializeComponent();
-            InitializeForm();
-        }
-
-        private void InitializeForm()
-        {
-            this.StartPosition = FormStartPosition.CenterScreen;
-            dgvAcc.ReadOnly = true;
             reloadDataGridView("");
-            this.WindowState = FormWindowState.Maximized;
-
-            lblDept.Text = StaticVariable.dept_full();
-            btnViewLog.Checked = true;
+            dgvAcc.ReadOnly = true;
         }
         private void reloadDataGridView(string query)
         {
@@ -53,11 +48,6 @@ namespace Elysia
                 totalPrice += Double.Parse(row.Cells["Subtotal"].Value.ToString());
             }
             lblPrice.Text = totalPrice.ToString("N2");*/
-        }
-        private void btnLogout_CheckedChanged(object sender, EventArgs e)
-        {
-            StaticVariable.logout();
-            this.Close();
         }
 
         private void btnFilter_Click(object sender, EventArgs e)

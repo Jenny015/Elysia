@@ -12,25 +12,16 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
 namespace Elysia
 {
-    public partial class ViewLateDeliveryAlarm : Form
+    public partial class ViewLateDeliveryAlarm : UserControl
     {
         string connectionString = "server=localhost;database=elysia;user=root;password=\"\"";
         public ViewLateDeliveryAlarm()
         {
             InitializeComponent();
-            this.WindowState = FormWindowState.Maximized;
-            this.StartPosition = FormStartPosition.CenterScreen;
-            lblDept.Text = StaticVariable.dept_full();
-            btnLateDelivery.Checked = true;
             dgvLateDelivery.AllowUserToAddRows = false;
             dgvLateDelivery.ReadOnly = true;
-
-            lblDept.Text = StaticVariable.dept_full();
-            btnLateDelivery.Checked = true;
             if (StaticVariable.dept == "SD")
             {
-                btnViewInvoice.Visible = true;
-                btnInvGen.Visible = true;
                 reloadDataGridView(@"SELECT o.orderID, o.orderStatus,
        5 * (DATEDIFF(CURDATE(), o.orderDate) DIV 7) +
        MID('0123444401233334012222340111123400001234000123440',
@@ -42,8 +33,6 @@ AND (5 * (DATEDIFF(CURDATE(), o.orderDate) DIV 7) +
          7 * WEEKDAY(CURDATE()) + WEEKDAY(o.orderDate) + 1, 1)) > 2;");
             }
             else {
-                btnDID.Visible = true;
-                btnSparePart.Visible = true;
                 reloadDataGridView(@"SELECT o.orderID, op.partID, op.orderQty,
        5 * (DATEDIFF(CURDATE(), o.orderDate) DIV 7) +
        MID('0123444401233334012222340111123400001234000123440',

@@ -6,26 +6,16 @@ using System.Windows.Forms;
 
 namespace Elysia
 {
-    public partial class ViewInvoice : Form
+    public partial class ViewInvoice : UserControl
     {
         private Filter filter;
         private string connectionString = "server=localhost;database=elysia;user=root;password=\"\"";
         public ViewInvoice()
         {
             InitializeComponent();
-            this.StartPosition = FormStartPosition.CenterScreen;
             reloadDataGridView("");
             dgvInv.ReadOnly = true;
             setDataGridView();
-            this.WindowState = FormWindowState.Maximized;
-
-            lblDept.Text = StaticVariable.dept_full();
-            btnViewInvoice.Checked = true;
-            if (StaticVariable.dept == "SD")
-            {
-                btnIG.Visible = true;
-                btnLD.Visible = true;
-            }
         }
 
         private void reloadDataGridView(String query)
@@ -78,12 +68,6 @@ namespace Elysia
             reloadDataGridView("");
 
         }
-        private void btnLogout_CheckedChanged(object sender, EventArgs e)
-        {
-            StaticVariable.logout();
-            this.Close();
-        }
-
         private void dgvInv_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             string orderID = dgvInv.Rows[e.RowIndex].Cells["orderID"].Value.ToString();
@@ -166,7 +150,6 @@ namespace Elysia
                 }
             }
         }
-
         private void btnFilter_Click(object sender, EventArgs e)
         {
             filter = new Filter("invoice");

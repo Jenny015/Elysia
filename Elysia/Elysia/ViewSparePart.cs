@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Elysia
 {
-    public partial class ViewSparePart : Form
+    public partial class ViewSparePart : UserControl
     {
         private Filter filter;
         string connectionString = "server=localhost;database=elysia;user=root;password=\"\"";
@@ -19,10 +19,6 @@ namespace Elysia
         {
             InitializeComponent();
             reloadDataGridView("");
-            this.StartPosition = FormStartPosition.CenterScreen;
-            lblDept.Text = StaticVariable.dept_full();
-            btnViewOrder.Checked = true;
-            this.WindowState = FormWindowState.Maximized;
         }
 
         private void reloadDataGridView(String query)
@@ -51,18 +47,6 @@ namespace Elysia
         {
             string query = filter.queryString;
             reloadDataGridView(query);
-        }
-        private void btnLogout_CheckedChanged(object sender, EventArgs e)
-        {
-            StaticVariable.logout();
-            this.Close();
-        }
-
-        private void btnDID_CheckedChanged(object sender, EventArgs e)
-        {
-            ViewDID did = new ViewDID();
-            did.Show();
-            this.Close();
         }
     }
 }

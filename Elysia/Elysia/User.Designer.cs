@@ -1,16 +1,16 @@
 ﻿namespace Elysia
 {
-    partial class NewDealer
+    partial class User
     {
-        /// <summary>
-        /// Required designer variable.
+        /// <summary> 
+        /// 設計工具所需的變數。
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
+        /// <summary> 
+        /// 清除任何使用中的資源。
         /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        /// <param name="disposing">如果應該處置受控資源則為 true，否則為 false。</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,11 +20,11 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region 元件設計工具產生的程式碼
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
+        /// <summary> 
+        /// 此為設計工具支援所需的方法 - 請勿使用程式碼編輯器修改
+        /// 這個方法的內容。
         /// </summary>
         private void InitializeComponent()
         {
@@ -54,12 +54,12 @@
             this.label4.TabIndex = 20;
             this.label4.Text = "幫手改thx";
             // 
-            // NewDealer
+            // User
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel2);
-            this.Name = "NewDealer";
+            this.Name = "User";
             this.Size = new System.Drawing.Size(1503, 1055);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

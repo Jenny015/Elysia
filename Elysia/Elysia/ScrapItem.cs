@@ -4,24 +4,14 @@ using System.Windows.Forms;
 
 namespace Elysia
 {
-    public partial class ScrapItem : Form
+    public partial class ScrapItem : UserControl
     {
+
         string connectionString = "server=localhost;database=elysia;user=root;password=\"\"";
         public ScrapItem()
         {
             InitializeComponent();
-            this.StartPosition = FormStartPosition.CenterScreen;
-            lblDept.Text = StaticVariable.dept_full();
-            this.WindowState = FormWindowState.Maximized;
-            btnScrapItem.Checked = true;
         }
-
-        private void btnLogout_CheckedChanged(object sender, EventArgs e)
-        {
-            StaticVariable.logout();
-            this.Close();
-        }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
             try
@@ -68,7 +58,6 @@ namespace Elysia
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
-
         private void btnClear_Click(object sender, EventArgs e)
         {
             tbPartID.Text = "";

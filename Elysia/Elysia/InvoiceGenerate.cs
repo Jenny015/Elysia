@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace Elysia
 {
-    public partial class InvoiceGenerate : Form
+    public partial class InvoiceGenerate : UserControl
     {
         String connectionString = "server=localhost;database=elysia;uid=root;pwd=\"\";";
         private Filter filter; //filter
@@ -20,14 +20,10 @@ namespace Elysia
         public InvoiceGenerate()
         {
             InitializeComponent();
-            this.StartPosition = FormStartPosition.CenterScreen;
-            lblDept.Text = StaticVariable.dept_full();
-            btnInvGen.Checked = true;
             dgvOrder.AllowUserToAddRows = false;
             dgvOrder.ReadOnly = true;
             LoadDataFromDatabase("");
             setDataGridView();
-            this.WindowState = FormWindowState.Maximized;
         }
         private void LoadDataFromDatabase(string query)
         {
@@ -75,12 +71,6 @@ namespace Elysia
         private void filter_Query(object sender, EventArgs e)
         {
             LoadDataFromDatabase(filter.queryString);
-        }
-
-        private void btnLogout_CheckedChanged(object sender, EventArgs e)
-        {
-            StaticVariable.logout();
-            this.Close();
         }
 
         private void dgvOrder_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -172,13 +162,6 @@ namespace Elysia
 
             }
             lblOrderID.Text = orderID;
-        }
-        //jump to View Invoice form
-        private void btnViewInvoice_CheckedChanged(object sender, EventArgs e)
-        {
-            ViewInvoice vi = new ViewInvoice();
-            vi.Show();
-            this.Close();
         }
         //generate invoice as pdf file
         private void btnPDF_Click(object sender, EventArgs e)
@@ -326,13 +309,6 @@ namespace Elysia
                     }
                 }
             }
-        }
-
-        private void btnLateDelivery_CheckedChanged(object sender, EventArgs e)
-        {
-            ViewLateDeliveryAlarm viewLateDeliveryAlarm = new ViewLateDeliveryAlarm();
-            viewLateDeliveryAlarm.Show();
-            this.Close();
         }
     }
 }

@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace Elysia
 {
-    public partial class NewOrder : Form
+    public partial class NewOrder : UserControl
     {
         public static string connectionString = "server=localhost;database=elysia;user=root;password=''";
         //dicationary to store order item partID and qty
@@ -16,10 +16,6 @@ namespace Elysia
         {
             InitializeComponent();
             LoadInformation();
-            btnNewOrder.Checked = true;
-            this.StartPosition = FormStartPosition.CenterScreen;
-            lblDept.Text = StaticVariable.dept_full();
-            this.WindowState = FormWindowState.Maximized;
         }
 
         public void LoadInformation()
@@ -292,25 +288,6 @@ namespace Elysia
                     }
                 }
             }
-        }
-
-        //logout
-        private void btnLogout_Click(object sender, EventArgs e)
-        {
-            StaticVariable.logout();
-        }
-
-        private void btnViewOrder_CheckedChanged(object sender, EventArgs e)
-        {
-            ViewOrder vOrder = new ViewOrder();
-            this.Close();
-            vOrder.Show();
-        }
-
-        private void btnLogout_CheckedChanged(object sender, EventArgs e)
-        {
-            StaticVariable.logout();
-            this.Close();
         }
     }
 }

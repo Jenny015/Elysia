@@ -5,22 +5,19 @@ using System.Windows.Forms;
 
 namespace Elysia
 {
-    public partial class ViewDID : Form
+    public partial class AssembleDID : UserControl
     {
         private Filter filter;
         string connectionString = "server=localhost;database=elysia;user=root;password=\"\"";
-        public ViewDID()
+        public AssembleDID()
         {
             InitializeComponent();
             setDataGridView();
-            this.StartPosition = FormStartPosition.CenterScreen;
-            lblDept.Text = StaticVariable.dept_full();
             this.dgvDID.CellClick += new DataGridViewCellEventHandler(dataGridView1_CellClick);
             btnDID.Checked = true;
             dgvDID.AllowUserToAddRows = false;
             dgvDID.ReadOnly = true;
             dgvDID.Columns[3].ReadOnly = false;
-            this.WindowState = FormWindowState.Maximized;
         }
         private void setDataGridView()
         {
@@ -187,7 +184,6 @@ namespace Elysia
             }
         }
 
-
         private void btnFilter_Click(object sender, EventArgs e)
         {
             filter = new Filter("DID");
@@ -197,26 +193,6 @@ namespace Elysia
         private void filter_Query(object sender, EventArgs e)
         {
             reloadDataGridView(filter.queryString);
-        }
-
-        private void btnLogout_CheckedChanged(object sender, EventArgs e)
-        {
-            StaticVariable.logout();
-            this.Close();
-        }
-
-        private void btnNewOrder_CheckedChanged(object sender, EventArgs e)
-        {
-            ViewSparePart sp = new ViewSparePart();
-            sp.Show();
-            this.Close();
-        }
-
-        private void btnViewOrder_CheckedChanged(object sender, EventArgs e)
-        {
-            ViewLateDeliveryAlarm lateDelivery = new ViewLateDeliveryAlarm();
-            lateDelivery.Show();
-            this.Close();
         }
     }
 }
