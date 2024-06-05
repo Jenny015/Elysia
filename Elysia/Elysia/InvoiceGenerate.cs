@@ -330,7 +330,7 @@ namespace Elysia
 
         private void btnLateDelivery_CheckedChanged(object sender, EventArgs e)
         {
-            ViewLateDeleveryAlarm viewLateDeliveryAlarm = new ViewLateDeleveryAlarm();
+            ViewLateDeliveryAlarm viewLateDeliveryAlarm = new ViewLateDeliveryAlarm();
             viewLateDeliveryAlarm.Show();
             this.Close();
         }

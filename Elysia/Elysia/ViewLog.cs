@@ -20,21 +20,15 @@ namespace Elysia
         {
             this.StartPosition = FormStartPosition.CenterScreen;
             dgvAcc.ReadOnly = true;
-            setDataGridView();
+            reloadDataGridView("");
             this.WindowState = FormWindowState.Maximized;
 
             lblDept.Text = StaticVariable.dept_full();
             btnViewLog.Checked = true;
-
-            if (StaticVariable.dept == "AC")
-            {
-                btnIG.Visible = true;
-                btnLD.Visible = true;
-            }
         }
         private void reloadDataGridView(string query)
         {
-            query = query == "" ? "SELECT logID, invStatus FROM `log` ORDER BY invStatus DESC" : query;
+            query = query == "" ? "SELECT * FROM `log`" : query;
             try
             {
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
@@ -51,18 +45,14 @@ namespace Elysia
             {
                 MessageBox.Show($"Error: {ex.Message}");
             }
-        }
 
-        private void setDataGridView()
-        {
-            DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn();
-            buttonColumn.HeaderText = "Print";
-            buttonColumn.Name = "Print";
-            buttonColumn.Text = "Print";
-            buttonColumn.UseColumnTextForButtonValue = true;
-
-            // Add the button column to the DataGridView
-            dgvAcc.Columns.Add(buttonColumn);
+            /*reference InvoiceGenerate line 148-167
+            double totalPrice = 0;
+            foreach (DataGridViewRow row in dgv.Rows)
+            {
+                totalPrice += Double.Parse(row.Cells["Subtotal"].Value.ToString());
+            }
+            lblPrice.Text = totalPrice.ToString("N2");*/
         }
         private void btnLogout_CheckedChanged(object sender, EventArgs e)
         {
@@ -72,7 +62,7 @@ namespace Elysia
 
         private void btnFilter_Click(object sender, EventArgs e)
         {
-            filter = new Filter("invoice");
+            filter = new Filter("log");
             filter.Query += filter_Query;
             filter.Show();
         }

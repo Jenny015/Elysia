@@ -1,6 +1,6 @@
 ﻿namespace Elysia
 {
-    partial class ViewLateDeleveryAlarm
+    partial class ViewLateDeliveryAlarm
     {
         /// <summary>
         /// Required designer variable.

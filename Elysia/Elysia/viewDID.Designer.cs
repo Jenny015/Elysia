@@ -102,6 +102,7 @@
             this.btnViewOrder.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnViewOrder.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnViewOrder.UseVisualStyleBackColor = false;
+            this.btnViewOrder.CheckedChanged += new System.EventHandler(this.btnViewOrder_CheckedChanged);
             // 
             // btnNewOrder
             // 

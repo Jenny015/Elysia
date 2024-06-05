@@ -211,5 +211,12 @@ namespace Elysia
             sp.Show();
             this.Close();
         }
+
+        private void btnViewOrder_CheckedChanged(object sender, EventArgs e)
+        {
+            ViewLateDeliveryAlarm lateDelivery = new ViewLateDeliveryAlarm();
+            lateDelivery.Show();
+            this.Close();
+        }
     }
 }

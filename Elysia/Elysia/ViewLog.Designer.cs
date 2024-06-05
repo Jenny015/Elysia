@@ -32,7 +32,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnEvaluatedList = new System.Windows.Forms.RadioButton();
-            this.btnSparePart = new System.Windows.Forms.RadioButton();
             this.btnViewLog = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.btnLogout = new System.Windows.Forms.RadioButton();
@@ -51,10 +50,10 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(135)))), ((int)(((byte)(167)))));
             this.panel2.Controls.Add(this.label4);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(373, 0);
+            this.panel2.Location = new System.Drawing.Point(419, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1338, 75);
+            this.panel2.Size = new System.Drawing.Size(1506, 90);
             this.panel2.TabIndex = 31;
             // 
             // label4
@@ -62,9 +61,9 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(36, 23);
+            this.label4.Location = new System.Drawing.Point(40, 28);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(157, 35);
+            this.label4.Size = new System.Drawing.Size(188, 41);
             this.label4.TabIndex = 20;
             this.label4.Text = "View Log";
             // 
@@ -73,7 +72,6 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(84)))), ((int)(((byte)(129)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.btnEvaluatedList);
-            this.panel1.Controls.Add(this.btnSparePart);
             this.panel1.Controls.Add(this.btnViewLog);
             this.panel1.Controls.Add(this.radioButton1);
             this.panel1.Controls.Add(this.btnLogout);
@@ -81,10 +79,10 @@
             this.panel1.Controls.Add(this.imgLogo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.panel1.Size = new System.Drawing.Size(373, 796);
+            this.panel1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Size = new System.Drawing.Size(419, 955);
             this.panel1.TabIndex = 30;
             // 
             // btnEvaluatedList
@@ -95,35 +93,16 @@
             this.btnEvaluatedList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEvaluatedList.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnEvaluatedList.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEvaluatedList.Location = new System.Drawing.Point(4, 413);
-            this.btnEvaluatedList.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnEvaluatedList.Location = new System.Drawing.Point(4, 420);
+            this.btnEvaluatedList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEvaluatedList.Name = "btnEvaluatedList";
-            this.btnEvaluatedList.Size = new System.Drawing.Size(363, 62);
+            this.btnEvaluatedList.Size = new System.Drawing.Size(409, 74);
             this.btnEvaluatedList.TabIndex = 10;
             this.btnEvaluatedList.TabStop = true;
             this.btnEvaluatedList.Text = "Evaluated List";
             this.btnEvaluatedList.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnEvaluatedList.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEvaluatedList.UseVisualStyleBackColor = false;
-            // 
-            // btnSparePart
-            // 
-            this.btnSparePart.Appearance = System.Windows.Forms.Appearance.Button;
-            this.btnSparePart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(135)))), ((int)(((byte)(167)))));
-            this.btnSparePart.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSparePart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSparePart.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.btnSparePart.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSparePart.Location = new System.Drawing.Point(4, 351);
-            this.btnSparePart.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnSparePart.Name = "btnSparePart";
-            this.btnSparePart.Size = new System.Drawing.Size(363, 62);
-            this.btnSparePart.TabIndex = 9;
-            this.btnSparePart.TabStop = true;
-            this.btnSparePart.Text = "Spare Part";
-            this.btnSparePart.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnSparePart.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSparePart.UseVisualStyleBackColor = false;
             // 
             // btnViewLog
             // 
@@ -133,10 +112,10 @@
             this.btnViewLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnViewLog.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnViewLog.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnViewLog.Location = new System.Drawing.Point(4, 289);
-            this.btnViewLog.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnViewLog.Location = new System.Drawing.Point(4, 346);
+            this.btnViewLog.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnViewLog.Name = "btnViewLog";
-            this.btnViewLog.Size = new System.Drawing.Size(363, 62);
+            this.btnViewLog.Size = new System.Drawing.Size(409, 74);
             this.btnViewLog.TabIndex = 8;
             this.btnViewLog.TabStop = true;
             this.btnViewLog.Text = "View Log";
@@ -152,10 +131,10 @@
             this.radioButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.radioButton1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.radioButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radioButton1.Location = new System.Drawing.Point(4, 227);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.radioButton1.Location = new System.Drawing.Point(4, 272);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(363, 62);
+            this.radioButton1.Size = new System.Drawing.Size(409, 74);
             this.radioButton1.TabIndex = 7;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "User";
@@ -171,10 +150,10 @@
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLogout.Location = new System.Drawing.Point(4, 741);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnLogout.Location = new System.Drawing.Point(4, 889);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(363, 50);
+            this.btnLogout.Size = new System.Drawing.Size(409, 60);
             this.btnLogout.TabIndex = 6;
             this.btnLogout.TabStop = true;
             this.btnLogout.Text = "Logout";
@@ -186,10 +165,10 @@
             // 
             this.lblDept.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblDept.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
-            this.lblDept.Location = new System.Drawing.Point(4, 165);
+            this.lblDept.Location = new System.Drawing.Point(4, 198);
             this.lblDept.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDept.Name = "lblDept";
-            this.lblDept.Size = new System.Drawing.Size(363, 62);
+            this.lblDept.Size = new System.Drawing.Size(409, 74);
             this.lblDept.TabIndex = 1;
             this.lblDept.Text = "Accountant";
             this.lblDept.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -199,20 +178,20 @@
             this.imgLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(84)))), ((int)(((byte)(129)))));
             this.imgLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.imgLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.imgLogo.Location = new System.Drawing.Point(4, 3);
-            this.imgLogo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.imgLogo.Location = new System.Drawing.Point(4, 4);
+            this.imgLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.imgLogo.Name = "imgLogo";
-            this.imgLogo.Size = new System.Drawing.Size(363, 162);
+            this.imgLogo.Size = new System.Drawing.Size(409, 194);
             this.imgLogo.TabIndex = 0;
             this.imgLogo.TabStop = false;
             // 
             // btnFilter
             // 
             this.btnFilter.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.btnFilter.Location = new System.Drawing.Point(1566, 756);
-            this.btnFilter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnFilter.Location = new System.Drawing.Point(1762, 907);
+            this.btnFilter.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(133, 34);
+            this.btnFilter.Size = new System.Drawing.Size(150, 41);
             this.btnFilter.TabIndex = 40;
             this.btnFilter.Text = "Filter";
             this.btnFilter.UseVisualStyleBackColor = true;
@@ -221,19 +200,19 @@
             // 
             this.dgvAcc.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvAcc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAcc.Location = new System.Drawing.Point(401, 94);
+            this.dgvAcc.Location = new System.Drawing.Point(451, 113);
             this.dgvAcc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvAcc.Name = "dgvAcc";
             this.dgvAcc.RowHeadersWidth = 62;
             this.dgvAcc.RowTemplate.Height = 31;
-            this.dgvAcc.Size = new System.Drawing.Size(1298, 653);
+            this.dgvAcc.Size = new System.Drawing.Size(1460, 784);
             this.dgvAcc.TabIndex = 39;
             // 
             // ViewLog
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1711, 796);
+            this.ClientSize = new System.Drawing.Size(1925, 955);
             this.Controls.Add(this.btnFilter);
             this.Controls.Add(this.dgvAcc);
             this.Controls.Add(this.panel2);
@@ -256,7 +235,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.RadioButton btnEvaluatedList;
-        private System.Windows.Forms.RadioButton btnSparePart;
         private System.Windows.Forms.RadioButton btnViewLog;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton btnLogout;
