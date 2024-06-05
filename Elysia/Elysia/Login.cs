@@ -95,7 +95,7 @@ namespace Elysia
                     break;
                 case "AC":
                     StaticVariable.dept = "AC";
-                    ViewLog viewLog = new ViewLog();
+                    Accountant viewLog = new Accountant();
                     viewLog.Show();
                     break;
             }
