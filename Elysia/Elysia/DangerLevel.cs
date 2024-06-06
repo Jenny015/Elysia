@@ -14,16 +14,17 @@ namespace Elysia
     public partial class DangerLevel : UserControl
     {
         string connectionString = "server=localhost;database=elysia;user=root;password=\"\"";
+        Filter filter;
         public DangerLevel()
         {
             InitializeComponent();
-            reloadDataGridView();
+            reloadDataGridView("");
             dgvDangerLevel.AllowUserToAddRows = false;
             dgvDangerLevel.ReadOnly = true;
         }
-        private void reloadDataGridView()
+        private void reloadDataGridView(String query)
         {
-            string query = "SELECT p.partID, categoryID, partName, purPrice, partQty, partStatus FROM part p, supplierPart sp WHERE p.partID = sp.partID AND partStatus != 'Normal' ORDER BY p.partID";
+            query = query == "" ? "SELECT p.partID, categoryID, partName, purPrice, partQty, partStatus FROM part p, supplierPart sp WHERE p.partID = sp.partID AND partStatus != 'Normal' ORDER BY p.partID" : query;
 
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
@@ -64,6 +65,18 @@ namespace Elysia
             }
             dgvDangerLevel.Columns["purPrice"].DefaultCellStyle.Format = "N2";
             dgvDangerLevel.Columns["partQty"].DefaultCellStyle.Format = "N0";
+        }
+        private void btnFilter_Click(object sender, EventArgs e)
+        {
+            filter = new Filter("part");
+            filter.Query += filter_Query;
+            filter.Show();
+        }
+
+        private void filter_Query(object sender, EventArgs e)
+        {
+            string query = "SELECT p.partID, categoryID, partName, purPrice, partQty, partStatus FROM `part` p, `category` c WHERE p.categoryID = c.categoryID " + filter.queryString;
+            reloadDataGridView(query);
         }
     }
 }

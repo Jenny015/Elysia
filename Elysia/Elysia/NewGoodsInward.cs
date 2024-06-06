@@ -5,19 +5,18 @@ using System.Windows.Forms;
 
 namespace Elysia
 {
-    public partial class GoodsInward : UserControl
+    public partial class NewGoodsInward : UserControl
     {
         string connectionString = "server=localhost;database=elysia;user=root;password=\"\"";
         private Dictionary<String, int> inwardsParts = new Dictionary<string, int>();  //dicationary to store order item partID and qty
         String newInwardsID;  //store new inwardsID
         String supplierID; //store current supplierID
 
-        public GoodsInward()
+        public NewGoodsInward()
         {
             InitializeComponent();
             LoadInformation();
         }
-
 
         private void LoadInformation()
         {

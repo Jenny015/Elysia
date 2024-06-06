@@ -44,11 +44,11 @@
             this.dgvPart.Location = new System.Drawing.Point(24, 117);
             this.dgvPart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvPart.Name = "dgvPart";
-            this.dgvPart.ReadOnly = true;
             this.dgvPart.RowHeadersWidth = 62;
             this.dgvPart.RowTemplate.Height = 31;
             this.dgvPart.Size = new System.Drawing.Size(1460, 850);
             this.dgvPart.TabIndex = 27;
+            this.dgvPart.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPart_CellEndEdit);
             // 
             // btnFilter
             // 

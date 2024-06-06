@@ -1,6 +1,6 @@
 ﻿namespace Elysia
 {
-    partial class GoodsInward
+    partial class NewGoodsInward
     {
         /// <summary>
         /// Required designer variable.
@@ -165,6 +165,7 @@
             // 
             // cbSupplierID
             // 
+            this.cbSupplierID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSupplierID.Font = new System.Drawing.Font("Times New Roman", 14F);
             this.cbSupplierID.FormattingEnabled = true;
             this.cbSupplierID.Location = new System.Drawing.Point(206, 213);
@@ -202,7 +203,7 @@
             this.groupBox2.Size = new System.Drawing.Size(1407, 400);
             this.groupBox2.TabIndex = 35;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Product and Quantity";
+            this.groupBox2.Text = "S";
             // 
             // lblpartName
             // 
@@ -281,6 +282,7 @@
             // 
             // cbPartID
             // 
+            this.cbPartID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPartID.FormattingEnabled = true;
             this.cbPartID.Location = new System.Drawing.Point(487, 72);
             this.cbPartID.Name = "cbPartID";
@@ -346,7 +348,7 @@
             this.label4.TabIndex = 20;
             this.label4.Text = "GoodInward";
             // 
-            // GoodsInward
+            // NewGoodsInward
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -356,7 +358,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "GoodsInward";
+            this.Name = "NewGoodsInward";
             this.Size = new System.Drawing.Size(1503, 1055);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

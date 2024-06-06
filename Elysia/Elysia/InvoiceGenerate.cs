@@ -167,6 +167,7 @@ namespace Elysia
         private void btnPDF_Click(object sender, EventArgs e)
         {
             Document document = new Document();
+            Directory.CreateDirectory("../../../invoice");
             PdfWriter writer = PdfWriter.GetInstance(document, new FileStream($"../../../invoice/{orderID}.pdf", FileMode.Create));
             document.Open();
 
@@ -274,7 +275,6 @@ namespace Elysia
             ColumnText signColumn = new ColumnText(writer.DirectContent);
             signColumn.SetSimpleColumn(new Phrase(Bsign.Text + "___________________", boldFont), document.LeftMargin, endPositionNewTable - 20, document.PageSize.Width - document.RightMargin, 0, 15, Element.ALIGN_RIGHT);
             signColumn.Go();
-
             document.Close();
             MessageBox.Show("Invoice is generate successfully.", "Success");
             uploadPdfToSql();

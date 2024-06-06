@@ -28,32 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tbQuantity = new System.Windows.Forms.TextBox();
-            this.tbPartID = new System.Windows.Forms.TextBox();
             this.lbPartID = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
+            this.tbQuantity = new System.Windows.Forms.NumericUpDown();
+            this.tbPartID = new System.Windows.Forms.ComboBox();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbQuantity)).BeginInit();
             this.SuspendLayout();
-            // 
-            // tbQuantity
-            // 
-            this.tbQuantity.Font = new System.Drawing.Font("Arial", 14F);
-            this.tbQuantity.Location = new System.Drawing.Point(248, 374);
-            this.tbQuantity.Name = "tbQuantity";
-            this.tbQuantity.Size = new System.Drawing.Size(792, 40);
-            this.tbQuantity.TabIndex = 43;
-            // 
-            // tbPartID
-            // 
-            this.tbPartID.Font = new System.Drawing.Font("Arial", 14F);
-            this.tbPartID.Location = new System.Drawing.Point(248, 253);
-            this.tbPartID.Name = "tbPartID";
-            this.tbPartID.Size = new System.Drawing.Size(792, 40);
-            this.tbPartID.TabIndex = 42;
             // 
             // lbPartID
             // 
@@ -69,7 +54,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(242, 339);
+            this.label2.Location = new System.Drawing.Point(241, 404);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(122, 32);
             this.label2.TabIndex = 40;
@@ -123,13 +108,46 @@
             this.label4.TabIndex = 20;
             this.label4.Text = "Scrap Item";
             // 
+            // tbQuantity
+            // 
+            this.tbQuantity.Font = new System.Drawing.Font("Arial", 14F);
+            this.tbQuantity.Location = new System.Drawing.Point(247, 460);
+            this.tbQuantity.Maximum = new decimal(new int[] {
+            1410065407,
+            2,
+            0,
+            0});
+            this.tbQuantity.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.tbQuantity.Name = "tbQuantity";
+            this.tbQuantity.Size = new System.Drawing.Size(120, 40);
+            this.tbQuantity.TabIndex = 45;
+            this.tbQuantity.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // tbPartID
+            // 
+            this.tbPartID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.tbPartID.Font = new System.Drawing.Font("Arial", 14F);
+            this.tbPartID.FormattingEnabled = true;
+            this.tbPartID.Location = new System.Drawing.Point(248, 271);
+            this.tbPartID.Name = "tbPartID";
+            this.tbPartID.Size = new System.Drawing.Size(241, 40);
+            this.tbPartID.TabIndex = 46;
+            // 
             // ScrapItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.tbQuantity);
             this.Controls.Add(this.tbPartID);
+            this.Controls.Add(this.tbQuantity);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.lbPartID);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnClear);
@@ -138,20 +156,20 @@
             this.Size = new System.Drawing.Size(1503, 1055);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbQuantity)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox tbQuantity;
-        private System.Windows.Forms.TextBox tbPartID;
         private System.Windows.Forms.Label lbPartID;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.NumericUpDown tbQuantity;
+        private System.Windows.Forms.ComboBox tbPartID;
     }
 }

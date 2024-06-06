@@ -120,6 +120,7 @@
             this.btnLogout.Text = "Logout";
             this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.CheckedChanged += new System.EventHandler(this.btnLogout_CheckedChanged_1);
             // 
             // lblDept
             // 

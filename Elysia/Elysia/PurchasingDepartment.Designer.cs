@@ -120,6 +120,7 @@
             this.btnViewSupplier.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnViewSupplier.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnViewSupplier.UseVisualStyleBackColor = false;
+            this.btnViewSupplier.CheckedChanged += new System.EventHandler(this.btnViewSupplier_CheckedChanged);
             // 
             // btnNewSupplier
             // 

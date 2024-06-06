@@ -64,6 +64,7 @@
             // 
             // cbDealerID
             // 
+            this.cbDealerID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDealerID.Font = new System.Drawing.Font("Times New Roman", 14F);
             this.cbDealerID.FormattingEnabled = true;
             this.cbDealerID.Location = new System.Drawing.Point(183, 219);
@@ -76,6 +77,7 @@
             // 
             // cbPartID
             // 
+            this.cbPartID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPartID.FormattingEnabled = true;
             this.cbPartID.Location = new System.Drawing.Point(487, 72);
             this.cbPartID.Name = "cbPartID";

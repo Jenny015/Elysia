@@ -31,6 +31,7 @@
             this.dgvDangerLevel = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnFilter = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDangerLevel)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -39,7 +40,7 @@
             // 
             this.dgvDangerLevel.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDangerLevel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDangerLevel.Location = new System.Drawing.Point(41, 132);
+            this.dgvDangerLevel.Location = new System.Drawing.Point(47, 105);
             this.dgvDangerLevel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvDangerLevel.Name = "dgvDangerLevel";
             this.dgvDangerLevel.RowHeadersWidth = 62;
@@ -69,10 +70,22 @@
             this.label4.TabIndex = 20;
             this.label4.Text = "Danger Level";
             // 
+            // btnFilter
+            // 
+            this.btnFilter.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.btnFilter.Location = new System.Drawing.Point(1317, 1001);
+            this.btnFilter.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.btnFilter.Name = "btnFilter";
+            this.btnFilter.Size = new System.Drawing.Size(150, 41);
+            this.btnFilter.TabIndex = 37;
+            this.btnFilter.Text = "Filter";
+            this.btnFilter.UseVisualStyleBackColor = true;
+            // 
             // DangerLevel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnFilter);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dgvDangerLevel);
             this.Name = "DangerLevel";
@@ -89,5 +102,6 @@
         private System.Windows.Forms.DataGridView dgvDangerLevel;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnFilter;
     }
 }

@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.contentPanel = new System.Windows.Forms.Panel();
             this.btnViewGoodsInward = new System.Windows.Forms.RadioButton();
             this.btnGoodsInward = new System.Windows.Forms.RadioButton();
             this.btnUser = new System.Windows.Forms.RadioButton();
             this.btnLogout = new System.Windows.Forms.RadioButton();
             this.lblDept = new System.Windows.Forms.Label();
             this.imgLogo = new System.Windows.Forms.PictureBox();
-            this.contentPanel = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
             this.SuspendLayout();
@@ -44,7 +44,6 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(84)))), ((int)(((byte)(129)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.contentPanel);
             this.panel1.Controls.Add(this.btnViewGoodsInward);
             this.panel1.Controls.Add(this.btnGoodsInward);
             this.panel1.Controls.Add(this.btnUser);
@@ -59,6 +58,13 @@
             this.panel1.Size = new System.Drawing.Size(419, 1055);
             this.panel1.TabIndex = 31;
             // 
+            // contentPanel
+            // 
+            this.contentPanel.Location = new System.Drawing.Point(420, 0);
+            this.contentPanel.Name = "contentPanel";
+            this.contentPanel.Size = new System.Drawing.Size(1503, 1055);
+            this.contentPanel.TabIndex = 52;
+            // 
             // btnViewGoodsInward
             // 
             this.btnViewGoodsInward.Appearance = System.Windows.Forms.Appearance.Button;
@@ -72,7 +78,6 @@
             this.btnViewGoodsInward.Name = "btnViewGoodsInward";
             this.btnViewGoodsInward.Size = new System.Drawing.Size(409, 74);
             this.btnViewGoodsInward.TabIndex = 9;
-            this.btnViewGoodsInward.TabStop = true;
             this.btnViewGoodsInward.Text = "View Goods Inward";
             this.btnViewGoodsInward.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnViewGoodsInward.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -136,6 +141,7 @@
             this.btnLogout.Text = "Logout";
             this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.CheckedChanged += new System.EventHandler(this.btnLogout_CheckedChanged);
             // 
             // lblDept
             // 
@@ -161,18 +167,12 @@
             this.imgLogo.TabIndex = 0;
             this.imgLogo.TabStop = false;
             // 
-            // contentPanel
-            // 
-            this.contentPanel.Location = new System.Drawing.Point(420, 0);
-            this.contentPanel.Name = "contentPanel";
-            this.contentPanel.Size = new System.Drawing.Size(1503, 1055);
-            this.contentPanel.TabIndex = 52;
-            // 
             // GoodsInwardDepartment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 1055);
+            this.Controls.Add(this.contentPanel);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "GoodsInwardDepartment";

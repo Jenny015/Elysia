@@ -490,13 +490,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.dgvOrder);
             this.Controls.Add(this.heading);
             this.Controls.Add(this.footer);
             this.Controls.Add(this.InvPreview);
             this.Controls.Add(this.btnPDF);
             this.Controls.Add(this.btnFilter);
             this.Controls.Add(this.btnBack);
+            this.Controls.Add(this.dgvOrder);
             this.Name = "InvoiceGenerate";
             this.Size = new System.Drawing.Size(1503, 1055);
             this.heading.ResumeLayout(false);

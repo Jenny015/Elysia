@@ -200,11 +200,11 @@
     <Compile Include="Filter.Designer.cs">
       <DependentUpon>Filter.cs</DependentUpon>
     </Compile>
-    <Compile Include="GoodsInward.cs">
+    <Compile Include="NewGoodsInward.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GoodsInward.Designer.cs">
-      <DependentUpon>GoodsInward.cs</DependentUpon>
+    <Compile Include="NewGoodsInward.Designer.cs">
+      <DependentUpon>NewGoodsInward.cs</DependentUpon>
     </Compile>
     <Compile Include="GoodsInwardDepartment.cs">
       <SubType>Form</SubType>
@@ -391,8 +391,8 @@
     <EmbeddedResource Include="Filter.resx">
       <DependentUpon>Filter.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GoodsInward.resx">
-      <DependentUpon>GoodsInward.cs</DependentUpon>
+    <EmbeddedResource Include="NewGoodsInward.resx">
+      <DependentUpon>NewGoodsInward.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GoodsInwardDepartment.resx">
       <DependentUpon>GoodsInwardDepartment.cs</DependentUpon>
@@ -405,6 +405,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InvoicingSection.resx">
       <DependentUpon>InvoicingSection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewSupplier.resx">
+      <DependentUpon>NewSupplier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PurchasingDepartment.resx">
       <DependentUpon>PurchasingDepartment.cs</DependentUpon>
@@ -473,6 +476,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ViewSparePart.resx">
       <DependentUpon>ViewSparePart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewSupplier.resx">
+      <DependentUpon>ViewSupplier.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Elysia_TemporaryKey.pfx" />
     <None Include="packages.config" />

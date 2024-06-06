@@ -62,11 +62,14 @@
             // 
             // dgvEv
             // 
+            this.dgvEv.AllowUserToAddRows = false;
+            this.dgvEv.AllowUserToDeleteRows = false;
             this.dgvEv.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvEv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEv.Location = new System.Drawing.Point(21, 107);
             this.dgvEv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvEv.Name = "dgvEv";
+            this.dgvEv.ReadOnly = true;
             this.dgvEv.RowHeadersWidth = 62;
             this.dgvEv.RowTemplate.Height = 31;
             this.dgvEv.Size = new System.Drawing.Size(1460, 846);
@@ -83,6 +86,7 @@
             this.btnPrint.TabIndex = 45;
             this.btnPrint.Text = "Print";
             this.btnPrint.UseVisualStyleBackColor = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // btnSaveAsCSV
             // 
@@ -95,6 +99,7 @@
             this.btnSaveAsCSV.TabIndex = 44;
             this.btnSaveAsCSV.Text = "Save As CSV";
             this.btnSaveAsCSV.UseVisualStyleBackColor = false;
+            this.btnSaveAsCSV.Click += new System.EventHandler(this.btnSaveAsCSV_Click);
             // 
             // label1
             // 

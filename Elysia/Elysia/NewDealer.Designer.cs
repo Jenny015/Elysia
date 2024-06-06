@@ -44,6 +44,8 @@
             this.lbDeliveryAddress = new System.Windows.Forms.Label();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblDealerID = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,7 +74,7 @@
             // 
             this.lbDealerName.AutoSize = true;
             this.lbDealerName.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
-            this.lbDealerName.Location = new System.Drawing.Point(41, 117);
+            this.lbDealerName.Location = new System.Drawing.Point(41, 225);
             this.lbDealerName.Name = "lbDealerName";
             this.lbDealerName.Size = new System.Drawing.Size(166, 32);
             this.lbDealerName.TabIndex = 39;
@@ -81,7 +83,7 @@
             // tbDealerName
             // 
             this.tbDealerName.Font = new System.Drawing.Font("Times New Roman", 14F);
-            this.tbDealerName.Location = new System.Drawing.Point(47, 152);
+            this.tbDealerName.Location = new System.Drawing.Point(47, 260);
             this.tbDealerName.Name = "tbDealerName";
             this.tbDealerName.Size = new System.Drawing.Size(915, 40);
             this.tbDealerName.TabIndex = 40;
@@ -89,7 +91,7 @@
             // tbCompany
             // 
             this.tbCompany.Font = new System.Drawing.Font("Times New Roman", 14F);
-            this.tbCompany.Location = new System.Drawing.Point(47, 257);
+            this.tbCompany.Location = new System.Drawing.Point(47, 365);
             this.tbCompany.Name = "tbCompany";
             this.tbCompany.Size = new System.Drawing.Size(915, 40);
             this.tbCompany.TabIndex = 42;
@@ -98,7 +100,7 @@
             // 
             this.lbCompany.AutoSize = true;
             this.lbCompany.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
-            this.lbCompany.Location = new System.Drawing.Point(41, 222);
+            this.lbCompany.Location = new System.Drawing.Point(41, 330);
             this.lbCompany.Name = "lbCompany";
             this.lbCompany.Size = new System.Drawing.Size(130, 32);
             this.lbCompany.TabIndex = 41;
@@ -107,7 +109,7 @@
             // tbPhoneNumber
             // 
             this.tbPhoneNumber.Font = new System.Drawing.Font("Times New Roman", 14F);
-            this.tbPhoneNumber.Location = new System.Drawing.Point(47, 359);
+            this.tbPhoneNumber.Location = new System.Drawing.Point(47, 467);
             this.tbPhoneNumber.Name = "tbPhoneNumber";
             this.tbPhoneNumber.Size = new System.Drawing.Size(915, 40);
             this.tbPhoneNumber.TabIndex = 44;
@@ -116,7 +118,7 @@
             // 
             this.lbPhoneNumber.AutoSize = true;
             this.lbPhoneNumber.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
-            this.lbPhoneNumber.Location = new System.Drawing.Point(41, 324);
+            this.lbPhoneNumber.Location = new System.Drawing.Point(41, 432);
             this.lbPhoneNumber.Name = "lbPhoneNumber";
             this.lbPhoneNumber.Size = new System.Drawing.Size(195, 32);
             this.lbPhoneNumber.TabIndex = 43;
@@ -125,7 +127,7 @@
             // tbEmail
             // 
             this.tbEmail.Font = new System.Drawing.Font("Times New Roman", 14F);
-            this.tbEmail.Location = new System.Drawing.Point(47, 457);
+            this.tbEmail.Location = new System.Drawing.Point(47, 565);
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(915, 40);
             this.tbEmail.TabIndex = 46;
@@ -134,7 +136,7 @@
             // 
             this.lbEmail.AutoSize = true;
             this.lbEmail.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
-            this.lbEmail.Location = new System.Drawing.Point(41, 422);
+            this.lbEmail.Location = new System.Drawing.Point(41, 530);
             this.lbEmail.Name = "lbEmail";
             this.lbEmail.Size = new System.Drawing.Size(85, 32);
             this.lbEmail.TabIndex = 45;
@@ -143,7 +145,7 @@
             // tbCompanyAddress
             // 
             this.tbCompanyAddress.Font = new System.Drawing.Font("Times New Roman", 14F);
-            this.tbCompanyAddress.Location = new System.Drawing.Point(47, 558);
+            this.tbCompanyAddress.Location = new System.Drawing.Point(47, 666);
             this.tbCompanyAddress.Name = "tbCompanyAddress";
             this.tbCompanyAddress.Size = new System.Drawing.Size(915, 40);
             this.tbCompanyAddress.TabIndex = 48;
@@ -152,7 +154,7 @@
             // 
             this.lbCompanyAddress.AutoSize = true;
             this.lbCompanyAddress.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
-            this.lbCompanyAddress.Location = new System.Drawing.Point(41, 523);
+            this.lbCompanyAddress.Location = new System.Drawing.Point(41, 631);
             this.lbCompanyAddress.Name = "lbCompanyAddress";
             this.lbCompanyAddress.Size = new System.Drawing.Size(227, 32);
             this.lbCompanyAddress.TabIndex = 47;
@@ -161,7 +163,7 @@
             // tbDeliveryAddress
             // 
             this.tbDeliveryAddress.Font = new System.Drawing.Font("Times New Roman", 14F);
-            this.tbDeliveryAddress.Location = new System.Drawing.Point(47, 657);
+            this.tbDeliveryAddress.Location = new System.Drawing.Point(47, 765);
             this.tbDeliveryAddress.Name = "tbDeliveryAddress";
             this.tbDeliveryAddress.Size = new System.Drawing.Size(915, 40);
             this.tbDeliveryAddress.TabIndex = 50;
@@ -170,7 +172,7 @@
             // 
             this.lbDeliveryAddress.AutoSize = true;
             this.lbDeliveryAddress.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
-            this.lbDeliveryAddress.Location = new System.Drawing.Point(41, 622);
+            this.lbDeliveryAddress.Location = new System.Drawing.Point(41, 730);
             this.lbDeliveryAddress.Name = "lbDeliveryAddress";
             this.lbDeliveryAddress.Size = new System.Drawing.Size(216, 32);
             this.lbDeliveryAddress.TabIndex = 49;
@@ -180,31 +182,55 @@
             // 
             this.btnSubmit.BackColor = System.Drawing.Color.Plum;
             this.btnSubmit.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.btnSubmit.Location = new System.Drawing.Point(269, 840);
+            this.btnSubmit.Location = new System.Drawing.Point(269, 875);
             this.btnSubmit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(150, 42);
             this.btnSubmit.TabIndex = 51;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = false;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // btnClear
             // 
             this.btnClear.BackColor = System.Drawing.Color.Tomato;
             this.btnClear.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.btnClear.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnClear.Location = new System.Drawing.Point(47, 840);
+            this.btnClear.Location = new System.Drawing.Point(47, 875);
             this.btnClear.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(150, 42);
             this.btnClear.TabIndex = 52;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(40, 153);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(138, 32);
+            this.label1.TabIndex = 53;
+            this.label1.Text = "DealerID: ";
+            // 
+            // lblDealerID
+            // 
+            this.lblDealerID.AutoSize = true;
+            this.lblDealerID.Font = new System.Drawing.Font("Times New Roman", 14F);
+            this.lblDealerID.Location = new System.Drawing.Point(184, 152);
+            this.lblDealerID.Name = "lblDealerID";
+            this.lblDealerID.Size = new System.Drawing.Size(101, 33);
+            this.lblDealerID.TabIndex = 54;
+            this.lblDealerID.Text = "orderID";
             // 
             // NewDealer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblDealerID);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.tbDeliveryAddress);
@@ -247,5 +273,7 @@
         private System.Windows.Forms.Label lbDeliveryAddress;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblDealerID;
     }
 }

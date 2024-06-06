@@ -42,5 +42,10 @@ namespace Elysia
             StaticVariable.logout();
             this.Close();
         }
+
+        private void btnViewSupplier_CheckedChanged(object sender, EventArgs e)
+        {
+            StaticVariable.displayContent(contentPanel, new ViewSupplier());
+        }
     }
 }

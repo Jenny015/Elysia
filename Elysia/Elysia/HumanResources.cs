@@ -40,5 +40,11 @@ namespace Elysia
         {
             StaticVariable.displayContent(contentPanel, new ViewEmployee());
         }
+
+        private void btnLogout_CheckedChanged_1(object sender, EventArgs e)
+        {
+            StaticVariable.logout();
+            this.Close();
+        }
     }
 }

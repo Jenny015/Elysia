@@ -142,7 +142,7 @@ namespace Elysia
                                 // Execute the SQl statement
                                 cmd.ExecuteNonQuery();
                                 conn.Close();
-                                StaticVariable.updatePartStatus();
+                                StaticVariable.updatePartStatus(partID);
                                 assembledOrder(orderID);
                                 reloadDataGridView("");
                                 return;

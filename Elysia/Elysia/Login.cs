@@ -90,13 +90,13 @@ namespace Elysia
                     break;
                 case "HR":
                     StaticVariable.dept = "HR";
-                    NewEmployee HR = new NewEmployee();
+                    HumanResources HR = new HumanResources();
                     HR.Show();
                     break;
                 case "AC":
                     StaticVariable.dept = "AC";
-                    Accountant viewLog = new Accountant();
-                    viewLog.Show();
+                    Accountant AC = new Accountant();
+                    AC.Show();
                     break;
             }
         }

@@ -11,6 +11,28 @@ namespace Elysia
         public ScrapItem()
         {
             InitializeComponent();
+            LoadInformation();
+        }
+        public void LoadInformation()
+        {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                MySqlCommand cmd = conn.CreateCommand();
+
+                //load dealerIDs
+                cmd.CommandText = "SELECT partID FROM part";
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    tbPartID.Items.Clear();
+
+                    while (reader.Read())
+                    {
+                        tbPartID.Items.Add(reader.GetString(0));
+                    }
+                }
+
+            }
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -20,8 +42,22 @@ namespace Elysia
                 {
                     connection.Open();
 
-                    string partID = tbPartID.Text.Trim();
-                    int quantity = int.Parse(tbQuantity.Text.Trim());
+                    string partID = tbPartID.SelectedItem.ToString();
+                    int quantity = (int)tbQuantity.Value;
+
+                    MySqlCommand cmd = connection.CreateCommand();
+                    cmd.CommandText = $"SELECT partQty FROM `part`";
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            if(reader.GetInt32(0) > quantity)
+                            {
+                                MessageBox.Show("Scrap item quantity should not br more than stock quantity.");
+                                return;
+                            }
+                        }
+                    }
 
                     // Update the part quantity in the part table
                     string updatePartSql = "UPDATE part SET partQty = partQty - @quantity WHERE partID = @partID";

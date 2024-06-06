@@ -1,6 +1,8 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Elysia
 {
@@ -52,45 +54,38 @@ namespace Elysia
         {
             control.Controls.Clear();
             control.Controls.Add(userControl);
+            control.Refresh();
         }
 
-        public static void updatePartStatus()
+        public static void updatePartStatus(String partID)
         {
+            string status = "Normal";
             using (MySqlConnection conn = new MySqlConnection("server=localhost;database=elysia;user=root;password=\"\""))
             {
                 conn.Open();
                 MySqlCommand cmd = conn.CreateCommand();
-
-                cmd.CommandText = "SELECT partID, partQty FROM part";
-                using (MySqlDataReader reader = cmd.ExecuteReader())
+                cmd.CommandText = $"SELECT partQty FROM part WHERE partID = '{partID}'";
+                using (MySqlDataReader reader2 = cmd.ExecuteReader())
                 {
-                    string query = "UPDATE part SET partStatus = @status WHERE partID = @partID;";
-                    while (reader.Read())
+                    if (reader2.Read())
                     {
-                        string partID = reader["partID"].ToString();
-                        int partQty = Convert.ToInt32(reader["partQty"]);
-
-                        using (MySqlCommand cmd2 = new MySqlCommand(query, conn))
+                        int partQty = Convert.ToInt32(reader2[0]);
+                        if (partQty < reOrder)
                         {
-                            if (partQty < reOrder)
-                            {
-                                cmd2.Parameters.AddWithValue("@status", "Reorder");
-                            }
-                            else if (partQty < danger)
-                            {
-                                cmd2.Parameters.AddWithValue("@status", "Danger");
-                            }
-                            else if (partQty == 0)
-                            {
-                                cmd2.Parameters.AddWithValue("@status", "Out-of-stock");
-                            }
-
-                            cmd2.Parameters.AddWithValue("@partID", partID);
-                            cmd2.ExecuteNonQuery();
-                            cmd2.Parameters.Clear();
+                            status = "Reorder";
+                        }
+                        else if (partQty < danger)
+                        {
+                            status = "Danger";
+                        }
+                        else if (partQty == 0)
+                        {
+                            status = "Out-of-stock";
                         }
                     }
-                    conn.Close();
+                    reader2.Close();
+                    cmd.CommandText = $"UPDATE part SET partStatus = '{status}' WHERE partID = '{partID}'";
+                    cmd.ExecuteNonQuery();
                 }
             }
         }
