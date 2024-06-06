@@ -29,6 +29,7 @@ namespace Elysia
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -46,6 +47,8 @@ namespace Elysia
             this.btnPrint = new System.Windows.Forms.Button();
             this.bar = new System.Windows.Forms.Panel();
             this.OrderInfor = new System.Windows.Forms.Label();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tbName = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
             this.bar.SuspendLayout();
@@ -55,10 +58,9 @@ namespace Elysia
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(397, 93);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(596, 129);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 29);
+            this.label1.Size = new System.Drawing.Size(176, 41);
             this.label1.TabIndex = 0;
             this.label1.Text = "Heading";
             // 
@@ -66,10 +68,9 @@ namespace Elysia
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(408, 139);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(612, 192);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(112, 22);
+            this.label2.Size = new System.Drawing.Size(160, 32);
             this.label2.TabIndex = 1;
             this.label2.Text = "Normal Text";
             // 
@@ -83,9 +84,10 @@ namespace Elysia
             this.panel1.Controls.Add(this.imgLogo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.panel1.Size = new System.Drawing.Size(280, 690);
+            this.panel1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Size = new System.Drawing.Size(419, 955);
             this.panel1.TabIndex = 3;
             // 
             // radioButton5
@@ -96,9 +98,10 @@ namespace Elysia
             this.radioButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.radioButton5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.radioButton5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radioButton5.Location = new System.Drawing.Point(3, 642);
+            this.radioButton5.Location = new System.Drawing.Point(4, 889);
+            this.radioButton5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(272, 43);
+            this.radioButton5.Size = new System.Drawing.Size(409, 60);
             this.radioButton5.TabIndex = 6;
             this.radioButton5.TabStop = true;
             this.radioButton5.Text = "Logout";
@@ -114,9 +117,10 @@ namespace Elysia
             this.radioButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.radioButton1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.radioButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radioButton1.Location = new System.Drawing.Point(3, 197);
+            this.radioButton1.Location = new System.Drawing.Point(4, 273);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(272, 54);
+            this.radioButton1.Size = new System.Drawing.Size(409, 75);
             this.radioButton1.TabIndex = 2;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Sidebar button";
@@ -128,9 +132,10 @@ namespace Elysia
             // 
             this.lblDept.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblDept.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
-            this.lblDept.Location = new System.Drawing.Point(3, 143);
+            this.lblDept.Location = new System.Drawing.Point(4, 198);
+            this.lblDept.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDept.Name = "lblDept";
-            this.lblDept.Size = new System.Drawing.Size(272, 54);
+            this.lblDept.Size = new System.Drawing.Size(409, 75);
             this.lblDept.TabIndex = 1;
             this.lblDept.Text = "Sales Office";
             this.lblDept.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -141,9 +146,10 @@ namespace Elysia
             this.imgLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(84)))), ((int)(((byte)(129)))));
             this.imgLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.imgLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.imgLogo.Location = new System.Drawing.Point(3, 3);
+            this.imgLogo.Location = new System.Drawing.Point(4, 4);
+            this.imgLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.imgLogo.Name = "imgLogo";
-            this.imgLogo.Size = new System.Drawing.Size(272, 140);
+            this.imgLogo.Size = new System.Drawing.Size(409, 194);
             this.imgLogo.TabIndex = 0;
             this.imgLogo.TabStop = false;
             // 
@@ -151,10 +157,10 @@ namespace Elysia
             // 
             this.btnSave.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnSave.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.btnSave.Location = new System.Drawing.Point(434, 420);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnSave.Location = new System.Drawing.Point(651, 582);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(100, 30);
+            this.btnSave.Size = new System.Drawing.Size(150, 42);
             this.btnSave.TabIndex = 4;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
@@ -163,10 +169,10 @@ namespace Elysia
             // 
             this.btnSubmit.BackColor = System.Drawing.Color.Plum;
             this.btnSubmit.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.btnSubmit.Location = new System.Drawing.Point(567, 273);
-            this.btnSubmit.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnSubmit.Location = new System.Drawing.Point(850, 378);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(100, 30);
+            this.btnSubmit.Size = new System.Drawing.Size(150, 42);
             this.btnSubmit.TabIndex = 5;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = false;
@@ -176,10 +182,10 @@ namespace Elysia
             this.btnCancel.BackColor = System.Drawing.Color.Tomato;
             this.btnCancel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.btnCancel.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnCancel.Location = new System.Drawing.Point(567, 339);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnCancel.Location = new System.Drawing.Point(850, 469);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(100, 30);
+            this.btnCancel.Size = new System.Drawing.Size(150, 42);
             this.btnCancel.TabIndex = 6;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -188,10 +194,10 @@ namespace Elysia
             // 
             this.btnAdd.BackColor = System.Drawing.Color.Gold;
             this.btnAdd.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.btnAdd.Location = new System.Drawing.Point(459, 273);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnAdd.Location = new System.Drawing.Point(688, 378);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(67, 30);
+            this.btnAdd.Size = new System.Drawing.Size(100, 42);
             this.btnAdd.TabIndex = 7;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -201,10 +207,10 @@ namespace Elysia
             this.btnClear.BackColor = System.Drawing.Color.Tomato;
             this.btnClear.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.btnClear.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnClear.Location = new System.Drawing.Point(567, 420);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnClear.Location = new System.Drawing.Point(850, 582);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(100, 30);
+            this.btnClear.Size = new System.Drawing.Size(150, 42);
             this.btnClear.TabIndex = 8;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
@@ -213,10 +219,10 @@ namespace Elysia
             // 
             this.btnConfirm.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnConfirm.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.btnConfirm.Location = new System.Drawing.Point(434, 339);
-            this.btnConfirm.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnConfirm.Location = new System.Drawing.Point(651, 469);
+            this.btnConfirm.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(100, 30);
+            this.btnConfirm.Size = new System.Drawing.Size(150, 42);
             this.btnConfirm.TabIndex = 9;
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.UseVisualStyleBackColor = false;
@@ -225,10 +231,10 @@ namespace Elysia
             // 
             this.btnSaveAsCSV.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnSaveAsCSV.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.btnSaveAsCSV.Location = new System.Drawing.Point(567, 499);
-            this.btnSaveAsCSV.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnSaveAsCSV.Location = new System.Drawing.Point(850, 691);
+            this.btnSaveAsCSV.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSaveAsCSV.Name = "btnSaveAsCSV";
-            this.btnSaveAsCSV.Size = new System.Drawing.Size(100, 30);
+            this.btnSaveAsCSV.Size = new System.Drawing.Size(150, 42);
             this.btnSaveAsCSV.TabIndex = 10;
             this.btnSaveAsCSV.Text = "Save As CSV";
             this.btnSaveAsCSV.UseVisualStyleBackColor = false;
@@ -237,10 +243,10 @@ namespace Elysia
             // 
             this.btnPrint.BackColor = System.Drawing.Color.Plum;
             this.btnPrint.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.btnPrint.Location = new System.Drawing.Point(434, 499);
-            this.btnPrint.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnPrint.Location = new System.Drawing.Point(651, 691);
+            this.btnPrint.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(100, 30);
+            this.btnPrint.Size = new System.Drawing.Size(150, 42);
             this.btnPrint.TabIndex = 11;
             this.btnPrint.Text = "Print";
             this.btnPrint.UseVisualStyleBackColor = false;
@@ -250,10 +256,9 @@ namespace Elysia
             this.bar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(135)))), ((int)(((byte)(167)))));
             this.bar.Controls.Add(this.OrderInfor);
             this.bar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bar.Location = new System.Drawing.Point(280, 0);
-            this.bar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bar.Location = new System.Drawing.Point(419, 0);
             this.bar.Name = "bar";
-            this.bar.Size = new System.Drawing.Size(1003, 65);
+            this.bar.Size = new System.Drawing.Size(1505, 90);
             this.bar.TabIndex = 43;
             // 
             // OrderInfor
@@ -261,18 +266,32 @@ namespace Elysia
             this.OrderInfor.AutoSize = true;
             this.OrderInfor.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Bold);
             this.OrderInfor.ForeColor = System.Drawing.Color.White;
-            this.OrderInfor.Location = new System.Drawing.Point(27, 19);
-            this.OrderInfor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.OrderInfor.Location = new System.Drawing.Point(40, 26);
             this.OrderInfor.Name = "OrderInfor";
-            this.OrderInfor.Size = new System.Drawing.Size(245, 29);
+            this.OrderInfor.Size = new System.Drawing.Size(370, 41);
             this.OrderInfor.TabIndex = 20;
             this.OrderInfor.Text = "Order Information";
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // tbName
+            // 
+            this.tbName.Font = new System.Drawing.Font("Times New Roman", 14F);
+            this.tbName.Location = new System.Drawing.Point(618, 234);
+            this.tbName.Name = "tbName";
+            this.tbName.Size = new System.Drawing.Size(915, 40);
+            this.tbName.TabIndex = 45;
+            // 
             // UI_Tester
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1283, 690);
+            this.ClientSize = new System.Drawing.Size(1924, 955);
+            this.Controls.Add(this.tbName);
             this.Controls.Add(this.bar);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.btnSaveAsCSV);
@@ -285,7 +304,7 @@ namespace Elysia
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "UI_Tester";
             this.Text = "UI_Tester";
             this.panel1.ResumeLayout(false);
@@ -316,5 +335,7 @@ namespace Elysia
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.Panel bar;
         private System.Windows.Forms.Label OrderInfor;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.TextBox tbName;
     }
 }

@@ -72,6 +72,7 @@
             this.dgvViewDealer.ShowEditingIcon = false;
             this.dgvViewDealer.Size = new System.Drawing.Size(1460, 850);
             this.dgvViewDealer.TabIndex = 45;
+           
             // 
             // ViewDealer
             // 
