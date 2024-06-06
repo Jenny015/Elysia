@@ -170,6 +170,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Accountant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accountant.Designer.cs">
+      <DependentUpon>Accountant.cs</DependentUpon>
+    </Compile>
     <Compile Include="AssembleDID.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -177,13 +183,13 @@
       <DependentUpon>AssembleDID.cs</DependentUpon>
     </Compile>
     <Compile Include="DangerLevel.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="DangerLevel.Designer.cs">
       <DependentUpon>DangerLevel.cs</DependentUpon>
     </Compile>
     <Compile Include="EvaluatedList.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="EvaluatedList.Designer.cs">
       <DependentUpon>EvaluatedList.cs</DependentUpon>
@@ -195,10 +201,22 @@
       <DependentUpon>Filter.cs</DependentUpon>
     </Compile>
     <Compile Include="GoodsInward.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="GoodsInward.Designer.cs">
       <DependentUpon>GoodsInward.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GoodsInwardDepartment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GoodsInwardDepartment.Designer.cs">
+      <DependentUpon>GoodsInwardDepartment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HumanResources.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HumanResources.Designer.cs">
+      <DependentUpon>HumanResources.cs</DependentUpon>
     </Compile>
     <Compile Include="InvoiceGenerate.cs">
       <SubType>UserControl</SubType>
@@ -211,6 +229,12 @@
     </Compile>
     <Compile Include="InvoicingSection.Designer.cs">
       <DependentUpon>InvoicingSection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PurchasingDepartment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PurchasingDepartment.Designer.cs">
+      <DependentUpon>PurchasingDepartment.cs</DependentUpon>
     </Compile>
     <Compile Include="SparesDespatch.cs">
       <SubType>Form</SubType>
@@ -231,7 +255,7 @@
       <DependentUpon>NewDealer.cs</DependentUpon>
     </Compile>
     <Compile Include="NewEmployee.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="NewEmployee.Designer.cs">
       <DependentUpon>NewEmployee.cs</DependentUpon>
@@ -249,7 +273,7 @@
       <DependentUpon>NewSparePart.cs</DependentUpon>
     </Compile>
     <Compile Include="NewSupplier.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="NewSupplier.Designer.cs">
       <DependentUpon>NewSupplier.cs</DependentUpon>
@@ -305,22 +329,22 @@
       <DependentUpon>Storemen.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewEmployee.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ViewEmployee.Designer.cs">
       <DependentUpon>ViewEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewGoodsInward.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewGoodsInward.Designer.cs">
+      <DependentUpon>ViewGoodsInward.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewInvoice.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ViewInvoice.Designer.cs">
       <DependentUpon>ViewInvoice.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ViewInwards.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ViewInwards.Designer.cs">
-      <DependentUpon>ViewInwards.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewLateDeliveryAlarm.cs">
       <SubType>UserControl</SubType>
@@ -329,7 +353,7 @@
       <DependentUpon>ViewLateDeliveryAlarm.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewLog.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ViewLog.Designer.cs">
       <DependentUpon>ViewLog.cs</DependentUpon>
@@ -352,6 +376,9 @@
     <Compile Include="ViewSupplier.Designer.cs">
       <DependentUpon>ViewSupplier.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Accountant.resx">
+      <DependentUpon>Accountant.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AssembleDID.resx">
       <DependentUpon>AssembleDID.cs</DependentUpon>
     </EmbeddedResource>
@@ -367,11 +394,20 @@
     <EmbeddedResource Include="GoodsInward.resx">
       <DependentUpon>GoodsInward.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GoodsInwardDepartment.resx">
+      <DependentUpon>GoodsInwardDepartment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HumanResources.resx">
+      <DependentUpon>HumanResources.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InvoiceGenerate.resx">
       <DependentUpon>InvoiceGenerate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InvoicingSection.resx">
       <DependentUpon>InvoicingSection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PurchasingDepartment.resx">
+      <DependentUpon>PurchasingDepartment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SparesDespatch.resx">
       <DependentUpon>SparesDespatch.cs</DependentUpon>
@@ -420,11 +456,11 @@
     <EmbeddedResource Include="ViewEmployee.resx">
       <DependentUpon>ViewEmployee.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ViewGoodsInward.resx">
+      <DependentUpon>ViewGoodsInward.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ViewInvoice.resx">
       <DependentUpon>ViewInvoice.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ViewInwards.resx">
-      <DependentUpon>ViewInwards.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewLateDeliveryAlarm.resx">
       <DependentUpon>ViewLateDeliveryAlarm.cs</DependentUpon>

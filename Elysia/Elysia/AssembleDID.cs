@@ -14,7 +14,6 @@ namespace Elysia
             InitializeComponent();
             setDataGridView();
             this.dgvDID.CellClick += new DataGridViewCellEventHandler(dataGridView1_CellClick);
-            btnDID.Checked = true;
             dgvDID.AllowUserToAddRows = false;
             dgvDID.ReadOnly = true;
             dgvDID.Columns[3].ReadOnly = false;

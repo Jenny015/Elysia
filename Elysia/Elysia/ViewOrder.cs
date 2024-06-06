@@ -101,13 +101,6 @@ namespace Elysia
             string query = filter.queryString;
             reloadDataGridView(query);
         }
-
-        private void btnViewDealer_CheckedChanged(object sender, EventArgs e)
-        {
-            ViewDealer viewDealer = new ViewDealer();
-            viewDealer.Show();
-            this.Close();
-        }
     }
 }
 

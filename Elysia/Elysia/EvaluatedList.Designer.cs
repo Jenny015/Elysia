@@ -30,7 +30,13 @@
         {
             this.panel2 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
+            this.dgvEv = new System.Windows.Forms.DataGridView();
+            this.btnPrint = new System.Windows.Forms.Button();
+            this.btnSaveAsCSV = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblTotal = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEv)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -54,16 +60,79 @@
             this.label4.TabIndex = 20;
             this.label4.Text = "Evaluated List";
             // 
+            // dgvEv
+            // 
+            this.dgvEv.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvEv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEv.Location = new System.Drawing.Point(21, 107);
+            this.dgvEv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvEv.Name = "dgvEv";
+            this.dgvEv.RowHeadersWidth = 62;
+            this.dgvEv.RowTemplate.Height = 31;
+            this.dgvEv.Size = new System.Drawing.Size(1460, 846);
+            this.dgvEv.TabIndex = 46;
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.BackColor = System.Drawing.Color.Plum;
+            this.btnPrint.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.btnPrint.Location = new System.Drawing.Point(1118, 978);
+            this.btnPrint.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(150, 42);
+            this.btnPrint.TabIndex = 45;
+            this.btnPrint.Text = "Print";
+            this.btnPrint.UseVisualStyleBackColor = false;
+            // 
+            // btnSaveAsCSV
+            // 
+            this.btnSaveAsCSV.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnSaveAsCSV.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.btnSaveAsCSV.Location = new System.Drawing.Point(1317, 978);
+            this.btnSaveAsCSV.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSaveAsCSV.Name = "btnSaveAsCSV";
+            this.btnSaveAsCSV.Size = new System.Drawing.Size(150, 42);
+            this.btnSaveAsCSV.TabIndex = 44;
+            this.btnSaveAsCSV.Text = "Save As CSV";
+            this.btnSaveAsCSV.UseVisualStyleBackColor = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(619, 968);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(106, 29);
+            this.label1.TabIndex = 47;
+            this.label1.Text = "Total:  $";
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Location = new System.Drawing.Point(716, 968);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(70, 29);
+            this.lblTotal.TabIndex = 48;
+            this.lblTotal.Text = "price";
+            // 
             // EvaluatedList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblTotal);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.dgvEv);
+            this.Controls.Add(this.btnPrint);
+            this.Controls.Add(this.btnSaveAsCSV);
             this.Controls.Add(this.panel2);
             this.Name = "EvaluatedList";
             this.Size = new System.Drawing.Size(1503, 1055);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEv)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -71,5 +140,10 @@
 
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridView dgvEv;
+        private System.Windows.Forms.Button btnPrint;
+        private System.Windows.Forms.Button btnSaveAsCSV;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTotal;
     }
 }
