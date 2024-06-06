@@ -57,6 +57,7 @@
             this.btnFilter.TabIndex = 35;
             this.btnFilter.Text = "Filter";
             this.btnFilter.UseVisualStyleBackColor = true;
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
             // panel2
             // 

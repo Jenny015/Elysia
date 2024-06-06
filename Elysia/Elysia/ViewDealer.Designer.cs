@@ -30,7 +30,9 @@
         {
             this.panel2 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
+            this.dgvViewDealer = new System.Windows.Forms.DataGridView();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvViewDealer)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -54,16 +56,35 @@
             this.label4.TabIndex = 20;
             this.label4.Text = "ViewDealer";
             // 
+            // dgvViewDealer
+            // 
+            this.dgvViewDealer.AllowUserToAddRows = false;
+            this.dgvViewDealer.AllowUserToDeleteRows = false;
+            this.dgvViewDealer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvViewDealer.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvViewDealer.ColumnHeadersHeight = 25;
+            this.dgvViewDealer.Location = new System.Drawing.Point(16, 114);
+            this.dgvViewDealer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvViewDealer.Name = "dgvViewDealer";
+            this.dgvViewDealer.ReadOnly = true;
+            this.dgvViewDealer.RowHeadersWidth = 51;
+            this.dgvViewDealer.RowTemplate.Height = 27;
+            this.dgvViewDealer.ShowEditingIcon = false;
+            this.dgvViewDealer.Size = new System.Drawing.Size(1460, 850);
+            this.dgvViewDealer.TabIndex = 45;
+            // 
             // ViewDealer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.dgvViewDealer);
             this.Controls.Add(this.panel2);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ViewDealer";
             this.Size = new System.Drawing.Size(1503, 1055);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvViewDealer)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -72,5 +93,6 @@
 
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridView dgvViewDealer;
     }
 }

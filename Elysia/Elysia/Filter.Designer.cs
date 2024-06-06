@@ -33,27 +33,10 @@
             this.didOrderID = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.didAll = new System.Windows.Forms.RadioButton();
-            this.didA = new System.Windows.Forms.RadioButton();
-            this.didP = new System.Windows.Forms.RadioButton();
-            this.didO = new System.Windows.Forms.RadioButton();
             this.btnSearch = new System.Windows.Forms.Button();
             this.invoice = new System.Windows.Forms.Panel();
             this.invOrderID = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.invSign = new System.Windows.Forms.RadioButton();
-            this.invAll = new System.Windows.Forms.RadioButton();
-            this.invSend = new System.Windows.Forms.RadioButton();
-            this.invW = new System.Windows.Forms.RadioButton();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rbOStatusAll = new System.Windows.Forms.RadioButton();
-            this.rbOStatusA = new System.Windows.Forms.RadioButton();
-            this.rbOStatusP = new System.Windows.Forms.RadioButton();
-            this.rbOStatusO = new System.Windows.Forms.RadioButton();
-            this.rbOStatusC = new System.Windows.Forms.RadioButton();
-            this.rbOStatusD = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.cbOrderID = new System.Windows.Forms.ComboBox();
@@ -78,28 +61,42 @@
             this.iwID = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.orderStatus = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.invStatus = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.didStatus = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.part = new System.Windows.Forms.Panel();
+            this.partStatus = new System.Windows.Forms.ComboBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.partPartID = new System.Windows.Forms.ComboBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.partCategory = new System.Windows.Forms.ComboBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.partPartName = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.DID.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.invoice.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.orderDateContainer.SuspendLayout();
             this.Order.SuspendLayout();
             this.inward.SuspendLayout();
             this.iwDatePanel.SuspendLayout();
+            this.part.SuspendLayout();
             this.SuspendLayout();
             // 
             // DID
             // 
+            this.DID.Controls.Add(this.didStatus);
+            this.DID.Controls.Add(this.label15);
             this.DID.Controls.Add(this.didPartID);
             this.DID.Controls.Add(this.didOrderID);
             this.DID.Controls.Add(this.label2);
             this.DID.Controls.Add(this.label6);
-            this.DID.Controls.Add(this.groupBox2);
-            this.DID.Location = new System.Drawing.Point(413, 16);
+            this.DID.Location = new System.Drawing.Point(425, 327);
             this.DID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DID.Name = "DID";
-            this.DID.Size = new System.Drawing.Size(400, 350);
+            this.DID.Size = new System.Drawing.Size(400, 227);
             this.DID.TabIndex = 6;
             this.DID.Visible = false;
             // 
@@ -107,7 +104,7 @@
             // 
             this.didPartID.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.didPartID.FormattingEnabled = true;
-            this.didPartID.Location = new System.Drawing.Point(168, 98);
+            this.didPartID.Location = new System.Drawing.Point(161, 92);
             this.didPartID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.didPartID.Name = "didPartID";
             this.didPartID.Size = new System.Drawing.Size(201, 30);
@@ -117,7 +114,7 @@
             // 
             this.didOrderID.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.didOrderID.FormattingEnabled = true;
-            this.didOrderID.Location = new System.Drawing.Point(168, 32);
+            this.didOrderID.Location = new System.Drawing.Point(161, 30);
             this.didOrderID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.didOrderID.Name = "didOrderID";
             this.didOrderID.Size = new System.Drawing.Size(201, 30);
@@ -127,7 +124,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(36, 104);
+            this.label2.Location = new System.Drawing.Point(29, 96);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(104, 26);
             this.label2.TabIndex = 16;
@@ -137,83 +134,17 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(36, 36);
+            this.label6.Location = new System.Drawing.Point(29, 34);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(123, 26);
             this.label6.TabIndex = 15;
             this.label6.Text = "Order ID: ";
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.didAll);
-            this.groupBox2.Controls.Add(this.didA);
-            this.groupBox2.Controls.Add(this.didP);
-            this.groupBox2.Controls.Add(this.didO);
-            this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.groupBox2.Location = new System.Drawing.Point(28, 170);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(341, 146);
-            this.groupBox2.TabIndex = 17;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "DID Status";
-            // 
-            // didAll
-            // 
-            this.didAll.AutoSize = true;
-            this.didAll.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.didAll.Location = new System.Drawing.Point(165, 94);
-            this.didAll.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.didAll.Name = "didAll";
-            this.didAll.Size = new System.Drawing.Size(117, 27);
-            this.didAll.TabIndex = 19;
-            this.didAll.Text = "All Status";
-            this.didAll.UseVisualStyleBackColor = true;
-            // 
-            // didA
-            // 
-            this.didA.AutoSize = true;
-            this.didA.Font = new System.Drawing.Font("Times New Roman", 10F);
-            this.didA.Location = new System.Drawing.Point(165, 43);
-            this.didA.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.didA.Name = "didA";
-            this.didA.Size = new System.Drawing.Size(123, 26);
-            this.didA.TabIndex = 18;
-            this.didA.Text = "Assembled";
-            this.didA.UseVisualStyleBackColor = true;
-            // 
-            // didP
-            // 
-            this.didP.AutoSize = true;
-            this.didP.Checked = true;
-            this.didP.Font = new System.Drawing.Font("Times New Roman", 10F);
-            this.didP.Location = new System.Drawing.Point(22, 43);
-            this.didP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.didP.Name = "didP";
-            this.didP.Size = new System.Drawing.Size(121, 26);
-            this.didP.TabIndex = 17;
-            this.didP.TabStop = true;
-            this.didP.Text = "Processing";
-            this.didP.UseVisualStyleBackColor = true;
-            // 
-            // didO
-            // 
-            this.didO.AutoSize = true;
-            this.didO.Font = new System.Drawing.Font("Times New Roman", 10F);
-            this.didO.Location = new System.Drawing.Point(22, 94);
-            this.didO.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.didO.Name = "didO";
-            this.didO.Size = new System.Drawing.Size(117, 26);
-            this.didO.TabIndex = 16;
-            this.didO.Text = "OStanding";
-            this.didO.UseVisualStyleBackColor = true;
-            // 
             // btnSearch
             // 
             this.btnSearch.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnSearch.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.btnSearch.Location = new System.Drawing.Point(2070, 1311);
+            this.btnSearch.Location = new System.Drawing.Point(125, 317);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(150, 40);
@@ -224,13 +155,14 @@
             // 
             // invoice
             // 
+            this.invoice.Controls.Add(this.label14);
+            this.invoice.Controls.Add(this.invStatus);
             this.invoice.Controls.Add(this.invOrderID);
             this.invoice.Controls.Add(this.label8);
-            this.invoice.Controls.Add(this.groupBox3);
             this.invoice.Location = new System.Drawing.Point(14, 492);
             this.invoice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.invoice.Name = "invoice";
-            this.invoice.Size = new System.Drawing.Size(400, 290);
+            this.invoice.Size = new System.Drawing.Size(400, 176);
             this.invoice.TabIndex = 20;
             this.invoice.Visible = false;
             // 
@@ -238,7 +170,7 @@
             // 
             this.invOrderID.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.invOrderID.FormattingEnabled = true;
-            this.invOrderID.Location = new System.Drawing.Point(168, 32);
+            this.invOrderID.Location = new System.Drawing.Point(161, 32);
             this.invOrderID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.invOrderID.Name = "invOrderID";
             this.invOrderID.Size = new System.Drawing.Size(201, 30);
@@ -248,175 +180,17 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(36, 36);
+            this.label8.Location = new System.Drawing.Point(29, 36);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(123, 26);
             this.label8.TabIndex = 15;
             this.label8.Text = "Order ID: ";
             // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.invSign);
-            this.groupBox3.Controls.Add(this.invAll);
-            this.groupBox3.Controls.Add(this.invSend);
-            this.groupBox3.Controls.Add(this.invW);
-            this.groupBox3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.groupBox3.Location = new System.Drawing.Point(28, 98);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox3.Size = new System.Drawing.Size(341, 154);
-            this.groupBox3.TabIndex = 17;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Invoice Status";
-            // 
-            // invSign
-            // 
-            this.invSign.AutoSize = true;
-            this.invSign.Font = new System.Drawing.Font("Times New Roman", 10F);
-            this.invSign.Location = new System.Drawing.Point(43, 100);
-            this.invSign.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.invSign.Name = "invSign";
-            this.invSign.Size = new System.Drawing.Size(70, 26);
-            this.invSign.TabIndex = 20;
-            this.invSign.Text = "Sign";
-            this.invSign.UseVisualStyleBackColor = true;
-            // 
-            // invAll
-            // 
-            this.invAll.AutoSize = true;
-            this.invAll.Checked = true;
-            this.invAll.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.invAll.Location = new System.Drawing.Point(178, 100);
-            this.invAll.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.invAll.Name = "invAll";
-            this.invAll.Size = new System.Drawing.Size(117, 27);
-            this.invAll.TabIndex = 19;
-            this.invAll.TabStop = true;
-            this.invAll.Text = "All Status";
-            this.invAll.UseVisualStyleBackColor = true;
-            // 
-            // invSend
-            // 
-            this.invSend.AutoSize = true;
-            this.invSend.Font = new System.Drawing.Font("Times New Roman", 10F);
-            this.invSend.Location = new System.Drawing.Point(178, 48);
-            this.invSend.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.invSend.Name = "invSend";
-            this.invSend.Size = new System.Drawing.Size(74, 26);
-            this.invSend.TabIndex = 18;
-            this.invSend.Text = "Send";
-            this.invSend.UseVisualStyleBackColor = true;
-            // 
-            // invW
-            // 
-            this.invW.AutoSize = true;
-            this.invW.Font = new System.Drawing.Font("Times New Roman", 10F);
-            this.invW.Location = new System.Drawing.Point(43, 48);
-            this.invW.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.invW.Name = "invW";
-            this.invW.Size = new System.Drawing.Size(71, 26);
-            this.invW.TabIndex = 16;
-            this.invW.Text = "Wait";
-            this.invW.UseVisualStyleBackColor = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.rbOStatusAll);
-            this.groupBox1.Controls.Add(this.rbOStatusA);
-            this.groupBox1.Controls.Add(this.rbOStatusP);
-            this.groupBox1.Controls.Add(this.rbOStatusO);
-            this.groupBox1.Controls.Add(this.rbOStatusC);
-            this.groupBox1.Controls.Add(this.rbOStatusD);
-            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.groupBox1.Location = new System.Drawing.Point(22, 184);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(459, 146);
-            this.groupBox1.TabIndex = 12;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Order Status";
-            // 
-            // rbOStatusAll
-            // 
-            this.rbOStatusAll.AutoSize = true;
-            this.rbOStatusAll.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbOStatusAll.Location = new System.Drawing.Point(310, 94);
-            this.rbOStatusAll.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.rbOStatusAll.Name = "rbOStatusAll";
-            this.rbOStatusAll.Size = new System.Drawing.Size(117, 27);
-            this.rbOStatusAll.TabIndex = 19;
-            this.rbOStatusAll.Text = "All Status";
-            this.rbOStatusAll.UseVisualStyleBackColor = true;
-            // 
-            // rbOStatusA
-            // 
-            this.rbOStatusA.AutoSize = true;
-            this.rbOStatusA.Font = new System.Drawing.Font("Times New Roman", 10F);
-            this.rbOStatusA.Location = new System.Drawing.Point(165, 43);
-            this.rbOStatusA.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.rbOStatusA.Name = "rbOStatusA";
-            this.rbOStatusA.Size = new System.Drawing.Size(123, 26);
-            this.rbOStatusA.TabIndex = 18;
-            this.rbOStatusA.Text = "Assembled";
-            this.rbOStatusA.UseVisualStyleBackColor = true;
-            // 
-            // rbOStatusP
-            // 
-            this.rbOStatusP.AutoSize = true;
-            this.rbOStatusP.Checked = true;
-            this.rbOStatusP.Font = new System.Drawing.Font("Times New Roman", 10F);
-            this.rbOStatusP.Location = new System.Drawing.Point(22, 43);
-            this.rbOStatusP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.rbOStatusP.Name = "rbOStatusP";
-            this.rbOStatusP.Size = new System.Drawing.Size(121, 26);
-            this.rbOStatusP.TabIndex = 17;
-            this.rbOStatusP.TabStop = true;
-            this.rbOStatusP.Text = "Processing";
-            this.rbOStatusP.UseVisualStyleBackColor = true;
-            // 
-            // rbOStatusO
-            // 
-            this.rbOStatusO.AutoSize = true;
-            this.rbOStatusO.Font = new System.Drawing.Font("Times New Roman", 10F);
-            this.rbOStatusO.Location = new System.Drawing.Point(22, 94);
-            this.rbOStatusO.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.rbOStatusO.Name = "rbOStatusO";
-            this.rbOStatusO.Size = new System.Drawing.Size(117, 26);
-            this.rbOStatusO.TabIndex = 16;
-            this.rbOStatusO.Text = "OStanding";
-            this.rbOStatusO.UseVisualStyleBackColor = true;
-            // 
-            // rbOStatusC
-            // 
-            this.rbOStatusC.AutoSize = true;
-            this.rbOStatusC.Font = new System.Drawing.Font("Times New Roman", 10F);
-            this.rbOStatusC.Location = new System.Drawing.Point(165, 94);
-            this.rbOStatusC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.rbOStatusC.Name = "rbOStatusC";
-            this.rbOStatusC.Size = new System.Drawing.Size(115, 26);
-            this.rbOStatusC.TabIndex = 15;
-            this.rbOStatusC.Text = "Cancelled";
-            this.rbOStatusC.UseVisualStyleBackColor = true;
-            // 
-            // rbOStatusD
-            // 
-            this.rbOStatusD.AutoSize = true;
-            this.rbOStatusD.Font = new System.Drawing.Font("Times New Roman", 10F);
-            this.rbOStatusD.Location = new System.Drawing.Point(310, 43);
-            this.rbOStatusD.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.rbOStatusD.Name = "rbOStatusD";
-            this.rbOStatusD.Size = new System.Drawing.Size(127, 26);
-            this.rbOStatusD.TabIndex = 14;
-            this.rbOStatusD.Text = "Despatched";
-            this.rbOStatusD.UseVisualStyleBackColor = true;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(30, 50);
+            this.label3.Location = new System.Drawing.Point(30, 33);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(123, 26);
             this.label3.TabIndex = 7;
@@ -426,7 +200,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(30, 118);
+            this.label5.Location = new System.Drawing.Point(30, 101);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(127, 26);
             this.label5.TabIndex = 10;
@@ -436,7 +210,7 @@
             // 
             this.cbOrderID.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.cbOrderID.FormattingEnabled = true;
-            this.cbOrderID.Location = new System.Drawing.Point(162, 46);
+            this.cbOrderID.Location = new System.Drawing.Point(162, 29);
             this.cbOrderID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbOrderID.Name = "cbOrderID";
             this.cbOrderID.Size = new System.Drawing.Size(201, 30);
@@ -446,7 +220,7 @@
             // 
             this.cbDealerID.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.cbDealerID.FormattingEnabled = true;
-            this.cbDealerID.Location = new System.Drawing.Point(162, 112);
+            this.cbDealerID.Location = new System.Drawing.Point(162, 97);
             this.cbDealerID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbDealerID.Name = "cbDealerID";
             this.cbDealerID.Size = new System.Drawing.Size(201, 30);
@@ -456,7 +230,7 @@
             // 
             this.cbDate.AutoSize = true;
             this.cbDate.Font = new System.Drawing.Font("Times New Roman", 10F);
-            this.cbDate.Location = new System.Drawing.Point(33, 358);
+            this.cbDate.Location = new System.Drawing.Point(35, 230);
             this.cbDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbDate.Name = "cbDate";
             this.cbDate.Size = new System.Drawing.Size(179, 26);
@@ -472,7 +246,7 @@
             this.orderDateContainer.Controls.Add(this.label4);
             this.orderDateContainer.Controls.Add(this.label1);
             this.orderDateContainer.Enabled = false;
-            this.orderDateContainer.Location = new System.Drawing.Point(22, 390);
+            this.orderDateContainer.Location = new System.Drawing.Point(24, 262);
             this.orderDateContainer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.orderDateContainer.Name = "orderDateContainer";
             this.orderDateContainer.Size = new System.Drawing.Size(459, 122);
@@ -523,17 +297,18 @@
             // 
             // Order
             // 
+            this.Order.Controls.Add(this.label13);
+            this.Order.Controls.Add(this.orderStatus);
             this.Order.Controls.Add(this.orderDateContainer);
             this.Order.Controls.Add(this.cbDate);
             this.Order.Controls.Add(this.cbDealerID);
             this.Order.Controls.Add(this.cbOrderID);
             this.Order.Controls.Add(this.label5);
             this.Order.Controls.Add(this.label3);
-            this.Order.Controls.Add(this.groupBox1);
             this.Order.Location = new System.Drawing.Point(831, 13);
             this.Order.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Order.Name = "Order";
-            this.Order.Size = new System.Drawing.Size(518, 530);
+            this.Order.Size = new System.Drawing.Size(518, 414);
             this.Order.TabIndex = 7;
             this.Order.Visible = false;
             // 
@@ -547,7 +322,7 @@
             this.inward.Controls.Add(this.iwID);
             this.inward.Controls.Add(this.label10);
             this.inward.Controls.Add(this.label11);
-            this.inward.Location = new System.Drawing.Point(14, 13);
+            this.inward.Location = new System.Drawing.Point(14, 701);
             this.inward.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.inward.Name = "inward";
             this.inward.Size = new System.Drawing.Size(393, 414);
@@ -624,7 +399,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.label12.Location = new System.Drawing.Point(30, 173);
+            this.label12.Location = new System.Drawing.Point(22, 173);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(104, 26);
             this.label12.TabIndex = 20;
@@ -647,7 +422,7 @@
             // 
             this.iwSupplierID.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.iwSupplierID.FormattingEnabled = true;
-            this.iwSupplierID.Location = new System.Drawing.Point(162, 98);
+            this.iwSupplierID.Location = new System.Drawing.Point(162, 100);
             this.iwSupplierID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.iwSupplierID.Name = "iwSupplierID";
             this.iwSupplierID.Size = new System.Drawing.Size(201, 30);
@@ -667,7 +442,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.label10.Location = new System.Drawing.Point(30, 104);
+            this.label10.Location = new System.Drawing.Point(22, 104);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(146, 26);
             this.label10.TabIndex = 10;
@@ -677,11 +452,169 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.label11.Location = new System.Drawing.Point(30, 37);
+            this.label11.Location = new System.Drawing.Point(22, 37);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(133, 26);
             this.label11.TabIndex = 7;
             this.label11.Text = "Inward ID: ";
+            // 
+            // orderStatus
+            // 
+            this.orderStatus.Font = new System.Drawing.Font("Times New Roman", 10F);
+            this.orderStatus.FormattingEnabled = true;
+            this.orderStatus.Location = new System.Drawing.Point(162, 163);
+            this.orderStatus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.orderStatus.Name = "orderStatus";
+            this.orderStatus.Size = new System.Drawing.Size(201, 30);
+            this.orderStatus.TabIndex = 19;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.label13.Location = new System.Drawing.Point(30, 167);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(89, 26);
+            this.label13.TabIndex = 20;
+            this.label13.Text = "Status: ";
+            // 
+            // invStatus
+            // 
+            this.invStatus.Font = new System.Drawing.Font("Times New Roman", 10F);
+            this.invStatus.FormattingEnabled = true;
+            this.invStatus.Location = new System.Drawing.Point(161, 109);
+            this.invStatus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.invStatus.Name = "invStatus";
+            this.invStatus.Size = new System.Drawing.Size(201, 30);
+            this.invStatus.TabIndex = 21;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.label14.Location = new System.Drawing.Point(29, 113);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(89, 26);
+            this.label14.TabIndex = 21;
+            this.label14.Text = "Status: ";
+            // 
+            // didStatus
+            // 
+            this.didStatus.Font = new System.Drawing.Font("Times New Roman", 10F);
+            this.didStatus.FormattingEnabled = true;
+            this.didStatus.Location = new System.Drawing.Point(161, 158);
+            this.didStatus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.didStatus.Name = "didStatus";
+            this.didStatus.Size = new System.Drawing.Size(201, 30);
+            this.didStatus.TabIndex = 22;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.label15.Location = new System.Drawing.Point(29, 162);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(89, 26);
+            this.label15.TabIndex = 22;
+            this.label15.Text = "Status: ";
+            // 
+            // part
+            // 
+            this.part.Controls.Add(this.label19);
+            this.part.Controls.Add(this.partPartName);
+            this.part.Controls.Add(this.partCategory);
+            this.part.Controls.Add(this.label18);
+            this.part.Controls.Add(this.partStatus);
+            this.part.Controls.Add(this.label16);
+            this.part.Controls.Add(this.partPartID);
+            this.part.Controls.Add(this.label17);
+            this.part.Location = new System.Drawing.Point(9, 9);
+            this.part.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.part.Name = "part";
+            this.part.Size = new System.Drawing.Size(400, 289);
+            this.part.TabIndex = 23;
+            this.part.Visible = false;
+            // 
+            // partStatus
+            // 
+            this.partStatus.Font = new System.Drawing.Font("Times New Roman", 10F);
+            this.partStatus.FormattingEnabled = true;
+            this.partStatus.Items.AddRange(new object[] {
+            "Processing",
+            "Assembled",
+            "OStanding"});
+            this.partStatus.Location = new System.Drawing.Point(163, 224);
+            this.partStatus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.partStatus.Name = "partStatus";
+            this.partStatus.Size = new System.Drawing.Size(201, 30);
+            this.partStatus.TabIndex = 22;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.label16.Location = new System.Drawing.Point(21, 225);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(89, 26);
+            this.label16.TabIndex = 22;
+            this.label16.Text = "Status: ";
+            // 
+            // partPartID
+            // 
+            this.partPartID.Font = new System.Drawing.Font("Times New Roman", 10F);
+            this.partPartID.FormattingEnabled = true;
+            this.partPartID.Location = new System.Drawing.Point(163, 29);
+            this.partPartID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.partPartID.Name = "partPartID";
+            this.partPartID.Size = new System.Drawing.Size(201, 30);
+            this.partPartID.TabIndex = 19;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.label17.Location = new System.Drawing.Point(21, 30);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(104, 26);
+            this.label17.TabIndex = 16;
+            this.label17.Text = "Part ID: ";
+            // 
+            // partCategory
+            // 
+            this.partCategory.Font = new System.Drawing.Font("Times New Roman", 10F);
+            this.partCategory.FormattingEnabled = true;
+            this.partCategory.Location = new System.Drawing.Point(163, 162);
+            this.partCategory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.partCategory.Name = "partCategory";
+            this.partCategory.Size = new System.Drawing.Size(201, 30);
+            this.partCategory.TabIndex = 24;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.label18.Location = new System.Drawing.Point(21, 164);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(127, 26);
+            this.label18.TabIndex = 23;
+            this.label18.Text = "Category:  ";
+            // 
+            // partPartName
+            // 
+            this.partPartName.Location = new System.Drawing.Point(163, 98);
+            this.partPartName.Name = "partPartName";
+            this.partPartName.Size = new System.Drawing.Size(201, 29);
+            this.partPartName.TabIndex = 24;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.label19.Location = new System.Drawing.Point(21, 98);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(137, 26);
+            this.label19.TabIndex = 25;
+            this.label19.Text = "Part Name: ";
             // 
             // Filter
             // 
@@ -690,6 +623,7 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(2232, 1364);
+            this.Controls.Add(this.part);
             this.Controls.Add(this.inward);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.DID);
@@ -702,14 +636,8 @@
             this.Text = "Filter";
             this.DID.ResumeLayout(false);
             this.DID.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.invoice.ResumeLayout(false);
             this.invoice.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.orderDateContainer.ResumeLayout(false);
             this.orderDateContainer.PerformLayout();
             this.Order.ResumeLayout(false);
@@ -718,6 +646,8 @@
             this.inward.PerformLayout();
             this.iwDatePanel.ResumeLayout(false);
             this.iwDatePanel.PerformLayout();
+            this.part.ResumeLayout(false);
+            this.part.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -729,19 +659,9 @@
         private System.Windows.Forms.ComboBox didOrderID;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton didAll;
-        private System.Windows.Forms.RadioButton didA;
-        private System.Windows.Forms.RadioButton didP;
-        private System.Windows.Forms.RadioButton didO;
         private System.Windows.Forms.Panel invoice;
         private System.Windows.Forms.ComboBox invOrderID;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.RadioButton invAll;
-        private System.Windows.Forms.RadioButton invSend;
-        private System.Windows.Forms.RadioButton invW;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbOrderID;
@@ -753,13 +673,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel Order;
-        private System.Windows.Forms.RadioButton rbOStatusAll;
-        private System.Windows.Forms.RadioButton rbOStatusA;
-        private System.Windows.Forms.RadioButton rbOStatusO;
-        private System.Windows.Forms.RadioButton rbOStatusC;
-        private System.Windows.Forms.RadioButton rbOStatusD;
-        private System.Windows.Forms.RadioButton rbOStatusP;
-        private System.Windows.Forms.RadioButton invSign;
         private System.Windows.Forms.Panel inward;
         private System.Windows.Forms.Panel iwDatePanel;
         private System.Windows.Forms.DateTimePicker iwTo;
@@ -773,5 +686,20 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox iwPartID;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ComboBox orderStatus;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.ComboBox invStatus;
+        private System.Windows.Forms.ComboBox didStatus;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Panel part;
+        private System.Windows.Forms.ComboBox partCategory;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.ComboBox partStatus;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.ComboBox partPartID;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox partPartName;
     }
 }

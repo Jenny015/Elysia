@@ -36,6 +36,9 @@ namespace Elysia
                 case "inward":
                     setComponent_inward();
                     break;
+                case "part":
+                    setComponent_part();
+                    break;
             }
         }
 
@@ -54,6 +57,9 @@ namespace Elysia
                     break;
                 case "inward":
                     search_inward();
+                    break;
+                case "part":
+                    search_part();
                     break;
             }
             Query?.Invoke(this, EventArgs.Empty);
@@ -83,24 +89,27 @@ namespace Elysia
         {
             DID.Location = new System.Drawing.Point(9, 9);
             DID.Visible = true;
-            btnSearch.Location = new System.Drawing.Point(90, 220);
+            btnSearch.Location = new System.Drawing.Point(125, 258);
             loadDataFromDatabase("orderID", "order", didOrderID);
             loadDataFromDatabase("partID", "part", didPartID);
+            loadDataFromDatabase("opStatus", "orderpart", didStatus);
         }
         private void setComponent_Order()
         {
             Order.Location = new System.Drawing.Point(9, 9);
             Order.Visible = true;
-            btnSearch.Location = new System.Drawing.Point(162, 475);
+            btnSearch.Location = new System.Drawing.Point(182, 446);
             loadDataFromDatabase("orderID", "order", cbOrderID);
             loadDataFromDatabase("dealerID", "dealer", cbDealerID);
+            loadDataFromDatabase("orderStatus", "order", orderStatus);
         }
         private void setComponent_invoice()
         {
             invoice.Location = new System.Drawing.Point(9, 9);
             invoice.Visible = true;
-            btnSearch.Location = new System.Drawing.Point(105, 180);
+            btnSearch.Location = new System.Drawing.Point(134, 203);
             loadDataFromDatabase("orderID", "order", invOrderID);
+            loadDataFromDatabase("invStatus", "invoice", invStatus);
         }
         private void setComponent_inward()
         {
@@ -110,6 +119,15 @@ namespace Elysia
             loadDataFromDatabase("inwardsID", "inwardsOrder", iwID);
             loadDataFromDatabase("supplierID", "inwardsOrder", iwSupplierID);
             loadDataFromDatabase("partID", "inwardspart", iwPartID);
+        }
+        private void setComponent_part()
+        {
+            part.Location = new System.Drawing.Point(9, 9);
+            part.Visible = true;
+            btnSearch.Location = new System.Drawing.Point(125, 317);
+            loadDataFromDatabase("partID", "part", partPartID);
+            loadDataFromDatabase("partStatus", "part", partStatus);
+            loadDataFromDatabase("categoryName", "category", partCategory);
         }
         private void search_DID()
         {
@@ -123,20 +141,9 @@ namespace Elysia
             {
                 queryBuilder.Append($" AND partID = '{didPartID.SelectedItem}'");
             }
-            if (!didAll.Checked)
+            if (didStatus.SelectedIndex != -1) { }
             {
-                if (didA.Checked)
-                {
-                    queryBuilder.Append(" AND opStatus = 'Assembled'");
-                }
-                if (didP.Checked)
-                {
-                    queryBuilder.Append(" AND opStatus = 'Processing'");
-                }
-                if (didO.Checked)
-                {
-                    queryBuilder.Append(" AND opStatus = 'OStanding'");
-                }
+                queryBuilder.Append($" AND opStatus = '{didStatus.SelectedItem.ToString()}'");
             }
             queryBuilder.Append(" ORDER BY O.orderDate DESC");
             queryString = queryBuilder.ToString();
@@ -153,28 +160,9 @@ namespace Elysia
             {
                 queryBuilder.Append($" AND dealerID = '{cbDealerID.SelectedItem}'");
             }
-            if (!rbOStatusAll.Checked)
+            if (orderStatus.SelectedIndex != -1)
             {
-                if (rbOStatusA.Checked)
-                {
-                    queryBuilder.Append(" AND orderStatus = 'Assembled'");
-                }
-                if (rbOStatusC.Checked)
-                {
-                    queryBuilder.Append(" AND orderStatus = 'Cancelled'");
-                }
-                if (rbOStatusD.Checked)
-                {
-                    queryBuilder.Append(" AND orderStatus = 'Despatched'");
-                }
-                if (rbOStatusP.Checked)
-                {
-                    queryBuilder.Append(" AND orderStatus = 'Processing'");
-                }
-                if (rbOStatusO.Checked)
-                {
-                    queryBuilder.Append(" AND orderStatus = 'OStanding'");
-                }
+                queryBuilder.Append($" AND orderStatus = '{orderStatus.SelectedItem.ToString()}'");
             }
             if (cbDate.Checked && oDateTo.Value.Date >= oDateFrom.Value.Date)
             {
@@ -197,20 +185,9 @@ namespace Elysia
             {
                 queryBuilder.Append($" AND i.orderID = '{invOrderID.SelectedItem}'");
             }
-            if (!invAll.Checked)
+            if (invStatus.SelectedIndex != -1)
             {
-                if (invW.Checked)
-                {
-                    queryBuilder.Append(" OR invStatus = 'Wait'");
-                }
-                if (invSend.Checked)
-                {
-                    queryBuilder.Append(" OR invStatus = 'Send'");
-                }
-                if (invSign.Checked)
-                {
-                    queryBuilder.Append(" OR invStatus = 'Sign'");
-                }
+                queryBuilder.Append($" AND invStatus = '{invStatus.SelectedItem.ToString()}'");
             }
             queryBuilder.Append(" ORDER BY o.`orderDate` DESC");
             queryString = queryBuilder.ToString();
@@ -242,6 +219,29 @@ namespace Elysia
         {
             iwDatePanel.Visible = iwDate.Checked;
             iwDatePanel.Enabled = iwDate.Checked;
+        }
+        private void search_part()
+        {
+            StringBuilder queryBuilder = new StringBuilder("");
+            List<MySqlParameter> parameters = new List<MySqlParameter>();
+            if (partPartID.SelectedIndex != -1)
+            {
+                queryBuilder.Append($" AND p.partID = '{partPartID.SelectedItem}'");
+            }
+            if (partCategory.SelectedIndex != -1)
+            {
+                queryBuilder.Append($" AND c.categoryName = '{partCategory.SelectedItem}'");
+            }
+            if (iwPartID.SelectedIndex != -1)
+            {
+                queryBuilder.Append($" AND `ip`.partID = '{iwPartID.SelectedItem}'");
+            }
+            if (iwDate.Checked && iwTo.Value.Date >= iwFrom.Value.Date)
+            {
+                queryBuilder.Append($" AND inwardsDate BETWEEN '{iwFrom.Value.ToString("yyyy-MM-dd")}' AND '{iwTo.Value.ToString("yyyy-MM-dd")}'");
+            }
+            queryBuilder.Append(" ORDER BY `io`.inwardsDate DESC");
+            queryString = queryBuilder.ToString();
         }
     }
 }

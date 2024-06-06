@@ -26,11 +26,11 @@ namespace Elysia
                        5 * (DATEDIFF(CURDATE(), o.orderDate) DIV 7) +
                        MID('0123444401233334012222340111123400001234000123440',
                            7 * WEEKDAY(CURDATE()) + WEEKDAY(o.orderDate) + 1, 1) AS DaysAfterOrderDate
-                FROM `order` o
-                WHERE o.orderStatus = 'Assembled'
-                AND (5 * (DATEDIFF(CURDATE(), o.orderDate) DIV 7) +
-                     MID('0123444401233334012222340111123400001234000123440',
-                         7 * WEEKDAY(CURDATE()) + WEEKDAY(o.orderDate) + 1, 1)) > 2;");
+                    FROM `order` o
+                    WHERE o.orderStatus = 'Assembled'
+                    AND (5 * (DATEDIFF(CURDATE(), o.orderDate) DIV 7) +
+                         MID('0123444401233334012222340111123400001234000123440',
+                             7 * WEEKDAY(CURDATE()) + WEEKDAY(o.orderDate) + 1, 1)) > 2;");
             }
             else {
                 reloadDataGridView(@"SELECT o.orderID, op.partID, op.orderQty,

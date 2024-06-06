@@ -11,6 +11,23 @@ namespace Elysia
         public ViewDealer()
         {
             InitializeComponent();
+            reloadDataGridView();
+            dgvViewDealer.AllowUserToAddRows = false;
+            dgvViewDealer.ReadOnly = true;
+        }
+        private void reloadDataGridView()
+        {
+            string query = "SELECT * FROM dealer";
+
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn))
+                {
+                    DataSet ds = new DataSet();
+                    adapter.Fill(ds);
+                    dgvViewDealer.DataSource = ds.Tables[0];
+                }
+            }
         }
     }
 }

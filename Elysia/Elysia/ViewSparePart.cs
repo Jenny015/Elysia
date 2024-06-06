@@ -45,7 +45,7 @@ namespace Elysia
 
         private void filter_Query(object sender, EventArgs e)
         {
-            string query = filter.queryString;
+            string query = "SELECT p.* FROM `part` p, `category` c WHERE p.categoryID = c.categoryID " + filter.queryString;
             reloadDataGridView(query);
         }
     }
