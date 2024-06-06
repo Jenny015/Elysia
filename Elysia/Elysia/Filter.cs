@@ -39,6 +39,18 @@ namespace Elysia
                 case "part":
                     setComponent_part();
                     break;
+                case "Sup":
+                    setComponent_Sup();
+                    break;
+                case "dealer":
+                    setComponent_dealer();
+                    break;
+                case "emp":
+                    setComponent_emp();
+                    break;
+                case "log":
+                    setComponent_log();
+                    break;
             }
         }
 
@@ -61,6 +73,20 @@ namespace Elysia
                 case "part":
                     search_part();
                     break;
+              /*case "Sup":
+                    search_sup();
+                    break;
+                case "dealer":
+                    search_dealer();
+                    break;
+                case"emp":
+                    search_emp();
+                    break;
+                case"log":
+                    search_log();
+                    break;
+
+              */
             }
             Query?.Invoke(this, EventArgs.Empty);
             this.Close();
@@ -85,6 +111,48 @@ namespace Elysia
                 }
             }
         }
+
+        private void setComponent_log()
+        {
+            log.Location = new System.Drawing.Point(9, 9);
+            log.Visible = true;
+            btnSearch.Location = new System.Drawing.Point(125, 258);
+            loadDataFromDatabase("logID", "log", logID);
+            loadDataFromDatabase("logChanges", "log", logChanges);
+            loadDataFromDatabase("logDes", "log", logDes);
+
+        }
+
+        private void setComponent_emp()
+        {
+            emp.Location = new System.Drawing.Point(9, 9);
+            emp.Visible = true;
+            btnSearch.Location = new System.Drawing.Point(125, 258);
+            loadDataFromDatabase("empID", "emp", empID);
+            loadDataFromDatabase("deptID", "emp", empDeptID);
+            loadDataFromDatabase("empPostion", "emp", empPostion);
+            loadDataFromDatabase("empStatus", "emp", empStatus);
+        }
+
+        private void setComponent_dealer()
+        {
+            dealer.Location = new System.Drawing.Point(9, 9);
+            dealer.Visible = true;
+            btnSearch.Location = new System.Drawing.Point(125, 258);
+            loadDataFromDatabase("dealerID", "dealer", deaID);
+            loadDataFromDatabase("dName", "dealer", deaName);
+            loadDataFromDatabase("Dcompany", "dealer", deaCompany);
+        }
+
+        private void setComponent_Sup()
+        {
+            Sup.Location = new System.Drawing.Point(9, 9);
+            Sup.Visible = true;
+            btnSearch.Location = new System.Drawing.Point(125, 258);
+            loadDataFromDatabase("supplierID", "supplierpart", supID);
+            loadDataFromDatabase("partID", "supplierpart", supPartID);
+        }
+
         private void setComponent_DID()
         {
             DID.Location = new System.Drawing.Point(9, 9);
@@ -243,5 +311,7 @@ namespace Elysia
             queryBuilder.Append(" ORDER BY p.partID");
             queryString = queryBuilder.ToString();
         }
+
+
     }
 }
