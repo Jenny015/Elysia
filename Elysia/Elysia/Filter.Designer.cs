@@ -213,7 +213,7 @@
             // 
             this.btnSearch.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnSearch.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.btnSearch.Location = new System.Drawing.Point(124, 433);
+            this.btnSearch.Location = new System.Drawing.Point(2070, 1311);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(150, 40);

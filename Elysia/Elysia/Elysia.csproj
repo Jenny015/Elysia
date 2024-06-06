@@ -371,7 +371,7 @@
       <DependentUpon>ViewSparePart.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewSupplier.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ViewSupplier.Designer.cs">
       <DependentUpon>ViewSupplier.cs</DependentUpon>

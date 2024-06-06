@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Elysia
 {
-    public partial class ViewSupplier : Form
+    public partial class ViewSupplier : UserControl
     {
         public ViewSupplier()
         {

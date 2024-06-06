@@ -34,7 +34,7 @@ namespace Elysia
 
         private void btnViewGoodsInward_CheckedChanged(object sender, EventArgs e)
         {
-            StaticVariable.displayContent(contentPanel, new GoodsInward());
+            StaticVariable.displayContent(contentPanel, new ViewGoodsInward());
         }
 
         private void btnLogout_CheckedChanged(object sender, EventArgs e)

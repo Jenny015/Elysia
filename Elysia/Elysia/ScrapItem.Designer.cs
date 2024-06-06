@@ -117,11 +117,11 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(40, 26);
+            this.label4.Location = new System.Drawing.Point(40, 28);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(188, 41);
+            this.label4.Size = new System.Drawing.Size(221, 41);
             this.label4.TabIndex = 20;
-            this.label4.Text = "幫手改thx";
+            this.label4.Text = "Scrap Item";
             // 
             // ScrapItem
             // 

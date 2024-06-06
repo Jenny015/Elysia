@@ -37,6 +37,7 @@
             // 
             // dgvLateDelivery
             // 
+            this.dgvLateDelivery.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvLateDelivery.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLateDelivery.Location = new System.Drawing.Point(27, 110);
             this.dgvLateDelivery.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -63,9 +64,9 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(40, 26);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(188, 41);
+            this.label4.Size = new System.Drawing.Size(463, 41);
             this.label4.TabIndex = 20;
-            this.label4.Text = "幫手改thx";
+            this.label4.Text = "ViewLateDeliveryAlarm";
             // 
             // ViewLateDeliveryAlarm
             // 

@@ -25,5 +25,10 @@ namespace Elysia
         {
             StaticVariable.displayContent(contentPanel, new ScrapItem());
         }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            StaticVariable.displayContent(contentPanel, new User());
+        }
     }
 }
