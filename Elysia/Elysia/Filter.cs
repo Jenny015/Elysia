@@ -73,7 +73,7 @@ namespace Elysia
                 conn.Open();
                 MySqlCommand cmd = conn.CreateCommand();
 
-                cmd.CommandText = $"SELECT {col} FROM `{table}`";
+                cmd.CommandText = $"SELECT DISTINCT {col} FROM `{table}`";
                 using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
                     cb.Items.Clear();
@@ -232,15 +232,15 @@ namespace Elysia
             {
                 queryBuilder.Append($" AND c.categoryName = '{partCategory.SelectedItem}'");
             }
-            if (iwPartID.SelectedIndex != -1)
+            if (partStatus.SelectedIndex != -1)
             {
-                queryBuilder.Append($" AND `ip`.partID = '{iwPartID.SelectedItem}'");
+                queryBuilder.Append($" AND p.partStatus = '{partStatus.SelectedItem}'");
             }
-            if (iwDate.Checked && iwTo.Value.Date >= iwFrom.Value.Date)
+            if (partPartName.Text.Length == 0)
             {
-                queryBuilder.Append($" AND inwardsDate BETWEEN '{iwFrom.Value.ToString("yyyy-MM-dd")}' AND '{iwTo.Value.ToString("yyyy-MM-dd")}'");
+                queryBuilder.Append($" AND p.partName LIKE '%{partPartName.Text}%'");
             }
-            queryBuilder.Append(" ORDER BY `io`.inwardsDate DESC");
+            queryBuilder.Append(" ORDER BY p.partID");
             queryString = queryBuilder.ToString();
         }
     }

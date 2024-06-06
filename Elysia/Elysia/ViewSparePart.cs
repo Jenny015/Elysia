@@ -32,7 +32,6 @@ namespace Elysia
                     DataSet ds = new DataSet();
                     adapter.Fill(ds);
                     dgvPart.DataSource = ds.Tables[0];
-
                 }
             }
         }

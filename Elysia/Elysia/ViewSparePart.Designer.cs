@@ -38,10 +38,13 @@
             // 
             // dgvPart
             // 
+            this.dgvPart.AllowUserToAddRows = false;
+            this.dgvPart.AllowUserToDeleteRows = false;
             this.dgvPart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPart.Location = new System.Drawing.Point(24, 117);
             this.dgvPart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvPart.Name = "dgvPart";
+            this.dgvPart.ReadOnly = true;
             this.dgvPart.RowHeadersWidth = 62;
             this.dgvPart.RowTemplate.Height = 31;
             this.dgvPart.Size = new System.Drawing.Size(1460, 850);
