@@ -204,7 +204,7 @@ namespace Elysia
             {
                 conn.Open();
                 MySqlCommand cmd = conn.CreateCommand();
-                //insert a new order into order DB
+                //insert a new entry into goodsinwards DB
                 cmd.CommandText = $"INSERT INTO `inwardsOrder` (inwardsID, supplierID) VALUES ('{newInwardsID}', '{supplierID}');";
                 try
                 {
@@ -218,7 +218,7 @@ namespace Elysia
                 //loop through orderPart dictionary
                 foreach (KeyValuePair<String, int> part in inwardsParts)
                 {
-                    var remaining = part.Value; // store the remaing qty after - a outstanding order
+                    var remaining = part.Value + getPartQty(part.Key); // store the remaing qty after - a outstanding order
                     // check if the part has outstanding order
                     cmd.CommandText = $"SELECT o.dealerID, op.partID, op.orderQty, o.fromOrder, o.orderID FROM `order` o, orderpart op WHERE o.orderID = op.orderID AND op.partID = '{part.Key}' AND opStatus='OStanding' ORDER BY o.orderDate;";
                     Object result = cmd.ExecuteScalar();
@@ -226,6 +226,7 @@ namespace Elysia
                     {
                         using (MySqlDataReader reader = cmd.ExecuteReader())
                         {
+                            cmd.CommandText = "";
                             while (reader.Read())
                             {
                                 // inwards qty - OSpart qty by orderDate asc > 0
@@ -234,14 +235,20 @@ namespace Elysia
                                     remaining -= reader.GetInt32(2);
                                     // New R order with origin orderID, inwardsDate generate, Update DID to inwards item
                                     string newOrderID = NewOrder.getOrderID('R');
-                                    cmd.CommandText = $"INSERT INTO `order` (orderID, dealerID, fromOrder) VALUES ('{newOrderID}', '{reader.GetString(0)}', '{reader.GetString(3)}');" +
-                                        $"UPDATE orderpart SET orderID = '{newOrderID}', opStatus = 'Processing' WHERE orderID = '{reader.GetString(4)}' AND partID = '{part.Key}';";
+                                    cmd.CommandText += $"INSERT INTO `order` (orderID, dealerID, fromOrder) VALUES ('{newOrderID}', '{reader.GetString(0)}', '{reader.GetString(3)}');" +
+                                        $"INSERT INTO `orderpart` (orderID, partID, orderQty, opStatus) VALUES ('{newOrderID}', '{part.Key}', '{reader.GetInt32(2)}', 'Processing');" +
+                                        $"UPDATE orderpart SET opStatus = 'Added', AddToOrder = '{newOrderID}' WHERE orderID = '{reader.GetString(4)}' AND partID = '{part.Key}';";
                                 }
                             }
                         }
+                    } else
+                    {
+                        cmd.CommandText = $"INSERT INTO inwardsPart VALUES ('{newInwardsID}', '{part.Key}', {part.Value});";
                     }
-                    cmd.CommandText += $"INSERT INTO inwardsPart VALUES ('{newInwardsID}', '{part.Key}', {part.Value})" +
-                    $"INSERT INTO log VALUES '{DateTime.Now.ToString("yyyyMMddHHmmssff")}', '{StaticVariable.empID}', '{part.Key}', {-part.Value}, 'Goods Inward');";
+                    cmd.ExecuteNonQuery();
+                    string timestamp = DateTime.Now.ToString("yyyyMMddHHmmssff");
+                    int changeQty = -part.Value;
+                    cmd.CommandText = $"INSERT INTO log VALUES ('{timestamp}', '{StaticVariable.empID}', '{part.Key}', {changeQty}, 'Goods Inward');";
                     try
                     {
                         cmd.ExecuteNonQuery();
@@ -252,9 +259,26 @@ namespace Elysia
                     }
                 }
             }
+            StaticVariable.UpdateAllOutstandingOrders();
             updateInwardsID();
             MessageBox.Show("New Goods Inward has been inserted successfully.", "Success");
             btnClear_Click(null, null);
+        }
+        private int getPartQty(String partID) {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                MySqlCommand cmd = conn.CreateCommand();
+                cmd.CommandText = $"SELECT partQty FROM part WHERE partID = '{partID}'";
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        return reader.GetInt32(0);
+                    }
+                }
+            }
+            return 0;
         }
     }
 }

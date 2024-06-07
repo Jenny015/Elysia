@@ -187,8 +187,8 @@ namespace Elysia
                 MySqlCommand cmd = conn.CreateCommand();
                 Dictionary<String, int> osParts = new Dictionary<string, int>();
 
-                //check if outstanding order part currently order
-                cmd.CommandText = $"SELECT partID, orderQty FROM `orderpart` OP, `order` O  WHERE O.dealerID = '{cbDealerID.SelectedItem.ToString()}' AND O.orderID LIKE 'O%' AND O.orderID = OP.orderID";
+                //add all the outstanding DID (partID, quantity) of the dealer to osParts Dictionary
+                cmd.CommandText = $"SELECT partID, orderQty FROM `orderpart` OP, `order` O  WHERE O.dealerID = '{cbDealerID.SelectedItem.ToString()}' AND O.orderID LIKE 'O%' AND O.orderID = OP.orderID AND OP.opStatus = 'OStanding'";
                 using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
@@ -197,7 +197,7 @@ namespace Elysia
                     }
                 }
 
-                //insert a new order into order DB
+                //Create a new order to Order database
                 cmd.CommandText = $"INSERT INTO `order` (orderID, dealerID) VALUES ('{newOrderID}', '{cbDealerID.SelectedItem.ToString()}')";
                 try
                 {
@@ -214,12 +214,13 @@ namespace Elysia
                     int orderQty;
                     if (osParts.TryGetValue(part.Key, out orderQty))
                     {
-                        //if current order partID contain OSorder partID, add OSorderpart orderQty to OSQty, update OSorderpart addToOrder, status = Added
+                        //if current order partID contain OSorder partID, add OSorderpart orderQty to OSQty, update OSorderpart: addToOrder, status = Added
                         cmd.CommandText = $"INSERT INTO orderpart VALUES ('{newOrderID}', '{part.Key}', {part.Value}, {osParts[part.Key]}, null, 'Processing', null);" +
                             $"UPDATE orderpart JOIN `order` ON `order`.`orderID` = `orderpart`.`orderID` SET `orderpart`.`opStatus` = 'Added', `orderpart`.`addToOrder` = '{newOrderID}' WHERE `orderpart`.opStatus = 'OStanding' AND `orderpart`.partID = '{part.Key}' AND `order`.`dealerID` = '{cbDealerID.SelectedItem.ToString()}';";
                     }
                     else
                     {
+                        //No outstanding DID
                         cmd.CommandText = $"INSERT INTO orderpart VALUES ('{newOrderID}', '{part.Key}', {part.Value}, 0, null, 'Processing', null)";
                     }
 
@@ -234,6 +235,7 @@ namespace Elysia
                     }
                 }
             }
+            StaticVariable.UpdateAllOutstandingOrders();
             updateOrderID();
             MessageBox.Show("New Order has been inserted successfully.", "Success");
             btnClear_Click(null, null);

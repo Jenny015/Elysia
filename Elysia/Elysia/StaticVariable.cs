@@ -1,5 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Collections.Generic;
+using System.Data;
 using System.Windows.Forms;
 
 namespace Elysia
@@ -7,6 +9,7 @@ namespace Elysia
     //To store global variable that every form could access to
     public static class StaticVariable
     {
+        public static string connectionString = "server=localhost;database=elysia;user=root;password=\"\"";
         public static readonly int reOrder = 50000;
         public static readonly int danger = 30000;
         public static readonly int outOfStock = 0;
@@ -58,7 +61,7 @@ namespace Elysia
         public static void updatePartStatus(String partID)
         {
             string status = "Normal";
-            using (MySqlConnection conn = new MySqlConnection("server=localhost;database=elysia;user=root;password=\"\""))
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
                 MySqlCommand cmd = conn.CreateCommand();
@@ -84,6 +87,73 @@ namespace Elysia
                     reader2.Close();
                     cmd.CommandText = $"UPDATE part SET partStatus = '{status}' WHERE partID = '{partID}'";
                     cmd.ExecuteNonQuery();
+                }
+            }
+        }
+        public static void UpdateAllOutstandingOrders()
+        {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+
+                    // SQL query to select all orders with 'OStanding' status
+                    string selectOrdersQuery = @"SELECT orderID FROM `order` WHERE orderStatus = 'OStanding'";
+
+                    // SQL query to check if all orderpart records for the order do not have 'OStanding' status
+                    string checkStatusQuery = @"SELECT COUNT(*) FROM orderpart WHERE orderID = @OrderId AND opStatus = 'OStanding'";
+
+                    // SQL query to update the order status to 'Done'
+                    string updateStatusQuery = @"UPDATE `order` SET orderStatus = 'Done' WHERE orderID = @OrderId";
+
+                    // Select all orders with 'OStanding' status
+                    using (MySqlCommand selectCmd = new MySqlCommand(selectOrdersQuery, conn))
+                    {
+                        List<string> orderIds = new List<string>();
+                        using (MySqlDataReader reader = selectCmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                orderIds.Add(reader.GetString("orderID"));
+                            }
+                        }
+
+                        foreach (string orderId in orderIds)
+                        {
+                            // Check if any 'orderpart' records have 'OStanding' status
+                            using (MySqlCommand checkCmd = new MySqlCommand(checkStatusQuery, conn))
+                            {
+                                checkCmd.Parameters.AddWithValue("@OrderId", orderId);
+                                int count = Convert.ToInt32(checkCmd.ExecuteScalar());
+
+                                // If count is 0, no 'orderpart' records have 'OStanding' status
+                                if (count == 0)
+                                {
+                                    // Update the order status to 'Done'
+                                    using (MySqlCommand updateCmd = new MySqlCommand(updateStatusQuery, conn))
+                                    {
+                                        updateCmd.Parameters.AddWithValue("@OrderId", orderId);
+                                        updateCmd.ExecuteNonQuery();
+                                    }
+                                }
+                                checkCmd.Parameters.Clear();
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Handle any errors that occur during the database operations
+                    MessageBox.Show("An error occurred: " + ex.Message);
+                }
+                finally
+                {
+                    // Close the connection
+                    if (conn.State == ConnectionState.Open)
+                    {
+                        conn.Close();
+                    }
                 }
             }
         }

@@ -37,7 +37,7 @@ namespace Elysia
         {
             if(query == "")
             {
-                query = "SELECT OP.orderID, OP.partID, (OP.orderQty+OP.OSQty) AS TotalQty, actDespQty, opStatus FROM orderpart OP, `order` O WHERE opStatus = 'Processing' AND OP.orderID = O.orderID ORDER BY O.orderDate DESC;";
+                query = "SELECT OP.orderID, OP.partID, (OP.orderQty+OP.OSQty) AS TotalQty, actDespQty, opStatus FROM orderpart OP, `order` O WHERE opStatus = 'Processing' AND OP.orderID = O.orderID ORDER BY O.orderDate;";
             } else
             {
                 dgvDID.Columns["buttonColumn"].Visible = false;
@@ -68,32 +68,32 @@ namespace Elysia
                     int totalQty = int.Parse(row.Cells["TotalQty"].Value.ToString());
                     String orderID = row.Cells["orderID"].Value.ToString();
                     String partID = row.Cells["partID"].Value.ToString();
+                    int partQty = 0;
 
+                    cmd.CommandText = $"SELECT partQty FROM part WHERE partID = '{partID}'";
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            partQty = reader.GetInt32(0);
+                        }
+                    }
+                    if(partQty < int.Parse(actDespQtyData))
+                    {
+                        MessageBox.Show("Actual despatch quantity more than stocking.\n\nPlease check again!", "Error!");
+                        return;
+                    }
 
                     // Check if the 'actDespQty' data is  null
                     if (actDespQtyData == "" || int.Parse(actDespQtyData) < 0)
                     {
                         MessageBox.Show("The 'actDespQty' value should be positive integer.");
                         return;
-
                     }
-                    else if (int.Parse(actDespQtyData) >= totalQty)
+                    // if actual despatch quantity > total quantity, set despatch quantity = total quantity
+                    if (int.Parse(actDespQtyData) >= totalQty)
                     {
-                        cmd.CommandText = $"UPDATE `orderpart` SET opStatus = 'Assembled', actDespQty = {totalQty} WHERE orderID = '{orderID}' AND partID = '{partID}';" +
-                            $"UPDATE part SET partQty = partQty - {totalQty} WHERE partID = '{partID}';";
-                        try
-                        {
-                            // Execute the SQl statement
-                            cmd.ExecuteNonQuery();
-                            reloadDataGridView("");
-                            return;
-
-                        }
-                        catch (Exception ex)
-                        {
-                            // if error occurs, show fail message
-                            MessageBox.Show("Failed" + ex.Message);
-                        }
+                        cmd.CommandText = $"UPDATE `orderpart` SET opStatus = 'Assembled', actDespQty = {totalQty} WHERE orderID = '{orderID}' AND partID = '{partID}';";
                     }
                     else
                     {
@@ -104,7 +104,7 @@ namespace Elysia
                         if (confirmResult == DialogResult.Yes)
                         {
                             //Check if the current order has an outstanding order
-                            cmd.CommandText = $"SELECT orderID, dealerID FROM `order` WHERE fromOrder = '{orderID}'";
+                            cmd.CommandText = $"SELECT orderID, dealerID FROM `order` WHERE fromOrder = '{orderID}' AND orderStatus = 'OStanding'";
                             using (MySqlDataReader reader = cmd.ExecuteReader())
                             {
                                 // If there's no outstanding order, create one
@@ -137,40 +137,41 @@ namespace Elysia
                                 else // If there has an outstanding order for this order, get the outstanding orderID
                                 {
                                     osOrderID = reader.GetString(0);
+                                    dealerID = reader.GetString(1);
                                     reader.Close();
                                 }
                             }
                             //add new did that belongs to new OSorder, new orderQty = (currentOrderQty - currentActDespQty)
-                            cmd.CommandText = $"UPDATE `orderpart` SET opStatus = 'Assembled', actDespQty = {actDespQtyData} WHERE orderID = '{orderID}' AND partID = '{partID}';" +
-                                    $"UPDATE part SET partQty = partQty - {actDespQtyData} WHERE partID = '{partID}';" +
-                                    $"INSERT INTO orderpart (orderID, partID, orderQty, opStatus) VALUES ('{osOrderID}', '{partID}', {totalQty - int.Parse(actDespQtyData)}, 'OStanding');";
+                            int osQty = totalQty - int.Parse(actDespQtyData);
+                            cmd.CommandText = $"UPDATE `orderpart` SET opStatus = 'Assembled', actDespQty = {actDespQtyData} WHERE orderID = '{orderID}' AND partID = '{partID}';";
                             cmd.ExecuteNonQuery();
-                            if (int.Parse(actDespQtyData) > 0)
-                            {
-                                string timestamp = DateTime.Now.ToString("yyyyMMddHHmmssff");
-                                int qtyChange = -int.Parse(actDespQtyData);
-                                cmd.CommandText += $"INSERT INTO log VALUES ('{timestamp}', '{StaticVariable.empID}', '{partID}', {qtyChange}, 'Despatched');";
-                            }
-                            try
-                            {
-                                // Execute the SQl statement
-                                cmd.ExecuteNonQuery();
-                                conn.Close();
-                                StaticVariable.updatePartStatus(partID);
-                                assembledOrder(orderID);
-                                return;
-
-                            }
-                            catch (Exception ex)
-                            {
-                                // if error occurs, show fail message
-                                MessageBox.Show(ex.Message, "Failed");
-                            }
-                            finally
-                            {
-                                reloadDataGridView("");
-                            }
+                            cmd.CommandText = $"UPDATE part SET partQty = partQty - {actDespQtyData} WHERE partID = '{partID}';";
+                            cmd.ExecuteNonQuery();
+                            cmd.CommandText = $"INSERT INTO orderpart (orderID, partID, orderQty, opStatus) VALUES ('{osOrderID}', '{partID}', {osQty}, 'OStanding');";
                         }
+                        if (int.Parse(actDespQtyData) > 0)
+                        {
+                            string timestamp = DateTime.Now.ToString("yyyyMMddHHmmssff");
+                            int qtyChange = -int.Parse(actDespQtyData);
+                            cmd.CommandText += $"INSERT INTO log VALUES ('{timestamp}', '{StaticVariable.empID}', '{partID}', {qtyChange}, 'Despatched');";
+                        }
+                    }
+                    try
+                    {
+                        // Execute the SQl statement
+                        cmd.ExecuteNonQuery();
+                        conn.Close();
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Failed");
+                    }
+                    finally
+                    {
+                        StaticVariable.UpdateAllOutstandingOrders();
+                        assembledOrder(orderID);
+                        reloadDataGridView("");
                     }
                 }
             }
@@ -181,7 +182,7 @@ namespace Elysia
             {
                 conn.Open();
 
-                string query = $"SELECT COUNT(*) FROM `orderpart` WHERE orderID = {orderID} AND opStatus != 'Assembled');";
+                string query = $"SELECT COUNT(*) FROM `orderpart` WHERE orderID = '{orderID}' AND opStatus != 'Assembled';";
 
                 using (MySqlCommand checkStatusCmd = new MySqlCommand(query, conn))
                 {
@@ -189,7 +190,7 @@ namespace Elysia
 
                     if (nonCompliantEntries == 0)
                     {
-                        query = $"UPDATE order SET orderStatus = 'Assembled' WHERE orderID = {orderID}";
+                        query = $"UPDATE `order` SET orderStatus = 'Assembled' WHERE orderID = '{orderID}'";
                         using (MySqlCommand insertCmd = new MySqlCommand(query, conn))
                         {
                             insertCmd.ExecuteNonQuery();

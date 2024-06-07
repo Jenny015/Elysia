@@ -68,7 +68,8 @@ namespace Elysia
                     }
                     else
                     {
-                        cmd.CommandText = "UPDATE `order` SET orderStatus = 'Cancelled' WHERE orderID = @orderID";
+                        cmd.CommandText = @"UPDATE `order` SET orderStatus = 'Cancelled' WHERE orderID = @orderID;" +
+                            @"UPDATE `orderpart` SET opStatus = 'Cancelled' WHERE orderID = @orderID";
                         cmd.Parameters.AddWithValue("@orderID", orderID);
                         try
                         {
