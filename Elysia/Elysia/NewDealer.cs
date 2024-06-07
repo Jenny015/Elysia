@@ -1,7 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Windows.Forms;
-using ZstdSharp.Unsafe;
 
 namespace Elysia
 {
@@ -16,8 +15,9 @@ namespace Elysia
         }
         private bool checkInput()
         {
-            if (tbDealerName.Text.Length > 0 && tbCompany.Text.Length > 0 && 
-                tbPhoneNumber.Text.Length > 0 && tbEmail.Text.Length > 0 && tbCompany.Text.Length > 0) {
+            if (tbDealerName.Text.Length > 0 && tbCompany.Text.Length > 0 &&
+                tbPhoneNumber.Text.Length > 0 && tbEmail.Text.Length > 0 && tbCompany.Text.Length > 0)
+            {
                 return true;
             }
             return false;
@@ -50,7 +50,8 @@ namespace Elysia
                         if (tbDeliveryAddress.Text == "")
                         {
                             cmd.Parameters.AddWithValue("@dDelivAdd", tbCompanyAddress.Text);
-                        } else
+                        }
+                        else
                         {
 
                             cmd.Parameters.AddWithValue("@dDelivAdd", tbDeliveryAddress.Text);

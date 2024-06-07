@@ -1,17 +1,13 @@
-﻿using Google.Protobuf.WellKnownTypes;
-using iTextSharp.text;
+﻿using iTextSharp.text;
 using iTextSharp.text.pdf;
 using MySql.Data.MySqlClient;
-using Mysqlx.Crud;
 using System;
 using System.Data;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Text;
 using System.Windows.Forms;
-using System.Xml.Linq;
 
 namespace Elysia
 {
@@ -69,7 +65,7 @@ namespace Elysia
         {
             Document document = new Document();
             Directory.CreateDirectory("../../../evaluatedList");
-            string fileName = "EvaluatedList_"+DateTime.Today.ToString("yyyyMMdd");
+            string fileName = "EvaluatedList_" + DateTime.Today.ToString("yyyyMMdd");
             PdfWriter writer = PdfWriter.GetInstance(document, new FileStream($"../../../evaluatedList/{fileName}.pdf", FileMode.Create));
             document.Open();
 
@@ -107,7 +103,7 @@ namespace Elysia
                         cell = new PdfPCell(new Phrase(formattedValue, normalFont));
                         cell.HorizontalAlignment = Element.ALIGN_RIGHT;
                     }
-                    else if (c > 2) 
+                    else if (c > 2)
                     {
                         double value = Convert.ToDouble(dgvEv.Rows[r].Cells[c].Value);
                         string formattedValue = value.ToString("N2", CultureInfo.InvariantCulture);
@@ -121,7 +117,7 @@ namespace Elysia
                         cell = new PdfPCell(new Phrase(dgvEv.Rows[r].Cells[c].Value.ToString(), normalFont));
                         cell.HorizontalAlignment = Element.ALIGN_CENTER;
                     }
-                    cell.BackgroundColor = r % 2 == 0 ? new BaseColor(220, 220, 220): BaseColor.WHITE;
+                    cell.BackgroundColor = r % 2 == 0 ? new BaseColor(220, 220, 220) : BaseColor.WHITE;
                     cell.Padding = 5;
                     table.AddCell(cell);
                 }
@@ -136,7 +132,7 @@ namespace Elysia
 
             document.Add(new Paragraph(" ", normalFont));
 
-            Paragraph date = new Paragraph("Printed at: "+ DateTime.Today.ToString("d"), normalFont);
+            Paragraph date = new Paragraph("Printed at: " + DateTime.Today.ToString("d"), normalFont);
             date.Alignment = Element.ALIGN_LEFT;
             document.Add(date);
 

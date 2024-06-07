@@ -205,7 +205,7 @@ namespace Elysia
                 conn.Open();
                 MySqlCommand cmd = conn.CreateCommand();
                 //insert a new order into order DB
-                cmd.CommandText = $"INSERT INTO `inwardsOrder` (inwardsID, supplierID) VALUES ('{newInwardsID}', '{supplierID}')";
+                cmd.CommandText = $"INSERT INTO `inwardsOrder` (inwardsID, supplierID) VALUES ('{newInwardsID}', '{supplierID}');";
                 try
                 {
                     cmd.ExecuteNonQuery();
@@ -240,7 +240,8 @@ namespace Elysia
                             }
                         }
                     }
-                    cmd.CommandText += $"INSERT INTO inwardsPart VALUES ('{newInwardsID}', '{part.Key}', {part.Value})";
+                    cmd.CommandText += $"INSERT INTO inwardsPart VALUES ('{newInwardsID}', '{part.Key}', {part.Value})" +
+                    $"INSERT INTO log VALUES '{DateTime.Now.ToString("yyyyMMddHHmmssff")}', '{StaticVariable.empID}', '{part.Key}', {-part.Value}, 'Goods Inward');";
                     try
                     {
                         cmd.ExecuteNonQuery();

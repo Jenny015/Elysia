@@ -8,18 +8,19 @@ namespace Elysia
     public partial class ViewDealer : UserControl
     {
         string connectionString = "server=localhost;database=elysia;user=root;password=\"\"";
+        Filter filter;
         public ViewDealer()
         {
             InitializeComponent();
-            reloadDataGridView();
+            reloadDataGridView("");
             dgvViewDealer.AllowUserToAddRows = false;
             dgvViewDealer.ReadOnly = false; // Allow editing
             addButtonColumns();
 
         }
-        private void reloadDataGridView()
+        private void reloadDataGridView(string query)
         {
-            string query = "SELECT * FROM dealer";
+            query = query == "" ? "SELECT * FROM dealer" : query;
 
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
@@ -46,7 +47,7 @@ namespace Elysia
         private void dgvViewDealer_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             //if (e.RowIndex >= 0 && e.ColumnIndex == updateColumn.Index)
-                {
+            {
                 // Update button clicked
                 DataGridViewRow row = dgvViewDealer.Rows[e.RowIndex];
 
@@ -81,7 +82,7 @@ namespace Elysia
                     }
 
                     MessageBox.Show("Dealer information updated successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    reloadDataGridView();
+                    reloadDataGridView("");
                 }
                 catch (Exception ex)
                 {
@@ -89,10 +90,16 @@ namespace Elysia
                 }
             }
         }
-
-
-
-       
-
+        private void btnFilter_Click(object sender, EventArgs e)
+        {
+            filter = new Filter("dealer");
+            filter.Query += filter_Query;
+            filter.Show();
+        }
+        //filter
+        private void filter_Query(object sender, EventArgs e)
+        {
+            reloadDataGridView(filter.queryString);
+        }
     }
 }

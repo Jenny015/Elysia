@@ -1,12 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Elysia
@@ -32,7 +26,7 @@ namespace Elysia
             {
                 using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn))
                 {
-                    DataSet ds = new DataSet(); 
+                    DataSet ds = new DataSet();
                     ds.Clear();
                     adapter.Fill(ds);
                     dgvPart.DataSource = ds.Tables[0];
@@ -68,9 +62,10 @@ namespace Elysia
                 }
                 conn.Close();
             }
-            if (e.ColumnIndex == 4) {
+            if (e.ColumnIndex == 4)
+            {
                 StaticVariable.updatePartStatus(primaryKey);
-             }
+            }
             reloadDataGridView("");
         }
     }

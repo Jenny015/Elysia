@@ -1,8 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Elysia
 {
@@ -50,7 +48,7 @@ namespace Elysia
             Login login = new Login();
             login.Show();
         }
-        public static void displayContent(Control control ,UserControl userControl)
+        public static void displayContent(Control control, UserControl userControl)
         {
             control.Controls.Clear();
             control.Controls.Add(userControl);

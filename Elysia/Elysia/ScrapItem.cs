@@ -51,7 +51,7 @@ namespace Elysia
                     {
                         if (reader.Read())
                         {
-                            if(reader.GetInt32(0) > quantity)
+                            if (reader.GetInt32(0) > quantity)
                             {
                                 MessageBox.Show("Scrap item quantity should not br more than stock quantity.");
                                 return;
@@ -74,7 +74,7 @@ namespace Elysia
                     logCommand.Parameters.AddWithValue("@empID", StaticVariable.empID);
                     logCommand.Parameters.AddWithValue("@partID", partID);
                     logCommand.Parameters.AddWithValue("@logChanges", -quantity);
-                    logCommand.Parameters.AddWithValue("@logDes", "scrap item");
+                    logCommand.Parameters.AddWithValue("@logDes", "Scrap item");
                     int insertedRows = logCommand.ExecuteNonQuery();
 
                     if (updatedRows > 0 && insertedRows > 0)

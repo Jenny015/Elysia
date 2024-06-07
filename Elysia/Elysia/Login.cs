@@ -21,7 +21,7 @@ namespace Elysia
             using (MySqlConnection connection = new MySqlConnection("server=localhost;database=elysia;uid=root;pwd=\"\";"))
             {
                 connection.Open();
-                MySqlCommand command = new MySqlCommand("SELECT deptID FROM emp WHERE empID = @username AND empPasswd = @password", connection);
+                MySqlCommand command = new MySqlCommand("SELECT deptID, empStatus FROM emp WHERE empID = @username AND empPasswd = @password", connection);
                 command.Parameters.AddWithValue("@username", username);
                 command.Parameters.AddWithValue("@password", password);
 
@@ -31,6 +31,11 @@ namespace Elysia
                 {
                     if (reader.Read())
                     {
+                        if (reader.GetString("empStatus") != "A")
+                        {
+                            MessageBox.Show("This account has been looked, please connect HR department for help.", "Failed");
+                            return;
+                        }
                         string deptID = reader.GetString("deptID");
 
                         // Store the employee ID in the StaticVariable class
@@ -42,7 +47,7 @@ namespace Elysia
                     else
                     {
                         // Login failed, display error message
-                        MessageBox.Show("Invalid username or password.");
+                        MessageBox.Show("Invalid username or password.", "Failed");
                     }
                 }
             }
@@ -73,7 +78,7 @@ namespace Elysia
                     InvoicingSection IS = new InvoicingSection();
                     IS.Show();
                     break;
-                case "SR": 
+                case "SR":
                     StaticVariable.dept = "SR";
                     StoreRecordClerk SR = new StoreRecordClerk();
                     SR.Show();

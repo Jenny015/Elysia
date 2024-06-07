@@ -1,8 +1,5 @@
-﻿using MySql.Data.MySqlClient;
-using System;
-using System.Data;
+﻿using System;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
 namespace Elysia
 {

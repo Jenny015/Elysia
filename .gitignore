@@ -2,3 +2,5 @@
 [Bb]in/
 [Oo]bj/
 invoice/*.pdf
+evaluatedList/*.pdf
+evaluatedList/*.csv

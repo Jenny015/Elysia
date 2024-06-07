@@ -1,12 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Elysia
@@ -23,7 +17,7 @@ namespace Elysia
         }
         private void reloadDataGridView(string query)
         {
-            query = query == "" ? "SELECT * FROM `log`" : query;
+            query = query == "" ? "SELECT * FROM `log` ORDER BY logID DESC" : query;
             try
             {
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
@@ -40,14 +34,6 @@ namespace Elysia
             {
                 MessageBox.Show($"Error: {ex.Message}");
             }
-
-            /*reference InvoiceGenerate line 148-167
-            double totalPrice = 0;
-            foreach (DataGridViewRow row in dgv.Rows)
-            {
-                totalPrice += Double.Parse(row.Cells["Subtotal"].Value.ToString());
-            }
-            lblPrice.Text = totalPrice.ToString("N2");*/
         }
 
         private void btnFilter_Click(object sender, EventArgs e)

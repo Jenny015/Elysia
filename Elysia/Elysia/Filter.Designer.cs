@@ -82,28 +82,28 @@
             this.supID = new System.Windows.Forms.ComboBox();
             this.label21 = new System.Windows.Forms.Label();
             this.dealer = new System.Windows.Forms.Panel();
-            this.deaCompany = new System.Windows.Forms.ComboBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.deaName = new System.Windows.Forms.ComboBox();
             this.deaID = new System.Windows.Forms.ComboBox();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.emp = new System.Windows.Forms.Panel();
+            this.empDept = new System.Windows.Forms.ComboBox();
             this.label25 = new System.Windows.Forms.Label();
-            this.empPostion = new System.Windows.Forms.ComboBox();
             this.label26 = new System.Windows.Forms.Label();
             this.empStatus = new System.Windows.Forms.ComboBox();
             this.label27 = new System.Windows.Forms.Label();
             this.empID = new System.Windows.Forms.ComboBox();
             this.label28 = new System.Windows.Forms.Label();
-            this.empDeptID = new System.Windows.Forms.ComboBox();
             this.log = new System.Windows.Forms.Panel();
             this.logDes = new System.Windows.Forms.ComboBox();
             this.label29 = new System.Windows.Forms.Label();
             this.logChanges = new System.Windows.Forms.ComboBox();
-            this.logID = new System.Windows.Forms.ComboBox();
+            this.logPartID = new System.Windows.Forms.ComboBox();
             this.label30 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
+            this.deaCompany = new System.Windows.Forms.TextBox();
+            this.deaName = new System.Windows.Forms.TextBox();
+            this.empPostion = new System.Windows.Forms.TextBox();
             this.DID.SuspendLayout();
             this.invoice.SuspendLayout();
             this.orderDateContainer.SuspendLayout();
@@ -668,10 +668,10 @@
             this.Sup.Controls.Add(this.supPartID);
             this.Sup.Controls.Add(this.supID);
             this.Sup.Controls.Add(this.label21);
-            this.Sup.Location = new System.Drawing.Point(825, 407);
+            this.Sup.Location = new System.Drawing.Point(827, 371);
             this.Sup.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Sup.Name = "Sup";
-            this.Sup.Size = new System.Drawing.Size(356, 147);
+            this.Sup.Size = new System.Drawing.Size(356, 186);
             this.Sup.TabIndex = 22;
             this.Sup.Visible = false;
             // 
@@ -679,21 +679,21 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.label20.Location = new System.Drawing.Point(26, 94);
+            this.label20.Location = new System.Drawing.Point(26, 92);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(116, 23);
+            this.label20.Size = new System.Drawing.Size(147, 23);
             this.label20.TabIndex = 21;
-            this.label20.Text = "Sup Part ID:";
+            this.label20.Text = "Supplier Part ID";
             // 
             // supPartID
             // 
             this.supPartID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.supPartID.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.supPartID.FormattingEnabled = true;
-            this.supPartID.Location = new System.Drawing.Point(143, 91);
+            this.supPartID.Location = new System.Drawing.Point(30, 123);
             this.supPartID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.supPartID.Name = "supPartID";
-            this.supPartID.Size = new System.Drawing.Size(179, 27);
+            this.supPartID.Size = new System.Drawing.Size(292, 27);
             this.supPartID.TabIndex = 21;
             // 
             // supID
@@ -719,29 +719,18 @@
             // 
             // dealer
             // 
+            this.dealer.Controls.Add(this.deaName);
             this.dealer.Controls.Add(this.deaCompany);
             this.dealer.Controls.Add(this.label22);
-            this.dealer.Controls.Add(this.deaName);
             this.dealer.Controls.Add(this.deaID);
             this.dealer.Controls.Add(this.label23);
             this.dealer.Controls.Add(this.label24);
-            this.dealer.Location = new System.Drawing.Point(428, 517);
+            this.dealer.Location = new System.Drawing.Point(827, 574);
             this.dealer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dealer.Name = "dealer";
             this.dealer.Size = new System.Drawing.Size(375, 189);
             this.dealer.TabIndex = 23;
             this.dealer.Visible = false;
-            // 
-            // deaCompany
-            // 
-            this.deaCompany.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.deaCompany.Font = new System.Drawing.Font("Times New Roman", 10F);
-            this.deaCompany.FormattingEnabled = true;
-            this.deaCompany.Location = new System.Drawing.Point(178, 132);
-            this.deaCompany.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.deaCompany.Name = "deaCompany";
-            this.deaCompany.Size = new System.Drawing.Size(179, 27);
-            this.deaCompany.TabIndex = 22;
             // 
             // label22
             // 
@@ -752,17 +741,6 @@
             this.label22.Size = new System.Drawing.Size(158, 23);
             this.label22.TabIndex = 22;
             this.label22.Text = "Dealer Company:";
-            // 
-            // deaName
-            // 
-            this.deaName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.deaName.Font = new System.Drawing.Font("Times New Roman", 10F);
-            this.deaName.FormattingEnabled = true;
-            this.deaName.Location = new System.Drawing.Point(178, 77);
-            this.deaName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.deaName.Name = "deaName";
-            this.deaName.Size = new System.Drawing.Size(179, 27);
-            this.deaName.TabIndex = 19;
             // 
             // deaID
             // 
@@ -797,9 +775,9 @@
             // 
             // emp
             // 
-            this.emp.Controls.Add(this.empDeptID);
-            this.emp.Controls.Add(this.label25);
             this.emp.Controls.Add(this.empPostion);
+            this.emp.Controls.Add(this.empDept);
+            this.emp.Controls.Add(this.label25);
             this.emp.Controls.Add(this.label26);
             this.emp.Controls.Add(this.empStatus);
             this.emp.Controls.Add(this.label27);
@@ -812,26 +790,26 @@
             this.emp.TabIndex = 26;
             this.emp.Visible = false;
             // 
+            // empDept
+            // 
+            this.empDept.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.empDept.Font = new System.Drawing.Font("Times New Roman", 10F);
+            this.empDept.FormattingEnabled = true;
+            this.empDept.Location = new System.Drawing.Point(145, 82);
+            this.empDept.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.empDept.Name = "empDept";
+            this.empDept.Size = new System.Drawing.Size(179, 27);
+            this.empDept.TabIndex = 26;
+            // 
             // label25
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.label25.Location = new System.Drawing.Point(19, 82);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(84, 23);
+            this.label25.Size = new System.Drawing.Size(118, 23);
             this.label25.TabIndex = 25;
-            this.label25.Text = "Dept ID:";
-            // 
-            // empPostion
-            // 
-            this.empPostion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.empPostion.Font = new System.Drawing.Font("Times New Roman", 10F);
-            this.empPostion.FormattingEnabled = true;
-            this.empPostion.Location = new System.Drawing.Point(145, 135);
-            this.empPostion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.empPostion.Name = "empPostion";
-            this.empPostion.Size = new System.Drawing.Size(179, 27);
-            this.empPostion.TabIndex = 24;
+            this.label25.Text = "Department:";
             // 
             // label26
             // 
@@ -849,9 +827,8 @@
             this.empStatus.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.empStatus.FormattingEnabled = true;
             this.empStatus.Items.AddRange(new object[] {
-            "Processing",
-            "Assembled",
-            "OStanding"});
+            "Active",
+            "Lock"});
             this.empStatus.Location = new System.Drawing.Point(145, 187);
             this.empStatus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.empStatus.Name = "empStatus";
@@ -889,26 +866,15 @@
             this.label28.TabIndex = 16;
             this.label28.Text = "Emp ID:";
             // 
-            // empDeptID
-            // 
-            this.empDeptID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.empDeptID.Font = new System.Drawing.Font("Times New Roman", 10F);
-            this.empDeptID.FormattingEnabled = true;
-            this.empDeptID.Location = new System.Drawing.Point(145, 82);
-            this.empDeptID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.empDeptID.Name = "empDeptID";
-            this.empDeptID.Size = new System.Drawing.Size(179, 27);
-            this.empDeptID.TabIndex = 26;
-            // 
             // log
             // 
             this.log.Controls.Add(this.logDes);
             this.log.Controls.Add(this.label29);
             this.log.Controls.Add(this.logChanges);
-            this.log.Controls.Add(this.logID);
+            this.log.Controls.Add(this.logPartID);
             this.log.Controls.Add(this.label30);
             this.log.Controls.Add(this.label31);
-            this.log.Location = new System.Drawing.Point(1237, 379);
+            this.log.Location = new System.Drawing.Point(1237, 311);
             this.log.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.log.Name = "log";
             this.log.Size = new System.Drawing.Size(375, 189);
@@ -941,22 +907,25 @@
             this.logChanges.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.logChanges.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.logChanges.FormattingEnabled = true;
+            this.logChanges.Items.AddRange(new object[] {
+            "Positive (+)",
+            "Negative (-)"});
             this.logChanges.Location = new System.Drawing.Point(178, 77);
             this.logChanges.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.logChanges.Name = "logChanges";
             this.logChanges.Size = new System.Drawing.Size(179, 27);
             this.logChanges.TabIndex = 19;
             // 
-            // logID
+            // logPartID
             // 
-            this.logID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.logID.Font = new System.Drawing.Font("Times New Roman", 10F);
-            this.logID.FormattingEnabled = true;
-            this.logID.Location = new System.Drawing.Point(178, 25);
-            this.logID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.logID.Name = "logID";
-            this.logID.Size = new System.Drawing.Size(179, 27);
-            this.logID.TabIndex = 18;
+            this.logPartID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.logPartID.Font = new System.Drawing.Font("Times New Roman", 10F);
+            this.logPartID.FormattingEnabled = true;
+            this.logPartID.Location = new System.Drawing.Point(178, 25);
+            this.logPartID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.logPartID.Name = "logPartID";
+            this.logPartID.Size = new System.Drawing.Size(179, 27);
+            this.logPartID.TabIndex = 18;
             // 
             // label30
             // 
@@ -974,9 +943,33 @@
             this.label31.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.label31.Location = new System.Drawing.Point(19, 28);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(76, 23);
+            this.label31.Size = new System.Drawing.Size(80, 23);
             this.label31.TabIndex = 15;
-            this.label31.Text = "Log ID:";
+            this.label31.Text = "Part ID:";
+            // 
+            // deaCompany
+            // 
+            this.deaCompany.Location = new System.Drawing.Point(178, 133);
+            this.deaCompany.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.deaCompany.Name = "deaCompany";
+            this.deaCompany.Size = new System.Drawing.Size(179, 25);
+            this.deaCompany.TabIndex = 25;
+            // 
+            // deaName
+            // 
+            this.deaName.Location = new System.Drawing.Point(178, 78);
+            this.deaName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.deaName.Name = "deaName";
+            this.deaName.Size = new System.Drawing.Size(179, 25);
+            this.deaName.TabIndex = 26;
+            // 
+            // empPostion
+            // 
+            this.empPostion.Location = new System.Drawing.Point(145, 135);
+            this.empPostion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.empPostion.Name = "empPostion";
+            this.empPostion.Size = new System.Drawing.Size(179, 25);
+            this.empPostion.TabIndex = 27;
             // 
             // Filter
             // 
@@ -1081,27 +1074,27 @@
         private System.Windows.Forms.ComboBox supID;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Panel dealer;
-        private System.Windows.Forms.ComboBox deaCompany;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.ComboBox deaName;
         private System.Windows.Forms.ComboBox deaID;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Panel emp;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.ComboBox empPostion;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.ComboBox empStatus;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.ComboBox empID;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.ComboBox empDeptID;
+        private System.Windows.Forms.ComboBox empDept;
         private System.Windows.Forms.Panel log;
         private System.Windows.Forms.ComboBox logDes;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.ComboBox logChanges;
-        private System.Windows.Forms.ComboBox logID;
+        private System.Windows.Forms.ComboBox logPartID;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.TextBox deaName;
+        private System.Windows.Forms.TextBox deaCompany;
+        private System.Windows.Forms.TextBox empPostion;
     }
 }

@@ -136,7 +136,11 @@ namespace Elysia
                             //add new did that belongs to new OSorder, new orderQty = (currentOrderQty - currentActDespQty)
                             cmd.CommandText = $"UPDATE `orderpart` SET opStatus = 'Assembled', actDespQty = {actDespQtyData} WHERE orderID = '{orderID}' AND partID = '{partID}';" +
                                 $"UPDATE part SET partQty = partQty - {actDespQtyData} WHERE partID = '{partID}';" +
-                                $"INSERT INTO orderpart (orderID, partID, orderQty, opStatus) VALUES ('{osOrderID}', '{partID}', {totalQty - int.Parse(actDespQtyData)}, 'OStanding')";
+                                $"INSERT INTactDespQtyDataO orderpart (orderID, partID, orderQty, opStatus) VALUES ('{osOrderID}', '{partID}', {totalQty - int.Parse(actDespQtyData)}, 'OStanding');";
+                            if (int.Parse(actDespQtyData) > 0)
+                            {
+                                cmd.CommandText += $"INSERT INTO log VALUES '{DateTime.Now.ToString("yyyyMMddHHmmssff")}', '{StaticVariable.empID}', '{partID}', {-int.Parse(actDespQtyData)}, 'Despatched')";
+                            }
                             try
                             {
                                 // Execute the SQl statement

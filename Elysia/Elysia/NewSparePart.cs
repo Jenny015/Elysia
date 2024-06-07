@@ -1,12 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Elysia
@@ -81,7 +75,7 @@ namespace Elysia
         }
         private void cate_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(cate.SelectedIndex == -1)
+            if (cate.SelectedIndex == -1)
             {
                 lblPartID.Text = "N\\A";
                 return;
@@ -139,7 +133,7 @@ namespace Elysia
 
         private bool checkInput()
         {
-            if(cate.SelectedIndex != -1 && partName.Text != "" && partPrice.Text != "")
+            if (cate.SelectedIndex != -1 && partName.Text != "" && partPrice.Text != "")
             {
                 return true;
             }

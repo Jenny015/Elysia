@@ -73,20 +73,18 @@ namespace Elysia
                 case "part":
                     search_part();
                     break;
-              /*case "Sup":
+                case "Sup":
                     search_sup();
                     break;
                 case "dealer":
                     search_dealer();
                     break;
-                case"emp":
+                case "emp":
                     search_emp();
                     break;
-                case"log":
+                case "log":
                     search_log();
                     break;
-
-              */
             }
             Query?.Invoke(this, EventArgs.Empty);
             this.Close();
@@ -111,48 +109,6 @@ namespace Elysia
                 }
             }
         }
-
-        private void setComponent_log()
-        {
-            log.Location = new System.Drawing.Point(9, 9);
-            log.Visible = true;
-            btnSearch.Location = new System.Drawing.Point(125, 258);
-            loadDataFromDatabase("logID", "log", logID);
-            loadDataFromDatabase("logChanges", "log", logChanges);
-            loadDataFromDatabase("logDes", "log", logDes);
-
-        }
-
-        private void setComponent_emp()
-        {
-            emp.Location = new System.Drawing.Point(9, 9);
-            emp.Visible = true;
-            btnSearch.Location = new System.Drawing.Point(125, 258);
-            loadDataFromDatabase("empID", "emp", empID);
-            loadDataFromDatabase("deptID", "emp", empDeptID);
-            loadDataFromDatabase("empPostion", "emp", empPostion);
-            loadDataFromDatabase("empStatus", "emp", empStatus);
-        }
-
-        private void setComponent_dealer()
-        {
-            dealer.Location = new System.Drawing.Point(9, 9);
-            dealer.Visible = true;
-            btnSearch.Location = new System.Drawing.Point(125, 258);
-            loadDataFromDatabase("dealerID", "dealer", deaID);
-            loadDataFromDatabase("dName", "dealer", deaName);
-            loadDataFromDatabase("Dcompany", "dealer", deaCompany);
-        }
-
-        private void setComponent_Sup()
-        {
-            Sup.Location = new System.Drawing.Point(9, 9);
-            Sup.Visible = true;
-            btnSearch.Location = new System.Drawing.Point(125, 258);
-            loadDataFromDatabase("supplierID", "supplierpart", supID);
-            loadDataFromDatabase("partID", "supplierpart", supPartID);
-        }
-
         private void setComponent_DID()
         {
             DID.Location = new System.Drawing.Point(9, 9);
@@ -196,6 +152,38 @@ namespace Elysia
             loadDataFromDatabase("partID", "part", partPartID);
             loadDataFromDatabase("partStatus", "part", partStatus);
             loadDataFromDatabase("categoryName", "category", partCategory);
+        }
+        private void setComponent_Sup()
+        {
+            Sup.Location = new System.Drawing.Point(9, 9);
+            Sup.Visible = true;
+            btnSearch.Location = new System.Drawing.Point(125, 270);
+            loadDataFromDatabase("supplierID", "supplierpart", supID);
+            loadDataFromDatabase("partID", "supplierpart", supPartID);
+        }
+        private void setComponent_dealer()
+        {
+            dealer.Location = new System.Drawing.Point(9, 9);
+            dealer.Visible = true;
+            btnSearch.Location = new System.Drawing.Point(125, 258);
+            loadDataFromDatabase("dealerID", "dealer", deaID);
+        }
+        private void setComponent_emp()
+        {
+            emp.Location = new System.Drawing.Point(9, 9);
+            emp.Visible = true;
+            btnSearch.Location = new System.Drawing.Point(125, 258);
+            loadDataFromDatabase("empID", "emp", empID);
+            loadDataFromDatabase("deptName", "dept", empDept);
+        }
+        private void setComponent_log()
+        {
+            log.Location = new System.Drawing.Point(9, 9);
+            log.Visible = true;
+            btnSearch.Location = new System.Drawing.Point(125, 258);
+            loadDataFromDatabase("logID", "log", logPartID);
+            loadDataFromDatabase("logDes", "log", logDes);
+
         }
         private void search_DID()
         {
@@ -311,7 +299,77 @@ namespace Elysia
             queryBuilder.Append(" ORDER BY p.partID");
             queryString = queryBuilder.ToString();
         }
-
-
+        private void search_sup()
+        {
+            StringBuilder queryBuilder = new StringBuilder("SELECT s.* FROM supplier s, supplierPart sp WHERE s.supplierID = sp.supplierID");
+            List<MySqlParameter> parameters = new List<MySqlParameter>();
+            if (supID.SelectedIndex != -1)
+            {
+                queryBuilder.Append($" AND sp.supplierID = '{supID.SelectedItem}'");
+            }
+            if (supPartID.SelectedIndex != -1)
+            {
+                queryBuilder.Append($" AND sp.partID = '{supPartID.SelectedItem}'");
+            }
+            queryBuilder.Append(" ORDER BY sp.supplierID");
+            queryString = queryBuilder.ToString();
+        }
+        private void search_dealer()
+        {
+            StringBuilder queryBuilder = new StringBuilder("SELECT * FROM dealer WHERE 1=1");
+            List<MySqlParameter> parameters = new List<MySqlParameter>();
+            if (deaID.SelectedIndex != -1)
+            {
+                queryBuilder.Append($" AND dealerID = '{deaID.SelectedItem}'");
+            }
+            if (deaName.Text.Length == 0)
+            {
+                queryBuilder.Append($" AND dName LIKE '%{deaName.Text}%'");
+            }
+            if (deaCompany.Text.Length == 0)
+            {
+                queryBuilder.Append($" AND dCompany LIKE '%{deaCompany.Text}%'");
+            }
+            queryBuilder.Append(" ORDER BY dealerID");
+            queryString = queryBuilder.ToString();
+        }
+        private void search_emp()
+        {
+            StringBuilder queryBuilder = new StringBuilder("SELECT e.empID, e.empName, e.empGander, e.empPhone, e.empEmail, d.deptName, e.empPostion, CASE e.empStatus WHEN 'A' THEN 'Active' WHEN 'L' THEN 'LOCK' END AS Status FROM emp e, dept d WHERE e.deptID = d.deptID");
+            List<MySqlParameter> parameters = new List<MySqlParameter>();
+            if (empID.SelectedIndex != -1)
+            {
+                queryBuilder.Append($" AND e.empID = '{empID.SelectedItem}'");
+            }
+            if (empDept.SelectedIndex != -1)
+            {
+                queryBuilder.Append($" AND d.deptName = '{empDept.SelectedItem}'");
+            }
+            queryBuilder.Append(" ORDER BY empID");
+            queryString = queryBuilder.ToString();
+        }
+        private void search_log()
+        {
+            StringBuilder queryBuilder = new StringBuilder("SELECT * FROM log WHERE 1=1");
+            List<MySqlParameter> parameters = new List<MySqlParameter>();
+            if (logPartID.SelectedIndex != -1)
+            {
+                queryBuilder.Append($" AND partID = '{logPartID.SelectedItem}'");
+            }
+            if (logChanges.SelectedIndex == 0)
+            {
+                queryBuilder.Append($" AND logChanges > 0");
+            }
+            else if (logChanges.SelectedIndex == 1)
+            {
+                queryBuilder.Append($" AND logChanges < 0");
+            }
+            if (logDes.SelectedIndex != -1)
+            {
+                queryBuilder.Append($" AND logDes = '{logDes.SelectedItem}'");
+            }
+            queryBuilder.Append(" ORDER BY logID DESC");
+            queryString = queryBuilder.ToString();
+        }
     }
 }
