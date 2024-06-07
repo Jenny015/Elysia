@@ -197,7 +197,7 @@ namespace Elysia
             {
                 queryBuilder.Append($" AND partID = '{didPartID.SelectedItem}'");
             }
-            if (didStatus.SelectedIndex != -1) { }
+            if (didStatus.SelectedIndex != -1)
             {
                 queryBuilder.Append($" AND opStatus = '{didStatus.SelectedItem.ToString()}'");
             }

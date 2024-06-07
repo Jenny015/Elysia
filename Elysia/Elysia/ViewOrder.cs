@@ -46,6 +46,7 @@ namespace Elysia
         {
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
+                conn.Open();
                 MySqlCommand cmd = conn.CreateCommand();
 
                 // Check if the click is on the button column

@@ -11,7 +11,7 @@ namespace Elysia
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             lblDept.Text = StaticVariable.dept_full();
-            btnInvGen.Checked = true;
+            btnLateDelivery.Checked = true;
             this.WindowState = FormWindowState.Maximized;
         }
         private void btnLogout_CheckedChanged(object sender, EventArgs e)

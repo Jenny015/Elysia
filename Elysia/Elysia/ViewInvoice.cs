@@ -91,9 +91,8 @@ namespace Elysia
                     }
                     using (SaveFileDialog saveFileDialog = new SaveFileDialog())
                     {
-                        string startupPath = Application.StartupPath;
-                        string invoicePath = Path.GetFullPath(Path.Combine(startupPath, @"..\..\..\invoice\"));
-
+                        string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                        string invoicePath = $"{documentsPath}\\Elysia\\invoice\\";
                         Directory.CreateDirectory(invoicePath);
                         saveFileDialog.Filter = "PDF Files|*.pdf";
                         saveFileDialog.Title = "Save Invoice PDF";

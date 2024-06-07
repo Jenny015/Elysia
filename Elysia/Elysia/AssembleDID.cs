@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Data;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace Elysia
@@ -12,15 +13,16 @@ namespace Elysia
         public AssembleDID()
         {
             InitializeComponent();
+            reloadDataGridView("");
             setDataGridView();
+            dgvDID.Columns[0].ReadOnly = true;
+            dgvDID.Columns[1].ReadOnly = true;
+            dgvDID.Columns[2].ReadOnly = true;
+            dgvDID.Columns[4].ReadOnly = true;
             this.dgvDID.CellClick += new DataGridViewCellEventHandler(dataGridView1_CellClick);
-            dgvDID.AllowUserToAddRows = false;
-            dgvDID.ReadOnly = true;
-            dgvDID.Columns[3].ReadOnly = false;
         }
         private void setDataGridView()
         {
-            reloadDataGridView("");
             DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn();
             buttonColumn.HeaderText = "Assemble";
             buttonColumn.Name = "buttonColumn";
@@ -33,8 +35,13 @@ namespace Elysia
 
         private void reloadDataGridView(String query)
         {
-            query = query == "" ? "SELECT OP.orderID, OP.partID, (OP.orderQty+OP.OSQty) AS TotalQty, actDespQty, opStatus FROM orderpart OP, `order` O WHERE opStatus = 'Processing' AND OP.orderID = O.orderID ORDER BY O.orderDate DESC;" : query;
-
+            if(query == "")
+            {
+                query = "SELECT OP.orderID, OP.partID, (OP.orderQty+OP.OSQty) AS TotalQty, actDespQty, opStatus FROM orderpart OP, `order` O WHERE opStatus = 'Processing' AND OP.orderID = O.orderID ORDER BY O.orderDate DESC;";
+            } else
+            {
+                dgvDID.Columns["buttonColumn"].Visible = false;
+            }
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn))
@@ -135,11 +142,14 @@ namespace Elysia
                             }
                             //add new did that belongs to new OSorder, new orderQty = (currentOrderQty - currentActDespQty)
                             cmd.CommandText = $"UPDATE `orderpart` SET opStatus = 'Assembled', actDespQty = {actDespQtyData} WHERE orderID = '{orderID}' AND partID = '{partID}';" +
-                                $"UPDATE part SET partQty = partQty - {actDespQtyData} WHERE partID = '{partID}';" +
-                                $"INSERT INTactDespQtyDataO orderpart (orderID, partID, orderQty, opStatus) VALUES ('{osOrderID}', '{partID}', {totalQty - int.Parse(actDespQtyData)}, 'OStanding');";
+                                    $"UPDATE part SET partQty = partQty - {actDespQtyData} WHERE partID = '{partID}';" +
+                                    $"INSERT INTO orderpart (orderID, partID, orderQty, opStatus) VALUES ('{osOrderID}', '{partID}', {totalQty - int.Parse(actDespQtyData)}, 'OStanding');";
+                            cmd.ExecuteNonQuery();
                             if (int.Parse(actDespQtyData) > 0)
                             {
-                                cmd.CommandText += $"INSERT INTO log VALUES '{DateTime.Now.ToString("yyyyMMddHHmmssff")}', '{StaticVariable.empID}', '{partID}', {-int.Parse(actDespQtyData)}, 'Despatched')";
+                                string timestamp = DateTime.Now.ToString("yyyyMMddHHmmssff");
+                                int qtyChange = -int.Parse(actDespQtyData);
+                                cmd.CommandText += $"INSERT INTO log VALUES ('{timestamp}', '{StaticVariable.empID}', '{partID}', {qtyChange}, 'Despatched');";
                             }
                             try
                             {
@@ -148,14 +158,17 @@ namespace Elysia
                                 conn.Close();
                                 StaticVariable.updatePartStatus(partID);
                                 assembledOrder(orderID);
-                                reloadDataGridView("");
                                 return;
 
                             }
                             catch (Exception ex)
                             {
                                 // if error occurs, show fail message
-                                MessageBox.Show("Failed" + ex.Message);
+                                MessageBox.Show(ex.Message, "Failed");
+                            }
+                            finally
+                            {
+                                reloadDataGridView("");
                             }
                         }
                     }

@@ -167,8 +167,10 @@ namespace Elysia
         private void btnPDF_Click(object sender, EventArgs e)
         {
             Document document = new Document();
-            Directory.CreateDirectory("../../../invoice");
-            PdfWriter writer = PdfWriter.GetInstance(document, new FileStream($"../../../invoice/{orderID}.pdf", FileMode.Create));
+            string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            string invoicePath = $"{documentsPath}\\Elysia\\invoice\\";
+            Directory.CreateDirectory(invoicePath);
+            PdfWriter writer = PdfWriter.GetInstance(document, new FileStream($"{invoicePath}{orderID}.pdf", FileMode.Create));
             document.Open();
 
             Paragraph header = new Paragraph(compName.Text, FontFactory.GetFont("Times New Roman", 16, iTextSharp.text.Font.BOLD));
@@ -292,7 +294,10 @@ namespace Elysia
                     if ((string)statusCmd.ExecuteScalar() == "Assembled")
                     {
                         byte[] pdfBytes;
-                        using (FileStream fs = new FileStream($"../../../invoice/{orderID}.pdf", FileMode.Open, FileAccess.Read))
+                        string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                        string invoicePath = $"{documentsPath}\\Elysia\\invoice\\";
+                        Directory.CreateDirectory(invoicePath);
+                        using (FileStream fs = new FileStream($"{invoicePath}{orderID}.pdf", FileMode.Open, FileAccess.Read))
                         {
                             pdfBytes = new byte[fs.Length];
                             fs.Read(pdfBytes, 0, pdfBytes.Length);

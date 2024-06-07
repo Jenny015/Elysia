@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace Elysia
 {
@@ -64,9 +65,11 @@ namespace Elysia
         private void btnPrint_Click(object sender, EventArgs e)
         {
             Document document = new Document();
-            Directory.CreateDirectory("../../../evaluatedList");
             string fileName = "EvaluatedList_" + DateTime.Today.ToString("yyyyMMdd");
-            PdfWriter writer = PdfWriter.GetInstance(document, new FileStream($"../../../evaluatedList/{fileName}.pdf", FileMode.Create));
+            string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            string path = $"{documentsPath}\\Elysia\\evaluatedList\\";
+            Directory.CreateDirectory(path);
+            PdfWriter writer = PdfWriter.GetInstance(document, new FileStream($"{path}{fileName}.pdf", FileMode.Create));
             document.Open();
 
             iTextSharp.text.Font boldFont = FontFactory.GetFont("Times-Roman", 12, iTextSharp.text.Font.BOLD);
@@ -157,9 +160,10 @@ namespace Elysia
                 }
             }
             string fileName = "EvaluatedList_" + DateTime.Today.ToString("yyyyMMdd");
-            string outputDirectory = "../../../evaluatedList";
-            Directory.CreateDirectory(outputDirectory);
-            string filePath = Path.Combine(outputDirectory, $"{fileName}.csv");
+            string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            string path = $"{documentsPath}\\Elysia\\evaluatedList\\";
+            Directory.CreateDirectory(path);
+            string filePath = $"{path}{fileName}.csv";
             File.WriteAllText(filePath, sb.ToString());
             MessageBox.Show($"Evaluated List: {fileName}.CSV is generate successfully.", "Success");
         }
