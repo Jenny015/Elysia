@@ -112,6 +112,7 @@ namespace Elysia
             InvPreview.Visible = false;
             heading.Visible = false;
             footer.Visible = false;
+            LoadDataFromDatabase("");
         }
         //set components of detail page
         private void setInvoice(String orderID)
@@ -287,31 +288,27 @@ namespace Elysia
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
+                MySqlCommand cmd = conn.CreateCommand();
 
-                string query = $"SELECT invStatus FROM `invoice` WHERE orderID = '{orderID}'";
-                using (MySqlCommand statusCmd = new MySqlCommand(query, conn))
+                cmd.CommandText = $"SELECT orderStatus FROM `order` WHERE orderID = '{orderID}'";
+                if ((string)cmd.ExecuteScalar() == "Assembled")
                 {
-                    if ((string)statusCmd.ExecuteScalar() == "Assembled")
+                    byte[] pdfBytes;
+                    string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                    string invoicePath = $"{documentsPath}\\Elysia\\invoice\\";
+                    Directory.CreateDirectory(invoicePath);
+                    using (FileStream fs = new FileStream($"{invoicePath}{orderID}.pdf", FileMode.Open, FileAccess.Read))
                     {
-                        byte[] pdfBytes;
-                        string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-                        string invoicePath = $"{documentsPath}\\Elysia\\invoice\\";
-                        Directory.CreateDirectory(invoicePath);
-                        using (FileStream fs = new FileStream($"{invoicePath}{orderID}.pdf", FileMode.Open, FileAccess.Read))
-                        {
-                            pdfBytes = new byte[fs.Length];
-                            fs.Read(pdfBytes, 0, pdfBytes.Length);
-                        }
-                        // Upload pdf to MySql by bytes
-                        query = $"INSERT INTO invoice ('orderID', 'invoice', 'invStatus') VALUES ('{orderID}', '@pdfData', 'Wait'); " +
-                            $"Update `order` SET orderStatus = 'Despatched' WHERE 'orderID' = '{orderID}';";
-                        using (MySqlCommand cmd = new MySqlCommand(query, conn))
-                        {
-                            cmd.Parameters.AddWithValue("@pdfData", pdfBytes);
-                            cmd.ExecuteNonQuery();
-                            conn.Close();
-                        }
+                        pdfBytes = new byte[fs.Length];
+                        fs.Read(pdfBytes, 0, pdfBytes.Length);
                     }
+                    // Upload pdf to MySql by bytes
+                    cmd.CommandText = $"INSERT INTO invoice (orderID, invoice, invStatus) VALUES ('{orderID}', @pdfData, 'Wait'); ";
+                    cmd.Parameters.AddWithValue("@pdfData", pdfBytes);
+                    cmd.ExecuteNonQuery();
+                    cmd.CommandText = $"Update `order` SET orderStatus = 'Despatched' WHERE orderID = '{orderID}';";
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
                 }
             }
         }

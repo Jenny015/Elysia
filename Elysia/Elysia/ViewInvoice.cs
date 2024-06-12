@@ -108,7 +108,7 @@ namespace Elysia
                     }
                 }
             }
-            else if (e.ColumnIndex == dgvInv.Columns["Upload"].Index && e.RowIndex >= 0) //Upload signed invoice
+            else if (StaticVariable.dept == "IS" && e.ColumnIndex == dgvInv.Columns["Upload"].Index && e.RowIndex >= 0) //Upload signed invoice
             {
                 using (OpenFileDialog openFileDialog = new OpenFileDialog())
                 {
@@ -134,7 +134,7 @@ namespace Elysia
                     }
                 }
             }
-            else if (e.ColumnIndex == dgvInv.Columns["Send"].Index && e.RowIndex >= 0)
+            else if (StaticVariable.dept == "SD" && e.ColumnIndex == dgvInv.Columns["Send"].Index && e.RowIndex >= 0)
             {
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
