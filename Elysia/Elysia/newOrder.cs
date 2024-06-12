@@ -177,10 +177,12 @@ namespace Elysia
         //submit form, create new order
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            if (!checkInput())
+            var confirm = MessageBox.Show("Do you want to submit the new order?", "Please confirm the new order", MessageBoxButtons.YesNo);
+            if (!checkInput() || confirm == DialogResult.No)
             {
                 return;
             };
+
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
