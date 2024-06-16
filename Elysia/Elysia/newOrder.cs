@@ -293,5 +293,10 @@ namespace Elysia
                 }
             }
         }
+
+        private void nQty_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

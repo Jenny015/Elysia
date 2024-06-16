@@ -1,4 +1,7 @@
-﻿using System.Windows.Forms;
+﻿using MySql.Data.MySqlClient;
+using System;
+using System.Data;
+using System.Windows.Forms;
 
 namespace Elysia
 {
@@ -9,10 +12,40 @@ namespace Elysia
         public ViewSupplier()
         {
             InitializeComponent();
+            reloadDataGridView("");
+            setDataGridView();
+
+
         }
-        /*private void btnFilter_Click(object sender, EventArgs e)
+        private void reloadDataGridView(String query)
         {
-            filter = new Filter("Sup");
+            query = query == "" ? "SELECT supplierID, sComName FROM `supplier` ORDER BY supplierID DESC" : query;
+
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn))
+                {
+                    DataSet ds = new DataSet();
+                    adapter.Fill(ds);
+                    dgvSupplier.DataSource = ds.Tables[0];
+
+                }
+            }
+        }
+        private void setDataGridView()
+        {
+            DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn();
+            buttonColumn.HeaderText = "Cancel";
+            buttonColumn.Name = "buttonColumn";
+            buttonColumn.Text = "Cancel";
+            buttonColumn.UseColumnTextForButtonValue = true; // This will set the button text to "Click Me"
+
+            // Add the button column to the DataGridView
+            dgvSuppliers.Columns.Add(buttonColumn);
+        }
+        private void btnFilter_Click(object sender, EventArgs e)
+        {
+            filter = new Filter("invoice");
             filter.Query += filter_Query;
             filter.Show();
         }
@@ -20,6 +53,6 @@ namespace Elysia
         private void filter_Query(object sender, EventArgs e)
         {
             reloadDataGridView(filter.queryString);
-        }*/
+        }
     }
 }
