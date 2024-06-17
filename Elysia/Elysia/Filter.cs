@@ -29,15 +29,6 @@ namespace Elysia
             this.StartPosition = FormStartPosition.CenterScreen;
         }
 
-        public Filter(String t, String supplier)
-        {
-            type = t;
-            supplierID = supplier;
-            InitializeComponent();
-            setComponent();
-            this.StartPosition = FormStartPosition.CenterScreen;
-        }
-
         public void setComponent()
         {
             switch (type)
