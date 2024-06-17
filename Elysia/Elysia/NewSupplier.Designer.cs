@@ -190,7 +190,6 @@
             this.Qty.Size = new System.Drawing.Size(40, 22);
             this.Qty.TabIndex = 55;
             this.Qty.Text = "Qty";
-            this.Qty.Click += new System.EventHandler(this.lbCompany_Click);
             // 
             // spSupplierName
             // 

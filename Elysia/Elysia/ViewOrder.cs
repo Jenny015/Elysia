@@ -19,9 +19,9 @@ namespace Elysia
         private void setDataGridView()
         {
             DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn();
-            buttonColumn.HeaderText = "Detail";
+            buttonColumn.HeaderText = "Cancel";
             buttonColumn.Name = "buttonColumn";
-            buttonColumn.Text = "Detail";
+            buttonColumn.Text = "Cancel";
             buttonColumn.UseColumnTextForButtonValue = true; // This will set the button text to "Click Me"
 
             // Add the button column to the DataGridView

@@ -19,7 +19,7 @@ namespace Elysia
         }
         private void reloadDataGridView(String query)
         {
-            query = query == "" ? "SELECT supplierID, sComName FROM `supplier` ORDER BY supplierID DESC" : query;
+            query = query == "" ? "SELECT supplierID, sComName  FROM `supplier` ORDER BY supplierID" : query;
 
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
@@ -35,17 +35,17 @@ namespace Elysia
         private void setDataGridView()
         {
             DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn();
-            buttonColumn.HeaderText = "Cancel";
+            buttonColumn.HeaderText = "Detail";
             buttonColumn.Name = "buttonColumn";
-            buttonColumn.Text = "Cancel";
+            buttonColumn.Text = "Detail";
             buttonColumn.UseColumnTextForButtonValue = true; // This will set the button text to "Click Me"
 
             // Add the button column to the DataGridView
-            dgvSuppliers.Columns.Add(buttonColumn);
+            dgvSupplier.Columns.Add(buttonColumn);
         }
         private void btnFilter_Click(object sender, EventArgs e)
         {
-            filter = new Filter("invoice");
+            filter = new Filter("Sup");
             filter.Query += filter_Query;
             filter.Show();
         }
@@ -53,6 +53,25 @@ namespace Elysia
         private void filter_Query(object sender, EventArgs e)
         {
             reloadDataGridView(filter.queryString);
+        }
+
+        private void dgvSupplier_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                MySqlCommand cmd = conn.CreateCommand();
+
+                // Check if the click is on the button column
+                if (e.ColumnIndex == dgvSupplier.Columns["buttonColumn"].Index && e.RowIndex >= 0)
+                {
+                    String supplierID = dgvSupplier.Rows[e.RowIndex].Cells["supplierID"].Value.ToString();
+                    ViewSupplierPart spp = new ViewSupplierPart(supplierID);
+                    this.Controls.Clear();
+                    this.Controls.Add(spp);
+                    this.Refresh();
+                }
+            }
         }
     }
 }

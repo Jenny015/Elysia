@@ -13,7 +13,7 @@ namespace Elysia
 
         }
 
-        private bool checkInput()
+        /*private bool checkInput()
         {
             if (tbDealerName.Text.Length > 0 && tbCompany.Text.Length > 0 &&
                 tbPhoneNumber.Text.Length > 0 && tbEmail.Text.Length > 0 && tbCompany.Text.Length > 0)
@@ -75,11 +75,6 @@ namespace Elysia
             spItems.Clear();
             spPrice.Clear();
 
-        }
-
-        private void lbCompany_Click(object sender, System.EventArgs e)
-        {
-
-        }
+        }*/
     }
 }
