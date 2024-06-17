@@ -15,6 +15,13 @@ namespace Elysia
             reloadDataGridView("");
             dgvAcc.ReadOnly = true;
         }
+        public ViewLog(String scrapItem)
+        {
+            InitializeComponent();
+            reloadDataGridView("SELECT * FROM `log` WHERE logDes = 'Scrap item' ORDER BY logID DESC");
+            dgvAcc.ReadOnly = true;
+            btnFilter.Visible = false;
+        }
         private void reloadDataGridView(string query)
         {
             query = query == "" ? "SELECT * FROM `log` ORDER BY logID DESC" : query;

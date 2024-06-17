@@ -48,7 +48,6 @@ namespace Elysia
         }
         private void setDataGridView()
         {
-            LoadDataFromDatabase("");
             DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn();
             buttonColumn.HeaderText = "Detail";
             buttonColumn.Name = "detailButton";
@@ -58,7 +57,6 @@ namespace Elysia
             // Add the button column to the DataGridView
             dgvOrder.Columns.Add(buttonColumn);
 
-            //set background color
         }
         //filter
         private void btnFilter_Click(object sender, EventArgs e)

@@ -370,6 +370,12 @@
     <Compile Include="ViewSparePart.Designer.cs">
       <DependentUpon>ViewSparePart.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewSupplierPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewSupplierPart.Designer.cs">
+      <DependentUpon>ViewSupplierPart.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewSupplier.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -476,6 +482,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ViewSparePart.resx">
       <DependentUpon>ViewSparePart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewSupplierPart.resx">
+      <DependentUpon>ViewSupplierPart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewSupplier.resx">
       <DependentUpon>ViewSupplier.cs</DependentUpon>
