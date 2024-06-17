@@ -13,10 +13,9 @@ namespace Elysia
 
         }
 
-        /*private bool checkInput()
+        private bool checkInput()
         {
-            if (tbDealerName.Text.Length > 0 && tbCompany.Text.Length > 0 &&
-                tbPhoneNumber.Text.Length > 0 && tbEmail.Text.Length > 0 && tbCompany.Text.Length > 0)
+            if (spSupplierName.Text.Length > 0 && spPhoneNumber.Text.Length > 0 && spAddress.Text.Length > 0)
             {
                 return true;
             }
@@ -44,12 +43,6 @@ namespace Elysia
                         cmd.Parameters.AddWithValue("@dName", spSupplierName.Text);
                         cmd.Parameters.AddWithValue("@dCompany", spAddress.Text);
                         cmd.Parameters.AddWithValue("@dPhone", spPhoneNumber.Text);
-                        cmd.Parameters.AddWithValue("@dEmail", spEmail.Text);
-                        cmd.Parameters.AddWithValue("@dPairID", spPairId.Text);
-                        cmd.Parameters.AddWithValue("@dItems", spItems.Text);
-                        cmd.Parameters.AddWithValue("@dPrice", spPrice.Text);
-
-
 
                         // Execute the query
                         cmd.ExecuteNonQuery();
@@ -70,11 +63,7 @@ namespace Elysia
             spSupplierName.Clear();
             spAddress.Clear();
             spPhoneNumber.Clear();
-            spEmail.Clear();
-            spPairId.Clear();
-            spItems.Clear();
-            spPrice.Clear();
 
-        }*/
+        }
     }
 }

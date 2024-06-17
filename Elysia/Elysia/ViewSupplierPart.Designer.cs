@@ -38,6 +38,7 @@
             this.sppt = new System.Windows.Forms.Label();
             this.spptAddress = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.btnBack = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSupplierPart)).BeginInit();
             this.SuspendLayout();
@@ -130,11 +131,10 @@
             // 
             // spptAddress
             // 
-            this.spptAddress.AutoSize = true;
             this.spptAddress.Font = new System.Drawing.Font("Times New Roman", 14F);
             this.spptAddress.Location = new System.Drawing.Point(1042, 116);
             this.spptAddress.Name = "spptAddress";
-            this.spptAddress.Size = new System.Drawing.Size(116, 33);
+            this.spptAddress.Size = new System.Drawing.Size(432, 98);
             this.spptAddress.TabIndex = 48;
             this.spptAddress.Text = "sAddress";
             // 
@@ -148,10 +148,22 @@
             this.label6.TabIndex = 49;
             this.label6.Text = "Supplier Address:";
             // 
+            // btnBack
+            // 
+            this.btnBack.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.btnBack.Location = new System.Drawing.Point(1149, 987);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(150, 40);
+            this.btnBack.TabIndex = 50;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            // 
             // ViewSupplierPart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.spptAddress);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.spptCompany);
@@ -183,5 +195,6 @@
         private System.Windows.Forms.Label sppt;
         private System.Windows.Forms.Label spptAddress;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnBack;
     }
 }
