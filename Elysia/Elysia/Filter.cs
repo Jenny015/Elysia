@@ -11,10 +11,20 @@ namespace Elysia
         public string queryString { get; private set; }
         public event EventHandler Query;
         private String type;
+        private String supplierID;
         string connectionString = "server=localhost;database=elysia;user=root;password=\"\"";
         public Filter(String t)
         {
             type = t;
+            InitializeComponent();
+            setComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
+        }
+
+        public Filter(String t, String supplier)
+        {
+            type = t;
+            supplierID = supplier;
             InitializeComponent();
             setComponent();
             this.StartPosition = FormStartPosition.CenterScreen;

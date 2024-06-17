@@ -41,7 +41,7 @@ namespace Elysia
             buttonColumn.UseColumnTextForButtonValue = true; // This will set the button text to "Click Me"
 
             // Add the button column to the DataGridView
-            dgvSuppliers.Columns.Add(buttonColumn);
+            dgvSupplier.Columns.Add(buttonColumn);
         }
         private void btnFilter_Click(object sender, EventArgs e)
         {

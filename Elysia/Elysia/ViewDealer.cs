@@ -38,6 +38,7 @@ namespace Elysia
             // Add "Update" button column
             DataGridViewButtonColumn updateColumn = new DataGridViewButtonColumn();
             updateColumn.HeaderText = "Update";
+            updateColumn.Name = "Update";
             updateColumn.Text = "Update";
             updateColumn.UseColumnTextForButtonValue = true;
             dgvViewDealer.Columns.Add(updateColumn);
@@ -46,7 +47,7 @@ namespace Elysia
 
         private void dgvViewDealer_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //if (e.RowIndex >= 0 && e.ColumnIndex == updateColumn.Index)
+            if (e.ColumnIndex == dgvViewDealer.Columns["Update"].Index && e.RowIndex >= 0)
             {
                 // Update button clicked
                 DataGridViewRow row = dgvViewDealer.Rows[e.RowIndex];
