@@ -223,7 +223,6 @@
             this.label1.Size = new System.Drawing.Size(138, 32);
             this.label1.TabIndex = 69;
             this.label1.Text = "DealerID: ";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // NewEmployee
             // 
