@@ -75,8 +75,11 @@ namespace Elysia
             spItems.Clear();
             spPrice.Clear();
 
+        }*/
+        private void lbCompany_Click(object sender, System.EventArgs e)
+        {
+
         }
-*/
     }
 }
         
