@@ -35,6 +35,7 @@
             this.lblDept = new System.Windows.Forms.Label();
             this.imgLogo = new System.Windows.Forms.PictureBox();
             this.contentPanel = new System.Windows.Forms.Panel();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
             this.SuspendLayout();
@@ -43,6 +44,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(84)))), ((int)(((byte)(129)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.radioButton2);
             this.panel1.Controls.Add(this.btnScrapItem);
             this.panel1.Controls.Add(this.radioButton1);
             this.panel1.Controls.Add(this.btnLogout);
@@ -146,6 +148,26 @@
             this.contentPanel.Size = new System.Drawing.Size(1503, 1055);
             this.contentPanel.TabIndex = 38;
             // 
+            // radioButton2
+            // 
+            this.radioButton2.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radioButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(135)))), ((int)(((byte)(167)))));
+            this.radioButton2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.radioButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.radioButton2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.radioButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.radioButton2.Location = new System.Drawing.Point(4, 423);
+            this.radioButton2.Margin = new System.Windows.Forms.Padding(4);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(409, 75);
+            this.radioButton2.TabIndex = 9;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "View Scrap Item";
+            this.radioButton2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.radioButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.radioButton2.UseVisualStyleBackColor = false;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            // 
             // StoreRecordClerk
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -169,5 +191,6 @@
         private System.Windows.Forms.Label lblDept;
         public System.Windows.Forms.PictureBox imgLogo;
         private System.Windows.Forms.Panel contentPanel;
+        private System.Windows.Forms.RadioButton radioButton2;
     }
 }

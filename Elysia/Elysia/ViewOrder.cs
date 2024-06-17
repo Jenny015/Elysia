@@ -18,14 +18,25 @@ namespace Elysia
         }
         private void setDataGridView()
         {
-            DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn();
-            buttonColumn.HeaderText = "Cancel";
-            buttonColumn.Name = "buttonColumn";
-            buttonColumn.Text = "Cancel";
-            buttonColumn.UseColumnTextForButtonValue = true; // This will set the button text to "Click Me"
+            DataGridViewButtonColumn detailBtn = new DataGridViewButtonColumn();
+            detailBtn.HeaderText = "Detail";
+            detailBtn.Name = "detailBtn";
+            detailBtn.Text = "Detail";
+            detailBtn.UseColumnTextForButtonValue = true;
 
             // Add the button column to the DataGridView
-            dataGridVieworder.Columns.Add(buttonColumn);
+            dataGridVieworder.Columns.Add(detailBtn);
+
+
+            DataGridViewButtonColumn cancelBtn = new DataGridViewButtonColumn();
+            cancelBtn.HeaderText = "Cancel";
+            cancelBtn.Name = "cancelBtn";
+            cancelBtn.Text = "Cancel";
+            cancelBtn.UseColumnTextForButtonValue = true;
+
+            // Add the button column to the DataGridView
+            dataGridVieworder.Columns.Add(cancelBtn);
+            
         }
         private void reloadDataGridView(String query)
         {
@@ -50,7 +61,7 @@ namespace Elysia
                 MySqlCommand cmd = conn.CreateCommand();
 
                 // Check if the click is on the button column
-                if (e.ColumnIndex == dataGridVieworder.Columns["buttonColumn"].Index && e.RowIndex >= 0)
+                if (e.ColumnIndex == dataGridVieworder.Columns["cancelBtn"].Index && e.RowIndex >= 0)
                 {
 
                     DataGridViewRow row = dataGridVieworder.Rows[e.RowIndex];
@@ -87,8 +98,54 @@ namespace Elysia
                         }
                     }
 
+                } else if(e.ColumnIndex == dataGridVieworder.Columns["detailBtn"].Index && e.RowIndex >= 0)
+                {
+                    viewOrderDetail(dataGridVieworder.Rows[e.RowIndex].Cells["orderID"].Value.ToString());
                 }
             }
+        }
+        private void viewOrderDetail(String orderID)
+        {
+            heading.Visible = true;
+            InvPreview.Visible = true;
+            btnBack.Visible = true;
+            btnFilter.Visible = false;
+            dataGridVieworder.Visible = false;
+
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                MySqlCommand cmd = conn.CreateCommand();
+                cmd.CommandText = $"SELECT O.orderDate, D.dCompany, D.dName, D.dPhone, D.dComAdd, D.dDelivAdd FROM `order` O, `orderpart` OP, dealer D, part P WHERE O.orderID = OP.orderID AND O.dealerID = D.dealerID AND P.partID = OP.partID AND O.orderID = '{orderID}';";
+                try
+                {
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            lblOrderDate.Text = reader.GetDateTime(0).ToString("d");
+                            lblDCom.Text = reader.GetString(1);
+                            lblDName.Text = reader.GetString(2);
+                            lblDPhone.Text = reader.GetString(3);
+                            lblAddr.Text = reader.GetString(5) != "" ? reader.GetString(5) : reader.GetString(4);
+                        }
+                    }
+
+                    String query = $"SELECT OP.partID AS `Part ID`, P.partName AS `Part Name`, OP.orderQty AS `Order Quantity`, OP.OSQty AS `Previous Order Quantity`, OP.actDespQty AS `Despatch Quantity` FROM orderpart OP, part P WHERE OP.partID = P.partID AND OP.orderID = '{orderID}';";
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn))
+                    {
+                        DataSet ds = new DataSet();
+                        adapter.Fill(ds);
+                        dgv.DataSource = ds.Tables[0];
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Failed" + ex.Message);
+                }
+
+            }
+            lblOrderID.Text = orderID;
         }
 
         private void btnFilter_Click(object sender, EventArgs e)
@@ -102,6 +159,15 @@ namespace Elysia
         {
             string query = filter.queryString;
             reloadDataGridView(query);
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            heading.Visible = false;
+            InvPreview.Visible = false;
+            btnBack.Visible = false;
+            btnFilter.Visible = true;
+            dataGridVieworder.Visible = true;
         }
     }
 }

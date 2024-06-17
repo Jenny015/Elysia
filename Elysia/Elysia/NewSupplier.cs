@@ -63,7 +63,12 @@ namespace Elysia
             spSupplierName.Clear();
             spAddress.Clear();
             spPhoneNumber.Clear();
+            spEmail.Clear();
+            spPairId.Clear();
+            spItems.Clear();
+            spPrice.Clear();
 
         }
     }
 }
+        
