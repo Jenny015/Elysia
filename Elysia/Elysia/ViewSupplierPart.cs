@@ -94,5 +94,12 @@ namespace Elysia
             }
         }
 
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            ViewSupplier supplier = new ViewSupplier();
+            this.Controls.Clear();
+            this.Controls.Add(supplier);
+            this.Refresh();
+        }
     }
 }
