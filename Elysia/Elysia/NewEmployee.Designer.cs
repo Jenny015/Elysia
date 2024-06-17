@@ -34,7 +34,6 @@
             this.btnSubmit = new System.Windows.Forms.Button();
             this.tbDeliveryAddress = new System.Windows.Forms.TextBox();
             this.lbDeliveryAddress = new System.Windows.Forms.Label();
-            this.tbCompanyAddress = new System.Windows.Forms.TextBox();
             this.lbCompanyAddress = new System.Windows.Forms.Label();
             this.tbEmail = new System.Windows.Forms.TextBox();
             this.lbEmail = new System.Windows.Forms.Label();
@@ -46,6 +45,11 @@
             this.lbDealerName = new System.Windows.Forms.Label();
             this.lblDealerID = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,7 +79,7 @@
             this.btnClear.BackColor = System.Drawing.Color.Tomato;
             this.btnClear.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.btnClear.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnClear.Location = new System.Drawing.Point(47, 922);
+            this.btnClear.Location = new System.Drawing.Point(47, 897);
             this.btnClear.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(150, 42);
@@ -87,7 +91,7 @@
             // 
             this.btnSubmit.BackColor = System.Drawing.Color.Plum;
             this.btnSubmit.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.btnSubmit.Location = new System.Drawing.Point(269, 922);
+            this.btnSubmit.Location = new System.Drawing.Point(269, 897);
             this.btnSubmit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(150, 42);
@@ -98,7 +102,7 @@
             // tbDeliveryAddress
             // 
             this.tbDeliveryAddress.Font = new System.Drawing.Font("Times New Roman", 14F);
-            this.tbDeliveryAddress.Location = new System.Drawing.Point(47, 779);
+            this.tbDeliveryAddress.Location = new System.Drawing.Point(47, 730);
             this.tbDeliveryAddress.Name = "tbDeliveryAddress";
             this.tbDeliveryAddress.Size = new System.Drawing.Size(915, 40);
             this.tbDeliveryAddress.TabIndex = 66;
@@ -107,19 +111,11 @@
             // 
             this.lbDeliveryAddress.AutoSize = true;
             this.lbDeliveryAddress.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
-            this.lbDeliveryAddress.Location = new System.Drawing.Point(41, 744);
+            this.lbDeliveryAddress.Location = new System.Drawing.Point(41, 695);
             this.lbDeliveryAddress.Name = "lbDeliveryAddress";
-            this.lbDeliveryAddress.Size = new System.Drawing.Size(216, 32);
+            this.lbDeliveryAddress.Size = new System.Drawing.Size(112, 32);
             this.lbDeliveryAddress.TabIndex = 65;
-            this.lbDeliveryAddress.Text = "Delivery Address";
-            // 
-            // tbCompanyAddress
-            // 
-            this.tbCompanyAddress.Font = new System.Drawing.Font("Times New Roman", 14F);
-            this.tbCompanyAddress.Location = new System.Drawing.Point(47, 680);
-            this.tbCompanyAddress.Name = "tbCompanyAddress";
-            this.tbCompanyAddress.Size = new System.Drawing.Size(915, 40);
-            this.tbCompanyAddress.TabIndex = 64;
+            this.lbDeliveryAddress.Text = "Position";
             // 
             // lbCompanyAddress
             // 
@@ -127,9 +123,9 @@
             this.lbCompanyAddress.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
             this.lbCompanyAddress.Location = new System.Drawing.Point(41, 645);
             this.lbCompanyAddress.Name = "lbCompanyAddress";
-            this.lbCompanyAddress.Size = new System.Drawing.Size(227, 32);
+            this.lbCompanyAddress.Size = new System.Drawing.Size(156, 32);
             this.lbCompanyAddress.TabIndex = 63;
-            this.lbCompanyAddress.Text = "CompanyAddress";
+            this.lbCompanyAddress.Text = "Department";
             // 
             // tbEmail
             // 
@@ -166,7 +162,6 @@
             this.lbPhoneNumber.Size = new System.Drawing.Size(195, 32);
             this.lbPhoneNumber.TabIndex = 59;
             this.lbPhoneNumber.Text = "Phone Number";
-           
             // 
             // tbCompany
             // 
@@ -208,11 +203,11 @@
             // 
             this.lblDealerID.AutoSize = true;
             this.lblDealerID.Font = new System.Drawing.Font("Times New Roman", 14F);
-            this.lblDealerID.Location = new System.Drawing.Point(185, 321);
+            this.lblDealerID.Location = new System.Drawing.Point(224, 321);
             this.lblDealerID.Name = "lblDealerID";
-            this.lblDealerID.Size = new System.Drawing.Size(101, 33);
+            this.lblDealerID.Size = new System.Drawing.Size(153, 33);
             this.lblDealerID.TabIndex = 70;
-            this.lblDealerID.Text = "orderID";
+            this.lblDealerID.Text = "EmployeeID";
             // 
             // label1
             // 
@@ -220,21 +215,75 @@
             this.label1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(41, 321);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(138, 32);
+            this.label1.Size = new System.Drawing.Size(177, 32);
             this.label1.TabIndex = 69;
-            this.label1.Text = "DealerID: ";
+            this.label1.Text = "EmployeeID: ";
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
+            this.radioButton1.Location = new System.Drawing.Point(47, 385);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(99, 36);
+            this.radioButton1.TabIndex = 71;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Male";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
+            this.radioButton2.Location = new System.Drawing.Point(155, 385);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(125, 36);
+            this.radioButton2.TabIndex = 72;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Female";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 14F);
+            this.textBox1.Location = new System.Drawing.Point(47, 824);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(915, 40);
+            this.textBox1.TabIndex = 75;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(41, 789);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(129, 32);
+            this.label2.TabIndex = 74;
+            this.label2.Text = "Password";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(203, 651);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(418, 26);
+            this.comboBox1.TabIndex = 76;
             // 
             // NewEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.lblDealerID);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.tbDeliveryAddress);
             this.Controls.Add(this.lbDeliveryAddress);
-            this.Controls.Add(this.tbCompanyAddress);
             this.Controls.Add(this.lbCompanyAddress);
             this.Controls.Add(this.tbEmail);
             this.Controls.Add(this.lbEmail);
@@ -262,7 +311,6 @@
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.TextBox tbDeliveryAddress;
         private System.Windows.Forms.Label lbDeliveryAddress;
-        private System.Windows.Forms.TextBox tbCompanyAddress;
         private System.Windows.Forms.Label lbCompanyAddress;
         private System.Windows.Forms.TextBox tbEmail;
         private System.Windows.Forms.Label lbEmail;
@@ -274,5 +322,10 @@
         private System.Windows.Forms.Label lbDealerName;
         private System.Windows.Forms.Label lblDealerID;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
