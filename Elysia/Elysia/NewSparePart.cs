@@ -51,7 +51,7 @@ namespace Elysia
                         var maxPartID = reader2[0];
                         if (maxPartID != null && maxPartID != DBNull.Value)
                         {
-                            lblPartID.Text = $"{category}{int.Parse(maxPartID.ToString().Substring(1)) + 1:D5}";
+                            
                             return;
                         }
                     }

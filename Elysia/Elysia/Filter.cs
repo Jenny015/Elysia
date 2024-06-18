@@ -139,28 +139,6 @@ namespace Elysia
             loadDataFromDatabase("dealerID", "dealer", cbDealerID);
             loadDataFromDatabase("orderStatus", "order", orderStatus);
         }
-        private void setComponent_spp()
-        {
-            supplierPart.Location = new System.Drawing.Point(9, 9);
-            supplierPart.Visible = true;
-            btnSearch.Location = new System.Drawing.Point(134, 203);
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
-            {
-                conn.Open();
-                MySqlCommand cmd = conn.CreateCommand();
-
-                cmd.CommandText = $"SELECT partID FROM supplierPart WHERE supplierID = '{supplierID}'";
-                using (MySqlDataReader reader = cmd.ExecuteReader())
-                {
-                    supplierPartID.Items.Clear();
-
-                    while (reader.Read())
-                    {
-                        supplierPartID.Items.Add(reader.GetString(0));
-                    }
-                }
-            }
-        }
         private void setComponent_inward()
         {
             inward.Location = new System.Drawing.Point(9, 9);
@@ -211,6 +189,28 @@ namespace Elysia
             loadDataFromDatabase("logDes", "log", logDes);
 
         }
+        private void setComponent_spp()
+        {
+            supplierPart.Location = new System.Drawing.Point(9, 9);
+            supplierPart.Visible = true;
+            btnSearch.Location = new System.Drawing.Point(134, 203);
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                MySqlCommand cmd = conn.CreateCommand();
+
+                cmd.CommandText = $"SELECT partID FROM supplierPart WHERE supplierID = '{supplierID}'";
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    supplierPartID.Items.Clear();
+
+                    while (reader.Read())
+                    {
+                        supplierPartID.Items.Add(reader.GetString(0));
+                    }
+                }
+            }
+        }
         private void search_DID()
         {
             StringBuilder queryBuilder = new StringBuilder("SELECT OP.orderID, OP.partID, (OP.orderQty+OP.OSQty) AS TotalQty, actDespQty, opStatus FROM `orderpart` OP, `order` O WHERE OP.orderID = O.orderID");
@@ -258,16 +258,6 @@ namespace Elysia
         {
             orderDateContainer.Visible = cbDate.Checked;
             orderDateContainer.Enabled = cbDate.Checked;
-        }
-        private void add_supplierPart()
-        {
-            StringBuilder queryBuilder = new StringBuilder("INSERT INTO supplierpart VALUES (");
-            List<MySqlParameter> parameters = new List<MySqlParameter>();
-            if (supplierPartID.SelectedIndex != -1 && sppPrice.Text != "")
-            {
-                queryBuilder.Append($"'{supplierID}', '{supplierPartID.SelectedItem}', {sppPrice.Text.ToString()}");
-            }
-            queryString = queryBuilder.ToString();
         }
         private void search_inward()
         {
@@ -392,7 +382,15 @@ namespace Elysia
             queryBuilder.Append(" ORDER BY logID DESC");
             queryString = queryBuilder.ToString();
         }
-
-
+        private void add_supplierPart()
+        {
+            StringBuilder queryBuilder = new StringBuilder("INSERT INTO supplierpart VALUES (");
+            List<MySqlParameter> parameters = new List<MySqlParameter>();
+            if (supplierPartID.SelectedIndex != -1 && sppPrice.Text != "")
+            {
+                queryBuilder.Append($"'{supplierID}', '{supplierPartID.SelectedItem}', {sppPrice.Text.ToString()}");
+            }
+            queryString = queryBuilder.ToString();
+        }
     }
 }
