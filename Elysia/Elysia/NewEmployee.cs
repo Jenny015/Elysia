@@ -16,6 +16,8 @@ namespace Elysia
         public NewEmployee()
         {
             InitializeComponent();
+            LoadInformation();
+            updateEmpID();
         }
         public void LoadInformation()
         {
@@ -25,7 +27,7 @@ namespace Elysia
                 MySqlCommand cmd = conn.CreateCommand();
 
                 //load deptIDs
-                cmd.CommandText = "SELECT * FROM dept";
+                cmd.CommandText = "SELECT deptName FROM dept";
                 using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
                     deptn.Items.Clear();
@@ -38,7 +40,7 @@ namespace Elysia
             }
         }
 
-        public void updateEmpID(string category)
+        public void updateEmpID()
         {
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
@@ -59,7 +61,13 @@ namespace Elysia
                 }
             }
         }
-        private void phoneValidate(object sender, EventArgs e)
+        private void Gander_choosed(object sender, EventArgs e)
+        {
+
+
+        }
+
+            private void phoneValidate(object sender, EventArgs e)
         {
             int result;
             bool isNumeric = int.TryParse(tbPhoneNumber.Text, out result);
@@ -83,7 +91,90 @@ namespace Elysia
                 e.Cancel = true;
             }
         }
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            tbEmpName.Text = "";
+            tbPhoneNumber.Text = "";
+            tbEmail.Text = "";
+            tbPosition.Text = "";
+            tbPassword.Text = "";
 
+        }
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            if (!checkInput())
+            {
+                MessageBox.Show("Every fields should be inputted", "Error");
+                return;
+            }
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                var dept;
+                switch (deptn.SelectedItem.ToString())
+                {
+                    case "Sales Office":
+                        dept = "SO";
+                        break;
+                    case "Spare Parts Store":
+                        dept = "SP";
+                        break;
+                    case "Spares Despatch Department":
+                        dept = "SD";
+                        break;
+                    case "Invoicing Section":
+                        dept = "IS";
+                        break;
+                    case "Stock Record Clerk":
+                        dept = "SR";
+                        break;
+                    case "Purchasing Department":
+                        dept = "PD";
+                        break;
+                    case "Goods Inward Department":
+                        dept = "GI";
+                        break;
+                    case "Human Resources":
+                        dept = "HR";
+                        break;
+                    case "Accountant":
+                        dept = "AC";
+                        break;
+                }
+                conn.Open();
+
+                var gender = f.Checked ? "F" : "M";
+
+                // Prepare the INSERT query
+                string insertQuery = "INSERT INTO part VALUES (@empID, @empName, @empGander, @empPhone, @empEmail, @deptID, @empPosition, @empPasswd, @empStatus)";
+                using (MySqlCommand cmd = new MySqlCommand(insertQuery, conn))
+                {
+                    cmd.Parameters.AddWithValue("@empID", lblEmpID.Text);
+                    cmd.Parameters.AddWithValue("@empName", tbEmpName.Text);
+                    cmd.Parameters.AddWithValue("@empGander", gender);
+                    cmd.Parameters.AddWithValue("@empPhone", tbPhoneNumber.Text);
+                    cmd.Parameters.AddWithValue("@empEmail", tbEmail.Text);
+                    cmd.Parameters.AddWithValue("@deptID", dept);
+                    cmd.Parameters.AddWithValue("@empPosition", tbPosition.Text);
+                    cmd.Parameters.AddWithValue("@empPasswd", tbPassword.Text);
+
+
+
+                    // Execute the query
+                    cmd.ExecuteNonQuery();
+                }
+
+                MessageBox.Show("Spare Part information added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnClear_Click(null, null);
+            }
+        }
+        private bool checkInput()
+        {
+            if (tbEmpName.Text != "" && tbPhoneNumber.Text != "" && tbEmail.Text != "" && tbPosition.Text != "" && tbPassword.Text != "")
+            {
+                return true;
+            }
+            return false;
+        }
 
     }
 }

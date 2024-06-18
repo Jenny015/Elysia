@@ -43,8 +43,8 @@
             this.lbDealerName = new System.Windows.Forms.Label();
             this.lblEmpID = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.m = new System.Windows.Forms.RadioButton();
+            this.f = new System.Windows.Forms.RadioButton();
             this.tbPassword = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.deptn = new System.Windows.Forms.ComboBox();
@@ -84,6 +84,7 @@
             this.btnClear.TabIndex = 68;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnSubmit
             // 
@@ -96,6 +97,7 @@
             this.btnSubmit.TabIndex = 67;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = false;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // tbPosition
             // 
@@ -132,6 +134,7 @@
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(915, 40);
             this.tbEmail.TabIndex = 62;
+            this.tbEmail.Leave += new System.EventHandler(this.phoneValidate);
             // 
             // lbEmail
             // 
@@ -201,29 +204,29 @@
             this.label1.TabIndex = 69;
             this.label1.Text = "EmployeeID: ";
             // 
-            // radioButton1
+            // m
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
-            this.radioButton1.Location = new System.Drawing.Point(47, 284);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(99, 36);
-            this.radioButton1.TabIndex = 71;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Male";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.m.AutoSize = true;
+            this.m.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
+            this.m.Location = new System.Drawing.Point(47, 284);
+            this.m.Name = "m";
+            this.m.Size = new System.Drawing.Size(99, 36);
+            this.m.TabIndex = 71;
+            this.m.TabStop = true;
+            this.m.Text = "Male";
+            this.m.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // f
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
-            this.radioButton2.Location = new System.Drawing.Point(155, 284);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(125, 36);
-            this.radioButton2.TabIndex = 72;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Female";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.f.AutoSize = true;
+            this.f.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
+            this.f.Location = new System.Drawing.Point(152, 284);
+            this.f.Name = "f";
+            this.f.Size = new System.Drawing.Size(125, 36);
+            this.f.TabIndex = 72;
+            this.f.TabStop = true;
+            this.f.Text = "Female";
+            this.f.UseVisualStyleBackColor = true;
             // 
             // tbPassword
             // 
@@ -259,8 +262,8 @@
             this.Controls.Add(this.deptn);
             this.Controls.Add(this.tbPassword);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.f);
+            this.Controls.Add(this.m);
             this.Controls.Add(this.lblEmpID);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnClear);
@@ -301,8 +304,8 @@
         private System.Windows.Forms.Label lbDealerName;
         private System.Windows.Forms.Label lblEmpID;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton m;
+        private System.Windows.Forms.RadioButton f;
         private System.Windows.Forms.TextBox tbPassword;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox deptn;
