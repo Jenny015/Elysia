@@ -185,7 +185,7 @@ namespace Elysia
             log.Location = new System.Drawing.Point(9, 9);
             log.Visible = true;
             btnSearch.Location = new System.Drawing.Point(125, 258);
-            loadDataFromDatabase("logID", "log", logPartID);
+            loadDataFromDatabase("partID", "log", logPartID);
             loadDataFromDatabase("logDes", "log", logDes);
 
         }

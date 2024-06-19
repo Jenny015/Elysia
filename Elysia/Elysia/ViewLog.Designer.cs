@@ -40,12 +40,12 @@
             // 
             this.dgvAcc.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvAcc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAcc.Location = new System.Drawing.Point(21, 127);
+            this.dgvAcc.Location = new System.Drawing.Point(21, 141);
             this.dgvAcc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvAcc.Name = "dgvAcc";
             this.dgvAcc.RowHeadersWidth = 62;
             this.dgvAcc.RowTemplate.Height = 31;
-            this.dgvAcc.Size = new System.Drawing.Size(1460, 850);
+            this.dgvAcc.Size = new System.Drawing.Size(1460, 944);
             this.dgvAcc.TabIndex = 40;
             // 
             // panel2
@@ -56,7 +56,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1503, 90);
+            this.panel2.Size = new System.Drawing.Size(1503, 100);
             this.panel2.TabIndex = 41;
             // 
             // label4
@@ -64,7 +64,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(40, 28);
+            this.label4.Location = new System.Drawing.Point(40, 31);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(188, 41);
             this.label4.TabIndex = 20;
@@ -73,23 +73,24 @@
             // btnFilter
             // 
             this.btnFilter.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.btnFilter.Location = new System.Drawing.Point(1331, 992);
-            this.btnFilter.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.btnFilter.Location = new System.Drawing.Point(1331, 1102);
+            this.btnFilter.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(150, 41);
+            this.btnFilter.Size = new System.Drawing.Size(150, 46);
             this.btnFilter.TabIndex = 42;
             this.btnFilter.Text = "Filter";
             this.btnFilter.UseVisualStyleBackColor = true;
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
             // ViewLog
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btnFilter);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dgvAcc);
             this.Name = "ViewLog";
-            this.Size = new System.Drawing.Size(1503, 1055);
+            this.Size = new System.Drawing.Size(1503, 1172);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAcc)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
