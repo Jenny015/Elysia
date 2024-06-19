@@ -31,9 +31,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.btnFilter = new System.Windows.Forms.Button();
-            this.dgvViewDealer = new System.Windows.Forms.DataGridView();
+            this.dgvEmp = new System.Windows.Forms.DataGridView();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvViewDealer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmp)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -68,29 +68,30 @@
             this.btnFilter.TabIndex = 43;
             this.btnFilter.Text = "Filter";
             this.btnFilter.UseVisualStyleBackColor = true;
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
-            // dgvViewDealer
+            // dgvEmp
             // 
-            this.dgvViewDealer.AllowUserToAddRows = false;
-            this.dgvViewDealer.AllowUserToDeleteRows = false;
-            this.dgvViewDealer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvViewDealer.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dgvViewDealer.ColumnHeadersHeight = 25;
-            this.dgvViewDealer.Location = new System.Drawing.Point(21, 118);
-            this.dgvViewDealer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dgvViewDealer.Name = "dgvViewDealer";
-            this.dgvViewDealer.ReadOnly = true;
-            this.dgvViewDealer.RowHeadersWidth = 51;
-            this.dgvViewDealer.RowTemplate.Height = 27;
-            this.dgvViewDealer.ShowEditingIcon = false;
-            this.dgvViewDealer.Size = new System.Drawing.Size(1460, 850);
-            this.dgvViewDealer.TabIndex = 47;
+            this.dgvEmp.AllowUserToAddRows = false;
+            this.dgvEmp.AllowUserToDeleteRows = false;
+            this.dgvEmp.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvEmp.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvEmp.ColumnHeadersHeight = 25;
+            this.dgvEmp.Location = new System.Drawing.Point(21, 118);
+            this.dgvEmp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvEmp.Name = "dgvEmp";
+            this.dgvEmp.RowHeadersWidth = 51;
+            this.dgvEmp.RowTemplate.Height = 27;
+            this.dgvEmp.ShowEditingIcon = false;
+            this.dgvEmp.Size = new System.Drawing.Size(1460, 850);
+            this.dgvEmp.TabIndex = 47;
+            this.dgvEmp.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmp_CellEndEdit);
             // 
             // ViewEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.dgvViewDealer);
+            this.Controls.Add(this.dgvEmp);
             this.Controls.Add(this.btnFilter);
             this.Controls.Add(this.panel2);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -98,7 +99,7 @@
             this.Size = new System.Drawing.Size(1503, 1055);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvViewDealer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmp)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -107,6 +108,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnFilter;
-        private System.Windows.Forms.DataGridView dgvViewDealer;
+        private System.Windows.Forms.DataGridView dgvEmp;
     }
 }

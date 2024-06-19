@@ -32,7 +32,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnSubmit = new System.Windows.Forms.Button();
-            this.tbPosition = new System.Windows.Forms.TextBox();
+            this.tbPostion = new System.Windows.Forms.TextBox();
             this.lbDeliveryAddress = new System.Windows.Forms.Label();
             this.lbCompanyAddress = new System.Windows.Forms.Label();
             this.tbEmail = new System.Windows.Forms.TextBox();
@@ -99,13 +99,13 @@
             this.btnSubmit.UseVisualStyleBackColor = false;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
-            // tbPosition
+            // tbPostion
             // 
-            this.tbPosition.Font = new System.Drawing.Font("Times New Roman", 14F);
-            this.tbPosition.Location = new System.Drawing.Point(47, 629);
-            this.tbPosition.Name = "tbPosition";
-            this.tbPosition.Size = new System.Drawing.Size(915, 40);
-            this.tbPosition.TabIndex = 66;
+            this.tbPostion.Font = new System.Drawing.Font("Times New Roman", 14F);
+            this.tbPostion.Location = new System.Drawing.Point(47, 629);
+            this.tbPostion.Name = "tbPostion";
+            this.tbPostion.Size = new System.Drawing.Size(915, 40);
+            this.tbPostion.TabIndex = 66;
             // 
             // lbDeliveryAddress
             // 
@@ -113,9 +113,9 @@
             this.lbDeliveryAddress.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
             this.lbDeliveryAddress.Location = new System.Drawing.Point(41, 594);
             this.lbDeliveryAddress.Name = "lbDeliveryAddress";
-            this.lbDeliveryAddress.Size = new System.Drawing.Size(112, 32);
+            this.lbDeliveryAddress.Size = new System.Drawing.Size(104, 32);
             this.lbDeliveryAddress.TabIndex = 65;
-            this.lbDeliveryAddress.Text = "Position";
+            this.lbDeliveryAddress.Text = "Postion";
             // 
             // lbCompanyAddress
             // 
@@ -268,7 +268,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnSubmit);
-            this.Controls.Add(this.tbPosition);
+            this.Controls.Add(this.tbPostion);
             this.Controls.Add(this.lbDeliveryAddress);
             this.Controls.Add(this.lbCompanyAddress);
             this.Controls.Add(this.tbEmail);
@@ -293,7 +293,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnSubmit;
-        private System.Windows.Forms.TextBox tbPosition;
+        private System.Windows.Forms.TextBox tbPostion;
         private System.Windows.Forms.Label lbDeliveryAddress;
         private System.Windows.Forms.Label lbCompanyAddress;
         private System.Windows.Forms.TextBox tbEmail;

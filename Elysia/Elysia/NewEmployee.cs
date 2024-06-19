@@ -96,7 +96,7 @@ namespace Elysia
             tbEmpName.Text = "";
             tbPhoneNumber.Text = "";
             tbEmail.Text = "";
-            tbPosition.Text = "";
+            tbPostion.Text = "";
             tbPassword.Text = "";
 
         }
@@ -109,7 +109,7 @@ namespace Elysia
             }
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
-                var dept;
+                var dept = "";
                 switch (deptn.SelectedItem.ToString())
                 {
                     case "Sales Office":
@@ -145,7 +145,7 @@ namespace Elysia
                 var gender = f.Checked ? "F" : "M";
 
                 // Prepare the INSERT query
-                string insertQuery = "INSERT INTO part VALUES (@empID, @empName, @empGander, @empPhone, @empEmail, @deptID, @empPosition, @empPasswd, @empStatus)";
+                string insertQuery = "INSERT INTO part VALUES (@empID, @empName, @empGander, @empPhone, @empEmail, @deptID, @empPostion, @empPasswd, @empStatus)";
                 using (MySqlCommand cmd = new MySqlCommand(insertQuery, conn))
                 {
                     cmd.Parameters.AddWithValue("@empID", lblEmpID.Text);
@@ -154,7 +154,7 @@ namespace Elysia
                     cmd.Parameters.AddWithValue("@empPhone", tbPhoneNumber.Text);
                     cmd.Parameters.AddWithValue("@empEmail", tbEmail.Text);
                     cmd.Parameters.AddWithValue("@deptID", dept);
-                    cmd.Parameters.AddWithValue("@empPosition", tbPosition.Text);
+                    cmd.Parameters.AddWithValue("@empPostion", tbPostion.Text);
                     cmd.Parameters.AddWithValue("@empPasswd", tbPassword.Text);
 
 
@@ -169,7 +169,7 @@ namespace Elysia
         }
         private bool checkInput()
         {
-            if (tbEmpName.Text != "" && tbPhoneNumber.Text != "" && tbEmail.Text != "" && tbPosition.Text != "" && tbPassword.Text != "")
+            if (tbEmpName.Text != "" && tbPhoneNumber.Text != "" && tbEmail.Text != "" && tbPostion.Text != "" && tbPassword.Text != "")
             {
                 return true;
             }

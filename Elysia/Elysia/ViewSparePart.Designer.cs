@@ -79,9 +79,9 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(40, 26);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(349, 41);
+            this.label4.Size = new System.Drawing.Size(315, 41);
             this.label4.TabIndex = 20;
-            this.label4.Text = "ViewSupplierPart";
+            this.label4.Text = "View Spare Part";
             // 
             // ViewSparePart
             // 
