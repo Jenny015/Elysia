@@ -17,11 +17,9 @@ namespace Elysia
         private bool checkInput()
         {
             // Check if all required fields are filled
-            if (string.IsNullOrWhiteSpace(tbDealerName.Text) ||
-                string.IsNullOrWhiteSpace(tbCompany.Text) ||
-                string.IsNullOrWhiteSpace(tbPhoneNumber.Text) ||
-                string.IsNullOrWhiteSpace(tbEmail.Text) ||
-                string.IsNullOrWhiteSpace(tbCompanyAddress.Text))
+            if (tbDealerName.Text == "" || tbCompany.Text == "" ||
+                tbPhoneNumber.Text == "" || tbEmail.Text == "" ||
+                tbCompanyAddress.Text == "")
             {
                 return false;
             }
@@ -58,6 +56,7 @@ namespace Elysia
         {
             if (!checkInput())
             {
+                MessageBox.Show("Please enter all fields", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             try

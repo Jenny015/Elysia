@@ -15,6 +15,7 @@ namespace Elysia
             reloadDataGridView("");
             dgvViewDealer.AllowUserToAddRows = false;
             dgvViewDealer.ReadOnly = false; // Allow editing
+            dgvViewDealer.Columns["dealerID"].ReadOnly = true;
             addButtonColumns();
 
         }
@@ -59,6 +60,16 @@ namespace Elysia
                 string dEmail = row.Cells["dEmail"].Value.ToString();
                 string dComAdd = row.Cells["dComAdd"].Value.ToString();
                 string dDelivAdd = row.Cells["dDelivAdd"].Value.ToString();
+
+                // Validate input fields
+                if (string.IsNullOrWhiteSpace(dName) || string.IsNullOrWhiteSpace(dCompany) 
+                    || string.IsNullOrWhiteSpace(dPhone) || string.IsNullOrWhiteSpace(dEmail) 
+                    || string.IsNullOrWhiteSpace(dComAdd))
+                {
+                    MessageBox.Show("All fields except 'dDelivAdd' must be filled.", "Invalid Input", 
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
 
                 try
                 {
