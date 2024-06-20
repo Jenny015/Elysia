@@ -24,7 +24,7 @@ namespace Elysia
 
         private void reloadDataGridView(String query)
         {
-            query = query == "" ? "SELECT p.partID, p.partName, p.partQty, sp.purPrice AS Purchase Price, (partQty*purPrice) AS Subtotal FROM part p,  supplierpart sp  WHERE P.partID = sp.partID ORDER BY p.partID" : query;
+            query = query == "" ? "SELECT p.partID, p.partName, p.partQty, sp.purPrice AS 'Purchase Price', (partQty*purPrice) AS Subtotal FROM part p,  supplierpart sp  WHERE P.partID = sp.partID ORDER BY p.partID" : query;
             try
             {
                 DataSet ds = new DataSet();
