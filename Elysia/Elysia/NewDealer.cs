@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace Elysia
@@ -15,12 +16,42 @@ namespace Elysia
         }
         private bool checkInput()
         {
-            if (tbDealerName.Text.Length > 0 && tbCompany.Text.Length > 0 &&
-                tbPhoneNumber.Text.Length > 0 && tbEmail.Text.Length > 0 && tbCompany.Text.Length > 0)
+            // Check if all required fields are filled
+            if (string.IsNullOrWhiteSpace(tbDealerName.Text) ||
+                string.IsNullOrWhiteSpace(tbCompany.Text) ||
+                string.IsNullOrWhiteSpace(tbPhoneNumber.Text) ||
+                string.IsNullOrWhiteSpace(tbEmail.Text) ||
+                string.IsNullOrWhiteSpace(tbCompanyAddress.Text))
             {
-                return true;
+                return false;
             }
-            return false;
+
+            // Validate phone number
+            if (!Regex.IsMatch(tbPhoneNumber.Text, @"^\d{8}$"))
+            {
+                MessageBox.Show("Phone number must be 8 numeric digits only.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            // Validate email
+            if (!IsValidEmail(tbEmail.Text))
+            {
+                MessageBox.Show("Please enter a valid email address.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
+        }
+
+        private bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
