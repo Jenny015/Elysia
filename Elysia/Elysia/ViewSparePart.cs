@@ -52,7 +52,7 @@ namespace Elysia
         {
             var newValue = dgvPart.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
             string primaryKey = dgvPart.Rows[e.RowIndex].Cells["partID"].Value.ToString();
-            string updateCommand = $"UPDATE part SET {dgvPart.Columns[e.ColumnIndex].Name} = {newValue} WHERE partID = '{primaryKey}'";
+            string updateCommand = $"UPDATE part SET {dgvPart.Columns[e.ColumnIndex].Name} = '{newValue}' WHERE partID = '{primaryKey}'";
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();

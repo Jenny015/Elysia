@@ -36,7 +36,7 @@ namespace Elysia
         {
             var newValue = dgvEmp.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
             string primaryKey = dgvEmp.Rows[e.RowIndex].Cells["empID"].Value.ToString();
-            string updateCommand = $"UPDATE part SET {dgvEmp.Columns[e.ColumnIndex].Name} = {newValue} WHERE empID = '{primaryKey}'";
+            string updateCommand = $"UPDATE emp SET {dgvEmp.Columns[e.ColumnIndex].Name} = '{newValue}' WHERE empID = '{primaryKey}'";
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();

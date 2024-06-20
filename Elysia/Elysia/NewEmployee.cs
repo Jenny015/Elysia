@@ -145,7 +145,7 @@ namespace Elysia
                 var gender = f.Checked ? "F" : "M";
 
                 // Prepare the INSERT query
-                string insertQuery = "INSERT INTO part VALUES (@empID, @empName, @empGander, @empPhone, @empEmail, @deptID, @empPostion, @empPasswd, @empStatus)";
+                string insertQuery = "INSERT INTO emp (empID , empName, empGander, empPhone, empEmail, deptID , empPostion, empPasswd) VALUES (@empID, @empName, @empGander, @empPhone, @empEmail, @deptID, @empPostion, @empPasswd)";
                 using (MySqlCommand cmd = new MySqlCommand(insertQuery, conn))
                 {
                     cmd.Parameters.AddWithValue("@empID", lblEmpID.Text);
@@ -157,13 +157,11 @@ namespace Elysia
                     cmd.Parameters.AddWithValue("@empPostion", tbPostion.Text);
                     cmd.Parameters.AddWithValue("@empPasswd", tbPassword.Text);
 
-
-
                     // Execute the query
                     cmd.ExecuteNonQuery();
                 }
 
-                MessageBox.Show("Spare Part information added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Employee information added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 btnClear_Click(null, null);
             }
         }

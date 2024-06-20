@@ -48,6 +48,7 @@
             this.tbPassword = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.deptn = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,8 +58,9 @@
             this.panel2.Controls.Add(this.label4);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1503, 90);
+            this.panel2.Size = new System.Drawing.Size(1002, 65);
             this.panel2.TabIndex = 31;
             // 
             // label4
@@ -66,9 +68,10 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(40, 28);
+            this.label4.Location = new System.Drawing.Point(27, 20);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(293, 41);
+            this.label4.Size = new System.Drawing.Size(195, 29);
             this.label4.TabIndex = 20;
             this.label4.Text = "New Employee";
             // 
@@ -77,11 +80,11 @@
             this.btnClear.BackColor = System.Drawing.Color.Tomato;
             this.btnClear.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.btnClear.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnClear.Location = new System.Drawing.Point(47, 796);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnClear.Location = new System.Drawing.Point(166, 676);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(150, 42);
-            this.btnClear.TabIndex = 68;
+            this.btnClear.Size = new System.Drawing.Size(100, 30);
+            this.btnClear.TabIndex = 10;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
@@ -90,11 +93,11 @@
             // 
             this.btnSubmit.BackColor = System.Drawing.Color.Plum;
             this.btnSubmit.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.btnSubmit.Location = new System.Drawing.Point(269, 796);
-            this.btnSubmit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSubmit.Location = new System.Drawing.Point(32, 676);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(150, 42);
-            this.btnSubmit.TabIndex = 67;
+            this.btnSubmit.Size = new System.Drawing.Size(100, 30);
+            this.btnSubmit.TabIndex = 9;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = false;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
@@ -102,18 +105,20 @@
             // tbPostion
             // 
             this.tbPostion.Font = new System.Drawing.Font("Times New Roman", 14F);
-            this.tbPostion.Location = new System.Drawing.Point(47, 629);
+            this.tbPostion.Location = new System.Drawing.Point(32, 534);
+            this.tbPostion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbPostion.Name = "tbPostion";
-            this.tbPostion.Size = new System.Drawing.Size(915, 40);
-            this.tbPostion.TabIndex = 66;
+            this.tbPostion.Size = new System.Drawing.Size(611, 29);
+            this.tbPostion.TabIndex = 7;
             // 
             // lbDeliveryAddress
             // 
             this.lbDeliveryAddress.AutoSize = true;
             this.lbDeliveryAddress.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
-            this.lbDeliveryAddress.Location = new System.Drawing.Point(41, 594);
+            this.lbDeliveryAddress.Location = new System.Drawing.Point(28, 509);
+            this.lbDeliveryAddress.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbDeliveryAddress.Name = "lbDeliveryAddress";
-            this.lbDeliveryAddress.Size = new System.Drawing.Size(104, 32);
+            this.lbDeliveryAddress.Size = new System.Drawing.Size(71, 22);
             this.lbDeliveryAddress.TabIndex = 65;
             this.lbDeliveryAddress.Text = "Postion";
             // 
@@ -121,66 +126,73 @@
             // 
             this.lbCompanyAddress.AutoSize = true;
             this.lbCompanyAddress.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
-            this.lbCompanyAddress.Location = new System.Drawing.Point(41, 544);
+            this.lbCompanyAddress.Location = new System.Drawing.Point(28, 452);
+            this.lbCompanyAddress.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbCompanyAddress.Name = "lbCompanyAddress";
-            this.lbCompanyAddress.Size = new System.Drawing.Size(156, 32);
+            this.lbCompanyAddress.Size = new System.Drawing.Size(107, 22);
             this.lbCompanyAddress.TabIndex = 63;
             this.lbCompanyAddress.Text = "Department";
             // 
             // tbEmail
             // 
             this.tbEmail.Font = new System.Drawing.Font("Times New Roman", 14F);
-            this.tbEmail.Location = new System.Drawing.Point(47, 478);
+            this.tbEmail.Location = new System.Drawing.Point(32, 391);
+            this.tbEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Size = new System.Drawing.Size(915, 40);
-            this.tbEmail.TabIndex = 62;
+            this.tbEmail.Size = new System.Drawing.Size(611, 29);
+            this.tbEmail.TabIndex = 5;
             this.tbEmail.Leave += new System.EventHandler(this.phoneValidate);
             // 
             // lbEmail
             // 
             this.lbEmail.AutoSize = true;
             this.lbEmail.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
-            this.lbEmail.Location = new System.Drawing.Point(41, 443);
+            this.lbEmail.Location = new System.Drawing.Point(28, 366);
+            this.lbEmail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbEmail.Name = "lbEmail";
-            this.lbEmail.Size = new System.Drawing.Size(85, 32);
+            this.lbEmail.Size = new System.Drawing.Size(58, 22);
             this.lbEmail.TabIndex = 61;
             this.lbEmail.Text = "Email";
             // 
             // tbPhoneNumber
             // 
             this.tbPhoneNumber.Font = new System.Drawing.Font("Times New Roman", 14F);
-            this.tbPhoneNumber.Location = new System.Drawing.Point(47, 378);
+            this.tbPhoneNumber.Location = new System.Drawing.Point(32, 315);
+            this.tbPhoneNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbPhoneNumber.MaxLength = 8;
             this.tbPhoneNumber.Name = "tbPhoneNumber";
-            this.tbPhoneNumber.Size = new System.Drawing.Size(915, 40);
-            this.tbPhoneNumber.TabIndex = 60;
+            this.tbPhoneNumber.Size = new System.Drawing.Size(611, 29);
+            this.tbPhoneNumber.TabIndex = 4;
             this.tbPhoneNumber.Leave += new System.EventHandler(this.phoneValidate);
             // 
             // lbPhoneNumber
             // 
             this.lbPhoneNumber.AutoSize = true;
             this.lbPhoneNumber.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
-            this.lbPhoneNumber.Location = new System.Drawing.Point(41, 343);
+            this.lbPhoneNumber.Location = new System.Drawing.Point(28, 290);
+            this.lbPhoneNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbPhoneNumber.Name = "lbPhoneNumber";
-            this.lbPhoneNumber.Size = new System.Drawing.Size(195, 32);
+            this.lbPhoneNumber.Size = new System.Drawing.Size(132, 22);
             this.lbPhoneNumber.TabIndex = 59;
             this.lbPhoneNumber.Text = "Phone Number";
             // 
             // tbEmpName
             // 
             this.tbEmpName.Font = new System.Drawing.Font("Times New Roman", 14F);
-            this.tbEmpName.Location = new System.Drawing.Point(47, 146);
+            this.tbEmpName.Location = new System.Drawing.Point(32, 179);
+            this.tbEmpName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbEmpName.Name = "tbEmpName";
-            this.tbEmpName.Size = new System.Drawing.Size(915, 40);
-            this.tbEmpName.TabIndex = 56;
+            this.tbEmpName.Size = new System.Drawing.Size(611, 29);
+            this.tbEmpName.TabIndex = 1;
             // 
             // lbDealerName
             // 
             this.lbDealerName.AutoSize = true;
             this.lbDealerName.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
-            this.lbDealerName.Location = new System.Drawing.Point(41, 111);
+            this.lbDealerName.Location = new System.Drawing.Point(28, 154);
+            this.lbDealerName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbDealerName.Name = "lbDealerName";
-            this.lbDealerName.Size = new System.Drawing.Size(82, 32);
+            this.lbDealerName.Size = new System.Drawing.Size(58, 22);
             this.lbDealerName.TabIndex = 55;
             this.lbDealerName.Text = "Name";
             // 
@@ -188,9 +200,10 @@
             // 
             this.lblEmpID.AutoSize = true;
             this.lblEmpID.Font = new System.Drawing.Font("Times New Roman", 14F);
-            this.lblEmpID.Location = new System.Drawing.Point(224, 220);
+            this.lblEmpID.Location = new System.Drawing.Point(150, 103);
+            this.lblEmpID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEmpID.Name = "lblEmpID";
-            this.lblEmpID.Size = new System.Drawing.Size(153, 33);
+            this.lblEmpID.Size = new System.Drawing.Size(103, 21);
             this.lblEmpID.TabIndex = 70;
             this.lblEmpID.Text = "EmployeeID";
             // 
@@ -198,20 +211,22 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(41, 220);
+            this.label1.Location = new System.Drawing.Point(28, 103);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(177, 32);
+            this.label1.Size = new System.Drawing.Size(121, 22);
             this.label1.TabIndex = 69;
             this.label1.Text = "EmployeeID: ";
             // 
             // m
             // 
             this.m.AutoSize = true;
-            this.m.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
-            this.m.Location = new System.Drawing.Point(47, 284);
+            this.m.Font = new System.Drawing.Font("Times New Roman", 14F);
+            this.m.Location = new System.Drawing.Point(114, 234);
+            this.m.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.m.Name = "m";
-            this.m.Size = new System.Drawing.Size(99, 36);
-            this.m.TabIndex = 71;
+            this.m.Size = new System.Drawing.Size(64, 25);
+            this.m.TabIndex = 2;
             this.m.TabStop = true;
             this.m.Text = "Male";
             this.m.UseVisualStyleBackColor = true;
@@ -219,11 +234,12 @@
             // f
             // 
             this.f.AutoSize = true;
-            this.f.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
-            this.f.Location = new System.Drawing.Point(152, 284);
+            this.f.Font = new System.Drawing.Font("Times New Roman", 14F);
+            this.f.Location = new System.Drawing.Point(199, 234);
+            this.f.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.f.Name = "f";
-            this.f.Size = new System.Drawing.Size(125, 36);
-            this.f.TabIndex = 72;
+            this.f.Size = new System.Drawing.Size(81, 25);
+            this.f.TabIndex = 3;
             this.f.TabStop = true;
             this.f.Text = "Female";
             this.f.UseVisualStyleBackColor = true;
@@ -231,34 +247,50 @@
             // tbPassword
             // 
             this.tbPassword.Font = new System.Drawing.Font("Times New Roman", 14F);
-            this.tbPassword.Location = new System.Drawing.Point(47, 723);
+            this.tbPassword.Location = new System.Drawing.Point(32, 608);
+            this.tbPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbPassword.Name = "tbPassword";
-            this.tbPassword.Size = new System.Drawing.Size(915, 40);
-            this.tbPassword.TabIndex = 75;
+            this.tbPassword.Size = new System.Drawing.Size(611, 29);
+            this.tbPassword.TabIndex = 8;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(41, 688);
+            this.label2.Location = new System.Drawing.Point(28, 583);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(129, 32);
+            this.label2.Size = new System.Drawing.Size(90, 22);
             this.label2.TabIndex = 74;
             this.label2.Text = "Password";
             // 
             // deptn
             // 
+            this.deptn.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.deptn.Font = new System.Drawing.Font("Times New Roman", 14F);
             this.deptn.FormattingEnabled = true;
-            this.deptn.Location = new System.Drawing.Point(203, 550);
+            this.deptn.Location = new System.Drawing.Point(139, 450);
+            this.deptn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.deptn.Name = "deptn";
-            this.deptn.Size = new System.Drawing.Size(418, 41);
-            this.deptn.TabIndex = 76;
+            this.deptn.Size = new System.Drawing.Size(280, 29);
+            this.deptn.TabIndex = 6;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(29, 235);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(81, 22);
+            this.label3.TabIndex = 77;
+            this.label3.Text = "Gender: ";
             // 
             // NewEmployee
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.deptn);
             this.Controls.Add(this.tbPassword);
             this.Controls.Add(this.label2);
@@ -278,8 +310,9 @@
             this.Controls.Add(this.tbEmpName);
             this.Controls.Add(this.lbDealerName);
             this.Controls.Add(this.panel2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "NewEmployee";
-            this.Size = new System.Drawing.Size(1503, 1055);
+            this.Size = new System.Drawing.Size(1002, 762);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -309,5 +342,6 @@
         private System.Windows.Forms.TextBox tbPassword;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox deptn;
+        private System.Windows.Forms.Label label3;
     }
 }
