@@ -16,6 +16,7 @@ namespace Elysia
             dgvViewDealer.AllowUserToAddRows = false;
             dgvViewDealer.ReadOnly = false; // Allow editing
             addButtonColumns();
+            dgvViewDealer.Columns[0].ReadOnly = true;
 
         }
         private void reloadDataGridView(string query)

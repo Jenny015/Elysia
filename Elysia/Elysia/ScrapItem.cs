@@ -53,7 +53,7 @@ namespace Elysia
                         {
                             if (reader.GetInt32(0) > quantity)
                             {
-                                MessageBox.Show("Scrap item quantity should not br more than stock quantity.");
+                                MessageBox.Show("Scrap item quantity should not be more than stock quantity.");
                                 return;
                             }
                         }

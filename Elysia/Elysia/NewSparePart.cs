@@ -51,7 +51,7 @@ namespace Elysia
                         var maxPartID = reader2[0];
                         if (maxPartID != null && maxPartID != DBNull.Value)
                         {
-                            
+                            lblPartID.Text = $"{category}{int.Parse(maxPartID.ToString().Substring(1)) + 1:D5}";
                             return;
                         }
                     }
@@ -79,20 +79,23 @@ namespace Elysia
             {
                 lblPartID.Text = "N\\A";
                 return;
-            }
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            } else
             {
-                conn.Open();
-                MySqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = $"SELECT categoryID FROM `category` WHERE categoryName = '{cate.SelectedItem.ToString()}'";
-                using (MySqlDataReader reader = cmd.ExecuteReader())
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
-                    if (reader.Read())
+                    conn.Open();
+                    MySqlCommand cmd = conn.CreateCommand();
+                    cmd.CommandText = $"SELECT categoryID FROM `category` WHERE categoryName = '{cate.SelectedItem.ToString()}'";
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
                     {
-                        updatePartID(reader[0].ToString());
+                        if (reader.Read())
+                        {
+                            updatePartID(reader[0].ToString());
+                        }
                     }
                 }
             }
+            
         }
 
         private void btnClear_Click(object sender, EventArgs e)

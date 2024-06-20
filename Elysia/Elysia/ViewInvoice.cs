@@ -131,13 +131,25 @@ namespace Elysia
                             }
                         }
                         MessageBox.Show($"Invoice of {orderID} uploaded successfully!", "Success!");
+                        reloadDataGridView("");
                     }
                 }
             }
             else if (StaticVariable.dept == "SD" && e.ColumnIndex == dgvInv.Columns["Send"].Index && e.RowIndex >= 0)
             {
+                if (dgvInv.Rows[e.RowIndex].Cells["invStatus"].Value.ToString() != "Wait")
+                {
+                    MessageBox.Show("This invoice has been sended.", "Error");
+                    return;
+                }
+                var confirm = MessageBox.Show($"Do you want to change the invoice status of {orderID} to Send?", "Please confirm", MessageBoxButtons.YesNo);
+                if (confirm == DialogResult.No)
+                {
+                    return;
+                }
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
+                    
                     string query = "UPDATE invoice SET invStatus = 'Send' WHERE orderID = @orderID";
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
@@ -146,6 +158,7 @@ namespace Elysia
                         cmd.ExecuteNonQuery();
                         conn.Close();
                     }
+                    reloadDataGridView("");
                 }
             }
         }

@@ -57,6 +57,11 @@ namespace Elysia
         {
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
+                if(dgvDID.Rows[e.RowIndex].Cells["actDespQty"].Value.ToString() == "")
+                {
+                    MessageBox.Show("Actual Despecth Quantity cannot be null", "Error");
+                    return;
+                }
                 conn.Open();
                 MySqlCommand cmd = conn.CreateCommand();
 
