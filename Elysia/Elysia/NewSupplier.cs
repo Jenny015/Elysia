@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace Elysia
@@ -13,19 +14,29 @@ namespace Elysia
 
         }
 
-        private bool checkInput()
-        {
-            if (spSupplierName.Text.Length > 0 && spPhoneNumber.Text.Length > 0 && spAddress.Text.Length > 0)
+        private bool checkInput() { 
+           // Check if all required fields are filled
+            if (spSupplierName.Text == "" || spPhoneNumber.Text == "" ||
+                spAddress.Text == "")
             {
-                return true;
+                return false;
             }
-            return false;
-        }
+
+            // Validate phone number
+            if (!Regex.IsMatch(spPhoneNumber.Text, @"^\d{8}$"))
+            {
+                MessageBox.Show("Phone number must be 8 numeric digits only.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+                return true;
+                        }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             if (!checkInput())
             {
+                MessageBox.Show("Please enter all fields", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             try
@@ -35,14 +46,15 @@ namespace Elysia
                     conn.Open();
 
                     // Prepare the INSERT query
-                    string insertQuery = "INSERT INTO dealer VALUES (@dealerID, @dName, @dCompany, @dPhone, @dEmail, @dComAdd, @dDelivAdd)";
+                    string insertQuery = "INSERT INTO supplier VALUES (@dName, @dPhone, @dCompany)";
 
                     using (MySqlCommand cmd = new MySqlCommand(insertQuery, conn))
                     {
                         // Set parameter values from textboxes
                         cmd.Parameters.AddWithValue("@dName", spSupplierName.Text);
-                        cmd.Parameters.AddWithValue("@dCompany", spAddress.Text);
                         cmd.Parameters.AddWithValue("@dPhone", spPhoneNumber.Text);
+                        cmd.Parameters.AddWithValue("@dCompany", spAddress.Text);
+
 
                         // Execute the query
                         cmd.ExecuteNonQuery();
