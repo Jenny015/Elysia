@@ -135,7 +135,7 @@ namespace Elysia
         {
             if(lbItems.SelectedIndex == -1)
             {
-                MessageBox.Show("Please select an item to remove");
+                MessageBox.Show("Please select an item to remove", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             String removeItem = lbItems.SelectedItem.ToString().Split(' ')[0];
@@ -182,7 +182,7 @@ namespace Elysia
         //submit form, create new order
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            var confirm = MessageBox.Show("Do you want to submit the new order?", "Please confirm the new order", MessageBoxButtons.YesNo);
+            var confirm = MessageBox.Show("Do you want to submit the new order?", "Please confirm the new order", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (!checkInput() || confirm == DialogResult.No)
             {
                 return;
@@ -212,7 +212,7 @@ namespace Elysia
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Failed to insert order\n" + ex.Message, "Failed");
+                    MessageBox.Show("Failed to insert order\n" + ex.Message, "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
                 //loop through orderPart dictionary
@@ -238,13 +238,13 @@ namespace Elysia
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Failed to insert DID\n" + ex.Message, "Failed");
+                        MessageBox.Show("Failed to insert DID\n" + ex.Message, "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
             StaticVariable.UpdateAllOutstandingOrders();
             updateOrderID();
-            MessageBox.Show("New Order has been inserted successfully.", "Success");
+            MessageBox.Show("New Order has been inserted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             btnClear_Click(null, null);
         }
 
@@ -262,7 +262,7 @@ namespace Elysia
             }
             if (msg.Length > 0)
             {
-                MessageBox.Show(msg, "Missing information");
+                MessageBox.Show(msg, "Missing information", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             else

@@ -20,7 +20,7 @@ namespace Elysia
 
         private void reloadDataGridView(String query)
         {
-            query = query == "" ? "SELECT orderID, invStatus FROM `invoice` ORDER BY invStatus DESC" : query;
+            query = query == "" ? "SELECT orderID, invStatus FROM `invoice` ORDER BY orderID DESC" : query;
             try
             {
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
@@ -35,7 +35,7 @@ namespace Elysia
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void setDataGridView()
@@ -103,7 +103,7 @@ namespace Elysia
                         {
                             string filename = saveFileDialog.FileName;
                             File.WriteAllBytes(filename, pdfData);
-                            MessageBox.Show($"Invoice of {orderID} downloaded successfully.", "Success");
+                            MessageBox.Show($"Invoice of {orderID} downloaded successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
                 }
@@ -130,7 +130,7 @@ namespace Elysia
                                 conn.Close();
                             }
                         }
-                        MessageBox.Show($"Invoice of {orderID} uploaded successfully!", "Success!");
+                        MessageBox.Show($"Invoice of {orderID} uploaded successfully!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         reloadDataGridView("");
                     }
                 }
@@ -139,10 +139,10 @@ namespace Elysia
             {
                 if (dgvInv.Rows[e.RowIndex].Cells["invStatus"].Value.ToString() != "Wait")
                 {
-                    MessageBox.Show("This invoice has been sended.", "Error");
+                    MessageBox.Show("This invoice has been sended.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                var confirm = MessageBox.Show($"Do you want to change the invoice status of {orderID} to Send?", "Please confirm", MessageBoxButtons.YesNo);
+                var confirm = MessageBox.Show($"Do you want to change the invoice status of {orderID} to Send?", "Please confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (confirm == DialogResult.No)
                 {
                     return;

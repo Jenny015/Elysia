@@ -55,7 +55,7 @@ namespace Elysia
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Failed" + ex.Message);
+                    MessageBox.Show("Failed" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
             }

@@ -57,17 +57,17 @@ namespace Elysia
         {
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
-                if(dgvDID.Rows[e.RowIndex].Cells["actDespQty"].Value.ToString() == "")
-                {
-                    MessageBox.Show("Actual Despecth Quantity cannot be null", "Error");
-                    return;
-                }
                 conn.Open();
                 MySqlCommand cmd = conn.CreateCommand();
 
                 // Check if the click is on the button column
                 if (e.ColumnIndex == dgvDID.Columns["buttonColumn"].Index && e.RowIndex >= 0)
                 {
+                    if (dgvDID.Rows[e.RowIndex].Cells["actDespQty"].Value.ToString() == "")
+                    {
+                        MessageBox.Show("Actual Despecth Quantity cannot be null", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
                     DataGridViewRow row = dgvDID.Rows[e.RowIndex];
                     String actDespQtyData = row.Cells["actDespQty"].Value.ToString();
                     int totalQty = int.Parse(row.Cells["TotalQty"].Value.ToString());
@@ -85,14 +85,14 @@ namespace Elysia
                     }
                     if(partQty < int.Parse(actDespQtyData))
                     {
-                        MessageBox.Show("Actual despatch quantity more than stocking.\n\nPlease check again!", "Error!");
+                        MessageBox.Show("Actual despatch quantity more than stocking.\n\nPlease check again!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
 
                     // Check if the 'actDespQty' data is  null
                     if (actDespQtyData == "" || int.Parse(actDespQtyData) < 0)
                     {
-                        MessageBox.Show("The 'actDespQty' value should be positive integer.");
+                        MessageBox.Show("The 'actDespQty' value should be positive integer.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
                     // if actual despatch quantity > total quantity, set despatch quantity = total quantity
@@ -104,7 +104,7 @@ namespace Elysia
                     {
                         String osOrderID = "";
                         String dealerID = "";
-                        var confirmResult = MessageBox.Show("Actual Despatch quantity not euqal to order quantity\nAre you sure to continue?", "Please confirm the quantity!", MessageBoxButtons.YesNo);
+                        var confirmResult = MessageBox.Show("Actual Despatch quantity not euqal to order quantity\nAre you sure to continue?", "Please confirm the quantity!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                         // If actual despatch qty < order qty, generate outstanding order, and oustanding orderpart
                         if (confirmResult == DialogResult.Yes)
                         {

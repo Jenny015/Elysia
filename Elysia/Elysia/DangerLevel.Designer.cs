@@ -40,12 +40,12 @@
             // 
             this.dgvDangerLevel.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDangerLevel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDangerLevel.Location = new System.Drawing.Point(47, 105);
-            this.dgvDangerLevel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvDangerLevel.Location = new System.Drawing.Point(31, 76);
+            this.dgvDangerLevel.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.dgvDangerLevel.Name = "dgvDangerLevel";
             this.dgvDangerLevel.RowHeadersWidth = 62;
             this.dgvDangerLevel.RowTemplate.Height = 31;
-            this.dgvDangerLevel.Size = new System.Drawing.Size(1420, 887);
+            this.dgvDangerLevel.Size = new System.Drawing.Size(947, 641);
             this.dgvDangerLevel.TabIndex = 35;
             // 
             // panel2
@@ -54,9 +54,9 @@
             this.panel2.Controls.Add(this.label4);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1503, 90);
+            this.panel2.Size = new System.Drawing.Size(1002, 65);
             this.panel2.TabIndex = 36;
             // 
             // label4
@@ -64,32 +64,35 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(40, 28);
+            this.label4.Location = new System.Drawing.Point(27, 20);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(263, 41);
+            this.label4.Size = new System.Drawing.Size(176, 29);
             this.label4.TabIndex = 20;
             this.label4.Text = "Danger Level";
             // 
             // btnFilter
             // 
             this.btnFilter.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.btnFilter.Location = new System.Drawing.Point(1317, 1001);
-            this.btnFilter.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.btnFilter.Location = new System.Drawing.Point(878, 723);
+            this.btnFilter.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(150, 41);
+            this.btnFilter.Size = new System.Drawing.Size(100, 30);
             this.btnFilter.TabIndex = 37;
             this.btnFilter.Text = "Filter";
             this.btnFilter.UseVisualStyleBackColor = true;
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
             // DangerLevel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btnFilter);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dgvDangerLevel);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "DangerLevel";
-            this.Size = new System.Drawing.Size(1503, 1055);
+            this.Size = new System.Drawing.Size(1002, 762);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDangerLevel)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

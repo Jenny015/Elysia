@@ -24,7 +24,7 @@ namespace Elysia
 
         private void reloadDataGridView(String query)
         {
-            query = query == "" ? "SELECT p.partID, p.partName, p.partQty, sp.purPrice, (partQty*purPrice) AS Subtotal FROM part p,  supplierpart sp  WHERE P.partID = sp.partID ORDER BY p.partID" : query;
+            query = query == "" ? "SELECT p.partID, p.partName, p.partQty, sp.purPrice AS Purchase Price, (partQty*purPrice) AS Subtotal FROM part p,  supplierpart sp  WHERE P.partID = sp.partID ORDER BY p.partID" : query;
             try
             {
                 DataSet ds = new DataSet();
@@ -50,15 +50,15 @@ namespace Elysia
             }
             catch (MySqlException ex)
             {
-                MessageBox.Show("Database error: " + ex.Message);
+                MessageBox.Show("Database error: " + ex.Message,"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (FormatException ex)
             {
-                MessageBox.Show("Format error: " + ex.Message);
+                MessageBox.Show("Format error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An unexpected error occurred: " + ex.Message);
+                MessageBox.Show("An unexpected error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -140,7 +140,7 @@ namespace Elysia
             document.Add(date);
 
             document.Close();
-            MessageBox.Show($"Evaluated List: {fileName}.PDF is generate successfully.", "Success");
+            MessageBox.Show($"Evaluated List: {fileName}.PDF is generate successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnSaveAsCSV_Click(object sender, EventArgs e)
@@ -165,7 +165,7 @@ namespace Elysia
             Directory.CreateDirectory(path);
             string filePath = $"{path}{fileName}.csv";
             File.WriteAllText(filePath, sb.ToString());
-            MessageBox.Show($"Evaluated List: {fileName}.CSV is generate successfully.", "Success");
+            MessageBox.Show($"Evaluated List: {fileName}.CSV is generate successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

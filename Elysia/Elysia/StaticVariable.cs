@@ -145,7 +145,7 @@ namespace Elysia
                 catch (Exception ex)
                 {
                     // Handle any errors that occur during the database operations
-                    MessageBox.Show("An error occurred: " + ex.Message);
+                    MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 finally
                 {

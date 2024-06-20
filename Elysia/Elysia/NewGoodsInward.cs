@@ -185,7 +185,7 @@ namespace Elysia
             }
             if (msg.Length > 0)
             {
-                MessageBox.Show(msg, "Missing information");
+                MessageBox.Show(msg, "Missing information", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             else
@@ -212,7 +212,7 @@ namespace Elysia
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Failed to insert goods inward order\n" + ex.Message, "Failed");
+                    MessageBox.Show("Failed to insert goods inward order\n" + ex.Message, "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
                 //loop through orderPart dictionary
@@ -255,13 +255,13 @@ namespace Elysia
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Failed to insert goods inward parts\n" + ex.Message, "Failed");
+                        MessageBox.Show("Failed to insert goods inward parts\n" + ex.Message, "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
             StaticVariable.UpdateAllOutstandingOrders();
             updateInwardsID();
-            MessageBox.Show("New Goods Inward has been inserted successfully.", "Success");
+            MessageBox.Show("New Goods Inward has been inserted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             btnClear_Click(null, null);
         }
         private int getPartQty(String partID) {

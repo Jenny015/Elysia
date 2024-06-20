@@ -58,7 +58,7 @@ namespace Elysia
                         {
                             if (reader.GetInt32(0) > quantity)
                             {
-                                MessageBox.Show("Scrap item quantity should not be more than stock quantity.");
+                                MessageBox.Show("Scrap item quantity should not be more than stock quantity.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 return;
                             }
                         }
@@ -84,19 +84,19 @@ namespace Elysia
 
                     if (updatedRows > 0 && insertedRows > 0)
                     {
-                        MessageBox.Show("Scrap item saved successfully.");
+                        MessageBox.Show("Scrap item saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         tbPartID.Text = "";
                         tbQuantity.Text = "";
                     }
                     else
                     {
-                        MessageBox.Show("Failed to save scrap item.");
+                        MessageBox.Show("Failed to save scrap item.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void btnClear_Click(object sender, EventArgs e)

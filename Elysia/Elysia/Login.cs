@@ -33,7 +33,7 @@ namespace Elysia
                     {
                         if (reader.GetString("empStatus") != "A")
                         {
-                            MessageBox.Show("This account has been looked, please connect HR department for help.", "Failed");
+                            MessageBox.Show("This account has been looked, please connect HR department for help.", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return;
                         }
                         string deptID = reader.GetString("deptID");
@@ -47,7 +47,7 @@ namespace Elysia
                     else
                     {
                         // Login failed, display error message
-                        MessageBox.Show("Invalid username or password.", "Failed");
+                        MessageBox.Show("Invalid username or password.", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }

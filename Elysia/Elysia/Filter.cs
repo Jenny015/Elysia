@@ -40,7 +40,7 @@ namespace Elysia
                     setComponent_Order();
                     break;
                 case "invoice":
-                    setComponent_spp();
+                    setComponent_invoice();
                     break;
                 case "inward":
                     setComponent_inward();
@@ -76,8 +76,8 @@ namespace Elysia
                 case "Order":
                     search_order();
                     break;
-                case "spp":
-                    add_supplierPart();
+                case "invoice":
+                    search_invoice();
                     break;
                 case "inward":
                     search_inward();
@@ -96,6 +96,9 @@ namespace Elysia
                     break;
                 case "log":
                     search_log();
+                    break;
+                case "spp":
+                    add_supplierPart();
                     break;
             }
             Query?.Invoke(this, EventArgs.Empty);
@@ -138,6 +141,11 @@ namespace Elysia
             loadDataFromDatabase("orderID", "order", cbOrderID);
             loadDataFromDatabase("dealerID", "dealer", cbDealerID);
             loadDataFromDatabase("orderStatus", "order", orderStatus);
+        }
+        private void setComponent_invoice()
+        {
+            Order.Location = new System.Drawing.Point(9, 9);
+            Order.Visible = true;
         }
         private void setComponent_inward()
         {
@@ -252,6 +260,12 @@ namespace Elysia
                 queryBuilder.Append($" AND orderDate BETWEEN '{oDateFrom.Value.ToString("yyyy-MM-dd")}' AND '{oDateTo.Value.ToString("yyyy-MM-dd")}'");
             }
             queryBuilder.Append(" ORDER BY orderDate DESC");
+            queryString = queryBuilder.ToString();
+        }
+        private void search_invoice()
+        {
+            StringBuilder queryBuilder = new StringBuilder("SELECT DISTINCT `io`.inwardsID, `io`.supplierID, `io`.inwardsDate FROM inwardsorder `io`, inwardspart `ip` WHERE `io`.inwardsID = `ip`.inwardsID");
+            List<MySqlParameter> parameters = new List<MySqlParameter>();
             queryString = queryBuilder.ToString();
         }
         private void cbDate_CheckedChanged(object sender, EventArgs e)

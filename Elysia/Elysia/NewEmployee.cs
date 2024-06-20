@@ -73,7 +73,7 @@ namespace Elysia
             bool isNumeric = int.TryParse(tbPhoneNumber.Text, out result);
             if (!isNumeric || tbPhoneNumber.Text.Length != 8)
             {
-                MessageBox.Show("The phone number is invalid.", "Error");
+                MessageBox.Show("The phone number is invalid.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 tbPhoneNumber.Text = "";
             }
         }
@@ -83,7 +83,7 @@ namespace Elysia
             if (!Regex.IsMatch(tbEmail.Text, emailPattern))
             {
                 // Email is not valid
-                MessageBox.Show("Please enter a valid email address.");
+                MessageBox.Show("Please enter a valid email address.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 e.Cancel = true;
             }
         }
@@ -100,7 +100,7 @@ namespace Elysia
         {
             if (!checkInput())
             {
-                MessageBox.Show("Every fields should be inputted", "Error");
+                MessageBox.Show("Every fields should be inputted", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             using (MySqlConnection conn = new MySqlConnection(connectionString))

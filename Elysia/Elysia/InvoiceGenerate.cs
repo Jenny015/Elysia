@@ -156,7 +156,7 @@ namespace Elysia
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Failed" + ex.Message);
+                    MessageBox.Show("Failed" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
             }
@@ -277,7 +277,7 @@ namespace Elysia
             signColumn.SetSimpleColumn(new Phrase(Bsign.Text + "___________________", boldFont), document.LeftMargin, endPositionNewTable - 20, document.PageSize.Width - document.RightMargin, 0, 15, Element.ALIGN_RIGHT);
             signColumn.Go();
             document.Close();
-            MessageBox.Show("Invoice is generate successfully.", "Success");
+            MessageBox.Show("Invoice is generate successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             uploadPdfToSql();
         }
         //upload invoice to sql
@@ -291,7 +291,7 @@ namespace Elysia
                 cmd.CommandText = $"SELECT orderStatus FROM `order` WHERE orderID = '{orderID}'";
                 if ((string)cmd.ExecuteScalar() == "Assembled")
                 {
-                    byte[] pdfBytes;
+                        byte[] pdfBytes;
                     string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
                     string invoicePath = $"{documentsPath}\\Elysia\\invoice\\";
                     Directory.CreateDirectory(invoicePath);

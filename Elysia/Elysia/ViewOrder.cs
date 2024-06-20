@@ -40,7 +40,7 @@ namespace Elysia
         }
         private void reloadDataGridView(String query)
         {
-            query = query == "" ? "SELECT * FROM `order` ORDER BY orderDate DESC" : query;
+            query = query == "" ? "SELECT * FROM `order` ORDER BY orderDate DESC, orderID DESC" : query;
 
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {

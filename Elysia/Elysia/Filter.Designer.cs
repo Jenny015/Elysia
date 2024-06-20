@@ -125,7 +125,7 @@
             this.DID.Controls.Add(this.didOrderID);
             this.DID.Controls.Add(this.label2);
             this.DID.Controls.Add(this.label6);
-            this.DID.Location = new System.Drawing.Point(283, 235);
+            this.DID.Location = new System.Drawing.Point(508, 103);
             this.DID.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.DID.Name = "DID";
             this.DID.Size = new System.Drawing.Size(267, 164);
