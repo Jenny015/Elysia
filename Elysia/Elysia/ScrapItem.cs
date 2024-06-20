@@ -36,6 +36,11 @@ namespace Elysia
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if(tbPartID.Text.ToString() == "" || tbQuantity.Value <= 0 )
+            {
+                MessageBox.Show("Please select a part item", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             try
             {
                 using (MySqlConnection connection = new MySqlConnection(connectionString))
