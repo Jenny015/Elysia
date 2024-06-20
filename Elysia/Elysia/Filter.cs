@@ -134,7 +134,7 @@ namespace Elysia
         {
             Order.Location = new System.Drawing.Point(9, 9);
             Order.Visible = true;
-            btnSearch.Location = new System.Drawing.Point(182, 446);
+            btnSearch.Location = new System.Drawing.Point(117, 321);
             loadDataFromDatabase("orderID", "order", cbOrderID);
             loadDataFromDatabase("dealerID", "dealer", cbDealerID);
             loadDataFromDatabase("orderStatus", "order", orderStatus);

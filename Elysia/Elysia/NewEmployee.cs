@@ -80,11 +80,7 @@ namespace Elysia
         private void textBoxEmail_Validating(object sender, CancelEventArgs e)
         {
             string emailPattern = @"^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$";
-            if (Regex.IsMatch(tbEmail.Text, emailPattern))
-            {
-                // Email is valid
-            }
-            else
+            if (!Regex.IsMatch(tbEmail.Text, emailPattern))
             {
                 // Email is not valid
                 MessageBox.Show("Please enter a valid email address.");

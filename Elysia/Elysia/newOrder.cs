@@ -133,6 +133,11 @@ namespace Elysia
         //delete item from list and dictionary
         private void btnDeleteItem_Click(object sender, EventArgs e)
         {
+            if(lbItems.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select an item to remove");
+                return;
+            }
             String removeItem = lbItems.SelectedItem.ToString().Split(' ')[0];
             orderParts.Remove(removeItem).ToString();
             lbItems.Items.Remove(lbItems.SelectedItem);

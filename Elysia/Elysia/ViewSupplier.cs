@@ -14,6 +14,7 @@ namespace Elysia
             InitializeComponent();
             reloadDataGridView("");
             setDataGridView();
+            dgvSupplier.Columns[0].ReadOnly = true;
 
 
         }

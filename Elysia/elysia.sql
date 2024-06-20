@@ -105,7 +105,7 @@ INSERT INTO `dept` (`deptID`, `deptName`) VALUES
 CREATE TABLE `emp` (
   `empID` char(6) NOT NULL,
   `empName` varchar(70) NOT NULL,
-  `empGander` char(1) DEFAULT NULL,
+  `empGander` char(1) NOT NULL,
   `empPhone` char(8) NOT NULL,
   `empEmail` varchar(255) NOT NULL,
   `deptID` char(2) NOT NULL,
@@ -122,7 +122,7 @@ INSERT INTO `emp` (`empID`, `empName`, `empGander`, `empPhone`, `empEmail`, `dep
 ('E00001', 'Peter Chan', 'M', '23604141', 'e00001@lc.com', 'HR', 'Manager', '1234', 'A'),
 ('E00002', 'Betty Lam', 'F', '23605628', 'e00002@lc.com', 'SO', 'Crew', '1234', 'A'),
 ('E00003', 'Ben Lau', 'M', '23623622', 'e00003@lc.com', 'SP', 'Store Menager', '1234', 'A'),
-('E00004', 'James Yeung', NULL, '23633388', 'e00004@lc.com', 'SD', 'Team Leader', '1234', 'A'),
+('E00004', 'James Yeung', 'M', '23633388', 'e00004@lc.com', 'SD', 'Team Leader', '1234', 'A'),
 ('E00005', 'Richard Mak', 'M', '23645566', 'e00005@lc.com', 'IS', 'Clerk', '1234', 'A'),
 ('E00006', 'Jennifer Ma', 'F', '23659824', 'e00006@lc.com', 'SR', 'Clerk', '1234', 'A'),
 ('E00007', 'Joseph Wong', 'M', '23667788', 'e00007@lc.com', 'PD', 'Manager', '1234', 'A'),
