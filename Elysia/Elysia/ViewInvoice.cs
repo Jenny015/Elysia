@@ -103,7 +103,7 @@ namespace Elysia
                         {
                             string filename = saveFileDialog.FileName;
                             File.WriteAllBytes(filename, pdfData);
-                            MessageBox.Show($"Invoice of {orderID} downloaded successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show($"Invoice of {orderID} downloaded successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
                 }
@@ -164,7 +164,7 @@ namespace Elysia
         }
         private void btnFilter_Click(object sender, EventArgs e)
         {
-            filter = new Filter("invoice");
+            filter = new Filter("inv");
             filter.Query += filter_Query;
             filter.Show();
         }

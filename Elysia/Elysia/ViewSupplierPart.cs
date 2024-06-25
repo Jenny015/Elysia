@@ -65,7 +65,7 @@ namespace Elysia
 
         private void btnFilter_Click(object sender, EventArgs e)
         {
-            filter = new Filter("spp");
+            filter = new Filter("spp", supplierID);
             filter.Query += filter_Query;
             filter.Show();
         }

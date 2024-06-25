@@ -39,9 +39,6 @@ namespace Elysia
                 case "Order":
                     setComponent_Order();
                     break;
-                case "invoice":
-                    setComponent_invoice();
-                    break;
                 case "inward":
                     setComponent_inward();
                     break;
@@ -63,6 +60,9 @@ namespace Elysia
                 case "spp":
                     setComponent_spp();
                     break;
+                case "inv":
+                    setComponent_inv();
+                    break;
             }
         }
 
@@ -75,9 +75,6 @@ namespace Elysia
                     break;
                 case "Order":
                     search_order();
-                    break;
-                case "invoice":
-                    search_invoice();
                     break;
                 case "inward":
                     search_inward();
@@ -99,6 +96,9 @@ namespace Elysia
                     break;
                 case "spp":
                     add_supplierPart();
+                    break;
+                case "inv":
+                    search_invoice();
                     break;
             }
             Query?.Invoke(this, EventArgs.Empty);
@@ -141,11 +141,6 @@ namespace Elysia
             loadDataFromDatabase("orderID", "order", cbOrderID);
             loadDataFromDatabase("dealerID", "dealer", cbDealerID);
             loadDataFromDatabase("orderStatus", "order", orderStatus);
-        }
-        private void setComponent_invoice()
-        {
-            Order.Location = new System.Drawing.Point(9, 9);
-            Order.Visible = true;
         }
         private void setComponent_inward()
         {
@@ -195,7 +190,6 @@ namespace Elysia
             btnSearch.Location = new System.Drawing.Point(125, 258);
             loadDataFromDatabase("partID", "log", logPartID);
             loadDataFromDatabase("logDes", "log", logDes);
-
         }
         private void setComponent_spp()
         {
@@ -218,6 +212,14 @@ namespace Elysia
                     }
                 }
             }
+        }
+        private void setComponent_inv()
+        {
+            inv.Location = new System.Drawing.Point(9, 9);
+            inv.Visible = true;
+            btnSearch.Location = new System.Drawing.Point(100, 150);
+            loadDataFromDatabase("orderID", "invoice", inv_orderID);
+            loadDataFromDatabase("invStatus", "invoice", inv_status);
         }
         private void search_DID()
         {
@@ -260,12 +262,6 @@ namespace Elysia
                 queryBuilder.Append($" AND orderDate BETWEEN '{oDateFrom.Value.ToString("yyyy-MM-dd")}' AND '{oDateTo.Value.ToString("yyyy-MM-dd")}'");
             }
             queryBuilder.Append(" ORDER BY orderDate DESC");
-            queryString = queryBuilder.ToString();
-        }
-        private void search_invoice()
-        {
-            StringBuilder queryBuilder = new StringBuilder("SELECT DISTINCT `io`.inwardsID, `io`.supplierID, `io`.inwardsDate FROM inwardsorder `io`, inwardspart `ip` WHERE `io`.inwardsID = `ip`.inwardsID");
-            List<MySqlParameter> parameters = new List<MySqlParameter>();
             queryString = queryBuilder.ToString();
         }
         private void cbDate_CheckedChanged(object sender, EventArgs e)
@@ -403,6 +399,20 @@ namespace Elysia
             if (supplierPartID.SelectedIndex != -1 && sppPrice.Text != "")
             {
                 queryBuilder.Append($"'{supplierID}', '{supplierPartID.SelectedItem}', {sppPrice.Text.ToString()}");
+            }
+            queryString = queryBuilder.ToString();
+        }
+        private void search_invoice()
+        {
+            StringBuilder queryBuilder = new StringBuilder("SELECT orderID, invStatus FROM invoice WHERE 1=1");
+            List<MySqlParameter> parameters = new List<MySqlParameter>();
+            if (inv_orderID.SelectedIndex != -1)
+            {
+                queryBuilder.Append($" AND orderID = '{inv_orderID.SelectedItem}'");
+            }
+            if (inv_status.SelectedIndex != -1)
+            {
+                queryBuilder.Append($" AND invStatus = '{inv_status.SelectedItem}'");
             }
             queryString = queryBuilder.ToString();
         }

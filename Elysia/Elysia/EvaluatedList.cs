@@ -140,7 +140,7 @@ namespace Elysia
             document.Add(date);
 
             document.Close();
-            MessageBox.Show($"Evaluated List: {fileName}.PDF is generate successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show($"Evaluated List: {fileName}.PDF is generate successfully at {path}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnSaveAsCSV_Click(object sender, EventArgs e)
@@ -165,7 +165,8 @@ namespace Elysia
             Directory.CreateDirectory(path);
             string filePath = $"{path}{fileName}.csv";
             File.WriteAllText(filePath, sb.ToString());
-            MessageBox.Show($"Evaluated List: {fileName}.CSV is generate successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show($"Evaluated List: {fileName}.CSV is generate successfully at {path}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        
         }
     }
 }
