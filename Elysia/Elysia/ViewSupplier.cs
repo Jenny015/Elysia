@@ -44,17 +44,6 @@ namespace Elysia
             // Add the button column to the DataGridView
             dgvSupplier.Columns.Add(buttonColumn);
         }
-        private void btnFilter_Click(object sender, EventArgs e)
-        {
-            filter = new Filter("Sup");
-            filter.Query += filter_Query;
-            filter.Show();
-        }
-        //filter
-        private void filter_Query(object sender, EventArgs e)
-        {
-            reloadDataGridView(filter.queryString);
-        }
 
         private void dgvSupplier_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -74,5 +63,18 @@ namespace Elysia
                 }
             }
         }
+
+        //filter
+        private void btnFilter_Click_1(object sender, EventArgs e)
+        {
+            filter = new Filter("Sup");
+            filter.Query += filter_Query;
+            filter.Show();
+        }
+        private void filter_Query(object sender, EventArgs e)
+        {
+            reloadDataGridView(filter.queryString);
+        }
+
     }
 }

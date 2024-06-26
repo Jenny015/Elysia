@@ -101,5 +101,12 @@ namespace Elysia
             this.Controls.Add(supplier);
             this.Refresh();
         }
+
+        private void btnFilter_Click_1(object sender, EventArgs e)
+        {
+            filter = new Filter("spp", supplierID);
+            filter.Query += filter_Query;
+            filter.Show();
+        }
     }
 }

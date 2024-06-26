@@ -196,22 +196,7 @@ namespace Elysia
             supplierPart.Location = new System.Drawing.Point(9, 9);
             supplierPart.Visible = true;
             btnSearch.Location = new System.Drawing.Point(134, 203);
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
-            {
-                conn.Open();
-                MySqlCommand cmd = conn.CreateCommand();
-
-                cmd.CommandText = $"SELECT partID FROM supplierPart WHERE supplierID = '{supplierID}'";
-                using (MySqlDataReader reader = cmd.ExecuteReader())
-                {
-                    supplierPartID.Items.Clear();
-
-                    while (reader.Read())
-                    {
-                        supplierPartID.Items.Add(reader.GetString(0));
-                    }
-                }
-            }
+            loadDataFromDatabase("partID", "log", supplierPartID);
         }
         private void setComponent_inv()
         {
@@ -322,7 +307,7 @@ namespace Elysia
         }
         private void search_sup()
         {
-            StringBuilder queryBuilder = new StringBuilder("SELECT s.* FROM supplier s, supplierPart sp WHERE s.supplierID = sp.supplierID");
+            StringBuilder queryBuilder = new StringBuilder("SELECT DISTINCT s.* FROM supplier s, supplierPart sp WHERE s.supplierID = sp.supplierID");
             List<MySqlParameter> parameters = new List<MySqlParameter>();
             if (supID.SelectedIndex != -1)
             {
@@ -394,13 +379,10 @@ namespace Elysia
         }
         private void add_supplierPart()
         {
-            StringBuilder queryBuilder = new StringBuilder("INSERT INTO supplierpart VALUES (");
-            List<MySqlParameter> parameters = new List<MySqlParameter>();
             if (supplierPartID.SelectedIndex != -1 && sppPrice.Text != "")
             {
-                queryBuilder.Append($"'{supplierID}', '{supplierPartID.SelectedItem}', {sppPrice.Text.ToString()}");
+                queryString = $"INSERT INTO supplierpart VALUES ('{supplierID}', '{supplierPartID.SelectedItem}', {sppPrice.Text.ToString()});";
             }
-            queryString = queryBuilder.ToString();
         }
         private void search_invoice()
         {

@@ -50,7 +50,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1503, 90);
+            this.panel2.Size = new System.Drawing.Size(1503, 100);
             this.panel2.TabIndex = 39;
             // 
             // label4
@@ -58,7 +58,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(40, 27);
+            this.label4.Location = new System.Drawing.Point(40, 30);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(367, 41);
             this.label4.TabIndex = 20;
@@ -67,13 +67,14 @@
             // btnFilter
             // 
             this.btnFilter.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.btnFilter.Location = new System.Drawing.Point(1324, 987);
+            this.btnFilter.Location = new System.Drawing.Point(1324, 1097);
             this.btnFilter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(150, 40);
+            this.btnFilter.Size = new System.Drawing.Size(150, 44);
             this.btnFilter.TabIndex = 42;
             this.btnFilter.Text = "Add";
             this.btnFilter.UseVisualStyleBackColor = true;
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click_1);
             // 
             // dgvSupplierPart
             // 
@@ -81,19 +82,19 @@
             this.dgvSupplierPart.AllowUserToDeleteRows = false;
             this.dgvSupplierPart.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvSupplierPart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSupplierPart.Location = new System.Drawing.Point(15, 228);
+            this.dgvSupplierPart.Location = new System.Drawing.Point(15, 253);
             this.dgvSupplierPart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvSupplierPart.Name = "dgvSupplierPart";
             this.dgvSupplierPart.RowHeadersWidth = 62;
             this.dgvSupplierPart.RowTemplate.Height = 31;
-            this.dgvSupplierPart.Size = new System.Drawing.Size(1460, 736);
+            this.dgvSupplierPart.Size = new System.Drawing.Size(1460, 818);
             this.dgvSupplierPart.TabIndex = 43;
             // 
             // sppID
             // 
             this.sppID.AutoSize = true;
             this.sppID.Font = new System.Drawing.Font("Times New Roman", 14F);
-            this.sppID.Location = new System.Drawing.Point(269, 116);
+            this.sppID.Location = new System.Drawing.Point(269, 129);
             this.sppID.Name = "sppID";
             this.sppID.Size = new System.Drawing.Size(54, 33);
             this.sppID.TabIndex = 44;
@@ -103,7 +104,7 @@
             // 
             this.sppt1.AutoSize = true;
             this.sppt1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
-            this.sppt1.Location = new System.Drawing.Point(24, 116);
+            this.sppt1.Location = new System.Drawing.Point(24, 129);
             this.sppt1.Name = "sppt1";
             this.sppt1.Size = new System.Drawing.Size(163, 32);
             this.sppt1.TabIndex = 45;
@@ -113,7 +114,7 @@
             // 
             this.spptCompany.AutoSize = true;
             this.spptCompany.Font = new System.Drawing.Font("Times New Roman", 14F);
-            this.spptCompany.Location = new System.Drawing.Point(269, 181);
+            this.spptCompany.Location = new System.Drawing.Point(269, 201);
             this.spptCompany.Name = "spptCompany";
             this.spptCompany.Size = new System.Drawing.Size(79, 33);
             this.spptCompany.TabIndex = 46;
@@ -123,7 +124,7 @@
             // 
             this.sppt.AutoSize = true;
             this.sppt.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
-            this.sppt.Location = new System.Drawing.Point(22, 182);
+            this.sppt.Location = new System.Drawing.Point(22, 202);
             this.sppt.Name = "sppt";
             this.sppt.Size = new System.Drawing.Size(249, 32);
             this.sppt.TabIndex = 47;
@@ -132,9 +133,9 @@
             // spptAddress
             // 
             this.spptAddress.Font = new System.Drawing.Font("Times New Roman", 14F);
-            this.spptAddress.Location = new System.Drawing.Point(1042, 116);
+            this.spptAddress.Location = new System.Drawing.Point(1042, 129);
             this.spptAddress.Name = "spptAddress";
-            this.spptAddress.Size = new System.Drawing.Size(432, 98);
+            this.spptAddress.Size = new System.Drawing.Size(432, 109);
             this.spptAddress.TabIndex = 48;
             this.spptAddress.Text = "sAddress";
             // 
@@ -142,7 +143,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(797, 116);
+            this.label6.Location = new System.Drawing.Point(797, 129);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(228, 32);
             this.label6.TabIndex = 49;
@@ -151,10 +152,10 @@
             // btnBack
             // 
             this.btnBack.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.btnBack.Location = new System.Drawing.Point(1149, 987);
+            this.btnBack.Location = new System.Drawing.Point(1149, 1097);
             this.btnBack.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(150, 40);
+            this.btnBack.Size = new System.Drawing.Size(150, 44);
             this.btnBack.TabIndex = 50;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -162,7 +163,7 @@
             // 
             // ViewSupplierPart
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.spptAddress);
@@ -175,7 +176,7 @@
             this.Controls.Add(this.btnFilter);
             this.Controls.Add(this.panel2);
             this.Name = "ViewSupplierPart";
-            this.Size = new System.Drawing.Size(1503, 1054);
+            this.Size = new System.Drawing.Size(1503, 1171);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSupplierPart)).EndInit();

@@ -41,11 +41,12 @@ namespace Elysia
                     conn.Open();
 
                     // Prepare the INSERT query
-                    string insertQuery = "INSERT INTO supplier (sComName, sAdd) VALUES (@dCompanyName, @dAdd)";
+                    string insertQuery = "INSERT INTO supplier (supplierID,sComName, sAdd) VALUES (@SupplierID,@dCompanyName, @dAdd)";
 
                     using (MySqlCommand cmd = new MySqlCommand(insertQuery, conn))
                     {
                         // Set parameter values from textboxes
+                        cmd.Parameters.AddWithValue("@SupplierID", lblsupplierID.Text);
                         cmd.Parameters.AddWithValue("@dCompanyName", spSupplierCompanyName.Text);
                         cmd.Parameters.AddWithValue("@dAdd", spAddress.Text);
 
@@ -86,6 +87,7 @@ namespace Elysia
                         var maxSupplierID = reader2[0];
                         if (maxSupplierID != null && maxSupplierID != DBNull.Value)
                         {
+
                             string maxID = maxSupplierID.ToString();
                             int startIndex = maxID.IndexOf("S") + 1;
                             int nextID = int.Parse(maxID.Substring(startIndex)) + 1;
