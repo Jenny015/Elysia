@@ -105,5 +105,10 @@ namespace Elysia
                     break;
             }
         }
+        private void btn_reset_Click(object sender, EventArgs e)
+        {
+            ResetPassword rp = new ResetPassword();
+            rp.Show();
+        }
     }
 }

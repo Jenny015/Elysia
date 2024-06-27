@@ -236,6 +236,12 @@
     <Compile Include="PurchasingDepartment.Designer.cs">
       <DependentUpon>PurchasingDepartment.cs</DependentUpon>
     </Compile>
+    <Compile Include="ResetPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResetPassword.Designer.cs">
+      <DependentUpon>ResetPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="SparesDespatch.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -417,6 +423,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PurchasingDepartment.resx">
       <DependentUpon>PurchasingDepartment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResetPassword.resx">
+      <DependentUpon>ResetPassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SparesDespatch.resx">
       <DependentUpon>SparesDespatch.cs</DependentUpon>
