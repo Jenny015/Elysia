@@ -164,6 +164,7 @@ namespace Elysia
         //clear form components
         private void btnClear_Click(object sender, EventArgs e)
         {
+            var confirm = MessageBox.Show("Do you want to clear the form?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             cbSupplierID.Enabled = true;
             cbSupplierID.SelectedItem = null;
             lbItems.Items.Clear();
