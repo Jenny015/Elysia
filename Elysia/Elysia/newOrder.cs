@@ -133,7 +133,12 @@ namespace Elysia
         //delete item from list and dictionary
         private void btnDeleteItem_Click(object sender, EventArgs e)
         {
-            if(lbItems.SelectedIndex == -1)
+            if (lbItems.Items.Count == 0)
+            {
+                MessageBox.Show("Your item list is empty!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (lbItems.SelectedIndex == -1)
             {
                 MessageBox.Show("Please select an item to remove", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;

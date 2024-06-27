@@ -196,6 +196,8 @@ namespace Elysia
             supplierPart.Location = new System.Drawing.Point(9, 9);
             supplierPart.Visible = true;
             btnSearch.Location = new System.Drawing.Point(134, 203);
+            btnSearch.Text = "Add";
+            this.Text = "Add Supplier Part";
             loadDataFromDatabase("partID", "log", supplierPartID);
         }
         private void setComponent_inv()
@@ -298,7 +300,7 @@ namespace Elysia
             {
                 queryBuilder.Append($" AND p.partStatus = '{partStatus.SelectedItem}'");
             }
-            if (partPartName.Text.Length == 0)
+            if (partPartName.Text.Length != 0)
             {
                 queryBuilder.Append($" AND p.partName LIKE '%{partPartName.Text}%'");
             }
@@ -328,11 +330,11 @@ namespace Elysia
             {
                 queryBuilder.Append($" AND dealerID = '{deaID.SelectedItem}'");
             }
-            if (deaName.Text.Length == 0)
+            if (deaName.Text.Length != 0)
             {
                 queryBuilder.Append($" AND dName LIKE '%{deaName.Text}%'");
             }
-            if (deaCompany.Text.Length == 0)
+            if (deaCompany.Text.Length != 0)
             {
                 queryBuilder.Append($" AND dCompany LIKE '%{deaCompany.Text}%'");
             }
