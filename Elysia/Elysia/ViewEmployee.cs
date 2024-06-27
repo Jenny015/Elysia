@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using System;
 using System.Data;
 using System.Windows.Forms;
 
@@ -12,6 +13,7 @@ namespace Elysia
         {
             InitializeComponent();
             reloadDataGridView("");
+            addButtonColumns();
             dgvEmp.Columns[0].ReadOnly = true;
             dgvEmp.Columns[1].ReadOnly = true;
             
@@ -32,19 +34,77 @@ namespace Elysia
             }
         }
 
-        private void dgvEmp_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        private void addButtonColumns()
         {
-            var newValue = dgvEmp.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
-            string primaryKey = dgvEmp.Rows[e.RowIndex].Cells["empID"].Value.ToString();
-            string updateCommand = $"UPDATE emp SET {dgvEmp.Columns[e.ColumnIndex].Name} = '{newValue}' WHERE empID = '{primaryKey}'";
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            // Add "Update" button column
+            DataGridViewButtonColumn updateColumn = new DataGridViewButtonColumn();
+            updateColumn.HeaderText = "Update";
+            updateColumn.Name = "Update";
+            updateColumn.Text = "Update";
+            updateColumn.UseColumnTextForButtonValue = true;
+            dgvEmp.Columns.Add(updateColumn);
+
+        }
+
+        private void dgvViewDealer_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dgvEmp.Columns["Update"].Index && e.RowIndex >= 0)
             {
-                conn.Open();
-                using (MySqlCommand cmd = new MySqlCommand(updateCommand, conn))
+                var confirm = MessageBox.Show($"Do you want to change the data of {dgvEmp.Rows[e.RowIndex].Cells["empID"].Value}?", "Update information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (confirm == DialogResult.No)
                 {
-                    cmd.ExecuteNonQuery();
+                    return;
                 }
-                conn.Close();
+                // Update button clicked
+                DataGridViewRow row = dgvEmp.Rows[e.RowIndex];
+
+                string empID = row.Cells["empID"].Value.ToString();
+                string empGander = row.Cells["empGander"].Value.ToString();
+                string empPhone = row.Cells["empPhone"].Value.ToString();
+                string empEmail = row.Cells["empEmail"].Value.ToString();
+                string deptID = row.Cells["deptID"].Value.ToString();
+                string empPostion = row.Cells["empPostion"].Value.ToString();
+                string empStatus = row.Cells["empStatus"].Value.ToString();
+
+                // Validate input fields
+                if (string.IsNullOrWhiteSpace(empGander) || string.IsNullOrWhiteSpace(empPhone)
+                    || string.IsNullOrWhiteSpace(empEmail) || string.IsNullOrWhiteSpace(deptID)
+                    || string.IsNullOrWhiteSpace(empPostion) || string.IsNullOrWhiteSpace(empStatus))
+                {
+                    MessageBox.Show("All fields except 'dDelivAdd' must be filled.", "Invalid Input",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                try
+                {
+                    // Update the database with the new dealer information
+                    string updateQuery = "UPDATE emp SET empGander = @empGander, empPhone = @empPhone, empEmail = @empEmail, deptID = @deptID, empPostion = @empPostion, empStatus = @empStatus WHERE empID = @empID";
+                    using (MySqlConnection conn = new MySqlConnection(connectionString))
+                    {
+                        using (MySqlCommand cmd = new MySqlCommand(updateQuery, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@empID", empID);
+                            cmd.Parameters.AddWithValue("@empGander", empGander);
+                            cmd.Parameters.AddWithValue("@empPhone", empPhone);
+                            cmd.Parameters.AddWithValue("@empEmail", empEmail);
+                            cmd.Parameters.AddWithValue("@deptID", deptID);
+                            cmd.Parameters.AddWithValue("@empPostion", empPostion);
+                            cmd.Parameters.AddWithValue("@empStatus", empStatus);
+
+                            conn.Open();
+                            cmd.ExecuteNonQuery();
+                            conn.Close();
+                        }
+                    }
+
+                    MessageBox.Show("Dealer information updated successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    reloadDataGridView("");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error updating dealer information: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 

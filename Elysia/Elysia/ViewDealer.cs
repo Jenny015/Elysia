@@ -51,6 +51,11 @@ namespace Elysia
         {
             if (e.ColumnIndex == dgvViewDealer.Columns["Update"].Index && e.RowIndex >= 0)
             {
+                var confirm = MessageBox.Show($"Do you want to change the data of {dgvViewDealer.Rows[e.RowIndex].Cells["dealerID"].Value}?", "Update information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (confirm == DialogResult.No)
+                {
+                    return;
+                }
                 // Update button clicked
                 DataGridViewRow row = dgvViewDealer.Rows[e.RowIndex];
 

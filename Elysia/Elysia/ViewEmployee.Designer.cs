@@ -95,7 +95,7 @@
             this.dgvEmp.ShowEditingIcon = false;
             this.dgvEmp.Size = new System.Drawing.Size(973, 614);
             this.dgvEmp.TabIndex = 47;
-            this.dgvEmp.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmp_CellEndEdit);
+            this.dgvEmp.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvViewDealer_CellClick);
             // 
             // ViewEmployee
             // 
