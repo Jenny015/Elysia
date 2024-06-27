@@ -8,39 +8,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Elysia
 {
-    public partial class ResetPassword : Form
+    public partial class ForgetPassword : Form
     {
         string connectionString = "server=localhost;database=elysia;user=root;password=\"\"";
         string username;
-        string password;
-        string npassword;
-        public ResetPassword()
+        public ForgetPassword()
         {
             InitializeComponent();
         }
-
-        private void btn_reset_Click(object sender, EventArgs e)
+        private void btn_forget_Click(object sender, EventArgs e)
         {
-            var confirm = MessageBox.Show("Do you want to reset your password?", "Please confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            var confirm = MessageBox.Show("Are you forget your password?", "Please confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (confirm == DialogResult.No)
             {
                 return;
             };
             username = tb_username.Text;
-            password = tb_password.Text;
-            npassword = tb_npassword.Text;
 
             using (MySqlConnection connection = new MySqlConnection("server=localhost;database=elysia;uid=root;pwd=\"\";"))
             {
                 connection.Open();
-                MySqlCommand command = new MySqlCommand("SELECT empStatus FROM emp WHERE empID = @username AND empPasswd = @password", connection);
+                MySqlCommand command = new MySqlCommand("SELECT empStatus FROM emp WHERE empID = @username", connection);
                 command.Parameters.AddWithValue("@username", username);
-                command.Parameters.AddWithValue("@password", password);
-
 
                 using (MySqlDataReader reader = command.ExecuteReader())
                 {
@@ -56,27 +48,24 @@ namespace Elysia
                     else
                     {
                         // Login failed, display error message
-                        MessageBox.Show("Invalid username or password.", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Invalid username.", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
+
         }
         private void UpdatePassword()
         {
-
             username = tb_username.Text;
-            password = tb_password.Text;
-            npassword = tb_npassword.Text;
             try
             {
                 // Update the database with the new dealer information
-                string updateQuery = "UPDATE emp SET empPasswd = @npassword WHERE empID = @empID";
+                string updateQuery = "UPDATE emp SET empPasswd = @username WHERE empID = @username";
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
                     using (MySqlCommand cmd = new MySqlCommand(updateQuery, conn))
                     {
-                        cmd.Parameters.AddWithValue("@empID", username);
-                        cmd.Parameters.AddWithValue("@npassword", npassword);
+                        cmd.Parameters.AddWithValue("@username", username);
 
                         conn.Open();
                         cmd.ExecuteNonQuery();
@@ -84,7 +73,7 @@ namespace Elysia
                     }
                 }
 
-                MessageBox.Show("Password updated successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Password updated successfully as your employee ID", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -93,6 +82,7 @@ namespace Elysia
 
             this.Close();
         }
-
     }
+    
 }
+

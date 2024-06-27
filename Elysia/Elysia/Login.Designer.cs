@@ -91,6 +91,7 @@
             this.lb_forgetPW.Size = new System.Drawing.Size(107, 15);
             this.lb_forgetPW.TabIndex = 5;
             this.lb_forgetPW.Text = "Forget password?";
+            this.lb_forgetPW.Click += new System.EventHandler(this.btn_forget_Click);
             // 
             // lb_resetPW
             // 

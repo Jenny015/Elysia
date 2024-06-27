@@ -110,5 +110,11 @@ namespace Elysia
             ResetPassword rp = new ResetPassword();
             rp.Show();
         }
+
+        private void btn_forget_Click(object sender, EventArgs e)
+        {
+            ForgetPassword rp = new ForgetPassword();
+            rp.Show();
+        }
     }
 }
