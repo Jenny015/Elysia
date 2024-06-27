@@ -173,6 +173,11 @@ namespace Elysia
         //clear form components
         private void btnClear_Click(object sender, EventArgs e)
         {
+            var confirm = MessageBox.Show("Do you want to clear the form?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (confirm == DialogResult.No)
+            {
+                return;
+            }
             cbDealerID.SelectedItem = null;
             lbItems.Items.Clear();
             cbPartID.SelectedItem = null;
@@ -186,7 +191,7 @@ namespace Elysia
             if (!checkInput() || confirm == DialogResult.No)
             {
                 return;
-            };
+            }
 
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {

@@ -19,7 +19,8 @@ namespace Elysia
         }
         private void reloadDataGridView(String query)
         {
-            query = query == "" ? "SELECT p.partID, categoryID, partName, purPrice, partQty, partStatus FROM part p, supplierPart sp WHERE p.partID = sp.partID AND partStatus != 'Normal' ORDER BY p.partID" : query;
+            query = query == "" ? "SELECT p.partID, p.categoryID, partName, purPrice, partQty, partStatus FROM part p JOIN supplierPart sp ON p.partID = sp.partID WHERE p.partStatus != 'Normal' ORDER BY p.partID" : query;
+
 
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
