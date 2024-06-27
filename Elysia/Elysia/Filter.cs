@@ -112,7 +112,7 @@ namespace Elysia
                 conn.Open();
                 MySqlCommand cmd = conn.CreateCommand();
 
-                cmd.CommandText = $"SELECT DISTINCT {col} FROM `{table}`";
+                cmd.CommandText = $"SELECT DISTINCT {col} FROM `{table}` ORDER BY {col}";
                 using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
                     cb.Items.Clear();
@@ -343,7 +343,7 @@ namespace Elysia
         }
         private void search_emp()
         {
-            StringBuilder queryBuilder = new StringBuilder("SELECT e.empID, e.empName, e.empGander, e.empPhone, e.empEmail, d.deptName, e.empPostion, CASE e.empStatus WHEN 'A' THEN 'Active' WHEN 'L' THEN 'LOCK' END AS Status FROM emp e, dept d WHERE e.deptID = d.deptID");
+            StringBuilder queryBuilder = new StringBuilder("SELECT e.empID, e.empName, e.empGander, e.empPhone, e.empEmail, d.deptName, e.empPostion, e.empStatus FROM emp e, dept d WHERE e.deptID = d.deptID");
             List<MySqlParameter> parameters = new List<MySqlParameter>();
             if (empID.SelectedIndex != -1)
             {
@@ -353,8 +353,24 @@ namespace Elysia
             {
                 queryBuilder.Append($" AND d.deptName = '{empDept.SelectedItem}'");
             }
-            queryBuilder.Append(" ORDER BY empID");
-            queryString = queryBuilder.ToString();
+            if (empPostion.Text.Length != 0)
+            {
+                queryBuilder.Append($" AND e.empPostion LIKE '%{empPostion.Text}%'");
+            }
+            if (empStatus.SelectedIndex != 0)
+            {
+                switch (empStatus.SelectedIndex)
+                {
+                    case 0:
+                        queryBuilder.Append($" AND e.empStatus = 'A'");
+                        break;
+                    case 1:
+                        queryBuilder.Append($" AND e.empStatus = 'L'");
+                        break;
+                }
+                queryBuilder.Append(" ORDER BY empID");
+                queryString = queryBuilder.ToString();
+            }
         }
         private void search_log()
         {

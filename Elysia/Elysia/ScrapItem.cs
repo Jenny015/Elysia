@@ -61,7 +61,7 @@ namespace Elysia
                     {
                         if (reader.Read())
                         {
-                            if (reader.GetInt32(0) > quantity)
+                            if (reader.GetInt32(0) < quantity)
                             {
                                 MessageBox.Show("Scrap item quantity should not be more than stock quantity.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 return;

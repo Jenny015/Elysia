@@ -13,11 +13,21 @@ namespace Elysia
         {
             InitializeComponent();
             reloadDataGridView("");
+            addButtonColumns();
             dgvPart.Columns[0].ReadOnly = true;
             dgvPart.Columns[1].ReadOnly = true;
             dgvPart.Columns[5].ReadOnly = true;
         }
-
+        private void addButtonColumns()
+        {
+            // Add "Update" button column
+            DataGridViewButtonColumn updateColumn = new DataGridViewButtonColumn();
+            updateColumn.HeaderText = "Update";
+            updateColumn.Name = "Update";
+            updateColumn.Text = "Update";
+            updateColumn.UseColumnTextForButtonValue = true;
+            dgvPart.Columns.Add(updateColumn);
+        }
         private void reloadDataGridView(String query)
         {
             query = query == "" ? "SELECT * FROM `part` ORDER BY partID" : query;
@@ -48,18 +58,17 @@ namespace Elysia
             reloadDataGridView(query);
         }
 
-        private void dgvViewDealer_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvPart_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == dgvPart.Columns["Update"].Index && e.RowIndex >= 0)
             {
-                var confirm = MessageBox.Show($"Do you want to change the data of {dgvEmp.Rows[e.RowIndex].Cells["empID"].Value}?", "Update information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                var confirm = MessageBox.Show($"Do you want to change the data of {dgvPart.Rows[e.RowIndex].Cells["partID"].Value}?", "Update information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (confirm == DialogResult.No)
                 {
                     return;
                 }
                 // Update button clicked
                 DataGridViewRow row = dgvPart.Rows[e.RowIndex];
-
                 string partID = row.Cells["partID"].Value.ToString();
                 string partName = row.Cells["partName"].Value.ToString();
                 string price = row.Cells["price"].Value.ToString();
@@ -77,7 +86,7 @@ namespace Elysia
                 try
                 {
                     // Update the database with the new dealer information
-                    string updateQuery = "UPDATE emp SET partName = @partName, price = @price, partQty = @partQty WHERE partID = @partID";
+                    string updateQuery = "UPDATE part SET partName = @partName, price = @price, partQty = @partQty WHERE partID = @partID";
                     using (MySqlConnection conn = new MySqlConnection(connectionString))
                     {
                         using (MySqlCommand cmd = new MySqlCommand(updateQuery, conn))
@@ -94,6 +103,7 @@ namespace Elysia
                     }
 
                     MessageBox.Show("Spare Part information updated successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    StaticVariable.updatePartStatus(partID);
                     reloadDataGridView("");
                 }
                 catch (Exception ex)
@@ -101,32 +111,6 @@ namespace Elysia
                     MessageBox.Show($"Error updating information: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-        }
-
-        private void dgvPart_CellEndEdit(object sender, DataGridViewCellEventArgs e)
-        {
-            var newValue = dgvPart.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
-            string primaryKey = dgvPart.Rows[e.RowIndex].Cells["partID"].Value.ToString();
-            string updateCommand = $"UPDATE part SET {dgvPart.Columns[e.ColumnIndex].Name} = '{newValue}' WHERE partID = '{primaryKey}'";
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
-            {
-                conn.Open();
-                using (MySqlCommand cmd = new MySqlCommand(updateCommand, conn))
-                {
-                    cmd.ExecuteNonQuery();
-                }
-                conn.Close();
-            }
-            if (e.ColumnIndex == 4)
-            {
-                StaticVariable.updatePartStatus(primaryKey);
-            }
-            reloadDataGridView("");
-        }
-
-        private void dgvPart_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

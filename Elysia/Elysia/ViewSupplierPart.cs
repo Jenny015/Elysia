@@ -14,10 +14,9 @@ namespace Elysia
         {
             InitializeComponent();
             supplierID = supplier;
+            dgvSupplierPart.ReadOnly = true;
             reloadDataGridView();
             setDataGridView();
-
-
         }
         private void reloadDataGridView()
         {

@@ -21,8 +21,7 @@ namespace Elysia
 
         private void reloadDataGridView(string query)
         {
-            query = query == "" ? "SELECT empID, empName, empGander, empPhone, empEmail, deptID, empPostion, empStatus FROM emp" : query;
-
+            query = query == "" ? "SELECT e.empID, e.empName, e.empGander, e.empPhone, e.empEmail, d.deptName, e.empPostion, e.empStatus FROM emp e, dept d WHERE e.deptID = d.deptID ORDER BY empID" : query;
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn))

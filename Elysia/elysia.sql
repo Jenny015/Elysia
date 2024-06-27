@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 20, 2024 at 06:45 AM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Generation Time: Jun 27, 2024 at 10:49 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -86,7 +86,6 @@ CREATE TABLE `dept` (
 
 INSERT INTO `dept` (`deptID`, `deptName`) VALUES
 ('AC', 'Accountant'),
-('AD', 'Admin'),
 ('GI', 'Goods Inward Department'),
 ('HR', 'Human Resources'),
 ('IS', 'Invoicing Section'),

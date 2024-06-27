@@ -71,17 +71,17 @@ namespace Elysia
                     if (reader2.Read())
                     {
                         int partQty = Convert.ToInt32(reader2[0]);
-                        if (partQty < reOrder)
+                        if(partQty == outOfStock)
+                        {
+                            status = "Out-of-stock";
+                        }
+                        else if (partQty < reOrder)
                         {
                             status = "Reorder";
                         }
                         else if (partQty < danger)
                         {
                             status = "Danger";
-                        }
-                        else if (partQty == 0)
-                        {
-                            status = "Out-of-stock";
                         }
                     }
                     reader2.Close();

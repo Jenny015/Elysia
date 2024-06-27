@@ -162,6 +162,11 @@ namespace Elysia
                 MessageBox.Show("Your item list is empty!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            if (lbItems.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select an item to remove", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             String removeItem = lbItems.SelectedItem.ToString().Split(' ')[0];
             inwardsParts.Remove(removeItem).ToString();
             lbItems.Items.Remove(lbItems.SelectedItem);
