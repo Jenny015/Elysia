@@ -12,7 +12,7 @@ namespace Elysia
             this.StartPosition = FormStartPosition.CenterScreen;
             lblDept.Text = StaticVariable.dept_full();
             
-            
+ 
         }
 
         private void btnUser_CheckedChanged(object sender, EventArgs e)
@@ -31,12 +31,14 @@ namespace Elysia
         }
         private void btnLogout_CheckedChanged(object sender, EventArgs e)
         {
-            if (btnLogout.Checked)
+            var confirm = MessageBox.Show("Do you want to logout?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (confirm == DialogResult.No)
             {
-                StaticVariable.logout();
-                this.Close();
+                return;
             }
+            StaticVariable.logout();
+            this.Close();
+        }
 
         }
     }
-}

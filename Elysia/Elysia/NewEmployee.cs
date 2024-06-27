@@ -89,6 +89,8 @@ namespace Elysia
         }
         private void btnClear_Click(object sender, EventArgs e)
         {
+            var confirm = MessageBox.Show("Do you want to clear the form?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
             tbEmpName.Text = "";
             tbPhoneNumber.Text = "";
             tbEmail.Text = "";

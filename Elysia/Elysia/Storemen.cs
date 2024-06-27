@@ -16,6 +16,11 @@ namespace Elysia
 
         private void btnLogout_CheckedChanged(object sender, EventArgs e)
         {
+            var confirm = MessageBox.Show("Do you want to logout?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (confirm == DialogResult.No)
+            {
+                return;
+            }
             StaticVariable.logout();
             this.Close();
         }
