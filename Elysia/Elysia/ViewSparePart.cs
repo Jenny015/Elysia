@@ -68,5 +68,10 @@ namespace Elysia
             }
             reloadDataGridView("");
         }
+
+        private void dgvPart_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

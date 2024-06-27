@@ -11,7 +11,8 @@ namespace Elysia
             btnGoodsInward.Checked = true;
             this.StartPosition = FormStartPosition.CenterScreen;
             lblDept.Text = StaticVariable.dept_full();
-            this.WindowState = FormWindowState.Maximized;
+            
+            
         }
 
         private void btnUser_CheckedChanged(object sender, EventArgs e)

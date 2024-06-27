@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.btnFilter = new System.Windows.Forms.Button();
@@ -42,9 +43,9 @@
             this.panel2.Controls.Add(this.label4);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1503, 90);
+            this.panel2.Size = new System.Drawing.Size(1002, 65);
             this.panel2.TabIndex = 32;
             // 
             // label4
@@ -52,19 +53,20 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(40, 28);
+            this.label4.Location = new System.Drawing.Point(27, 20);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(303, 41);
+            this.label4.Size = new System.Drawing.Size(201, 29);
             this.label4.TabIndex = 20;
             this.label4.Text = "View Employee";
             // 
             // btnFilter
             // 
             this.btnFilter.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.btnFilter.Location = new System.Drawing.Point(1331, 996);
-            this.btnFilter.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.btnFilter.Location = new System.Drawing.Point(887, 719);
+            this.btnFilter.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(150, 41);
+            this.btnFilter.Size = new System.Drawing.Size(100, 30);
             this.btnFilter.TabIndex = 43;
             this.btnFilter.Text = "Filter";
             this.btnFilter.UseVisualStyleBackColor = true;
@@ -76,27 +78,35 @@
             this.dgvEmp.AllowUserToDeleteRows = false;
             this.dgvEmp.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEmp.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEmp.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvEmp.ColumnHeadersHeight = 25;
-            this.dgvEmp.Location = new System.Drawing.Point(21, 118);
-            this.dgvEmp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvEmp.Location = new System.Drawing.Point(14, 85);
+            this.dgvEmp.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dgvEmp.Name = "dgvEmp";
             this.dgvEmp.RowHeadersWidth = 51;
             this.dgvEmp.RowTemplate.Height = 27;
             this.dgvEmp.ShowEditingIcon = false;
-            this.dgvEmp.Size = new System.Drawing.Size(1460, 850);
+            this.dgvEmp.Size = new System.Drawing.Size(973, 614);
             this.dgvEmp.TabIndex = 47;
             this.dgvEmp.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmp_CellEndEdit);
             // 
             // ViewEmployee
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.dgvEmp);
             this.Controls.Add(this.btnFilter);
             this.Controls.Add(this.panel2);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.Name = "ViewEmployee";
-            this.Size = new System.Drawing.Size(1503, 1055);
+            this.Size = new System.Drawing.Size(1002, 762);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmp)).EndInit();

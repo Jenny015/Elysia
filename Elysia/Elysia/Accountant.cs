@@ -10,7 +10,7 @@ namespace Elysia
             InitializeComponent();
             lblDept.Text = StaticVariable.dept_full();
             btnViewLog.Checked = true;
-            this.WindowState = FormWindowState.Maximized;
+            
             this.StartPosition = FormStartPosition.CenterScreen;
         }
 
