@@ -11,8 +11,8 @@ namespace Elysia
             btnGoodsInward.Checked = true;
             this.StartPosition = FormStartPosition.CenterScreen;
             lblDept.Text = StaticVariable.dept_full();
-            
- 
+
+
         }
 
         private void btnUser_CheckedChanged(object sender, EventArgs e)
@@ -40,5 +40,5 @@ namespace Elysia
             this.Close();
         }
 
-        }
     }
+}

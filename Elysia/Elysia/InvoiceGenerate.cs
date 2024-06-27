@@ -291,7 +291,7 @@ namespace Elysia
                 cmd.CommandText = $"SELECT orderStatus FROM `order` WHERE orderID = '{orderID}'";
                 if ((string)cmd.ExecuteScalar() == "Assembled")
                 {
-                        byte[] pdfBytes;
+                    byte[] pdfBytes;
                     string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
                     string invoicePath = $"{documentsPath}\\Elysia\\invoice\\";
                     Directory.CreateDirectory(invoicePath);

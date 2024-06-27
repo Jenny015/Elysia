@@ -36,9 +36,14 @@ namespace Elysia
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if(tbPartID.Text.ToString() == "" || tbQuantity.Value <= 0 )
+            if (tbPartID.Text.ToString() == "" || tbQuantity.Value <= 0)
             {
                 MessageBox.Show("Please select a part item", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            var confirm = MessageBox.Show("Do you want to add the scrap item?", "Scrap Item", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (confirm == DialogResult.No)
+            {
                 return;
             }
             try
@@ -101,8 +106,6 @@ namespace Elysia
         }
         private void btnClear_Click(object sender, EventArgs e)
         {
-            var confirm = MessageBox.Show("Do you want to clear the form?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
             tbPartID.Text = "";
             tbQuantity.Text = "";
         }

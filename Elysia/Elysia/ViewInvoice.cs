@@ -149,7 +149,7 @@ namespace Elysia
                 }
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
-                    
+
                     string query = "UPDATE invoice SET invStatus = 'Send' WHERE orderID = @orderID";
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {

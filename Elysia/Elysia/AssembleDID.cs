@@ -1,7 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Data;
-using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace Elysia
@@ -35,10 +34,11 @@ namespace Elysia
 
         private void reloadDataGridView(String query)
         {
-            if(query == "")
+            if (query == "")
             {
                 query = "SELECT OP.orderID, OP.partID, (OP.orderQty+OP.OSQty) AS TotalQty, actDespQty, opStatus FROM orderpart OP, `order` O WHERE opStatus = 'Processing' AND OP.orderID = O.orderID ORDER BY O.orderDate;";
-            } else
+            }
+            else
             {
                 dgvDID.Columns["buttonColumn"].Visible = false;
             }
@@ -83,7 +83,7 @@ namespace Elysia
                             partQty = reader.GetInt32(0);
                         }
                     }
-                    if(partQty < int.Parse(actDespQtyData))
+                    if (partQty < int.Parse(actDespQtyData))
                     {
                         MessageBox.Show("Actual despatch quantity more than stocking.\n\nPlease check again!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;

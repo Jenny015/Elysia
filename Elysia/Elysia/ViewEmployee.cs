@@ -16,7 +16,7 @@ namespace Elysia
             addButtonColumns();
             dgvEmp.Columns[0].ReadOnly = true;
             dgvEmp.Columns[1].ReadOnly = true;
-            
+
         }
 
         private void reloadDataGridView(string query)
@@ -71,7 +71,7 @@ namespace Elysia
                     || string.IsNullOrWhiteSpace(empEmail) || string.IsNullOrWhiteSpace(deptID)
                     || string.IsNullOrWhiteSpace(empPostion) || string.IsNullOrWhiteSpace(empStatus))
                 {
-                    MessageBox.Show("All fields except 'dDelivAdd' must be filled.", "Invalid Input",
+                    MessageBox.Show("All fields except must be filled.", "Invalid Input",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
@@ -98,24 +98,24 @@ namespace Elysia
                         }
                     }
 
-                    MessageBox.Show("Dealer information updated successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Employee information updated successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     reloadDataGridView("");
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Error updating dealer information: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Error updating information: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
 
-            private void btnFilter_Click(object sender, System.EventArgs e )
+        private void btnFilter_Click(object sender, System.EventArgs e)
         {
             filter = new Filter("emp");
             filter.Query += filter_Query;
             filter.Show();
         }
         //filter
-        private void filter_Query(object sender, System.EventArgs e )
+        private void filter_Query(object sender, System.EventArgs e)
         {
             reloadDataGridView(filter.queryString);
         }

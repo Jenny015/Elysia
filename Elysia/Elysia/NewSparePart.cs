@@ -79,7 +79,8 @@ namespace Elysia
             {
                 lblPartID.Text = "N\\A";
                 return;
-            } else
+            }
+            else
             {
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
@@ -95,12 +96,11 @@ namespace Elysia
                     }
                 }
             }
-            
+
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            var confirm = MessageBox.Show("Do you want to clear the form?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             cate.SelectedIndex = -1;
             partName.Text = "";
             partPrice.Text = "";
@@ -111,6 +111,11 @@ namespace Elysia
             if (!checkInput())
             {
                 MessageBox.Show("Every fields should be inputted", "Error");
+                return;
+            }
+            var confirm = MessageBox.Show("Do you want to add the part?", "New Spare part", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (confirm == DialogResult.No)
+            {
                 return;
             }
             using (MySqlConnection conn = new MySqlConnection(connectionString))

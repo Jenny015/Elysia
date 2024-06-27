@@ -36,7 +36,7 @@ namespace Elysia
 
             // Add the button column to the DataGridView
             dataGridVieworder.Columns.Add(cancelBtn);
-            
+
         }
         private void reloadDataGridView(String query)
         {
@@ -98,7 +98,8 @@ namespace Elysia
                         }
                     }
 
-                } else if(e.ColumnIndex == dataGridVieworder.Columns["detailBtn"].Index && e.RowIndex >= 0)
+                }
+                else if (e.ColumnIndex == dataGridVieworder.Columns["detailBtn"].Index && e.RowIndex >= 0)
                 {
                     viewOrderDetail(dataGridVieworder.Rows[e.RowIndex].Cells["orderID"].Value.ToString());
                 }

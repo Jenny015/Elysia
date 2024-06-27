@@ -157,10 +157,10 @@ namespace Elysia
         //delete item from list and dictionary
         private void btnDeleteItem_Click(object sender, EventArgs e)
         {
-            if(lbItems.Items.Count == 0) 
+            if (lbItems.Items.Count == 0)
             {
                 MessageBox.Show("Your item list is empty!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return; 
+                return;
             }
             String removeItem = lbItems.SelectedItem.ToString().Split(' ')[0];
             inwardsParts.Remove(removeItem).ToString();
@@ -169,7 +169,6 @@ namespace Elysia
         //clear form components
         private void btnClear_Click(object sender, EventArgs e)
         {
-            var confirm = MessageBox.Show("Do you want to clear the form?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             cbSupplierID.Enabled = true;
             cbSupplierID.SelectedItem = null;
             lbItems.Items.Clear();
@@ -205,7 +204,12 @@ namespace Elysia
             if (!checkInput())
             {
                 return;
-            };
+            }
+            var confirm = MessageBox.Show("Do you want to add the Goods Inward?", "New Goods Inward", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (confirm == DialogResult.No)
+            {
+                return;
+            }
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
@@ -247,7 +251,8 @@ namespace Elysia
                                 }
                             }
                         }
-                    } else
+                    }
+                    else
                     {
                         cmd.CommandText = $"INSERT INTO inwardsPart VALUES ('{newInwardsID}', '{part.Key}', {part.Value});";
                     }
@@ -270,7 +275,8 @@ namespace Elysia
             MessageBox.Show("New Goods Inward has been inserted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             btnClear_Click(null, null);
         }
-        private int getPartQty(String partID) {
+        private int getPartQty(String partID)
+        {
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();

@@ -10,7 +10,7 @@ namespace Elysia
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             lblDept.Text = StaticVariable.dept_full();
-            
+
             btnScrapItem.Checked = true;
         }
 

@@ -8,7 +8,7 @@ namespace Elysia
         public PurchasingDepartment()
         {
             InitializeComponent();
-            
+
             this.StartPosition = FormStartPosition.CenterScreen;
             lblDept.Text = StaticVariable.dept_full();
             btnDangerLevel.Checked = true;

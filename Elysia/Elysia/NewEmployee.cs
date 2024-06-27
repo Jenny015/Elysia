@@ -1,7 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
-using MySqlX.XDevAPI.Common;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
@@ -61,13 +59,8 @@ namespace Elysia
                 }
             }
         }
-        private void Gander_choosed(object sender, EventArgs e)
-        {
 
-
-        }
-
-            private void phoneValidate(object sender, EventArgs e)
+        private void phoneValidate(object sender, EventArgs e)
         {
             int result;
             bool isNumeric = int.TryParse(tbPhoneNumber.Text, out result);
@@ -89,8 +82,6 @@ namespace Elysia
         }
         private void btnClear_Click(object sender, EventArgs e)
         {
-            var confirm = MessageBox.Show("Do you want to clear the form?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
             tbEmpName.Text = "";
             tbPhoneNumber.Text = "";
             tbEmail.Text = "";
@@ -103,6 +94,11 @@ namespace Elysia
             if (!checkInput())
             {
                 MessageBox.Show("Every fields should be inputted", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            var confirm = MessageBox.Show("Do you want to add the employee?", "New Employee", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (confirm == DialogResult.No)
+            {
                 return;
             }
             using (MySqlConnection conn = new MySqlConnection(connectionString))

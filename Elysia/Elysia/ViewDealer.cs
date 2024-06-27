@@ -68,11 +68,11 @@ namespace Elysia
                 string dDelivAdd = row.Cells["dDelivAdd"].Value.ToString();
 
                 // Validate input fields
-                if (string.IsNullOrWhiteSpace(dName) || string.IsNullOrWhiteSpace(dCompany) 
-                    || string.IsNullOrWhiteSpace(dPhone) || string.IsNullOrWhiteSpace(dEmail) 
+                if (string.IsNullOrWhiteSpace(dName) || string.IsNullOrWhiteSpace(dCompany)
+                    || string.IsNullOrWhiteSpace(dPhone) || string.IsNullOrWhiteSpace(dEmail)
                     || string.IsNullOrWhiteSpace(dComAdd))
                 {
-                    MessageBox.Show("All fields except 'dDelivAdd' must be filled.", "Invalid Input", 
+                    MessageBox.Show("All fields except 'dDelivAdd' must be filled.", "Invalid Input",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }

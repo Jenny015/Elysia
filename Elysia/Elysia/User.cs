@@ -1,6 +1,4 @@
 ﻿using MySql.Data.MySqlClient;
-using Mysqlx.Crud;
-using System.Data;
 using System;
 using System.Windows.Forms;
 

@@ -11,7 +11,7 @@ namespace Elysia
             this.StartPosition = FormStartPosition.CenterScreen;
             lblDept.Text = StaticVariable.dept_full();
             btnViewInvoice.Checked = true;
-            
+
         }
         private void btnLogout_CheckedChanged(object sender, EventArgs e)
         {

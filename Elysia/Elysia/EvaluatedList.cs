@@ -8,7 +8,6 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using System.Xml.Linq;
 
 namespace Elysia
 {
@@ -50,7 +49,7 @@ namespace Elysia
             }
             catch (MySqlException ex)
             {
-                MessageBox.Show("Database error: " + ex.Message,"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Database error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (FormatException ex)
             {
@@ -166,7 +165,7 @@ namespace Elysia
             string filePath = $"{path}{fileName}.csv";
             File.WriteAllText(filePath, sb.ToString());
             MessageBox.Show($"Evaluated List: {fileName}.CSV is generate successfully at {path}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        
+
         }
     }
 }
