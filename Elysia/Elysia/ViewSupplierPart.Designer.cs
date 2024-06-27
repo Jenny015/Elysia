@@ -83,6 +83,7 @@
             // 
             this.dgvSupplierPart.AllowUserToAddRows = false;
             this.dgvSupplierPart.AllowUserToDeleteRows = false;
+            this.dgvSupplierPart.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSupplierPart.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
