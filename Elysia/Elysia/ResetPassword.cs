@@ -13,6 +13,7 @@ namespace Elysia
         public ResetPassword()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void btn_reset_Click(object sender, EventArgs e)
