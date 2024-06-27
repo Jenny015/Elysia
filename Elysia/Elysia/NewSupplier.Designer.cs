@@ -47,7 +47,7 @@
             this.panel2.Controls.Add(this.label4);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1002, 65);
             this.panel2.TabIndex = 39;
@@ -60,9 +60,9 @@
             this.label4.Location = new System.Drawing.Point(27, 19);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(175, 29);
+            this.label4.Size = new System.Drawing.Size(181, 29);
             this.label4.TabIndex = 20;
-            this.label4.Text = "NewSupplier";
+            this.label4.Text = "New Supplier";
             // 
             // btnClear
             // 
@@ -95,7 +95,7 @@
             // 
             this.spAddress.Font = new System.Drawing.Font("Times New Roman", 14F);
             this.spAddress.Location = new System.Drawing.Point(31, 355);
-            this.spAddress.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.spAddress.Margin = new System.Windows.Forms.Padding(2);
             this.spAddress.Name = "spAddress";
             this.spAddress.Size = new System.Drawing.Size(611, 29);
             this.spAddress.TabIndex = 62;
@@ -115,7 +115,7 @@
             // 
             this.spSupplierCompanyName.Font = new System.Drawing.Font("Times New Roman", 14F);
             this.spSupplierCompanyName.Location = new System.Drawing.Point(32, 233);
-            this.spSupplierCompanyName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.spSupplierCompanyName.Margin = new System.Windows.Forms.Padding(2);
             this.spSupplierCompanyName.Name = "spSupplierCompanyName";
             this.spSupplierCompanyName.Size = new System.Drawing.Size(611, 29);
             this.spSupplierCompanyName.TabIndex = 54;
@@ -166,7 +166,7 @@
             this.Controls.Add(this.spSupplierCompanyName);
             this.Controls.Add(this.lbSupplierName);
             this.Controls.Add(this.panel2);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "NewSupplier";
             this.Size = new System.Drawing.Size(1002, 761);
             this.panel2.ResumeLayout(false);
