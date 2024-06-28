@@ -19,7 +19,7 @@ namespace Elysia
         }
         private void reloadDataGridView(String query)
         {
-            query = query == "" ? "SELECT p.partID, p.categoryID, partName, sp.purPrice, partQty, partStatus FROM part p JOIN supplierPart sp ON p.partID = sp.partID WHERE p.partStatus != 'Normal' ORDER BY p.partID" : query;
+            query = query == "" ? "SELECT p.partID, p.categoryID, partName, sp.purPrice, partQty, partStatus FROM part p JOIN supplierPart sp ON p.partID = sp.partID JOIN category c ON c.categoryID = p.categoryID WHERE p.partStatus != 'Normal' ORDER BY p.partID" : query;
 
 
             using (MySqlConnection conn = new MySqlConnection(connectionString))
@@ -71,7 +71,7 @@ namespace Elysia
 
         private void filter_Query(object sender, EventArgs e)
         {
-            string query = "SELECT p.partID, p.categoryID, partName, sp.purPrice, partQty, partStatus FROM part p,  supplierPart sp WHERE p.partID = sp.partID" + filter.queryString;
+            string query = "SELECT p.partID, p.categoryID, partName, sp.purPrice, partQty, partStatus FROM part p JOIN supplierPart sp ON p.partID = sp.partID JOIN category c ON c.categoryID = p.categoryID WHERE p.partID = sp.partID" + filter.queryString;
             reloadDataGridView(query);
         }
     }
