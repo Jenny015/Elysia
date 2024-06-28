@@ -165,7 +165,6 @@ namespace Elysia
             string filePath = $"{path}{fileName}.csv";
             File.WriteAllText(filePath, sb.ToString());
             MessageBox.Show($"Evaluated List: {fileName}.CSV is generate successfully at {path}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
         }
     }
 }
