@@ -86,6 +86,7 @@ namespace Elysia
                     }
                     MessageBox.Show("Supplier Part information added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+                reloadDataGridView();
             }
             catch (Exception ex)
             {
