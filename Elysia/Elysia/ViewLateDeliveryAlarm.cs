@@ -16,41 +16,39 @@ namespace Elysia
             if (StaticVariable.dept == "SD")
             {
                 reloadDataGridView(@"SELECT o.orderID, o.orderStatus,
-                       5 * (DATEDIFF(CURDATE(), o.orderDate) DIV 7) +
-                       MID('0123444401233334012222340111123400001234000123440',
-                           7 * WEEKDAY(CURDATE()) + WEEKDAY(o.orderDate) + 1, 1) AS DaysAfterOrderDate
+                   5 * (DATEDIFF(CURDATE(), o.orderDate) DIV 7) +
+                   MID('0123444401233334012222340111123400001234000123440',
+                       7 * WEEKDAY(CURDATE()) + WEEKDAY(o.orderDate) + 1, 1) AS DaysAfterOrderDate
                     FROM `order` o
                     WHERE o.orderStatus = 'Assembled'
-                    AND (5 * (DATEDIFF(CURDATE(), o.orderDate) DIV 7) +
-                         MID('0123444401233334012222340111123400001234000123440',
-                             7 * WEEKDAY(CURDATE()) + WEEKDAY(o.orderDate) + 1, 1)) > 2;");
+                    AND (
+                        (o.orderID LIKE 'R%' AND (5 * (DATEDIFF(CURDATE(), o.orderDate) DIV 7) +
+                        MID('0123444401233334012222340111123400001234000123440',
+                            7 * WEEKDAY(CURDATE()) + WEEKDAY(o.orderDate) + 1, 1)) > 5)
+                        OR
+                        (o.fromOrder IS NULL AND (5 * (DATEDIFF(CURDATE(), o.orderDate) DIV 7) +
+                        MID('0123444401233334012222340111123400001234000123440',
+                            7 * WEEKDAY(CURDATE()) + WEEKDAY(o.orderDate) + 1, 1)) > 2)
+                    );");
             }
             else
             {
                 reloadDataGridView(@"SELECT o.orderID, op.partID, op.orderQty,
-                       5 * (DATEDIFF(CURDATE(), o.orderDate) DIV 7) +
-                       MID('0123444401233334012222340111123400001234000123440',
-                           7 * WEEKDAY(CURDATE()) + WEEKDAY(o.orderDate) + 1, 1) AS DaysAfterOrderDate
-                FROM `order` o, orderpart op
-                WHERE o.orderStatus = 'Processing'
-                AND (5 * (DATEDIFF(CURDATE(), o.orderDate) DIV 7) +
-                     MID('0123444401233334012222340111123400001234000123440',
-                         7 * WEEKDAY(CURDATE()) + WEEKDAY(o.orderDate) + 1, 1)) > 2
-                AND o.orderID = op.orderID
-
-                UNION ALL
-
-                SELECT o.orderID, op.partID, op.orderQty,
-                       5 * (DATEDIFF(CURDATE(), o.orderDate) DIV 7) +
-                       MID('0123444401233334012222340111123400001234000123440',
-                           7 * WEEKDAY(CURDATE()) + WEEKDAY(o.orderDate) + 1, 1) AS DaysAfterOrderDate
-                FROM `order` o, orderpart op
-                WHERE o.orderStatus = 'Processing'
-                AND (5 * (DATEDIFF(CURDATE(), o.orderDate) DIV 7) +
-                     MID('0123444401233334012222340111123400001234000123440',
-                         7 * WEEKDAY(CURDATE()) + WEEKDAY(o.orderDate) + 1, 1)) > 5
-                AND o.orderID = op.orderID
-                AND o.fromOrder IS NOT NULL;");
+                   5 * (DATEDIFF(CURDATE(), o.orderDate) DIV 7) +
+                   MID('0123444401233334012222340111123400001234000123440',
+                       7 * WEEKDAY(CURDATE()) + WEEKDAY(o.orderDate) + 1, 1) AS DaysAfterOrderDate
+                    FROM `order` o
+                    JOIN `orderpart` op ON o.orderID = op.orderID
+                    WHERE o.orderStatus = 'Processing'
+                    AND (
+                        (o.orderID LIKE 'R%' AND (5 * (DATEDIFF(CURDATE(), o.orderDate) DIV 7) +
+                        MID('0123444401233334012222340111123400001234000123440',
+                            7 * WEEKDAY(CURDATE()) + WEEKDAY(o.orderDate) + 1, 1)) > 5)
+                        OR
+                        (o.fromOrder IS NULL AND (5 * (DATEDIFF(CURDATE(), o.orderDate) DIV 7) +
+                        MID('0123444401233334012222340111123400001234000123440',
+                            7 * WEEKDAY(CURDATE()) + WEEKDAY(o.orderDate) + 1, 1)) > 2)
+                    );");
             }
         }
         private void reloadDataGridView(String query)
