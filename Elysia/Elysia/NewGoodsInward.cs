@@ -56,7 +56,7 @@ namespace Elysia
                         var maxInwardsID = reader[0];
                         if (maxInwardsID != null && maxInwardsID != DBNull.Value)
                         {
-                            newInwardsID = $"R{int.Parse(maxInwardsID.ToString().Substring(1)) + 1:D9}";
+                            newInwardsID = $"G{int.Parse(maxInwardsID.ToString().Substring(1)) + 1:D9}";
                         }
                     }
                 }
@@ -231,6 +231,7 @@ namespace Elysia
                 }
 
                 //loop through orderPart dictionary
+                int seq = 0;
                 foreach (KeyValuePair<String, int> part in inwardsParts)
                 {
                     var remaining = part.Value + getPartQty(part.Key); // store the remaing qty after - a outstanding order
@@ -262,7 +263,7 @@ namespace Elysia
                         cmd.CommandText = $"INSERT INTO inwardsPart VALUES ('{newInwardsID}', '{part.Key}', {part.Value});";
                     }
                     cmd.ExecuteNonQuery();
-                    string timestamp = DateTime.Now.ToString("yyyyMMddHHmmssff");
+                    string timestamp = DateTime.Now.ToString("yyyyMMddHHmmss")+seq.ToString("D2");
                     int changeQty = -part.Value;
                     cmd.CommandText = $"INSERT INTO log VALUES ('{timestamp}', '{StaticVariable.empID}', '{part.Key}', {changeQty}, 'Goods Inward');";
                     try
@@ -273,6 +274,7 @@ namespace Elysia
                     {
                         MessageBox.Show("Failed to insert goods inward parts\n" + ex.Message, "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
+                    seq++;
                 }
             }
             StaticVariable.UpdateAllOutstandingOrders();
