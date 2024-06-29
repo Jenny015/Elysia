@@ -93,6 +93,7 @@
             // 
             // ForgetPassword
             // 
+            this.AcceptButton = this.btn_forget;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;

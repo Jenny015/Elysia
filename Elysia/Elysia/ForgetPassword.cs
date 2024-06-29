@@ -15,7 +15,7 @@ namespace Elysia
         }
         private void btn_forget_Click(object sender, EventArgs e)
         {
-            var confirm = MessageBox.Show("Are you forget your password?", "Please confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            var confirm = MessageBox.Show("Do you want to set your password to default value?", "Please confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (confirm == DialogResult.No)
             {
                 return;
