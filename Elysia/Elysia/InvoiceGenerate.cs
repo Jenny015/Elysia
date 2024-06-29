@@ -277,7 +277,7 @@ namespace Elysia
             signColumn.SetSimpleColumn(new Phrase(Bsign.Text + "___________________", boldFont), document.LeftMargin, endPositionNewTable - 20, document.PageSize.Width - document.RightMargin, 0, 15, Element.ALIGN_RIGHT);
             signColumn.Go();
             document.Close();
-            MessageBox.Show("Invoice is generate successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show($"Invoice is generate successfully at {invoicePath}.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             uploadPdfToSql();
         }
         //upload invoice to sql

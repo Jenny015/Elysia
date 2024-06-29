@@ -11,6 +11,7 @@ namespace Elysia
         public ForgetPassword()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
         private void btn_forget_Click(object sender, EventArgs e)
         {

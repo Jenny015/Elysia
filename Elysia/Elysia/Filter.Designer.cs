@@ -145,7 +145,7 @@
             this.DID.Controls.Add(this.didOrderID);
             this.DID.Controls.Add(this.label2);
             this.DID.Controls.Add(this.label6);
-            this.DID.Location = new System.Drawing.Point(930, 158);
+            this.DID.Location = new System.Drawing.Point(9, 9);
             this.DID.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.DID.Name = "DID";
             this.DID.Size = new System.Drawing.Size(400, 227);
@@ -219,7 +219,7 @@
             // 
             this.btnSearch.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnSearch.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.btnSearch.Location = new System.Drawing.Point(176, 444);
+            this.btnSearch.Location = new System.Drawing.Point(135, 257);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(150, 40);
@@ -253,7 +253,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.label14.Location = new System.Drawing.Point(28, 114);
+            this.label14.Location = new System.Drawing.Point(145, 116);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(75, 26);
             this.label14.TabIndex = 21;
@@ -345,7 +345,7 @@
             this.orderDateContainer.Location = new System.Drawing.Point(24, 262);
             this.orderDateContainer.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.orderDateContainer.Name = "orderDateContainer";
-            this.orderDateContainer.Size = new System.Drawing.Size(459, 122);
+            this.orderDateContainer.Size = new System.Drawing.Size(369, 122);
             this.orderDateContainer.TabIndex = 16;
             this.orderDateContainer.Visible = false;
             // 
@@ -356,7 +356,7 @@
             this.oDateTo.Location = new System.Drawing.Point(86, 71);
             this.oDateTo.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.oDateTo.Name = "oDateTo";
-            this.oDateTo.Size = new System.Drawing.Size(310, 30);
+            this.oDateTo.Size = new System.Drawing.Size(252, 30);
             this.oDateTo.TabIndex = 3;
             this.oDateTo.Value = new System.DateTime(2024, 5, 30, 0, 0, 0, 0);
             // 
@@ -367,7 +367,7 @@
             this.oDateFrom.Location = new System.Drawing.Point(86, 22);
             this.oDateFrom.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.oDateFrom.Name = "oDateFrom";
-            this.oDateFrom.Size = new System.Drawing.Size(310, 30);
+            this.oDateFrom.Size = new System.Drawing.Size(252, 30);
             this.oDateFrom.TabIndex = 2;
             this.oDateFrom.Value = new System.DateTime(2024, 5, 30, 0, 0, 0, 0);
             // 
@@ -401,10 +401,10 @@
             this.Order.Controls.Add(this.cbOrderID);
             this.Order.Controls.Add(this.label5);
             this.Order.Controls.Add(this.label3);
-            this.Order.Location = new System.Drawing.Point(14, 12);
+            this.Order.Location = new System.Drawing.Point(1053, 53);
             this.Order.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.Order.Name = "Order";
-            this.Order.Size = new System.Drawing.Size(518, 414);
+            this.Order.Size = new System.Drawing.Size(426, 414);
             this.Order.TabIndex = 7;
             this.Order.Visible = false;
             // 
