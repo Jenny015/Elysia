@@ -86,8 +86,6 @@ namespace Elysia
             tbPhoneNumber.Text = "";
             tbEmail.Text = "";
             tbPostion.Text = "";
-            tbPassword.Text = "";
-
         }
         private void btnSubmit_Click(object sender, EventArgs e)
         {
@@ -149,7 +147,7 @@ namespace Elysia
                     cmd.Parameters.AddWithValue("@empEmail", tbEmail.Text);
                     cmd.Parameters.AddWithValue("@deptID", dept);
                     cmd.Parameters.AddWithValue("@empPostion", tbPostion.Text);
-                    cmd.Parameters.AddWithValue("@empPasswd", tbPassword.Text);
+                    cmd.Parameters.AddWithValue("@empPasswd", lblEmpID.Text.ToLower());
 
                     // Execute the query
                     cmd.ExecuteNonQuery();
@@ -157,11 +155,12 @@ namespace Elysia
 
                 MessageBox.Show("Employee information added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 btnClear_Click(null, null);
+                updateEmpID();
             }
         }
         private bool checkInput()
         {
-            if (tbEmpName.Text != "" && tbPhoneNumber.Text != "" && tbEmail.Text != "" && tbPostion.Text != "" && tbPassword.Text != "")
+            if (tbEmpName.Text != "" && tbPhoneNumber.Text != "" && tbEmail.Text != "" && tbPostion.Text != "")
             {
                 return true;
             }

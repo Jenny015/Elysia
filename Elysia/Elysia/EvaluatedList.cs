@@ -14,6 +14,7 @@ namespace Elysia
     public partial class EvaluatedList : UserControl
     {
         string connectionString = "server=localhost;database=elysia;user=root;password=\"\"";
+        private Filter filter;
 
         public EvaluatedList()
         {
@@ -37,8 +38,15 @@ namespace Elysia
                 }
 
                 dgvEv.DataSource = ds.Tables[0];
-                dgvEv.Columns["partQty"].DefaultCellStyle.Format = "N0";
+                if (dgvEv.Columns.Contains("partQty"))
+                {
+                    dgvEv.Columns["partQty"].DefaultCellStyle.Format = "N0";
+                } else if (dgvEv.Columns.Contains("changes"))
+                {
+                    dgvEv.Columns["changes"].DefaultCellStyle.Format = "N0";
+                }
                 dgvEv.Columns["Subtotal"].DefaultCellStyle.Format = "N2";
+                dgvEv.Columns["Purchase Price"].DefaultCellStyle.Format = "N2";
 
                 double totalPrice = 0;
                 foreach (DataGridViewRow row in dgvEv.Rows)
@@ -165,6 +173,17 @@ namespace Elysia
             string filePath = $"{path}{fileName}.csv";
             File.WriteAllText(filePath, sb.ToString());
             MessageBox.Show($"Evaluated List: {fileName}.CSV is generate successfully at {path}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        private void btnFilter_Click(object sender, EventArgs e)
+        {
+            filter = new Filter("evaluated");
+            filter.Query += filter_Query;
+            filter.Show();
+        }
+        //filter
+        private void filter_Query(object sender, EventArgs e)
+        {
+            reloadDataGridView(filter.queryString);
         }
     }
 }

@@ -63,6 +63,9 @@ namespace Elysia
                 case "inv":
                     setComponent_inv();
                     break;
+                case "evaluated":
+                    setComponent_evaluated();
+                    break;
             }
         }
 
@@ -99,6 +102,9 @@ namespace Elysia
                     break;
                 case "inv":
                     search_invoice();
+                    break;
+                case "evaluated":
+                    search_evaluated();
                     break;
             }
             Query?.Invoke(this, EventArgs.Empty);
@@ -188,7 +194,7 @@ namespace Elysia
             log.Location = new System.Drawing.Point(9, 9);
             log.Visible = true;
             btnSearch.Location = new System.Drawing.Point(125, 258);
-            loadDataFromDatabase("partID", "log", logPartID);
+            loadDataFromDatabase("partID", "part", logPartID);
             loadDataFromDatabase("logDes", "log", logDes);
         }
         private void setComponent_spp()
@@ -198,7 +204,7 @@ namespace Elysia
             btnSearch.Location = new System.Drawing.Point(134, 203);
             btnSearch.Text = "Add";
             this.Text = "Add Supplier Part";
-            loadDataFromDatabase("partID", "log", supplierPartID);
+            loadDataFromDatabase("partID", "part", supplierPartID);
         }
         private void setComponent_inv()
         {
@@ -207,6 +213,27 @@ namespace Elysia
             btnSearch.Location = new System.Drawing.Point(100, 150);
             loadDataFromDatabase("orderID", "invoice", inv_orderID);
             loadDataFromDatabase("invStatus", "invoice", inv_status);
+        }
+        private void setComponent_evaluated()
+        {
+            evaluated.Location = new System.Drawing.Point(9, 9);
+            evaluated.Visible = true;
+            btnSearch.Location = new System.Drawing.Point(100, 360);
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                MySqlCommand cmd = conn.CreateCommand();
+
+                cmd.CommandText = $"SELECT categoryName FROM category ORDER BY categoryName Desc;";
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    evaCate.Items.Clear();
+                    while (reader.Read())
+                    {
+                        evaCate.Items.Add(reader.GetString(0));
+                    }
+                }
+            };
         }
         private void search_DID()
         {
@@ -415,6 +442,50 @@ namespace Elysia
                 queryBuilder.Append($" AND invStatus = '{inv_status.SelectedItem}'");
             }
             queryString = queryBuilder.ToString();
+        }
+        private void search_evaluated()
+        {
+            StringBuilder queryBuilder = new StringBuilder("SELECT p.partID, p.partName, SUM(L.logChanges) AS changes, sp.purPrice AS 'Purchase Price', SUM((L.logChanges*purPrice)) AS Subtotal FROM part p, supplierpart sp, log L WHERE P.partID = sp.partID AND L.partID = p.partID");
+            List<MySqlParameter> parameters = new List<MySqlParameter>();
+            switch (evaCate.SelectedIndex)
+            {
+                case -1:
+                    break;
+                case 0:
+                    queryBuilder.Append($" AND p.categoryID = 'A'");
+                    break;
+                case 1:
+                    queryBuilder.Append($" AND p.categoryID = 'B'");
+                    break;
+                case 2:
+                    queryBuilder.Append($" AND p.categoryID = 'C'");
+                    break;
+                case 3:
+                    queryBuilder.Append($" AND p.categoryID = 'D'");
+                    break;
+            }
+            switch (evaValue.SelectedIndex)
+            {
+                case -1:
+                    break;
+                case 0:
+                    queryBuilder.Append($" AND L.logChanges > 0");
+                    break;
+                case 1:
+                    queryBuilder.Append($" AND L.logChanges < 0");
+                    break;
+            }
+            if (evaDate.Checked && evaTo.Value.Date >= evaFrom.Value.Date)
+            {
+                queryBuilder.Append($" AND L.logID BETWEEN '{evaFrom.Value.ToString("yyyyMMdd")}%' AND '{evaTo.Value.ToString("yyyyMMdd")}%'");
+            }
+            queryBuilder.Append(" GROUP BY p.partID, p.partName, sp.purPrice ORDER BY p.partID");
+            queryString = queryBuilder.ToString();
+        }
+        private void evaDate_CheckedChanged(object sender, EventArgs e)
+        {
+            evaDatePanel.Visible = evaDate.Checked;
+            evaDatePanel.Enabled = evaDate.Checked;
         }
     }
 }

@@ -109,6 +109,17 @@
             this.inv_status = new System.Windows.Forms.ComboBox();
             this.inv_orderID = new System.Windows.Forms.ComboBox();
             this.label36 = new System.Windows.Forms.Label();
+            this.evaluated = new System.Windows.Forms.Panel();
+            this.evaDatePanel = new System.Windows.Forms.Panel();
+            this.evaTo = new System.Windows.Forms.DateTimePicker();
+            this.evaFrom = new System.Windows.Forms.DateTimePicker();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.evaDate = new System.Windows.Forms.CheckBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.evaValue = new System.Windows.Forms.ComboBox();
+            this.label39 = new System.Windows.Forms.Label();
+            this.evaCate = new System.Windows.Forms.ComboBox();
             this.DID.SuspendLayout();
             this.supplierPart.SuspendLayout();
             this.orderDateContainer.SuspendLayout();
@@ -121,6 +132,8 @@
             this.emp.SuspendLayout();
             this.log.SuspendLayout();
             this.inv.SuspendLayout();
+            this.evaluated.SuspendLayout();
+            this.evaDatePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // DID
@@ -146,7 +159,7 @@
             this.didStatus.Location = new System.Drawing.Point(160, 158);
             this.didStatus.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.didStatus.Name = "didStatus";
-            this.didStatus.Size = new System.Drawing.Size(200, 27);
+            this.didStatus.Size = new System.Drawing.Size(200, 30);
             this.didStatus.TabIndex = 22;
             // 
             // label15
@@ -155,7 +168,7 @@
             this.label15.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.label15.Location = new System.Drawing.Point(28, 162);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(75, 23);
+            this.label15.Size = new System.Drawing.Size(89, 26);
             this.label15.TabIndex = 22;
             this.label15.Text = "Status: ";
             // 
@@ -167,7 +180,7 @@
             this.didPartID.Location = new System.Drawing.Point(160, 91);
             this.didPartID.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.didPartID.Name = "didPartID";
-            this.didPartID.Size = new System.Drawing.Size(200, 27);
+            this.didPartID.Size = new System.Drawing.Size(200, 30);
             this.didPartID.TabIndex = 19;
             // 
             // didOrderID
@@ -178,7 +191,7 @@
             this.didOrderID.Location = new System.Drawing.Point(160, 30);
             this.didOrderID.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.didOrderID.Name = "didOrderID";
-            this.didOrderID.Size = new System.Drawing.Size(200, 27);
+            this.didOrderID.Size = new System.Drawing.Size(200, 30);
             this.didOrderID.TabIndex = 18;
             // 
             // label2
@@ -187,7 +200,7 @@
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(28, 96);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 23);
+            this.label2.Size = new System.Drawing.Size(104, 26);
             this.label2.TabIndex = 16;
             this.label2.Text = "Part ID: ";
             // 
@@ -197,7 +210,7 @@
             this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.label6.Location = new System.Drawing.Point(28, 35);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(100, 23);
+            this.label6.Size = new System.Drawing.Size(123, 26);
             this.label6.TabIndex = 15;
             this.label6.Text = "Order ID: ";
             // 
@@ -241,7 +254,7 @@
             this.label14.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.label14.Location = new System.Drawing.Point(28, 114);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(61, 23);
+            this.label14.Size = new System.Drawing.Size(75, 26);
             this.label14.TabIndex = 21;
             this.label14.Text = "Price:";
             // 
@@ -253,7 +266,7 @@
             this.supplierPartID.Location = new System.Drawing.Point(226, 32);
             this.supplierPartID.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.supplierPartID.Name = "supplierPartID";
-            this.supplierPartID.Size = new System.Drawing.Size(200, 27);
+            this.supplierPartID.Size = new System.Drawing.Size(200, 30);
             this.supplierPartID.TabIndex = 18;
             // 
             // label8
@@ -262,7 +275,7 @@
             this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.label8.Location = new System.Drawing.Point(28, 36);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(159, 23);
+            this.label8.Size = new System.Drawing.Size(198, 26);
             this.label8.TabIndex = 15;
             this.label8.Text = "Supplier Part ID: ";
             // 
@@ -272,7 +285,7 @@
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.label3.Location = new System.Drawing.Point(30, 35);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 23);
+            this.label3.Size = new System.Drawing.Size(123, 26);
             this.label3.TabIndex = 7;
             this.label3.Text = "Order ID: ";
             // 
@@ -282,7 +295,7 @@
             this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.label5.Location = new System.Drawing.Point(30, 101);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(105, 23);
+            this.label5.Size = new System.Drawing.Size(127, 26);
             this.label5.TabIndex = 10;
             this.label5.Text = "Dealer ID: ";
             // 
@@ -294,7 +307,7 @@
             this.cbOrderID.Location = new System.Drawing.Point(162, 29);
             this.cbOrderID.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.cbOrderID.Name = "cbOrderID";
-            this.cbOrderID.Size = new System.Drawing.Size(200, 27);
+            this.cbOrderID.Size = new System.Drawing.Size(200, 30);
             this.cbOrderID.TabIndex = 13;
             // 
             // cbDealerID
@@ -305,7 +318,7 @@
             this.cbDealerID.Location = new System.Drawing.Point(162, 97);
             this.cbDealerID.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.cbDealerID.Name = "cbDealerID";
-            this.cbDealerID.Size = new System.Drawing.Size(200, 27);
+            this.cbDealerID.Size = new System.Drawing.Size(200, 30);
             this.cbDealerID.TabIndex = 14;
             // 
             // cbDate
@@ -315,7 +328,7 @@
             this.cbDate.Location = new System.Drawing.Point(34, 230);
             this.cbDate.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.cbDate.Name = "cbDate";
-            this.cbDate.Size = new System.Drawing.Size(153, 23);
+            this.cbDate.Size = new System.Drawing.Size(179, 26);
             this.cbDate.TabIndex = 15;
             this.cbDate.Text = "Querying by date?";
             this.cbDate.UseVisualStyleBackColor = true;
@@ -342,7 +355,7 @@
             this.oDateTo.Location = new System.Drawing.Point(86, 71);
             this.oDateTo.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.oDateTo.Name = "oDateTo";
-            this.oDateTo.Size = new System.Drawing.Size(310, 27);
+            this.oDateTo.Size = new System.Drawing.Size(310, 30);
             this.oDateTo.TabIndex = 3;
             this.oDateTo.Value = new System.DateTime(2024, 5, 30, 0, 0, 0, 0);
             // 
@@ -353,7 +366,7 @@
             this.oDateFrom.Location = new System.Drawing.Point(86, 22);
             this.oDateFrom.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.oDateFrom.Name = "oDateFrom";
-            this.oDateFrom.Size = new System.Drawing.Size(310, 27);
+            this.oDateFrom.Size = new System.Drawing.Size(310, 30);
             this.oDateFrom.TabIndex = 2;
             this.oDateFrom.Value = new System.DateTime(2024, 5, 30, 0, 0, 0, 0);
             // 
@@ -363,7 +376,7 @@
             this.label4.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.label4.Location = new System.Drawing.Point(18, 73);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(26, 19);
+            this.label4.Size = new System.Drawing.Size(31, 22);
             this.label4.TabIndex = 1;
             this.label4.Text = "To";
             // 
@@ -373,7 +386,7 @@
             this.label1.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.label1.Location = new System.Drawing.Point(18, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 19);
+            this.label1.Size = new System.Drawing.Size(52, 22);
             this.label1.TabIndex = 0;
             this.label1.Text = "From";
             // 
@@ -400,7 +413,7 @@
             this.label13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.label13.Location = new System.Drawing.Point(30, 168);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(75, 23);
+            this.label13.Size = new System.Drawing.Size(89, 26);
             this.label13.TabIndex = 20;
             this.label13.Text = "Status: ";
             // 
@@ -412,7 +425,7 @@
             this.orderStatus.Location = new System.Drawing.Point(162, 163);
             this.orderStatus.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.orderStatus.Name = "orderStatus";
-            this.orderStatus.Size = new System.Drawing.Size(200, 27);
+            this.orderStatus.Size = new System.Drawing.Size(200, 30);
             this.orderStatus.TabIndex = 19;
             // 
             // inward
@@ -425,7 +438,7 @@
             this.inward.Controls.Add(this.iwID);
             this.inward.Controls.Add(this.label10);
             this.inward.Controls.Add(this.label11);
-            this.inward.Location = new System.Drawing.Point(14, 701);
+            this.inward.Location = new System.Drawing.Point(29, 576);
             this.inward.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.inward.Name = "inward";
             this.inward.Size = new System.Drawing.Size(393, 414);
@@ -440,7 +453,7 @@
             this.iwPartID.Location = new System.Drawing.Point(162, 168);
             this.iwPartID.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.iwPartID.Name = "iwPartID";
-            this.iwPartID.Size = new System.Drawing.Size(200, 27);
+            this.iwPartID.Size = new System.Drawing.Size(200, 30);
             this.iwPartID.TabIndex = 21;
             // 
             // iwDatePanel
@@ -464,7 +477,7 @@
             this.iwTo.Location = new System.Drawing.Point(86, 71);
             this.iwTo.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.iwTo.Name = "iwTo";
-            this.iwTo.Size = new System.Drawing.Size(205, 27);
+            this.iwTo.Size = new System.Drawing.Size(205, 30);
             this.iwTo.TabIndex = 3;
             this.iwTo.Value = new System.DateTime(2024, 5, 30, 0, 0, 0, 0);
             // 
@@ -475,7 +488,7 @@
             this.iwFrom.Location = new System.Drawing.Point(86, 22);
             this.iwFrom.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.iwFrom.Name = "iwFrom";
-            this.iwFrom.Size = new System.Drawing.Size(205, 27);
+            this.iwFrom.Size = new System.Drawing.Size(205, 30);
             this.iwFrom.TabIndex = 2;
             this.iwFrom.Value = new System.DateTime(2024, 5, 30, 0, 0, 0, 0);
             // 
@@ -485,7 +498,7 @@
             this.label7.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.label7.Location = new System.Drawing.Point(18, 73);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(26, 19);
+            this.label7.Size = new System.Drawing.Size(31, 22);
             this.label7.TabIndex = 1;
             this.label7.Text = "To";
             // 
@@ -495,7 +508,7 @@
             this.label9.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.label9.Location = new System.Drawing.Point(18, 30);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(46, 19);
+            this.label9.Size = new System.Drawing.Size(52, 22);
             this.label9.TabIndex = 0;
             this.label9.Text = "From";
             // 
@@ -505,7 +518,7 @@
             this.label12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.label12.Location = new System.Drawing.Point(22, 173);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(85, 23);
+            this.label12.Size = new System.Drawing.Size(104, 26);
             this.label12.TabIndex = 20;
             this.label12.Text = "Part ID: ";
             // 
@@ -516,7 +529,7 @@
             this.iwDate.Location = new System.Drawing.Point(34, 230);
             this.iwDate.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.iwDate.Name = "iwDate";
-            this.iwDate.Size = new System.Drawing.Size(153, 23);
+            this.iwDate.Size = new System.Drawing.Size(179, 26);
             this.iwDate.TabIndex = 15;
             this.iwDate.Text = "Querying by date?";
             this.iwDate.UseVisualStyleBackColor = true;
@@ -530,7 +543,7 @@
             this.iwSupplierID.Location = new System.Drawing.Point(162, 100);
             this.iwSupplierID.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.iwSupplierID.Name = "iwSupplierID";
-            this.iwSupplierID.Size = new System.Drawing.Size(200, 27);
+            this.iwSupplierID.Size = new System.Drawing.Size(200, 30);
             this.iwSupplierID.TabIndex = 14;
             // 
             // iwID
@@ -541,7 +554,7 @@
             this.iwID.Location = new System.Drawing.Point(162, 32);
             this.iwID.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.iwID.Name = "iwID";
-            this.iwID.Size = new System.Drawing.Size(200, 27);
+            this.iwID.Size = new System.Drawing.Size(200, 30);
             this.iwID.TabIndex = 13;
             // 
             // label10
@@ -550,7 +563,7 @@
             this.label10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.label10.Location = new System.Drawing.Point(22, 104);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(117, 23);
+            this.label10.Size = new System.Drawing.Size(146, 26);
             this.label10.TabIndex = 10;
             this.label10.Text = "Supplier ID: ";
             // 
@@ -560,7 +573,7 @@
             this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.label11.Location = new System.Drawing.Point(22, 37);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(107, 23);
+            this.label11.Size = new System.Drawing.Size(133, 26);
             this.label11.TabIndex = 7;
             this.label11.Text = "Inward ID: ";
             // 
@@ -587,7 +600,7 @@
             this.label19.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.label19.Location = new System.Drawing.Point(21, 98);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(113, 23);
+            this.label19.Size = new System.Drawing.Size(137, 26);
             this.label19.TabIndex = 25;
             this.label19.Text = "Part Name: ";
             // 
@@ -607,7 +620,7 @@
             this.partCategory.Location = new System.Drawing.Point(164, 162);
             this.partCategory.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.partCategory.Name = "partCategory";
-            this.partCategory.Size = new System.Drawing.Size(200, 27);
+            this.partCategory.Size = new System.Drawing.Size(200, 30);
             this.partCategory.TabIndex = 24;
             // 
             // label18
@@ -616,7 +629,7 @@
             this.label18.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.label18.Location = new System.Drawing.Point(21, 163);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(106, 23);
+            this.label18.Size = new System.Drawing.Size(127, 26);
             this.label18.TabIndex = 23;
             this.label18.Text = "Category:  ";
             // 
@@ -632,7 +645,7 @@
             this.partStatus.Location = new System.Drawing.Point(164, 224);
             this.partStatus.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.partStatus.Name = "partStatus";
-            this.partStatus.Size = new System.Drawing.Size(200, 27);
+            this.partStatus.Size = new System.Drawing.Size(200, 30);
             this.partStatus.TabIndex = 22;
             // 
             // label16
@@ -641,7 +654,7 @@
             this.label16.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.label16.Location = new System.Drawing.Point(21, 226);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(75, 23);
+            this.label16.Size = new System.Drawing.Size(89, 26);
             this.label16.TabIndex = 22;
             this.label16.Text = "Status: ";
             // 
@@ -653,7 +666,7 @@
             this.partPartID.Location = new System.Drawing.Point(164, 29);
             this.partPartID.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.partPartID.Name = "partPartID";
-            this.partPartID.Size = new System.Drawing.Size(200, 27);
+            this.partPartID.Size = new System.Drawing.Size(200, 30);
             this.partPartID.TabIndex = 19;
             // 
             // label17
@@ -662,7 +675,7 @@
             this.label17.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.label17.Location = new System.Drawing.Point(21, 30);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(85, 23);
+            this.label17.Size = new System.Drawing.Size(104, 26);
             this.label17.TabIndex = 16;
             this.label17.Text = "Part ID: ";
             // 
@@ -685,7 +698,7 @@
             this.label20.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.label20.Location = new System.Drawing.Point(28, 109);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(147, 23);
+            this.label20.Size = new System.Drawing.Size(184, 26);
             this.label20.TabIndex = 21;
             this.label20.Text = "Supplier Part ID";
             // 
@@ -697,7 +710,7 @@
             this.supPartID.Location = new System.Drawing.Point(34, 148);
             this.supPartID.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.supPartID.Name = "supPartID";
-            this.supPartID.Size = new System.Drawing.Size(328, 27);
+            this.supPartID.Size = new System.Drawing.Size(328, 30);
             this.supPartID.TabIndex = 21;
             // 
             // supID
@@ -708,7 +721,7 @@
             this.supID.Location = new System.Drawing.Point(176, 37);
             this.supID.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.supID.Name = "supID";
-            this.supID.Size = new System.Drawing.Size(200, 27);
+            this.supID.Size = new System.Drawing.Size(200, 30);
             this.supID.TabIndex = 18;
             // 
             // label21
@@ -717,7 +730,7 @@
             this.label21.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.label21.Location = new System.Drawing.Point(28, 36);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(112, 23);
+            this.label21.Size = new System.Drawing.Size(140, 26);
             this.label21.TabIndex = 15;
             this.label21.Text = "Supplier ID:";
             // 
@@ -758,7 +771,7 @@
             this.label22.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.label22.Location = new System.Drawing.Point(21, 162);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(158, 23);
+            this.label22.Size = new System.Drawing.Size(193, 26);
             this.label22.TabIndex = 22;
             this.label22.Text = "Dealer Company:";
             // 
@@ -770,7 +783,7 @@
             this.deaID.Location = new System.Drawing.Point(200, 30);
             this.deaID.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.deaID.Name = "deaID";
-            this.deaID.Size = new System.Drawing.Size(200, 27);
+            this.deaID.Size = new System.Drawing.Size(200, 30);
             this.deaID.TabIndex = 18;
             // 
             // label23
@@ -779,7 +792,7 @@
             this.label23.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.label23.Location = new System.Drawing.Point(21, 96);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(128, 23);
+            this.label23.Size = new System.Drawing.Size(154, 26);
             this.label23.TabIndex = 16;
             this.label23.Text = "Dealer Name:";
             // 
@@ -789,7 +802,7 @@
             this.label24.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.label24.Location = new System.Drawing.Point(21, 35);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(100, 23);
+            this.label24.Size = new System.Drawing.Size(121, 26);
             this.label24.TabIndex = 15;
             this.label24.Text = "Dealer ID:";
             // 
@@ -826,7 +839,7 @@
             this.empDept.Location = new System.Drawing.Point(164, 98);
             this.empDept.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.empDept.Name = "empDept";
-            this.empDept.Size = new System.Drawing.Size(200, 27);
+            this.empDept.Size = new System.Drawing.Size(200, 30);
             this.empDept.TabIndex = 26;
             // 
             // label25
@@ -835,7 +848,7 @@
             this.label25.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.label25.Location = new System.Drawing.Point(21, 98);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(118, 23);
+            this.label25.Size = new System.Drawing.Size(143, 26);
             this.label25.TabIndex = 25;
             this.label25.Text = "Department:";
             // 
@@ -845,7 +858,7 @@
             this.label26.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.label26.Location = new System.Drawing.Point(21, 163);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(72, 23);
+            this.label26.Size = new System.Drawing.Size(88, 26);
             this.label26.TabIndex = 23;
             this.label26.Text = "Postion";
             // 
@@ -860,7 +873,7 @@
             this.empStatus.Location = new System.Drawing.Point(164, 224);
             this.empStatus.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.empStatus.Name = "empStatus";
-            this.empStatus.Size = new System.Drawing.Size(200, 27);
+            this.empStatus.Size = new System.Drawing.Size(200, 30);
             this.empStatus.TabIndex = 22;
             // 
             // label27
@@ -869,7 +882,7 @@
             this.label27.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.label27.Location = new System.Drawing.Point(21, 226);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(75, 23);
+            this.label27.Size = new System.Drawing.Size(89, 26);
             this.label27.TabIndex = 22;
             this.label27.Text = "Status: ";
             // 
@@ -881,7 +894,7 @@
             this.empID.Location = new System.Drawing.Point(164, 29);
             this.empID.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.empID.Name = "empID";
-            this.empID.Size = new System.Drawing.Size(200, 27);
+            this.empID.Size = new System.Drawing.Size(200, 30);
             this.empID.TabIndex = 19;
             // 
             // label28
@@ -890,7 +903,7 @@
             this.label28.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.label28.Location = new System.Drawing.Point(21, 30);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(81, 23);
+            this.label28.Size = new System.Drawing.Size(100, 26);
             this.label28.TabIndex = 16;
             this.label28.Text = "Emp ID:";
             // 
@@ -917,7 +930,7 @@
             this.logDes.Location = new System.Drawing.Point(200, 158);
             this.logDes.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.logDes.Name = "logDes";
-            this.logDes.Size = new System.Drawing.Size(200, 27);
+            this.logDes.Size = new System.Drawing.Size(200, 30);
             this.logDes.TabIndex = 22;
             // 
             // label29
@@ -926,7 +939,7 @@
             this.label29.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.label29.Location = new System.Drawing.Point(21, 162);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(151, 23);
+            this.label29.Size = new System.Drawing.Size(185, 26);
             this.label29.TabIndex = 22;
             this.label29.Text = "Log Descirption:";
             // 
@@ -941,7 +954,7 @@
             this.logChanges.Location = new System.Drawing.Point(200, 91);
             this.logChanges.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.logChanges.Name = "logChanges";
-            this.logChanges.Size = new System.Drawing.Size(200, 27);
+            this.logChanges.Size = new System.Drawing.Size(200, 30);
             this.logChanges.TabIndex = 19;
             // 
             // logPartID
@@ -952,7 +965,7 @@
             this.logPartID.Location = new System.Drawing.Point(200, 30);
             this.logPartID.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.logPartID.Name = "logPartID";
-            this.logPartID.Size = new System.Drawing.Size(200, 27);
+            this.logPartID.Size = new System.Drawing.Size(200, 30);
             this.logPartID.TabIndex = 18;
             // 
             // label30
@@ -961,7 +974,7 @@
             this.label30.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.label30.Location = new System.Drawing.Point(21, 96);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(127, 23);
+            this.label30.Size = new System.Drawing.Size(153, 26);
             this.label30.TabIndex = 16;
             this.label30.Text = "Log Changes:";
             // 
@@ -971,7 +984,7 @@
             this.label31.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.label31.Location = new System.Drawing.Point(21, 35);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(80, 23);
+            this.label31.Size = new System.Drawing.Size(98, 26);
             this.label31.TabIndex = 15;
             this.label31.Text = "Part ID:";
             // 
@@ -981,7 +994,7 @@
             this.inv.Controls.Add(this.inv_status);
             this.inv.Controls.Add(this.inv_orderID);
             this.inv.Controls.Add(this.label36);
-            this.inv.Location = new System.Drawing.Point(538, 76);
+            this.inv.Location = new System.Drawing.Point(583, 30);
             this.inv.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.inv.Name = "inv";
             this.inv.Size = new System.Drawing.Size(400, 162);
@@ -994,7 +1007,7 @@
             this.label32.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.label32.Location = new System.Drawing.Point(30, 104);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(75, 23);
+            this.label32.Size = new System.Drawing.Size(89, 26);
             this.label32.TabIndex = 20;
             this.label32.Text = "Status: ";
             // 
@@ -1006,7 +1019,7 @@
             this.inv_status.Location = new System.Drawing.Point(162, 99);
             this.inv_status.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.inv_status.Name = "inv_status";
-            this.inv_status.Size = new System.Drawing.Size(200, 27);
+            this.inv_status.Size = new System.Drawing.Size(200, 30);
             this.inv_status.TabIndex = 19;
             // 
             // inv_orderID
@@ -1017,7 +1030,7 @@
             this.inv_orderID.Location = new System.Drawing.Point(162, 29);
             this.inv_orderID.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.inv_orderID.Name = "inv_orderID";
-            this.inv_orderID.Size = new System.Drawing.Size(200, 27);
+            this.inv_orderID.Size = new System.Drawing.Size(200, 30);
             this.inv_orderID.TabIndex = 13;
             // 
             // label36
@@ -1026,9 +1039,138 @@
             this.label36.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.label36.Location = new System.Drawing.Point(30, 35);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(100, 23);
+            this.label36.Size = new System.Drawing.Size(123, 26);
             this.label36.TabIndex = 7;
             this.label36.Text = "Order ID: ";
+            // 
+            // evaluated
+            // 
+            this.evaluated.Controls.Add(this.evaCate);
+            this.evaluated.Controls.Add(this.label39);
+            this.evaluated.Controls.Add(this.evaValue);
+            this.evaluated.Controls.Add(this.evaDatePanel);
+            this.evaluated.Controls.Add(this.label35);
+            this.evaluated.Controls.Add(this.evaDate);
+            this.evaluated.Location = new System.Drawing.Point(552, 242);
+            this.evaluated.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.evaluated.Name = "evaluated";
+            this.evaluated.Size = new System.Drawing.Size(393, 335);
+            this.evaluated.TabIndex = 22;
+            this.evaluated.Visible = false;
+            // 
+            // evaDatePanel
+            // 
+            this.evaDatePanel.Controls.Add(this.evaTo);
+            this.evaDatePanel.Controls.Add(this.evaFrom);
+            this.evaDatePanel.Controls.Add(this.label33);
+            this.evaDatePanel.Controls.Add(this.label34);
+            this.evaDatePanel.Enabled = false;
+            this.evaDatePanel.Location = new System.Drawing.Point(25, 185);
+            this.evaDatePanel.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.evaDatePanel.Name = "evaDatePanel";
+            this.evaDatePanel.Size = new System.Drawing.Size(340, 122);
+            this.evaDatePanel.TabIndex = 16;
+            this.evaDatePanel.Visible = false;
+            // 
+            // evaTo
+            // 
+            this.evaTo.CustomFormat = "yyyy-MM-dd";
+            this.evaTo.Font = new System.Drawing.Font("Times New Roman", 10F);
+            this.evaTo.Location = new System.Drawing.Point(86, 71);
+            this.evaTo.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.evaTo.Name = "evaTo";
+            this.evaTo.Size = new System.Drawing.Size(205, 30);
+            this.evaTo.TabIndex = 3;
+            this.evaTo.Value = new System.DateTime(2024, 5, 30, 0, 0, 0, 0);
+            // 
+            // evaFrom
+            // 
+            this.evaFrom.CustomFormat = "yyyy-MM-dd";
+            this.evaFrom.Font = new System.Drawing.Font("Times New Roman", 10F);
+            this.evaFrom.Location = new System.Drawing.Point(86, 22);
+            this.evaFrom.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.evaFrom.Name = "evaFrom";
+            this.evaFrom.Size = new System.Drawing.Size(205, 30);
+            this.evaFrom.TabIndex = 2;
+            this.evaFrom.Value = new System.DateTime(2024, 5, 30, 0, 0, 0, 0);
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Times New Roman", 10F);
+            this.label33.Location = new System.Drawing.Point(18, 73);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(31, 22);
+            this.label33.TabIndex = 1;
+            this.label33.Text = "To";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Times New Roman", 10F);
+            this.label34.Location = new System.Drawing.Point(18, 30);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(52, 22);
+            this.label34.TabIndex = 0;
+            this.label34.Text = "From";
+            // 
+            // evaDate
+            // 
+            this.evaDate.AutoSize = true;
+            this.evaDate.Font = new System.Drawing.Font("Times New Roman", 10F);
+            this.evaDate.Location = new System.Drawing.Point(33, 152);
+            this.evaDate.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.evaDate.Name = "evaDate";
+            this.evaDate.Size = new System.Drawing.Size(179, 26);
+            this.evaDate.TabIndex = 15;
+            this.evaDate.Text = "Querying by date?";
+            this.evaDate.UseVisualStyleBackColor = true;
+            this.evaDate.CheckedChanged += new System.EventHandler(this.evaDate_CheckedChanged);
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.label35.Location = new System.Drawing.Point(21, 95);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(84, 26);
+            this.label35.TabIndex = 20;
+            this.label35.Text = "Value: ";
+            // 
+            // evaValue
+            // 
+            this.evaValue.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.evaValue.Font = new System.Drawing.Font("Times New Roman", 10F);
+            this.evaValue.FormattingEnabled = true;
+            this.evaValue.Items.AddRange(new object[] {
+            "Increase",
+            "Decrease"});
+            this.evaValue.Location = new System.Drawing.Point(161, 95);
+            this.evaValue.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.evaValue.Name = "evaValue";
+            this.evaValue.Size = new System.Drawing.Size(200, 30);
+            this.evaValue.TabIndex = 21;
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.label39.Location = new System.Drawing.Point(21, 36);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(127, 26);
+            this.label39.TabIndex = 24;
+            this.label39.Text = "Category:  ";
+            // 
+            // evaCate
+            // 
+            this.evaCate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.evaCate.Font = new System.Drawing.Font("Times New Roman", 10F);
+            this.evaCate.FormattingEnabled = true;
+            this.evaCate.Location = new System.Drawing.Point(161, 37);
+            this.evaCate.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.evaCate.Name = "evaCate";
+            this.evaCate.Size = new System.Drawing.Size(200, 30);
+            this.evaCate.TabIndex = 26;
             // 
             // Filter
             // 
@@ -1037,6 +1179,7 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1924, 1055);
+            this.Controls.Add(this.evaluated);
             this.Controls.Add(this.inv);
             this.Controls.Add(this.log);
             this.Controls.Add(this.emp);
@@ -1077,6 +1220,10 @@
             this.log.PerformLayout();
             this.inv.ResumeLayout(false);
             this.inv.PerformLayout();
+            this.evaluated.ResumeLayout(false);
+            this.evaluated.PerformLayout();
+            this.evaDatePanel.ResumeLayout(false);
+            this.evaDatePanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1163,5 +1310,16 @@
         private System.Windows.Forms.ComboBox inv_status;
         private System.Windows.Forms.ComboBox inv_orderID;
         private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Panel evaluated;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.ComboBox evaValue;
+        private System.Windows.Forms.Panel evaDatePanel;
+        private System.Windows.Forms.DateTimePicker evaTo;
+        private System.Windows.Forms.DateTimePicker evaFrom;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.CheckBox evaDate;
+        private System.Windows.Forms.ComboBox evaCate;
     }
 }
