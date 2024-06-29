@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SalesOffice));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnViewOrder = new System.Windows.Forms.RadioButton();
             this.btnNewOrder = new System.Windows.Forms.RadioButton();
@@ -70,7 +71,7 @@
             this.btnViewOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnViewOrder.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnViewOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnViewOrder.Location = new System.Drawing.Point(4, 573);
+            this.btnViewOrder.Location = new System.Drawing.Point(4, 649);
             this.btnViewOrder.Margin = new System.Windows.Forms.Padding(4);
             this.btnViewOrder.Name = "btnViewOrder";
             this.btnViewOrder.Size = new System.Drawing.Size(409, 75);
@@ -90,7 +91,7 @@
             this.btnNewOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewOrder.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnNewOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNewOrder.Location = new System.Drawing.Point(4, 498);
+            this.btnNewOrder.Location = new System.Drawing.Point(4, 574);
             this.btnNewOrder.Margin = new System.Windows.Forms.Padding(4);
             this.btnNewOrder.Name = "btnNewOrder";
             this.btnNewOrder.Size = new System.Drawing.Size(409, 75);
@@ -110,7 +111,7 @@
             this.btnViewDealer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnViewDealer.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnViewDealer.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnViewDealer.Location = new System.Drawing.Point(4, 423);
+            this.btnViewDealer.Location = new System.Drawing.Point(4, 499);
             this.btnViewDealer.Margin = new System.Windows.Forms.Padding(4);
             this.btnViewDealer.Name = "btnViewDealer";
             this.btnViewDealer.Size = new System.Drawing.Size(409, 75);
@@ -130,7 +131,7 @@
             this.btnNewDealer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewDealer.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnNewDealer.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNewDealer.Location = new System.Drawing.Point(4, 348);
+            this.btnNewDealer.Location = new System.Drawing.Point(4, 424);
             this.btnNewDealer.Margin = new System.Windows.Forms.Padding(4);
             this.btnNewDealer.Name = "btnNewDealer";
             this.btnNewDealer.Size = new System.Drawing.Size(409, 75);
@@ -150,7 +151,7 @@
             this.radioButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.radioButton1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.radioButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radioButton1.Location = new System.Drawing.Point(4, 273);
+            this.radioButton1.Location = new System.Drawing.Point(4, 349);
             this.radioButton1.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(409, 75);
@@ -185,7 +186,7 @@
             // 
             this.lblDept.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblDept.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
-            this.lblDept.Location = new System.Drawing.Point(4, 198);
+            this.lblDept.Location = new System.Drawing.Point(4, 274);
             this.lblDept.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDept.Name = "lblDept";
             this.lblDept.Size = new System.Drawing.Size(409, 75);
@@ -198,10 +199,12 @@
             this.imgLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(84)))), ((int)(((byte)(129)))));
             this.imgLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.imgLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.imgLogo.Image = global::Elysia.Properties.Resources.logo;
             this.imgLogo.Location = new System.Drawing.Point(4, 4);
             this.imgLogo.Margin = new System.Windows.Forms.Padding(4);
             this.imgLogo.Name = "imgLogo";
-            this.imgLogo.Size = new System.Drawing.Size(409, 194);
+            this.imgLogo.Size = new System.Drawing.Size(409, 270);
+            this.imgLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgLogo.TabIndex = 0;
             this.imgLogo.TabStop = false;
             // 
@@ -219,6 +222,7 @@
             this.ClientSize = new System.Drawing.Size(1924, 1055);
             this.Controls.Add(this.contentPanel);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SalesOffice";
             this.Text = "SalesOffice";
             this.panel1.ResumeLayout(false);

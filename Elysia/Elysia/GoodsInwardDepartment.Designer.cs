@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GoodsInwardDepartment));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.contentPanel = new System.Windows.Forms.Panel();
             this.btnViewGoodsInward = new System.Windows.Forms.RadioButton();
             this.btnGoodsInward = new System.Windows.Forms.RadioButton();
             this.btnUser = new System.Windows.Forms.RadioButton();
             this.btnLogout = new System.Windows.Forms.RadioButton();
             this.lblDept = new System.Windows.Forms.Label();
             this.imgLogo = new System.Windows.Forms.PictureBox();
+            this.contentPanel = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
             this.SuspendLayout();
@@ -58,13 +59,6 @@
             this.panel1.Size = new System.Drawing.Size(419, 1055);
             this.panel1.TabIndex = 31;
             // 
-            // contentPanel
-            // 
-            this.contentPanel.Location = new System.Drawing.Point(420, 0);
-            this.contentPanel.Name = "contentPanel";
-            this.contentPanel.Size = new System.Drawing.Size(1503, 1055);
-            this.contentPanel.TabIndex = 52;
-            // 
             // btnViewGoodsInward
             // 
             this.btnViewGoodsInward.Appearance = System.Windows.Forms.Appearance.Button;
@@ -73,7 +67,7 @@
             this.btnViewGoodsInward.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnViewGoodsInward.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnViewGoodsInward.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnViewGoodsInward.Location = new System.Drawing.Point(4, 420);
+            this.btnViewGoodsInward.Location = new System.Drawing.Point(4, 496);
             this.btnViewGoodsInward.Margin = new System.Windows.Forms.Padding(4);
             this.btnViewGoodsInward.Name = "btnViewGoodsInward";
             this.btnViewGoodsInward.Size = new System.Drawing.Size(409, 74);
@@ -92,7 +86,7 @@
             this.btnGoodsInward.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGoodsInward.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnGoodsInward.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnGoodsInward.Location = new System.Drawing.Point(4, 346);
+            this.btnGoodsInward.Location = new System.Drawing.Point(4, 422);
             this.btnGoodsInward.Margin = new System.Windows.Forms.Padding(4);
             this.btnGoodsInward.Name = "btnGoodsInward";
             this.btnGoodsInward.Size = new System.Drawing.Size(409, 74);
@@ -112,7 +106,7 @@
             this.btnUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUser.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnUser.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnUser.Location = new System.Drawing.Point(4, 272);
+            this.btnUser.Location = new System.Drawing.Point(4, 348);
             this.btnUser.Margin = new System.Windows.Forms.Padding(4);
             this.btnUser.Name = "btnUser";
             this.btnUser.Size = new System.Drawing.Size(409, 74);
@@ -147,7 +141,7 @@
             // 
             this.lblDept.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblDept.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold);
-            this.lblDept.Location = new System.Drawing.Point(4, 198);
+            this.lblDept.Location = new System.Drawing.Point(4, 274);
             this.lblDept.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDept.Name = "lblDept";
             this.lblDept.Size = new System.Drawing.Size(409, 74);
@@ -160,12 +154,21 @@
             this.imgLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(84)))), ((int)(((byte)(129)))));
             this.imgLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.imgLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.imgLogo.Image = global::Elysia.Properties.Resources.logo;
             this.imgLogo.Location = new System.Drawing.Point(4, 4);
             this.imgLogo.Margin = new System.Windows.Forms.Padding(4);
             this.imgLogo.Name = "imgLogo";
-            this.imgLogo.Size = new System.Drawing.Size(409, 194);
+            this.imgLogo.Size = new System.Drawing.Size(409, 270);
+            this.imgLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgLogo.TabIndex = 0;
             this.imgLogo.TabStop = false;
+            // 
+            // contentPanel
+            // 
+            this.contentPanel.Location = new System.Drawing.Point(420, 0);
+            this.contentPanel.Name = "contentPanel";
+            this.contentPanel.Size = new System.Drawing.Size(1503, 1055);
+            this.contentPanel.TabIndex = 52;
             // 
             // GoodsInwardDepartment
             // 
@@ -174,6 +177,7 @@
             this.ClientSize = new System.Drawing.Size(1924, 1055);
             this.Controls.Add(this.contentPanel);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "GoodsInwardDepartment";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

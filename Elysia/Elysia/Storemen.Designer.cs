@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Storemen));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnLateDelivery = new System.Windows.Forms.RadioButton();
             this.btnLogout = new System.Windows.Forms.RadioButton();
@@ -70,7 +71,7 @@
             this.btnLateDelivery.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLateDelivery.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnLateDelivery.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLateDelivery.Location = new System.Drawing.Point(4, 568);
+            this.btnLateDelivery.Location = new System.Drawing.Point(4, 645);
             this.btnLateDelivery.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnLateDelivery.Name = "btnLateDelivery";
             this.btnLateDelivery.Size = new System.Drawing.Size(409, 74);
@@ -109,7 +110,7 @@
             this.btnNewSparePart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewSparePart.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnNewSparePart.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNewSparePart.Location = new System.Drawing.Point(4, 494);
+            this.btnNewSparePart.Location = new System.Drawing.Point(4, 571);
             this.btnNewSparePart.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnNewSparePart.Name = "btnNewSparePart";
             this.btnNewSparePart.Size = new System.Drawing.Size(409, 74);
@@ -129,7 +130,7 @@
             this.btnSparePart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSparePart.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnSparePart.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSparePart.Location = new System.Drawing.Point(4, 420);
+            this.btnSparePart.Location = new System.Drawing.Point(4, 497);
             this.btnSparePart.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSparePart.Name = "btnSparePart";
             this.btnSparePart.Size = new System.Drawing.Size(409, 74);
@@ -149,7 +150,7 @@
             this.btnDID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDID.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnDID.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDID.Location = new System.Drawing.Point(4, 346);
+            this.btnDID.Location = new System.Drawing.Point(4, 423);
             this.btnDID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnDID.Name = "btnDID";
             this.btnDID.Size = new System.Drawing.Size(409, 74);
@@ -169,7 +170,7 @@
             this.btnUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUser.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnUser.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnUser.Location = new System.Drawing.Point(4, 272);
+            this.btnUser.Location = new System.Drawing.Point(4, 349);
             this.btnUser.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnUser.Name = "btnUser";
             this.btnUser.Size = new System.Drawing.Size(409, 74);
@@ -185,7 +186,7 @@
             // 
             this.lblDept.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblDept.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
-            this.lblDept.Location = new System.Drawing.Point(4, 198);
+            this.lblDept.Location = new System.Drawing.Point(4, 275);
             this.lblDept.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDept.Name = "lblDept";
             this.lblDept.Size = new System.Drawing.Size(409, 74);
@@ -198,10 +199,12 @@
             this.imgLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(84)))), ((int)(((byte)(129)))));
             this.imgLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.imgLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.imgLogo.Image = global::Elysia.Properties.Resources.logo;
             this.imgLogo.Location = new System.Drawing.Point(4, 5);
             this.imgLogo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.imgLogo.Name = "imgLogo";
-            this.imgLogo.Size = new System.Drawing.Size(409, 193);
+            this.imgLogo.Size = new System.Drawing.Size(409, 270);
+            this.imgLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgLogo.TabIndex = 0;
             this.imgLogo.TabStop = false;
             // 
@@ -219,6 +222,7 @@
             this.ClientSize = new System.Drawing.Size(1924, 1055);
             this.Controls.Add(this.contentPanel);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Storemen";
             this.Text = "viewDID";

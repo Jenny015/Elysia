@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Accountant));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnEvaluatedList = new System.Windows.Forms.RadioButton();
             this.btnViewLog = new System.Windows.Forms.RadioButton();
@@ -66,7 +67,7 @@
             this.btnEvaluatedList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEvaluatedList.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnEvaluatedList.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEvaluatedList.Location = new System.Drawing.Point(4, 420);
+            this.btnEvaluatedList.Location = new System.Drawing.Point(4, 496);
             this.btnEvaluatedList.Margin = new System.Windows.Forms.Padding(4);
             this.btnEvaluatedList.Name = "btnEvaluatedList";
             this.btnEvaluatedList.Size = new System.Drawing.Size(409, 74);
@@ -86,7 +87,7 @@
             this.btnViewLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnViewLog.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnViewLog.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnViewLog.Location = new System.Drawing.Point(4, 346);
+            this.btnViewLog.Location = new System.Drawing.Point(4, 422);
             this.btnViewLog.Margin = new System.Windows.Forms.Padding(4);
             this.btnViewLog.Name = "btnViewLog";
             this.btnViewLog.Size = new System.Drawing.Size(409, 74);
@@ -106,7 +107,7 @@
             this.radioButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.radioButton1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.radioButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radioButton1.Location = new System.Drawing.Point(4, 272);
+            this.radioButton1.Location = new System.Drawing.Point(4, 348);
             this.radioButton1.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(409, 74);
@@ -141,7 +142,7 @@
             // 
             this.lblDept.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblDept.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
-            this.lblDept.Location = new System.Drawing.Point(4, 198);
+            this.lblDept.Location = new System.Drawing.Point(4, 274);
             this.lblDept.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDept.Name = "lblDept";
             this.lblDept.Size = new System.Drawing.Size(409, 74);
@@ -154,10 +155,12 @@
             this.imgLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(84)))), ((int)(((byte)(129)))));
             this.imgLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.imgLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.imgLogo.Image = global::Elysia.Properties.Resources.logo;
             this.imgLogo.Location = new System.Drawing.Point(4, 4);
             this.imgLogo.Margin = new System.Windows.Forms.Padding(4);
             this.imgLogo.Name = "imgLogo";
-            this.imgLogo.Size = new System.Drawing.Size(409, 194);
+            this.imgLogo.Size = new System.Drawing.Size(409, 270);
+            this.imgLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgLogo.TabIndex = 0;
             this.imgLogo.TabStop = false;
             // 
@@ -175,6 +178,7 @@
             this.ClientSize = new System.Drawing.Size(1924, 1055);
             this.Controls.Add(this.contentPanel);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Accountant";
             this.Text = "ViewLog";

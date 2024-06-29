@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Filter));
             this.DID = new System.Windows.Forms.Panel();
             this.didStatus = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -110,16 +111,16 @@
             this.inv_orderID = new System.Windows.Forms.ComboBox();
             this.label36 = new System.Windows.Forms.Label();
             this.evaluated = new System.Windows.Forms.Panel();
+            this.evaCate = new System.Windows.Forms.ComboBox();
+            this.label39 = new System.Windows.Forms.Label();
+            this.evaValue = new System.Windows.Forms.ComboBox();
             this.evaDatePanel = new System.Windows.Forms.Panel();
             this.evaTo = new System.Windows.Forms.DateTimePicker();
             this.evaFrom = new System.Windows.Forms.DateTimePicker();
             this.label33 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
-            this.evaDate = new System.Windows.Forms.CheckBox();
             this.label35 = new System.Windows.Forms.Label();
-            this.evaValue = new System.Windows.Forms.ComboBox();
-            this.label39 = new System.Windows.Forms.Label();
-            this.evaCate = new System.Windows.Forms.ComboBox();
+            this.evaDate = new System.Windows.Forms.CheckBox();
             this.DID.SuspendLayout();
             this.supplierPart.SuspendLayout();
             this.orderDateContainer.SuspendLayout();
@@ -1058,6 +1059,41 @@
             this.evaluated.TabIndex = 22;
             this.evaluated.Visible = false;
             // 
+            // evaCate
+            // 
+            this.evaCate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.evaCate.Font = new System.Drawing.Font("Times New Roman", 10F);
+            this.evaCate.FormattingEnabled = true;
+            this.evaCate.Location = new System.Drawing.Point(161, 37);
+            this.evaCate.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.evaCate.Name = "evaCate";
+            this.evaCate.Size = new System.Drawing.Size(200, 30);
+            this.evaCate.TabIndex = 26;
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.label39.Location = new System.Drawing.Point(21, 36);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(127, 26);
+            this.label39.TabIndex = 24;
+            this.label39.Text = "Category:  ";
+            // 
+            // evaValue
+            // 
+            this.evaValue.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.evaValue.Font = new System.Drawing.Font("Times New Roman", 10F);
+            this.evaValue.FormattingEnabled = true;
+            this.evaValue.Items.AddRange(new object[] {
+            "Increase",
+            "Decrease"});
+            this.evaValue.Location = new System.Drawing.Point(161, 95);
+            this.evaValue.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.evaValue.Name = "evaValue";
+            this.evaValue.Size = new System.Drawing.Size(200, 30);
+            this.evaValue.TabIndex = 21;
+            // 
             // evaDatePanel
             // 
             this.evaDatePanel.Controls.Add(this.evaTo);
@@ -1114,6 +1150,16 @@
             this.label34.TabIndex = 0;
             this.label34.Text = "From";
             // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.label35.Location = new System.Drawing.Point(21, 95);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(84, 26);
+            this.label35.TabIndex = 20;
+            this.label35.Text = "Value: ";
+            // 
             // evaDate
             // 
             this.evaDate.AutoSize = true;
@@ -1126,51 +1172,6 @@
             this.evaDate.Text = "Querying by date?";
             this.evaDate.UseVisualStyleBackColor = true;
             this.evaDate.CheckedChanged += new System.EventHandler(this.evaDate_CheckedChanged);
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.label35.Location = new System.Drawing.Point(21, 95);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(84, 26);
-            this.label35.TabIndex = 20;
-            this.label35.Text = "Value: ";
-            // 
-            // evaValue
-            // 
-            this.evaValue.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.evaValue.Font = new System.Drawing.Font("Times New Roman", 10F);
-            this.evaValue.FormattingEnabled = true;
-            this.evaValue.Items.AddRange(new object[] {
-            "Increase",
-            "Decrease"});
-            this.evaValue.Location = new System.Drawing.Point(161, 95);
-            this.evaValue.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
-            this.evaValue.Name = "evaValue";
-            this.evaValue.Size = new System.Drawing.Size(200, 30);
-            this.evaValue.TabIndex = 21;
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.label39.Location = new System.Drawing.Point(21, 36);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(127, 26);
-            this.label39.TabIndex = 24;
-            this.label39.Text = "Category:  ";
-            // 
-            // evaCate
-            // 
-            this.evaCate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.evaCate.Font = new System.Drawing.Font("Times New Roman", 10F);
-            this.evaCate.FormattingEnabled = true;
-            this.evaCate.Location = new System.Drawing.Point(161, 37);
-            this.evaCate.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
-            this.evaCate.Name = "evaCate";
-            this.evaCate.Size = new System.Drawing.Size(200, 30);
-            this.evaCate.TabIndex = 26;
             // 
             // Filter
             // 
@@ -1192,6 +1193,7 @@
             this.Controls.Add(this.supplierPart);
             this.Controls.Add(this.Order);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.ImeMode = System.Windows.Forms.ImeMode.Alpha;
             this.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.Name = "Filter";

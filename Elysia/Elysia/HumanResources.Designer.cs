@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HumanResources));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnViewEmployee = new System.Windows.Forms.RadioButton();
             this.btnNewEmployee = new System.Windows.Forms.RadioButton();
@@ -66,7 +67,7 @@
             this.btnViewEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnViewEmployee.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnViewEmployee.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnViewEmployee.Location = new System.Drawing.Point(4, 423);
+            this.btnViewEmployee.Location = new System.Drawing.Point(4, 499);
             this.btnViewEmployee.Margin = new System.Windows.Forms.Padding(4);
             this.btnViewEmployee.Name = "btnViewEmployee";
             this.btnViewEmployee.Size = new System.Drawing.Size(409, 75);
@@ -86,7 +87,7 @@
             this.btnNewEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewEmployee.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnNewEmployee.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNewEmployee.Location = new System.Drawing.Point(4, 348);
+            this.btnNewEmployee.Location = new System.Drawing.Point(4, 424);
             this.btnNewEmployee.Margin = new System.Windows.Forms.Padding(4);
             this.btnNewEmployee.Name = "btnNewEmployee";
             this.btnNewEmployee.Size = new System.Drawing.Size(409, 75);
@@ -106,7 +107,7 @@
             this.btnUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUser.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnUser.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnUser.Location = new System.Drawing.Point(4, 273);
+            this.btnUser.Location = new System.Drawing.Point(4, 349);
             this.btnUser.Margin = new System.Windows.Forms.Padding(4);
             this.btnUser.Name = "btnUser";
             this.btnUser.Size = new System.Drawing.Size(409, 75);
@@ -141,7 +142,7 @@
             // 
             this.lblDept.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblDept.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
-            this.lblDept.Location = new System.Drawing.Point(4, 198);
+            this.lblDept.Location = new System.Drawing.Point(4, 274);
             this.lblDept.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDept.Name = "lblDept";
             this.lblDept.Size = new System.Drawing.Size(409, 75);
@@ -154,10 +155,12 @@
             this.imgLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(84)))), ((int)(((byte)(129)))));
             this.imgLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.imgLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.imgLogo.Image = global::Elysia.Properties.Resources.logo;
             this.imgLogo.Location = new System.Drawing.Point(4, 4);
             this.imgLogo.Margin = new System.Windows.Forms.Padding(4);
             this.imgLogo.Name = "imgLogo";
-            this.imgLogo.Size = new System.Drawing.Size(409, 194);
+            this.imgLogo.Size = new System.Drawing.Size(409, 270);
+            this.imgLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgLogo.TabIndex = 0;
             this.imgLogo.TabStop = false;
             // 
@@ -175,6 +178,7 @@
             this.ClientSize = new System.Drawing.Size(1924, 1055);
             this.Controls.Add(this.contentPanel);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "HumanResources";
             this.Text = "HumanResources";
             this.panel1.ResumeLayout(false);

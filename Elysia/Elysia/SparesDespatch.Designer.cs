@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SparesDespatch));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnLateDelivery = new System.Windows.Forms.RadioButton();
             this.btnInvGen = new System.Windows.Forms.RadioButton();
@@ -68,7 +69,7 @@
             this.btnLateDelivery.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLateDelivery.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnLateDelivery.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLateDelivery.Location = new System.Drawing.Point(4, 494);
+            this.btnLateDelivery.Location = new System.Drawing.Point(4, 571);
             this.btnLateDelivery.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnLateDelivery.Name = "btnLateDelivery";
             this.btnLateDelivery.Size = new System.Drawing.Size(409, 74);
@@ -88,7 +89,7 @@
             this.btnInvGen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInvGen.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnInvGen.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnInvGen.Location = new System.Drawing.Point(4, 420);
+            this.btnInvGen.Location = new System.Drawing.Point(4, 497);
             this.btnInvGen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnInvGen.Name = "btnInvGen";
             this.btnInvGen.Size = new System.Drawing.Size(409, 74);
@@ -108,7 +109,7 @@
             this.btnViewInvoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnViewInvoice.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnViewInvoice.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnViewInvoice.Location = new System.Drawing.Point(4, 346);
+            this.btnViewInvoice.Location = new System.Drawing.Point(4, 423);
             this.btnViewInvoice.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnViewInvoice.Name = "btnViewInvoice";
             this.btnViewInvoice.Size = new System.Drawing.Size(409, 74);
@@ -128,7 +129,7 @@
             this.btnUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUser.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnUser.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnUser.Location = new System.Drawing.Point(4, 272);
+            this.btnUser.Location = new System.Drawing.Point(4, 349);
             this.btnUser.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnUser.Name = "btnUser";
             this.btnUser.Size = new System.Drawing.Size(409, 74);
@@ -163,7 +164,7 @@
             // 
             this.lblDept.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblDept.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
-            this.lblDept.Location = new System.Drawing.Point(4, 198);
+            this.lblDept.Location = new System.Drawing.Point(4, 275);
             this.lblDept.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDept.Name = "lblDept";
             this.lblDept.Size = new System.Drawing.Size(409, 74);
@@ -175,10 +176,12 @@
             this.imgLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(84)))), ((int)(((byte)(129)))));
             this.imgLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.imgLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.imgLogo.Image = global::Elysia.Properties.Resources.logo;
             this.imgLogo.Location = new System.Drawing.Point(4, 5);
             this.imgLogo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.imgLogo.Name = "imgLogo";
-            this.imgLogo.Size = new System.Drawing.Size(409, 193);
+            this.imgLogo.Size = new System.Drawing.Size(409, 270);
+            this.imgLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgLogo.TabIndex = 0;
             this.imgLogo.TabStop = false;
             // 
@@ -196,6 +199,7 @@
             this.ClientSize = new System.Drawing.Size(1924, 1055);
             this.Controls.Add(this.contentPanel);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "SparesDespatch";
             this.Text = "InvoiceGenerateAndDelivery";
