@@ -134,7 +134,7 @@ namespace Elysia
         {
             DID.Location = new System.Drawing.Point(9, 9);
             DID.Visible = true;
-            btnSearch.Location = new System.Drawing.Point(125, 258);
+            btnSearch.Location = new System.Drawing.Point((DID.Width / 2) - (btnSearch.Width / 2), DID.Height + 10);
             loadDataFromDatabase("orderID", "order", didOrderID);
             loadDataFromDatabase("partID", "part", didPartID);
             loadDataFromDatabase("opStatus", "orderpart", didStatus);
@@ -143,7 +143,7 @@ namespace Elysia
         {
             Order.Location = new System.Drawing.Point(9, 9);
             Order.Visible = true;
-            btnSearch.Location = new System.Drawing.Point(117, 321);
+            btnSearch.Location = new System.Drawing.Point((Order.Width / 2) - (btnSearch.Width / 2), Order.Height + 10);
             loadDataFromDatabase("orderID", "order", cbOrderID);
             loadDataFromDatabase("dealerID", "dealer", cbDealerID);
             loadDataFromDatabase("orderStatus", "order", orderStatus);
@@ -152,7 +152,7 @@ namespace Elysia
         {
             inward.Location = new System.Drawing.Point(9, 9);
             inward.Visible = true;
-            btnSearch.Location = new System.Drawing.Point(110, 361);
+            btnSearch.Location = new System.Drawing.Point((inward.Width / 2) - (btnSearch.Width / 2), inward.Height + 10);
             loadDataFromDatabase("inwardsID", "inwardsOrder", iwID);
             loadDataFromDatabase("supplierID", "inwardsOrder", iwSupplierID);
             loadDataFromDatabase("partID", "inwardspart", iwPartID);
@@ -161,7 +161,7 @@ namespace Elysia
         {
             part.Location = new System.Drawing.Point(9, 9);
             part.Visible = true;
-            btnSearch.Location = new System.Drawing.Point(125, 317);
+            btnSearch.Location = new System.Drawing.Point((part.Width / 2) - (btnSearch.Width / 2), part.Height + 10);
             loadDataFromDatabase("partID", "part", partPartID);
             loadDataFromDatabase("partStatus", "part", partStatus);
             loadDataFromDatabase("categoryName", "category", partCategory);
@@ -170,7 +170,7 @@ namespace Elysia
         {
             Sup.Location = new System.Drawing.Point(9, 9);
             Sup.Visible = true;
-            btnSearch.Location = new System.Drawing.Point(125, 270);
+            btnSearch.Location = new System.Drawing.Point((Sup.Width / 2) - (btnSearch.Width / 2), Sup.Height + 10);
             loadDataFromDatabase("supplierID", "supplierpart", supID);
             loadDataFromDatabase("partID", "supplierpart", supPartID);
         }
@@ -178,14 +178,14 @@ namespace Elysia
         {
             dealer.Location = new System.Drawing.Point(9, 9);
             dealer.Visible = true;
-            btnSearch.Location = new System.Drawing.Point(125, 258);
+            btnSearch.Location = new System.Drawing.Point((dealer.Width / 2) - (btnSearch.Width / 2), dealer.Height + 10);
             loadDataFromDatabase("dealerID", "dealer", deaID);
         }
         private void setComponent_emp()
         {
             emp.Location = new System.Drawing.Point(9, 9);
             emp.Visible = true;
-            btnSearch.Location = new System.Drawing.Point(125, 258);
+            btnSearch.Location = new System.Drawing.Point((emp.Width / 2) - (btnSearch.Width / 2), emp.Height + 10);
             loadDataFromDatabase("empID", "emp", empID);
             loadDataFromDatabase("deptName", "dept", empDept);
         }
@@ -193,7 +193,7 @@ namespace Elysia
         {
             log.Location = new System.Drawing.Point(9, 9);
             log.Visible = true;
-            btnSearch.Location = new System.Drawing.Point(125, 258);
+            btnSearch.Location = new System.Drawing.Point((log.Width / 2) - (btnSearch.Width / 2), log.Height + 10);
             loadDataFromDatabase("partID", "part", logPartID);
             loadDataFromDatabase("logDes", "log", logDes);
         }
@@ -201,7 +201,7 @@ namespace Elysia
         {
             supplierPart.Location = new System.Drawing.Point(9, 9);
             supplierPart.Visible = true;
-            btnSearch.Location = new System.Drawing.Point(134, 203);
+            btnSearch.Location = new System.Drawing.Point((supplierPart.Width / 2) - (btnSearch.Width / 2), supplierPart.Height + 10);
             btnSearch.Text = "Add";
             this.Text = "Add Supplier Part";
             loadDataFromDatabase("partID", "part", supplierPartID);
@@ -210,7 +210,7 @@ namespace Elysia
         {
             inv.Location = new System.Drawing.Point(9, 9);
             inv.Visible = true;
-            btnSearch.Location = new System.Drawing.Point(100, 150);
+            btnSearch.Location = new System.Drawing.Point((inv.Width / 2) - (btnSearch.Width / 2), inv.Height + 10);
             loadDataFromDatabase("orderID", "invoice", inv_orderID);
             loadDataFromDatabase("invStatus", "invoice", inv_status);
         }
@@ -218,7 +218,7 @@ namespace Elysia
         {
             evaluated.Location = new System.Drawing.Point(9, 9);
             evaluated.Visible = true;
-            btnSearch.Location = new System.Drawing.Point(100, 360);
+            btnSearch.Location = new System.Drawing.Point((evaluated.Width / 2) - (btnSearch.Width / 2), evaluated.Height + 10);
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
