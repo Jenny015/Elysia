@@ -66,7 +66,7 @@ namespace Elysia
                     this.Controls.Clear();
                     this.Controls.Add(spp);
                     this.Refresh();
-                } 
+                }
                 else if (e.ColumnIndex == dgvSupplier.Columns["Update"].Index && e.RowIndex >= 0)
                 {
                     var confirm = MessageBox.Show($"Do you want to change the data of {dgvSupplier.Rows[e.RowIndex].Cells["supplierID"].Value}?", "Update information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);

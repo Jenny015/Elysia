@@ -56,7 +56,7 @@ namespace Elysia
         }
         private void UpdatePassword()
         {
-            if(String.IsNullOrEmpty(tb_username.Text) || String.IsNullOrEmpty(tb_password.Text) || String.IsNullOrEmpty(tb_npassword.Text))
+            if (String.IsNullOrEmpty(tb_username.Text) || String.IsNullOrEmpty(tb_password.Text) || String.IsNullOrEmpty(tb_npassword.Text))
             {
                 MessageBox.Show("Please enter all the fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;

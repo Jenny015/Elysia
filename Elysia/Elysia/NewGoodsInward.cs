@@ -263,7 +263,7 @@ namespace Elysia
                         cmd.CommandText = $"INSERT INTO inwardsPart VALUES ('{newInwardsID}', '{part.Key}', {part.Value});";
                     }
                     cmd.ExecuteNonQuery();
-                    string timestamp = DateTime.Now.ToString("yyyyMMddHHmmss")+seq.ToString("D2");
+                    string timestamp = DateTime.Now.ToString("yyyyMMddHHmmss") + seq.ToString("D2");
                     int changeQty = -part.Value;
                     cmd.CommandText = $"INSERT INTO log VALUES ('{timestamp}', '{StaticVariable.empID}', '{part.Key}', {changeQty}, 'Goods Inward');";
                     try

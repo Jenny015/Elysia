@@ -370,7 +370,7 @@ namespace Elysia
         }
         private void search_emp()
         {
-            StringBuilder queryBuilder = new StringBuilder("SELECT e.empID, e.empName, e.empGander, e.empPhone, e.empEmail, d.deptName, e.empPostion, e.empStatus FROM emp e, dept d WHERE e.deptID = d.deptID");
+            StringBuilder queryBuilder = new StringBuilder("SELECT e.empID, e.empName, e.empGander, e.empPhone, e.empEmail, e.deptID, e.empPostion, e.empStatus FROM emp e, dept d WHERE e.deptID = d.deptID");
             List<MySqlParameter> parameters = new List<MySqlParameter>();
             if (empID.SelectedIndex != -1)
             {

@@ -41,7 +41,8 @@ namespace Elysia
                 if (dgvEv.Columns.Contains("partQty"))
                 {
                     dgvEv.Columns["partQty"].DefaultCellStyle.Format = "N0";
-                } else if (dgvEv.Columns.Contains("changes"))
+                }
+                else if (dgvEv.Columns.Contains("changes"))
                 {
                     dgvEv.Columns["changes"].DefaultCellStyle.Format = "N0";
                 }
